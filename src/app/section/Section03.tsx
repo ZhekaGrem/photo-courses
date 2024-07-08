@@ -13,14 +13,14 @@ const data: InfoType[] = [
   { id: 3, title: '03 ВИТРИМКА ТА ISO (СВІТЛОЧУТЛИВІСТЬ)', content: 'Bloc 3' },
   { id: 4, title: '04 КОМПОЗИЦІЯ', content: 'Bloc4' },
   { id: 5, title: '05 КОЛІР', content: 'Bloc5' },
-  { id: 6, title: '06 СВІТЛО', content: 'Содержимое блока 3' },
-  { id: 7, title: '07 ПОРТФОЛІО', content: 'Содержимое блока 3' },
-  { id: 8, title: '08 ІМПРОВІЗАЦІЙНА ЗЙОМКА ВІД ВХОДУ У СТУДІЮ ДО ВИХОДУ', content: 'Содержимое блока 3' },
-  { id: 9, title: '09 ХТО ТАКИЙ ФОТОГРАФ В ОЧАХ КОЛЕГ', content: 'Содержимое блока 3' },
-  { id: 10, title: '10 ВИБІР ТА ПРОЯВКА В ЛАЙТРУМ', content: 'Содержимое блока 3' },
-  { id: 11, title: '11 ЯК ЗНАЙТИ ПЕРШОГО КЛІЄНТА', content: 'Содержимое блока 3' },
-  { id: 12, title: '12 РОЗБІР ВАШИХ РОБІТ ТА ДОМАШНІХ ЗАВДАНЬ', content: 'Содержимое блока 3' },
-  { id: 13, title: '13 БОНУСНИЙ УРОК', content: 'Содержимое блока 3' },
+  { id: 6, title: '06 СВІТЛО', content: 'Bloc' },
+  { id: 7, title: '07 ПОРТФОЛІО', content: 'Bloc' },
+  { id: 8, title: '08 ІМПРОВІЗАЦІЙНА ЗЙОМКА ВІД ВХОДУ У СТУДІЮ ДО ВИХОДУ', content: 'Bloc' },
+  { id: 9, title: '09 ХТО ТАКИЙ ФОТОГРАФ В ОЧАХ КОЛЕГ', content: 'Bloc' },
+  { id: 10, title: '10 ВИБІР ТА ПРОЯВКА В ЛАЙТРУМ', content: 'Bloc' },
+  { id: 11, title: '11 ЯК ЗНАЙТИ ПЕРШОГО КЛІЄНТА', content: 'Bloc' },
+  { id: 12, title: '12 РОЗБІР ВАШИХ РОБІТ ТА ДОМАШНІХ ЗАВДАНЬ', content: 'Bloc' },
+  { id: 13, title: '13 БОНУСНИЙ УРОК', content: 'Bloc' },
 ];
 const Section03 = () => {
    const [selectedId, setSelectedId] = useState(data[0].id);
