@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const data1 = {
@@ -28,16 +29,14 @@ const data3 = {
 const Footer = () => {
   const thisYear = new Date().getFullYear();
   return (
-    <footer className='   text-lg bg-yellow-400 pt-2 tablet:h-full '>
-      <div className='grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3 mx-auto w-full max-w-screen-xl'>
+    <footer className="   text-lg bg-yellow-400 pt-2 tablet:h-full ">
+      <div className="grid grid-cols-1 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3 mx-auto w-full max-w-screen-xl">
         <div>
-          <h3 className='mb-6 text-sm font-semibold text-gray-900 uppercase'>
-            {data1.title}
-          </h3>
+          <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{data1.title}</h3>
           <ul>
             {data1.list_link.map((link) => (
-              <li key={link.id} className='mb-4'>
-                <a href={link.href} className=' hover:underline'>
+              <li key={link.id} className="mb-4">
+                <a href={link.href} className=" hover:underline">
                   {link.text}
                 </a>
               </li>
@@ -45,122 +44,41 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h3 className='mb-6 text-sm font-semibold text-gray-900 uppercase'>
-            {data2.title}
-          </h3>
-          <form className='flex  flex-col justify-center ' action=''>
-            <label className='py-3' htmlFor=''>
-              <input type='text' />
+          <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{data2.title}</h3>
+          <form className="flex  flex-col justify-center " action="">
+            <label className="py-3" htmlFor="">
+              <input type="text" />
             </label>
-            <label className='py-3' htmlFor=''>
-              <input type='tel' />
+            <label className="py-3" htmlFor="">
+              <input type="tel" />
             </label>
-            <label className='py-3' htmlFor=''>
-              <input type='submit' />
+            <label className="py-3" htmlFor="">
+              <input type="submit" />
             </label>
           </form>
         </div>
         <div>
-          <h3 className='mb-6 text-sm font-semibold text-gray-900 uppercase'>
-            {data3.title}
-          </h3>
+          <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{data3.title}</h3>
           <ul>
             {data3.list_link.map((link) => (
-              <li key={link.id} className='mb-4'>
-                <a href={link.href} className=' hover:underline'>
+              <li key={link.id} className="mb-4">
+                <a href={link.href} className=" hover:underline">
                   {link.text}
                 </a>
               </li>
             ))}
           </ul>
         </div>
-
-        {/* <div>
-          <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
-            НАШІ КОНТАКТИ:
-          </h2>
-          <ul className='text-gray-500 dark:text-gray-400 font-medium'>
-            <li className='mb-4'>
-              <a href='#' className=' hover:underline'>
-                +38 (066) 867 58 78
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Careers
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Brand Center
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Blog
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className='col-span-2'>
-          <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase '>
-            Help center
-          </h2>
-          <ul className='text-gray-500 dark:text-gray-400 font-medium'>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Discord Server
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Twitter
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Facebook
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white'>
-            Legal
-          </h2>
-          <ul className='text-gray-500 dark:text-gray-400 font-medium'>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Privacy Policy
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Licensing
-              </a>
-            </li>
-            <li className='mb-4'>
-              <a href='#' className='hover:underline'>
-                Terms &amp; Conditions
-              </a>
-            </li>
-          </ul>
-        </div> */}
       </div>
-      <div className='px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between'>
-        <span className='text-sm text-gray-500 dark:text-gray-300 sm:text-center'>
-          <a href='https://flowbite.com/'>Умови надання послуг</a>
+      <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <Link href="terms_of_service">Умови надання послуг</Link>
         </span>
         <div>
           <span>ІПН</span>
         </div>
-        <div className='flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse'>
-          <a href='tel:+380687003020'>тел: +38 (066) 867 58 78</a>
+        <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+          <a href="tel:+380687003020">тел: +38 (066) 867 58 78</a>
         </div>
       </div>
     </footer>

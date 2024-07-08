@@ -74,7 +74,7 @@ footer {
 }
 
 main{
-    padding-top: 30px;
+    padding-top: 80px;
 }
 
 .container {
@@ -85,10 +85,14 @@ main{
   padding-right: 1.25rem;
   width: 100%;
 }
+h4{
+  font-size: 3.75rem;
+line-height: 1.1334;
+font-weight: 900;
 
+}
 section {
   height: 100%;
-  margin-bottom: 30px;
   padding-bottom: 20px;
 }
 section:last-child {
@@ -135,10 +139,20 @@ section:last-child {
 }
 
 @media (min-width: 1536px) {
-  .container {
-    max-width: 1436px;
-  }
+
   .section {
-    padding: 10rem 0;
+    padding: 6rem 0;
   }
+}
+
+
+.imgBg {
+  background-image: url('assets/img/cosmos-main.jpg');
+background-repeat: no-repeat;
+
+background-position: center;
+background-size: cover;
+
+
+
 }
