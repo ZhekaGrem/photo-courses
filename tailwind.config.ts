@@ -11,8 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         background: '#20242c',
-        red1: '#cc3151',
+        red1: '#FFEB99',
         text: '#000000',
+        text_header: '#FFEB99',
         texthover: '#727d91',
         bluesmock: '#57a3eb',
         yellow:'#FFD700'

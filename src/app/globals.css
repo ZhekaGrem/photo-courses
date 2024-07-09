@@ -149,10 +149,15 @@ section:last-child {
 .imgBg {
   background-image: url('assets/img/cosmos-main.jpg');
 background-repeat: no-repeat;
-
 background-position: center;
 background-size: cover;
+}
+.imgBg2 {
+  background-image: url('assets/img/4.png');
+  background-repeat: no-repeat;
 
-
-
+background-position: right;
+background-size: contain;
+z-index: 10;
+position: absolute;
 }

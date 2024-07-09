@@ -14,12 +14,12 @@ const Section01 = () => {
             </h1>
             <span className="font-bold text-2xl text-[#cc3151]">ОНЛАЙН-КУРС</span>
           </div>
-          <div className="py-10">
-            <p className="font-semibold text-white text-4xl">
+          <div className="py-4">
+            <p className="font-semibold text-white text-3xl">
               Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів
             </p>
           </div>
-          <div className="py-10"></div>
+          <div className="py-4"></div>
           <div className="py-10 ">
             <button className="bg-red1 text-2xl font-bold border-2 p-4 text-white hover:bg-texthover rounded-lg ">
               ПОДАТИ ЗАЯВКУ

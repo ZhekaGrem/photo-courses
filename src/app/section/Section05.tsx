@@ -10,7 +10,7 @@ const data=[
 
 const Section05 = () => {
   return (
-    <section className=" bg-[#FFCE4E] ">
+    <section className=" bg-[#EC0B88] ">
       <div className="container section">
         <h4>ЯК ПРОХОДИТь КУРС:</h4>
         <ul className="grid grid-cols-3 grid-rows-2 p-2 gap-2 ">

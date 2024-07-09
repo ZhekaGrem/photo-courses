@@ -38,7 +38,7 @@ const Section01 = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section className="bg-[#E1E327]">
+    <section className="bg-[#FFFDE7]">
       <div className="flex w-full container section  rounded-lg">
         <div className="w-1/2">
           <h4 className="text-6xl  font-semibold">ЧАСТІ ЗАПИТАННЯ:</h4>

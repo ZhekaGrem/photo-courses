@@ -1,7 +1,7 @@
 import React from 'react';
 import  ScreenSVG  from '@/app/assets/svg/Screen.svg';
 const IconLogo = () => {
-  return <ScreenSVG />;
+  return <ScreenSVG/>;
 };
 
 export default IconLogo;

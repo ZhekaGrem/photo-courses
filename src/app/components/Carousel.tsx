@@ -15,13 +15,13 @@ type ImgType = {
 };
 
 const carousel: ImgType[] = [
-  { id: 1, link: "/1.jpg",alt:"img", width:300, height:300 },
-  { id: 2, link: "/2.jpg",alt:"img", width:300, height:300 },
-  { id: 3, link: "/1.jpg",alt:"img", width:300, height:300 },
-  { id: 4, link: "/2.jpg",alt:"img", width:300, height:300 },
-  { id: 5, link: "/1.jpg",alt:"img", width:300, height:300 },
-  { id: 6, link: "/2.jpg",alt:"img", width:300, height:300 },
-  { id: 7, link: "/1.jpg",alt:"img", width:300, height:300 },
+  { id: 2, link: "/2.jpg",alt:"img", width:300, height:400 },
+  { id: 3, link: "/1.jpg",alt:"img", width:300, height:400 },
+  { id: 4, link: "/2.jpg",alt:"img", width:300, height:400 },
+  { id: 5, link: "/1.jpg",alt:"img", width:300, height:400 },
+  { id: 6, link: "/2.jpg",alt:"img", width:300, height:400 },
+  { id: 7, link: "/1.jpg",alt:"img", width:300, height:400 },
+  { id: 1, link: "/1.jpg",alt:"img", width:300, height:400 },
 ];
 
 export default function Carousel() {
@@ -39,7 +39,7 @@ export default function Carousel() {
    mode: 'free',
    slides: {
      perView: 5,
-     spacing: 15,
+     spacing: 5,
    },
  });
  return (
@@ -50,7 +50,7 @@ export default function Carousel() {
            <li key={item.id} className="keen-slider__slide ">
              <Image
              
-               className="rounded-3xl w-full h-auto"
+               className="rounded-3xl h-full "
                width={item.width}
                height={item.height}
                src={item.link}

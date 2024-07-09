@@ -8,6 +8,9 @@ import Section03 from './section/Section03';
 import Section04 from './section/Section04';
 import Section05 from './section/Section05';
 import Section06 from './section/Section06';
+import Section07 from './section/Section07';
+import Section08 from './section/Section08';
+import Section09 from './section/Section09';
 
 export default function Home() {
   return (
@@ -16,11 +19,14 @@ export default function Home() {
         <div className="w-full imgBg">
         <Section01 />
         </div>
-        <Section02 />
         <Section03 />
+        <Section08 />
+        <Section09 />
+        <Section07 />
         <Section04 />
         <Section05 />
-        <Section06 />
+        {/* <Section06 /> */}
+        <Section02 />
      
     </>
   );
