@@ -13,7 +13,7 @@ const Section05 = () => {
     <section className=" bg-[#EC0B88] ">
       <div className="container section">
         <h4>ЯК ПРОХОДИТь КУРС:</h4>
-        <ul className="grid grid-cols-3 grid-rows-2 p-2 gap-2 ">
+        <ul className="grid  grid-cols-1  md:grid-cols-3  grid-rows-2 p-2 gap-2 ">
           {data.map((list) => (
             <li key={list.id} className="flex items-center">
               <div className="font-extrabold text-6xl mr-2.5">{list.number}</div>{' '}
