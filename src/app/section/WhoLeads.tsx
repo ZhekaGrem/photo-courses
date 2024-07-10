@@ -2,16 +2,15 @@ import React from 'react'
 import Image from 'next/image';
 import CarouselMini from '../components/CarouselMini';
 
-const Section08 = () => {
+const WhoLeads = () => {
   return (
-    <section className="bg-[#FFDF55] min-h-screen">
-      <div className=" container section ">
+    <section className="bg-background_section_3 min-h-screen">
+      <div className=" container section text-text_1">
         <div className="  flex ">
-
-        <div className="w-1/2 z-20">
-          <h4>ХТО БУДЕ ПРОВОДИТИ КУРС?</h4>
-          <p>ОЛЕГ СЕРНЮК</p>
-        </div>
+          <div className="w-1/2 z-20">
+            <h4>ХТО БУДЕ ПРОВОДИТИ КУРС?</h4>
+            <p>ОЛЕГ СЕРНЮК</p>
+          </div>
         </div>
         <div className="w-1/2 "></div>
         <div>
@@ -35,4 +34,4 @@ const Section08 = () => {
   );
 }
 
-export default Section08
+export default WhoLeads;

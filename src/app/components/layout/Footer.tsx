@@ -52,7 +52,7 @@ const Footer = () => {
             <label className="py-3" htmlFor="">
               <input type="tel" />
             </label>
-            <label className="py-3" htmlFor="">
+            <label className="py-3 bg-background_btn hover:bg-background_btn_hover " htmlFor="">
               <input type="submit" />
             </label>
           </form>

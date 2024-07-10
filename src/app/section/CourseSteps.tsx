@@ -8,10 +8,10 @@ const data=[
   {id:5,number:'05',info:'Вивчаєте матеріали та отримуєте нову професію'},
 ]
 
-const Section05 = () => {
+const CourseSteps = () => {
   return (
-    <section className=" bg-[#EC0B88] ">
-      <div className="container section">
+    <section className=" bg-background_section_7 ">
+      <div className="container section text-text_2">
         <h4>ЯК ПРОХОДИТь КУРС:</h4>
         <ul className="grid  grid-cols-1  md:grid-cols-3  grid-rows-2 p-2 gap-2 ">
           {data.map((list) => (
@@ -21,7 +21,9 @@ const Section05 = () => {
             </li>
           ))}
           <li className="flex items-center" key={6}>
-            <button className="font-extrabold text-3xl underline">ЗАРЕЄСТРУВАТИСЯ</button>{' '}
+            <button className="font-extrabold text-3xl underline bg-background_btn hover:bg-background_btn_hover ">
+              ЗАРЕЄСТРУВАТИСЯ
+            </button>{' '}
           </li>
         </ul>
       </div>
@@ -29,4 +31,4 @@ const Section05 = () => {
   );
 };
 
-export default Section05;
+export default CourseSteps;

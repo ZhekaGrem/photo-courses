@@ -1,15 +1,15 @@
 import React from 'react'
 import Carousel from '../components/Carousel';
 
-const Section04 = () => {
+const Portfolio = () => {
   return (
-    <section className=" bg-[#ffcc7b] ">
-      <div className="section ">
+    <section className=" bg-background_section_6 ">
+      <div className="section text-text_2">
         <h4>ПОРТФОЛІО АВТОРА:</h4>
         <Carousel />
       </div>
     </section>
   );
-}
+};
 
-export default Section04
+export default Portfolio;

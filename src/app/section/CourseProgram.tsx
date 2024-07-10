@@ -145,89 +145,89 @@ const data: InfoType[] = [
     },
   },
 ];
-const Section03 = () => {
-   const [selectedId, setSelectedId] = useState(data[0].id);
-   const handleClick = (id:number) => {
-     setSelectedId(id);
-   };
-   return (
-     <section className="bg-[#FF7175]">
-       <div className="container section">
-         <h4>ПРОГРАМА КУРСУ:</h4>
-         <div className="flex   relative  items-start flex-row ">
-           <ul className="w-1/3 p-4 ">
-             {data.map((item) => (
-               <li
-                 key={item.id}
-                 className={`p-2 mb-5  cursor-pointer break-words ${
-                   selectedId === item.id
-                     ? ' border-b-4 border-black border-solid'
-                     : ' border-black border-solid border-b-2  '
-                 }`}
-                 onClick={() => handleClick(item.id)}>
-                 {item.title}
-               </li>
-             ))}
-           </ul>
-           <div className=" bg-yellow-400 sticky top-24  w-full py-6 px-6 ">
-             <div className="w-full h-full top-0 left-0  ">
-               {data.map((item) =>
-                 item.id === selectedId ? (
-                   <div key={item.id}>
-                     <div className="flex p-3">
-                       <div className="w-1/2 p-3">
-                         <div className="w-full pl-3">
-                           <Image
-                             loading="lazy"
-                             src="/photo-1-2.png"
-                             alt="photoaparat"
-                             width={99}
-                             height={106}
-                           />
-                         </div>
-                         <div className="text-center text-5xl">{item.content.title}</div>
-                         <div className="flex justify-end">
-                           <Image
-                             className=""
-                             loading="lazy"
-                             src="/phone-1-2.png"
-                             alt="phone"
-                             width={124}
-                             height={134}
-                           />
-                         </div>
-                       </div>
-                       <div className="w-1/2 p-3">
-                         <div className="text-4xl pb-4">{item.content.title2}</div>
-                         <ul>
-                           {item.content.list.map((item, index) => (
-                             <li className="text-2xl list-disc list-inside" key={index}>
-                               {item}
-                             </li>
-                           ))}
-                         </ul>
-                       </div>
-                     </div>
-                     <div className="w-full px-12 py-5 flex justify-center">
-                       <Image
-                         className="rounded-3xl object-cover"
-                         loading="lazy"
-                         src={item.content.img}
-                         alt={item.content.title}
-                         width={550}
-                         height={350}
-                       />
-                     </div>
-                   </div>
-                 ) : null
-               )}
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
-   );
-}
+const CourseProgram = () => {
+  const [selectedId, setSelectedId] = useState(data[0].id);
+  const handleClick = (id: number) => {
+    setSelectedId(id);
+  };
+  return (
+    <section id="program" className=" bg-background_section_2">
+      <div className="container section text-text_2">
+        <h4>ПРОГРАМА КУРСУ:</h4>
+        <div className="flex   relative  items-start flex-row ">
+          <ul className="w-1/3 p-4 ">
+            {data.map((item) => (
+              <li
+                key={item.id}
+                className={`p-2 mb-5 text-xl font-bold  cursor-pointer break-words ${
+                  selectedId === item.id
+                    ? ' border-b-4 border-text-text_2 border-solid'
+                    : ' border-text-text_2 border-solid border-b-2  '
+                }`}
+                onClick={() => handleClick(item.id)}>
+                {item.title}
+              </li>
+            ))}
+          </ul>
+          <div className=" bg-yellow-400 sticky top-24  w-full py-6 px-6 ">
+            <div className="w-full h-full top-0 left-0  ">
+              {data.map((item) =>
+                item.id === selectedId ? (
+                  <div key={item.id}>
+                    <div className="flex p-3">
+                      <div className="w-1/2 p-3">
+                        <div className="w-full pl-3">
+                          <Image
+                            loading="lazy"
+                            src="/photo-1-2.png"
+                            alt="photoaparat"
+                            width={99}
+                            height={106}
+                          />
+                        </div>
+                        <div className="text-center text-5xl">{item.content.title}</div>
+                        <div className="flex justify-end">
+                          <Image
+                            className=""
+                            loading="lazy"
+                            src="/phone-1-2.png"
+                            alt="phone"
+                            width={124}
+                            height={134}
+                          />
+                        </div>
+                      </div>
+                      <div className="w-1/2 p-3">
+                        <div className="text-4xl pb-4">{item.content.title2}</div>
+                        <ul>
+                          {item.content.list.map((item, index) => (
+                            <li className="text-2xl list-disc list-inside" key={index}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="w-full px-12 py-5 flex justify-center">
+                      <Image
+                        className="rounded-3xl object-cover"
+                        loading="lazy"
+                        src={item.content.img}
+                        alt={item.content.title}
+                        width={550}
+                        height={350}
+                      />
+                    </div>
+                  </div>
+                ) : null
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 
-export default Section03
+export default CourseProgram;

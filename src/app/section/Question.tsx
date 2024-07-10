@@ -32,16 +32,16 @@ const aboutuslist = [
       'ПРАКТИКОЮ І Є ВАШІ ЗАВДАННЯ, ЯКІ ДАЮТЬСЯ ПІСЛЯ КОЖНОЇ ТЕМИ. ТАК ЦЕ СКЛАДНІШЕ, БО НЕМА БІЛЯ ВАС ЛЮДИНИ ЯКА Б ВАМ ПІДКАЗАЛА В ПРОЦЕСІ, АЛЕ ЕФЕКТИВНІШЕ, БО В ПРОЦЕСІ ВИ ПРАКТИКУЄТЕ НАВИКИ, МЕТОДОМ ПОВТОРЮВАННЯ ТАК ЩОБ ПОЛУЧИВСЯ ПРАВИЛЬНИЙ РЕЗУЛЬТАТ.',
   },
 ];
-const Section01 = () => {
+const Question = () => {
   const [openIndex, setOpenIndex] = useState<IndexType>(null);
   const handleButtonClick: HandleClickButton = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section className="bg-[#FFFDE7]">
-      <div className="flex w-full container section  rounded-lg">
+    <section className="bg-background_section_10">
+      <div className="flex w-full container section  rounded-lg text-text_1">
         <div className="w-1/2">
-          <h4 className="text-6xl  font-semibold">ЧАСТІ ЗАПИТАННЯ:</h4>
+          <h4 className=" ">ЧАСТІ ЗАПИТАННЯ:</h4>
           <ul className="">
             {aboutuslist.map((item, index) => (
               <motion.li
@@ -52,7 +52,9 @@ const Section01 = () => {
                 key={item.key}
                 className="border-x-2 border-t-2 last:border-b-2 border-backgraund border-solid ">
                 <div className="bg-yellow-300 text-black text-base p-5 ">
-                  <button className="w-full text-start " onClick={() => handleButtonClick(index)}>
+                  <button
+                    className="w-full text-start font-medium text-2xl "
+                    onClick={() => handleButtonClick(index)}>
                     {item.title}
                   </button>
                 </div>
@@ -63,7 +65,7 @@ const Section01 = () => {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.5 }}>
-                      <p>{item.description}</p>
+                      <p className="font-normal text-1xl">{item.description}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -85,4 +87,4 @@ const Section01 = () => {
   );
 };
 
-export default Section01;
+export default Question;
