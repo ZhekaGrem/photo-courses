@@ -39,48 +39,72 @@ const Question = () => {
   };
   return (
     <section className="bg-background_section_10">
-      <div className="flex w-full container section  rounded-lg text-text_1">
-        <div className="w-1/2">
-          <h4 className=" ">ЧАСТІ ЗАПИТАННЯ:</h4>
-          <ul className="">
-            {aboutuslist.map((item, index) => (
-              <motion.li
-                initial="hidden"
-                animate="visible"
-                variants={{ hidden: { opacity: 0, x: -100 }, visible: { opacity: 1, x: 0 } }}
-                transition={{ duration: 3 }}
-                key={item.key}
-                className="border-x-2 border-t-2 last:border-b-2 border-backgraund border-solid ">
-                <div className="bg-yellow-300 text-black text-base p-5 ">
+      <div className="container section">
+        <h4 className=" text-center text-text_1 mb-12">ЧАСТІ ЗАПИТАННЯ:</h4>
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
+          <div className="lg:w-1/2">
+            <ul className="space-y-4">
+              {aboutuslist.map((item, index) => (
+                <motion.li
+                  key={item.key}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white rounded-lg shadow-md overflow-hidden">
                   <button
-                    className="w-full text-start font-medium text-2xl "
+                    className="w-full text-left p-6 focus:outline-none"
                     onClick={() => handleButtonClick(index)}>
-                    {item.title}
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+                      <svg
+                        className={`w-6 h-6 transform transition-transform duration-300 ${
+                          openIndex === index ? 'rotate-180' : ''
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
                   </button>
-                </div>
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5 }}>
-                      <p className="font-normal text-1xl">{item.description}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-        <div className="w-1/2">
-          <Image
-            className="max-w-full h-auto"
-            src="/ICH_7748-копія-2-1.png"
-            width={800}
-            height={860}
-            alt="kek"
-          />
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}>
+                        <div className="px-6 pb-6 text-gray-600">
+                          <p>{item.description}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+          <div className="lg:w-1/2">
+            <div className="relative">
+              <Image
+                className="rounded-lg shadow-2xl"
+                src="/ICH_7748-копія-2-1.png"
+                width={800}
+                height={860}
+                alt="Фотограф за роботою"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t  to-transparent rounded-lg"></div>
+              <div className="absolute bottom-0 left-0 p-8 text-white">
+                <h3 className="text-3xl font-bold mb-2">Розкрийте свій потенціал</h3>
+                <p className="text-xl">Станьте професійним фотографом з нашим курсом</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

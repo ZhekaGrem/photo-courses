@@ -1,12 +1,13 @@
 import React from 'react';
+import Button from '../components/common/Button';
 
-const data=[
-  {id:1,number:'01',info:'Обираєте один із двох тарифів курсу'},
-  {id:2,number:'02',info:'Реєструєтесь на курс та оплачуєте всю суму чи частину'},
-  {id:3,number:'03',info:'Отримуєте доступ до платформи, де будуть уроки'},
-  {id:4,number:'04',info:'Отримуєте доступ до групи та каналу в Telegram'},
-  {id:5,number:'05',info:'Вивчаєте матеріали та отримуєте нову професію'},
-]
+const data = [
+  { id: 1, number: '01', info: 'Обираєте один із двох тарифів курсу' },
+  { id: 2, number: '02', info: 'Реєструєтесь на курс та оплачуєте всю суму чи частину' },
+  { id: 3, number: '03', info: 'Отримуєте доступ до платформи, де будуть уроки' },
+  { id: 4, number: '04', info: 'Отримуєте доступ до групи та каналу в Telegram' },
+  { id: 5, number: '05', info: 'Вивчаєте матеріали та отримуєте нову професію' },
+];
 
 const CourseSteps = () => {
   return (
@@ -21,9 +22,7 @@ const CourseSteps = () => {
             </li>
           ))}
           <li className="flex items-center" key={6}>
-            <button className="font-extrabold text-3xl underline bg-background_btn hover:bg-background_btn_hover ">
-              ЗАРЕЄСТРУВАТИСЯ
-            </button>{' '}
+            <Button className="px-7 py-3" text="ЗАРЕЄСТРУВАТИСЯ"></Button>
           </li>
         </ul>
       </div>

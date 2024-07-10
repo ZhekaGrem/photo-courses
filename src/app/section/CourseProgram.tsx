@@ -181,24 +181,24 @@ const CourseProgram = () => {
                             loading="lazy"
                             src="/photo-1-2.png"
                             alt="photoaparat"
-                            width={99}
-                            height={106}
+                            width={90}
+                            height={97}
                           />
                         </div>
-                        <div className="text-center text-5xl">{item.content.title}</div>
+                        <div className="text-center text-4xl">{item.content.title}</div>
                         <div className="flex justify-end">
                           <Image
                             className=""
                             loading="lazy"
                             src="/phone-1-2.png"
                             alt="phone"
-                            width={124}
-                            height={134}
+                            width={114}
+                            height={124}
                           />
                         </div>
                       </div>
                       <div className="w-1/2 p-3">
-                        <div className="text-4xl pb-4">{item.content.title2}</div>
+                        <div className="text-3xl pb-4">{item.content.title2}</div>
                         <ul>
                           {item.content.list.map((item, index) => (
                             <li className="text-2xl list-disc list-inside" key={index}>
@@ -208,9 +208,9 @@ const CourseProgram = () => {
                         </ul>
                       </div>
                     </div>
-                    <div className="w-full px-12 py-5 flex justify-center">
+                    <div className="w-full px-12 pb-5 flex justify-center">
                       <Image
-                        className="rounded-3xl object-cover"
+                        className=" object-cover rounded-lg shadow-2xl"
                         loading="lazy"
                         src={item.content.img}
                         alt={item.content.title}

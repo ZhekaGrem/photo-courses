@@ -49,8 +49,7 @@ export default function Carousel() {
          {carousel.map((item) => (
            <li key={item.id} className="keen-slider__slide ">
              <Image
-             
-               className="rounded-3xl h-full "
+               className=" h-full rounded-lg shadow-2xl "
                width={item.width}
                height={item.height}
                src={item.link}
@@ -61,14 +60,9 @@ export default function Carousel() {
        </ul>
        {loaded && instanceRef.current && (
          <>
-           <Arrow
-             left
-             onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()}
-           />
+           <Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} />
 
-           <Arrow
-             onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()}
-           />
+           <Arrow onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()} />
          </>
        )}
      </div>{' '}

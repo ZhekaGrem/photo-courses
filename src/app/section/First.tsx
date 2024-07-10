@@ -1,31 +1,59 @@
+import Image from 'next/image';
 import React from 'react';
+import Instagramicon from '@/app/assets/svg/instagram'
+import Button from '../components/common/Button';
+
+
+
+
+const data=[
+  {id:1,src:'/svg/instagram.svg',alt:'instagram'},
+  {id:2,src:'/svg/instagram.svg',alt:'instagram'},
+  {id:3,src:'/svg/instagram.svg',alt:'instagram'},
+]
 const First = () => {
   return (
-    <section className=" imgBg">
-      <div className="w-full flex  container section">
-        <div className="w-3/4">
-          <div className="py-10">
-            <h1 className="font-black text-text_2 text-7xl">
-              Курс
+    <section className="imgBg bg-cover bg-center min-h-screen flex items-center">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="lg:w-2/3 mb-12 lg:mb-0">
+            <span className="inline-block bg-[#cc3151] text-white text-xl font-bold px-4 py-2 rounded-full mb-6">
+              ОНЛАЙН-КУРС
+            </span>
+            <h1 className="font-black text-text_2 text-5xl lg:text-7xl leading-tight mb-8">
+              Курс фотографа
               <br />
-              фотографа <br />
-              для початцівців
+              для початківців
             </h1>
-            <span className="font-bold text-2xl text-[#cc3151]">ОНЛАЙН-КУРС</span>
-          </div>
-          <div className="py-4">
-            <p className="font-normal text-white text-3xl">
+            <p className="font-normal text-white text-xl lg:text-3xl mb-12 max-w-2xl">
               Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів
             </p>
+           
+            <Button
+              className="px-8 py-4 bg-yellow-400 text-black text-xl font-bold rounded-full transition-all duration-300 hover:bg-yellow-500 hover:shadow-lg transform hover:scale-105"
+              text="ПОДАТИ ЗАЯВКУ"
+            />
           </div>
-          <div className="py-4"></div>
-          <div className="py-10 ">
-            <button className="bg-background_btn hover:bg-background_btn_hover  text-2xl font-bold border-2 p-4 text-white rounded-lg ">
-              ПОДАТИ ЗАЯВКУ
-            </button>
+          <div className="lg:w-1/3 flex justify-end">
+            <div className="   rounded-2xl p-6">
+              <ul className="flex flex-col gap-y-6">
+                {data.map((item) => (
+                  <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.alt}
+                      title={item.alt}
+                      href="#"
+                      className="text-white hover:text-yellow-400 transition-colors duration-300">
+                      <Instagramicon />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        <div className="w-1/3 "></div>
       </div>
     </section>
   );

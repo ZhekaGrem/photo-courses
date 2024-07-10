@@ -22,7 +22,7 @@ export default function Home() {
       <CustomerSearch />
       <Portfolio />
       <CourseSteps />
-      <Feedback />
+      {/* <Feedback /> */}
       <Price />
       <Question />
     </>
