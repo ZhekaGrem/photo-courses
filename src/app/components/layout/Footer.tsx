@@ -59,7 +59,7 @@ const Footer = () => {
           </ul>
           <ul className="flex gap-x-4">
             {data1.icon.map((item) => (
-              <li>
+              <li key={item.id}>
                 <span className="sr-only">{item.alt}</span>
                 <a
                   target="_blank"
@@ -94,7 +94,7 @@ const Footer = () => {
           <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{data3.title}</h3>
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {data3.list_link.map((link) => (
-              <li key={link.id} className={`mb-4${link.colspan}`}>
+              <li key={link.id} className={`mb-4 ${link.colspan}`}>
                 <a href={link.href} className= "hover:underline ">
                   {link.text}
                 </a>

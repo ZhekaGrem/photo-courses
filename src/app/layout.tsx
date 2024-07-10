@@ -19,13 +19,11 @@ export default function RootLayout({
   return (
     <html lang="ua">
       <body className={inter.className}>
-          <Header/>
-        <main>
-        {children}
-        </main>
-          <Footer/>
-
-        </body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <div id="portal-root" />
+      </body>
     </html>
   );
 }

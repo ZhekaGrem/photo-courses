@@ -1,7 +1,9 @@
 import React from 'react'
 import Button from '../components/common/Button';
+import Portal from '../components/layout/Portal';
 
 const Price = () => {
+
   return (
     <section className="bg-background_section_9 ">
       <div className="container section text-text_2 ">
@@ -85,35 +87,34 @@ const Price = () => {
           <div className="flex justify-center space-x-4">
             <div className=" p-4 rounded-lg shadow max-w-xs">
               <h2>тут будеп відео</h2>
-              <iframe
+              {/* <iframe
                 className="rounded-3xl bg-white"
                 width="300"
                 height="350"
                 src=""
                 title="YouTube video player"
-                frameBorder="0"
-                allowFullScreen></iframe>
-              <p className="italic mb-2">"Цей курс змінив моє життя. Тепер я професійний фотограф!"</p>
+                allowFullScreen></iframe> */}
+              <p className="italic mb-2">Цей курс змінив моє життя. Тепер я професійний фотограф!</p>
               <p className="font-bold">- Олена К.</p>
             </div>
             <div className=" p-4 rounded-lg shadow max-w-xs ">
-              <h2>тут будеп відео</h2>
+              {/* <h2>тут будеп відео</h2>
               <iframe
                 className="rounded-3xl bg-white"
                 width="300"
                 height="350"
                 src=""
                 title="YouTube video player"
-                frameBorder="0"
                 allowFullScreen>
                 {' '}
-              </iframe>
-              <p className="italic mb-2">"Цей курс змінив моє життя. Тепер я професійний фотограф!"</p>
+              </iframe> */}
+              <p className="italic mb-2">Цей курс змінив моє життя. Тепер я професійний фотограф!</p>
               <p className="font-bold">- Олена К.</p>
             </div>
           </div>
         </div>
       </div>
+      <Portal/>
     </section>
   );
 };
