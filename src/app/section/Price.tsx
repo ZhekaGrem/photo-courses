@@ -114,7 +114,6 @@ const Price = () => {
           </div>
         </div>
       </div>
-      <Portal/>
     </section>
   );
 };

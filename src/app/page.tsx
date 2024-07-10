@@ -11,7 +11,6 @@ import {
   Price,
   Question,
 } from '@/app/section/sectionsgroup';
-import Portal from './components/layout/Portal';
 
 export default function Home() {
   return (
