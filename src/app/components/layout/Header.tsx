@@ -4,6 +4,7 @@ import Link from 'next/link';
 import IconLogo from '../common/IconLogo';
 import Image from 'next/image';
 import Button from '../common/Button';
+import { usePortal } from '@/app/components/layout/PortalContext';
 type NavLinks = {
   id: number;
   name: string;
@@ -17,6 +18,7 @@ const dataLink: NavLinks[] = [
 ];
 
 const Header = () => {
+  const { isPortalOpen, setIsPortalOpen } = usePortal();
   const [burgerMenu, setBurgerMenu] = useState(!false);
   const handleBurgerButtonClick = () => {
     setBurgerMenu(!burgerMenu);
@@ -34,7 +36,11 @@ const Header = () => {
             <div className="hidden md:block text-xs mr-3">
               СТАРТ НАСТУПНОГО <br /> ПОТОКУ: 24.04.2023
             </div>
-            <Button className="px-6 py-2 hidden sm:block" text="ЗАПИСАТИСЬ НА КУРС" />
+            <Button
+              onClick={() => setIsPortalOpen(true)}
+              className="px-6 py-2 hidden sm:block"
+              text="ЗАПИСАТИСЬ НА КУРС"
+            />
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"

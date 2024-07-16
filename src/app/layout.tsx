@@ -3,6 +3,8 @@ import { Inter, Montserrat,Open_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
+import { PortalProvider } from './components/layout/PortalContext';
+
 
 const inter = Montserrat({ subsets: ['latin'] });
 
@@ -19,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="ua">
       <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <div id="portal-root" />
+        <PortalProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <div id="portal-root" />
+        </PortalProvider>
       </body>
     </html>
   );

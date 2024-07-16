@@ -19,7 +19,7 @@ const CustomerSearch = () => {
             </div>
           </div>
           <div className="lg:w-1/2 lg:pl-16">
-            <h4 className="text-4xl font-bold text-text_3 mb-6 relative">
+            <h4 className=" text-text_3 mb-6 relative">
               ПОШУК КЛІЄНТІВ:
               <span className="absolute -left-8 top-0 h-full w-2 bg-yellow-400"></span>
             </h4>

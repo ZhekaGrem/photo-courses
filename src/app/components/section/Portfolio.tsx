@@ -1,5 +1,5 @@
-import React from 'react'
-import Carousel from '../components/Carousel';
+import React from 'react';
+import Carousel from '../Carousel';
 
 const Portfolio = () => {
   return (

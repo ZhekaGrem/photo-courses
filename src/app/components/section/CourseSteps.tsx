@@ -1,6 +1,7 @@
+'use client'
 import React from 'react';
-import Button from '../components/common/Button';
-
+import Button from '../common/Button';
+import { usePortal } from '@/app/components/layout/PortalContext';
 const data = [
   { id: 1, number: '01', info: 'Обираєте один із двох тарифів курсу' },
   { id: 2, number: '02', info: 'Реєструєтесь на курс та оплачуєте всю суму чи частину' },
@@ -10,6 +11,7 @@ const data = [
 ];
 
 const CourseSteps = () => {
+  const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
     <section className=" bg-background_section_7 ">
       <div className="container section text-text_2">
@@ -22,7 +24,10 @@ const CourseSteps = () => {
             </li>
           ))}
           <li className="flex items-center" key={6}>
-            <Button className="px-7 py-3" text="ЗАРЕЄСТРУВАТИСЯ"></Button>
+            <Button
+              onClick={() => setIsPortalOpen(true)}
+              className="px-7 py-3"
+              text="ЗАРЕЄСТРУВАТИСЯ"></Button>
           </li>
         </ul>
       </div>

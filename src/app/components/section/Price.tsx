@@ -1,9 +1,10 @@
-import React from 'react'
-import Button from '../components/common/Button';
-import Portal from '../components/layout/Portal';
+'use client';
+import React from 'react';
+import Button from '../common/Button';
+import { usePortal } from '@/app/components/layout/PortalContext';
 
 const Price = () => {
-
+  const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
     <section className="bg-background_section_9 ">
       <div className="container section text-text_2 ">
@@ -77,7 +78,11 @@ const Price = () => {
             <p className="text-4xl font-bold text-red-600 mb-4">СПЕЦІАЛЬНА ПРОПОЗИЦІЯ: 199$</p>
             <p className="text-sm text-gray-600">Економія 291$ (60% знижка)</p>
           </div>
-          <Button text="ПОЧАТИ НАВЧАННЯ ЗАРАЗ" className="w-full text-2xl ont-bold px-6 py-2" />
+          <Button
+            onClick={() => setIsPortalOpen(true)}
+            text="ПОЧАТИ НАВЧАННЯ ЗАРАЗ"
+            className="w-full text-2xl ont-bold px-6 py-2"
+          />
 
           <p className="text-center text-sm mt-4">Гарантія повернення коштів протягом 30 днів</p>
         </div>

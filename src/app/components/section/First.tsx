@@ -1,17 +1,17 @@
-import Image from 'next/image';
+'use client';
 import React from 'react';
-import Instagramicon from '@/app/assets/svg/instagram'
-import Button from '../components/common/Button';
+import Instagramicon from '@/app/assets/svg/instagram';
+import Button from '../common/Button';
+import { usePortal } from '@/app/components/layout/PortalContext';
 
-
-
-
-const data=[
-  {id:1,src:'/svg/instagram.svg',alt:'instagram'},
-  {id:2,src:'/svg/instagram.svg',alt:'instagram'},
-  {id:3,src:'/svg/instagram.svg',alt:'instagram'},
-]
+const data = [
+  { id: 1, src: '/svg/instagram.svg', alt: 'instagram' },
+  { id: 2, src: '/svg/instagram.svg', alt: 'instagram' },
+  { id: 3, src: '/svg/instagram.svg', alt: 'instagram' },
+];
 const First = () => {
+  const { isPortalOpen, setIsPortalOpen } = usePortal();
+
   return (
     <section className="imgBg bg-cover bg-center min-h-screen flex items-center">
       <div className="container mx-auto px-4">
@@ -28,10 +28,11 @@ const First = () => {
             <p className="font-normal text-white text-xl lg:text-3xl mb-12 max-w-2xl">
               Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів
             </p>
-           
+
             <Button
-              className="px-8 py-4 bg-yellow-400 text-black text-xl font-bold rounded-full transition-all duration-300 hover:bg-yellow-500 hover:shadow-lg transform hover:scale-105"
+              className="px-8 py-4 bg-yellow-400 text-black text-xl font-bold rounded-full transition-all duration-300  hover:shadow-lg "
               text="ПОДАТИ ЗАЯВКУ"
+              onClick={() => setIsPortalOpen(true)}
             />
           </div>
           <div className="lg:w-1/3 flex justify-end">

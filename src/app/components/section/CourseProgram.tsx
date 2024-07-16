@@ -169,12 +169,12 @@ const CourseProgram = () => {
               </li>
             ))}
           </ul>
-          <div className=" bg-yellow-400 sticky top-24  w-full py-6 px-6 ">
+          <div className=" bg-yellow-400 sticky top-4  w-full py-6 px-6 ">
             <div className="w-full h-full top-0 left-0  ">
               {data.map((item) =>
                 item.id === selectedId ? (
                   <div key={item.id}>
-                    <div className="flex p-3">
+                    <div className="flex px-3 pb-3">
                       <div className="w-1/2 p-3">
                         <div className="w-full pl-3">
                           <Image
@@ -188,7 +188,6 @@ const CourseProgram = () => {
                         <div className="text-center text-4xl">{item.content.title}</div>
                         <div className="flex justify-end">
                           <Image
-                            className=""
                             loading="lazy"
                             src="/phone-1-2.png"
                             alt="phone"

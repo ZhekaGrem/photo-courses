@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
-import CarouselMini from '../components/CarouselMini';
+import CarouselMini from '../CarouselMini';
 
 const WhoLeads = () => {
   return (
@@ -53,7 +53,7 @@ const WhoLeads = () => {
             </div>
           </div>
           <div className="lg:w-1/2 lg:pl-12">
-            <div className="relative">
+            <div className="relative ">
               <Image
                 src="/ICH.png"
                 width={600}
@@ -73,6 +73,6 @@ const WhoLeads = () => {
       </div>
     </section>
   );
-}
+};
 
 export default WhoLeads;
