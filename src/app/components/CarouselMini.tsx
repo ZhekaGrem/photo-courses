@@ -49,27 +49,33 @@ export default function CarouselMini() {
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1">
           {' '}
-          <Image className="rounded-3xl w-full h-auto" width={222} height={222} src="/3.png" alt="kek" />
+          <Image
+            className="rounded-3xl w-full h-auto"
+            width={222}
+            height={222}
+            src="/3.png"
+            alt="kek"
+          />
         </div>
         <div className="keen-slider__slide number-slide2">
           {' '}
-          <Image className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
+          <Image  loading="lazy"className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
         </div>
         <div className="keen-slider__slide number-slide3">
           {' '}
-          <Image className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
+          <Image loading="lazy" className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
         </div>
         <div className="keen-slider__slide number-slide4">
           {' '}
-          <Image className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
+          <Image  loading="lazy"className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
         </div>
         <div className="keen-slider__slide number-slide5">
           {' '}
-          <Image className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
+          <Image  loading="lazy"className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
         </div>
         <div className="keen-slider__slide number-slide6">
           {' '}
-          <Image className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
+          <Image  loading="lazy"className="rounded-3xl w-full h-auto" width={222} height={222} src="/4.png" alt="kek" />
         </div>
       </div>
     </>

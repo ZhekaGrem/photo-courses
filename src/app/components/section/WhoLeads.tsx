@@ -55,6 +55,7 @@ const WhoLeads = () => {
           <div className="lg:w-1/2 lg:pl-12">
             <div className="relative ">
               <Image
+                loading="lazy"
                 src="/ICH.png"
                 width={600}
                 height={600}

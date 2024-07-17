@@ -26,7 +26,7 @@ const CourseSteps = () => {
           <li className="flex items-center" key={6}>
             <Button
               onClick={() => setIsPortalOpen(true)}
-              className="px-7 py-3"
+              className="md:px-7 md:py-3"
               text="ЗАРЕЄСТРУВАТИСЯ"></Button>
           </li>
         </ul>

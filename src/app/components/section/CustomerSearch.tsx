@@ -9,13 +9,7 @@ const CustomerSearch = () => {
           <div className="lg:w-1/2 mb-12 lg:mb-0 relative">
             <div className="absolute top-0 left-0 w-full h-full bg-yellow-400 transform -skew-x-12 -translate-x-1/4 z-0"></div>
             <div className="relative z-10">
-              <Image
-                src="/3.png"
-                width={360}
-                height={670}
-                alt="Автор курсу"
-                className=""
-              />
+              <Image loading="lazy" src="/3.png" width={360} height={670} alt="Автор курсу" />
             </div>
           </div>
           <div className="lg:w-1/2 lg:pl-16">

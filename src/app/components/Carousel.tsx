@@ -49,6 +49,7 @@ export default function Carousel() {
          {carousel.map((item) => (
            <li key={item.id} className="keen-slider__slide ">
              <Image
+               loading="lazy"
                className=" h-full rounded-lg shadow-2xl "
                width={item.width}
                height={item.height}

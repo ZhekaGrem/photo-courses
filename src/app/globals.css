@@ -55,6 +55,9 @@ h6 {
 p {
   max-width: 75ch;
   text-wrap: pretty;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .global {
@@ -83,7 +86,6 @@ main{
   max-width: 77.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  width: 100%;
 }
 h4{
   font-size: 3.75rem;
@@ -110,8 +112,6 @@ section:last-child {
   .container {
     max-width: 640px;
   }
-  
-
 
 }
 
@@ -147,11 +147,20 @@ section:last-child {
 
 
 .imgBg {
-  background-image: url('assets/img/cosmos-main.jpg');
+  background-image: url('assets/img/cosmos-main-mini.webp');
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
 }
+
+
+@media (min-width: 768px) {
+  .imgBg {
+    background-image: url('assets/img/cosmos-main.jpg');
+  }
+}
+
+
 .imgBg2 {
   background-image: url('assets/img/4.png');
   background-repeat: no-repeat;
@@ -162,6 +171,8 @@ z-index: 10;
 position: absolute;
 }
 
-.test{
-  fill: aliceblue;
+h1{
+  font-weight: 900;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
 }

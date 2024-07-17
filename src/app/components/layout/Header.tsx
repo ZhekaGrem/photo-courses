@@ -30,7 +30,14 @@ const Header = () => {
       <nav className="bg-background_header  w-full z-20 top-0 start-0 border-b   ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <Image className="h-auto w-full  " width={80} height={80} src="/screen.svg" alt="logo" />
+            <Image
+              loading="lazy"
+              className="h-auto w-full  "
+              width={80}
+              height={80}
+              src="/screen.svg"
+              alt="logo"
+            />
           </a>
           <div className=" font-bold flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse text-center">
             <div className="hidden md:block text-xs mr-3">
@@ -44,7 +51,7 @@ const Header = () => {
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="  kinline-flex items-center p-2 w-10 h-10 justify-center text-xs  rounded-lg lg:hidden bg-background_btn hover:bg-background_btn_hover  focus:outline-none focus:ring-2  "
+              className="  kinline-flex items-center p-3 w-10 h-10 justify-center text-xs  rounded-lg lg:hidden bg-background_btn hover:bg-background_btn_hover  focus:outline-none focus:ring-2  "
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={handleBurgerButtonClick}>

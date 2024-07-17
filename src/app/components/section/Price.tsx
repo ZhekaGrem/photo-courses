@@ -6,9 +6,9 @@ import { usePortal } from '@/app/components/layout/PortalContext';
 const Price = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
-    <section className="bg-background_section_9 ">
+    <section className="bg-background_section_7 ">
       <div className="container section text-text_2 ">
-        <h4 className="text-5xl font-bold text-center mb-12">НАЙКРАЩА ІНВЕСТИЦІЯ У ВАШЕ МАЙБУТНЄ</h4>
+        <h4 className="text-center">НАЙКРАЩА ІНВЕСТИЦІЯ У ВАШЕ МАЙБУТНЄ</h4>
 
         <div className=" rounded-xl shadow-2xl p-6 max-w-3xl mx-auto">
           <div className="flex justify-between items-center mb-8">
@@ -81,7 +81,7 @@ const Price = () => {
           <Button
             onClick={() => setIsPortalOpen(true)}
             text="ПОЧАТИ НАВЧАННЯ ЗАРАЗ"
-            className="w-full text-2xl ont-bold px-6 py-2"
+            className="w-full text-2xl ont-bold md:px-6 py-2"
           />
 
           <p className="text-center text-sm mt-4">Гарантія повернення коштів протягом 30 днів</p>

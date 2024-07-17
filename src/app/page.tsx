@@ -1,5 +1,6 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { First, CourseProgram } from '@/app/components/section/sectionsgroup';
+import Loading from './loading';
 
 const WhoLeads = lazy(() => import('@/app/components/section/WhoLeads'));
 const Сertificate = lazy(() => import('@/app/components/section/Сertificate'));
@@ -14,14 +15,30 @@ export default function Home() {
     <>
       <First />
       <CourseProgram />
-      <WhoLeads />
-      <Сertificate />
-      <CustomerSearch />
-      <Portfolio />
-      <CourseSteps />
+      <Suspense fallback={<Loading />}>
+        <WhoLeads />
+      </Suspense>
+
+      <Suspense fallback={<Loading />}>
+        <Сertificate />
+      </Suspense>
+      {/* <Suspense fallback={<Loading />}>
+        <CustomerSearch />
+      </Suspense> */}
+      <Suspense fallback={<Loading />}>
+        <Portfolio />
+      </Suspense>
+      {/* <Suspense fallback={<Loading />}>
+        <CourseSteps />
+      </Suspense> */}
+      <Suspense fallback={<Loading />}>
+        <Price />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Question />
+      </Suspense>
+
       {/* <Feedback /> */}
-      <Price />
-      <Question />
     </>
   );
 }

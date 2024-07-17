@@ -25,6 +25,7 @@ const Сertificate = () => {
           <div className=" overflow-hidden shadow-2xl border-8 border-yellow-400">
             <div className=" ">
               <Image
+                loading="lazy"
                 src="/Rectangle-e1676897018833.png"
                 width={520}
                 height={465}

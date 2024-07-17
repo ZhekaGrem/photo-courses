@@ -9,6 +9,12 @@ type HandleClickButton = (index: number) => void;
 
 const aboutuslist = [
   {
+    key: 0,
+    title: 'ПОШУК КЛІЄНТІВ:',
+    description:
+      'ПІСЛЯ КУРСУ ВИ ОСВОЇТЕ ПРОФЕСІЮ ФОТОГРАФА ВІД ВИБОРУ ФОТОАПАРАТУ І ДО ПОШУКУ ПЕРШИХ КЛІЄНТІВ. Створення портфоліо. Робота з соціальними мережами. Стратегії ціноутворення',
+  },
+  {
     key: 1,
     title: 'СКІЛЬКИ ЧАСУ ДІЄ ДОСТУП ДО УРОКІВ?',
     description: 'В ПАКЕТІ “ЛЮБИТЕЛЬ” ВИ ОТРИМУЄТЕ ДОСТУП НА ПІВ РОКУ. І НАЗАВЖДИ – В ПАКЕТІ “ПРОФІ”.',
@@ -42,7 +48,7 @@ const Question = () => {
       <div className="container section">
         <h4 className=" text-center text-text_1 mb-12">ЧАСТІ ЗАПИТАННЯ:</h4>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 w-full">
             <ul className="space-y-4">
               {aboutuslist.map((item, index) => (
                 <motion.li
@@ -89,9 +95,10 @@ const Question = () => {
               ))}
             </ul>
           </div>
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <div className="relative">
               <Image
+                loading="lazy"
                 className="rounded-lg shadow-2xl"
                 src="/ICH_7748-копія-2-1.png"
                 width={800}
