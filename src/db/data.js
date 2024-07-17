@@ -1,6 +1,15 @@
 //Header
 
-import { title } from "process";
+export const header = {
+  startdata1: 'СТАРТ НАСТУПНОГО',
+  startdata2: 'ПОТОКУ: 24.07.2023',
+  btndata: 'ЗАПИСАТИСЬ НА КУРС',
+};
+export const navlink = [
+  { id: 1, name: 'ПРОГРАММА', href: 'home' },
+  { id: 2, name: 'ПРО АВТОРА', href: 'home' },
+  { id: 3, name: 'ВАРТІСТЬ', href: 'home' },
+];
 
 //01 Section
 export const section_1 = {
@@ -206,14 +215,14 @@ export const section_6 = {
     },
     {
       text: 'ей курс змінив моє життя. Тепер я професійний фотограф!',
-      name: '- Олена К',
+      name: '- Катя К',
     },
   ],
 };
 //07 Section
 export const section_7 = {
   title: 'ЧАСТІ ЗАПИТАННЯ:',
-  FAQs: [
+  faqs: [
     {
       key: 0,
       title: 'ПОШУК КЛІЄНТІВ:',
@@ -268,7 +277,7 @@ export const footer = {
   colum2: {
     title: 'ЗВ’ЯЗАТИСЬ З НАМИ',
   },
-  colum2: {
+  colum3: {
     title: 'ІНФО',
     list_link: [
       { id: 9, text: 'ГОЛОВНА', href: '#', colspan: 'col-span-1' },
@@ -277,12 +286,12 @@ export const footer = {
       { id: 12, text: 'ПРО АВТОРА', href: '#', colspan: 'col-span-1' },
       { id: 13, text: 'ВАРТІСТЬ', href: '#', colspan: 'col-span-1' },
     ],
-    horizontal_col: {
-      text_link: 'Умови надання послуг',
-      text2: 'ІПН',
-      telephone: '+380687003020',
-      telephone_text: 'тел: +38 (066) 867 58 78',
-    },
+  },
+  horizontal_col: {
+    text_link: 'Умови надання послуг',
+    text2: 'ІПН',
+    telephone: 'tel:+380687003020',
+    telephone_text: 'тел: +38 (066) 867 58 78',
   },
 };
 //Mini carousel- карурсель з блоку "хто веде курс" з  еблемами компаній з якими співрацює автор

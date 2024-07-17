@@ -1,21 +1,26 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link'; 
-import IconLogo from '../common/IconLogo';
 import Image from 'next/image';
 import Button from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
+import { navlink, header } from '@/db/data';
+import { type } from 'os';
+
 type NavLinks = {
   id: number;
   name: string;
   href: string;
 };
 
-const dataLink: NavLinks[] = [
-  { id: 1, name: 'ПРОГРАММА', href: 'home' },
-  { id: 2, name: 'ПРО АВТОРА', href: 'home' },
-  { id: 3, name: 'ВАРТІСТЬ', href: 'home' },
-];
+type InfoType = {
+  startdata1: string;
+  startdata2: string;
+  btndata:string;
+};
+
+const dataLink: NavLinks[] = navlink;
+const text: InfoType = header;
 
 const Header = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
@@ -41,12 +46,14 @@ const Header = () => {
           </a>
           <div className=" font-bold flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse text-center">
             <div className="hidden md:block text-xs mr-3">
-              СТАРТ НАСТУПНОГО <br /> ПОТОКУ: 24.04.2023
+              {text.startdata1}
+              <br />
+              {text.startdata2}
             </div>
             <Button
               onClick={() => setIsPortalOpen(true)}
               className="px-6 py-2 hidden sm:block"
-              text="ЗАПИСАТИСЬ НА КУРС"
+              text={text.btndata}
             />
             <button
               data-collapse-toggle="navbar-sticky"
@@ -55,7 +62,7 @@ const Header = () => {
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={handleBurgerButtonClick}>
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Відкрити меню</span>
               <svg
                 className="w-5 h-5"
                 aria-hidden="true"
