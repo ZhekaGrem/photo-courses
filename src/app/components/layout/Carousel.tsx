@@ -5,24 +5,17 @@ import Image from "next/image";
 import "keen-slider/keen-slider.min.css";
 import '@/app/styles/carousel.css';
 
+import { porfoliocarousel } from '@/db/data';
+
 
 type ImgType = {
   id: number;
   link: string;
   alt: string;
-  width: number;
-  height: number;
+ 
 };
 
-const carousel: ImgType[] = [
-  { id: 2, link: "/2.jpg",alt:"img", width:300, height:400 },
-  { id: 3, link: "/1.jpg",alt:"img", width:300, height:400 },
-  { id: 4, link: "/2.jpg",alt:"img", width:300, height:400 },
-  { id: 5, link: "/1.jpg",alt:"img", width:300, height:400 },
-  { id: 6, link: "/2.jpg",alt:"img", width:300, height:400 },
-  { id: 7, link: "/1.jpg",alt:"img", width:300, height:400 },
-  { id: 1, link: "/1.jpg",alt:"img", width:300, height:400 },
-];
+const data: ImgType[] = porfoliocarousel;
 
 export default function Carousel() {
    const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -36,23 +29,23 @@ export default function Carousel() {
      setLoaded(true);
    },
    loop: true,
-   mode: 'free',
+   mode: 'snap',
    slides: {
      perView: 5,
-     spacing: 5,
+     spacing: 0,
    },
  });
  return (
    <>
-     <div className=" relative">
-       <ul ref={ref} className="keen-slider">
-         {carousel.map((item) => (
-           <li key={item.id} className="keen-slider__slide ">
+     <div className=" relative overflow-hidden">
+       <ul ref={ref} className="keen-slider min-h-96">
+         {data.map((item) => (
+           <li key={item.id} className="keen-slider__slide w-auto">
              <Image
                loading="lazy"
-               className=" h-full rounded-lg shadow-2xl "
-               width={item.width}
-               height={item.height}
+               className=" h-full shadow-2xl  w-auto object-cover "
+               width={400}
+               height={400}
                src={item.link}
                alt={item.alt}
              />

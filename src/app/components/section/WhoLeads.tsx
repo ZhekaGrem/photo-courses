@@ -15,7 +15,7 @@ const data: SectionInfo = section_3;
 
 const WhoLeads = () => {
   return (
-    <section className="bg-background_section_3 ">
+    <section id="author" className="bg-background_section_3 ">
       <div className="container section">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
@@ -60,7 +60,7 @@ const WhoLeads = () => {
             <div className="relative ">
               <Image
                 loading="lazy"
-                src="/ICH.png"
+                src="/oleg.png"
                 width={600}
                 height={600}
                 alt="Олег Сернюк"

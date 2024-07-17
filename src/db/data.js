@@ -6,16 +6,15 @@ export const header = {
   btndata: 'ЗАПИСАТИСЬ НА КУРС',
 };
 export const navlink = [
-  { id: 1, name: 'ПРОГРАММА', href: 'home' },
-  { id: 2, name: 'ПРО АВТОРА', href: 'home' },
-  { id: 3, name: 'ВАРТІСТЬ', href: 'home' },
+  { id: 1, name: 'ПРОГРАММА', href: '#program' },
+  { id: 2, name: 'ПРО АВТОРА', href: '#author' },
+  { id: 3, name: 'ВАРТІСТЬ', href: '#price' },
 ];
 
 //01 Section
 export const section_1 = {
   title: 'Курс фотографа\nдля початківців',
-  text:
-    'Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів',
+  text: 'Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів',
   button_text: 'Курс фотографа\nдля початківців',
 };
 export const icon = [
@@ -34,7 +33,7 @@ export const data_section_2 = [
       title: 'yfgh ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/1.png',
       loading: 'eager',
     },
   },
@@ -42,10 +41,16 @@ export const data_section_2 = [
     id: 1,
     title: '02 ЕКСПОЗИЦІЯ, ДІАФРАГМА, ЗАМІР ЕКСПОЗИЦІЇ ',
     content: {
-      title: 'ВИБІР ТЕХНІКИ',
+      title: 'ЕКСПОЗИЦІЯ ТА ДІАФРАГМА',
       title2: 'Програма уроку',
-      list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      list: [
+        'Що таке експозиція',
+        'Замір експозиції',
+        'Трикутник експозиції',
+        'Що таке діафрагма',
+        'На що впливає діафрагма',
+      ],
+      img: '/programgroup/2.png',
       loading: 'lazy',
     },
   },
@@ -53,10 +58,18 @@ export const data_section_2 = [
     id: 2,
     title: '03 ВИТРИМКА ТА ISO (СВІТЛОЧУТЛИВІСТЬ)',
     content: {
-      title: 'ВИБІР ТЕХНІКИ',
+      title: 'ВИТРИМКА \n ТА \n ISO (СВІТЛОЧУТЛИВІСТЬ)',
       title2: 'Програма уроку',
-      list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      list: [
+        'Що таке витримка',
+        'На що впливає витримка',
+        '«Довга та коротка витримка»',
+        'Що таке ІSO',
+        'На що впливає ISO',
+        'Взаємодія між трьома складовими ISO, витримка та діафрагма',
+        'Показ на практиці як працює довга витримка та високе ISO',
+      ],
+      img: '/programgroup/3.png',
       loading: 'lazy',
     },
   },
@@ -67,7 +80,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/4.png',
       loading: 'lazy',
     },
   },
@@ -78,7 +91,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/5.png',
       loading: 'lazy',
     },
   },
@@ -89,7 +102,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/6.png',
       loading: 'lazy',
     },
   },
@@ -100,7 +113,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/7.png',
       loading: 'lazy',
     },
   },
@@ -111,7 +124,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/8.png',
       loading: 'lazy',
     },
   },
@@ -122,7 +135,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/9.png',
       loading: 'lazy',
     },
   },
@@ -133,7 +146,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/10.png',
       loading: 'lazy',
     },
   },
@@ -144,7 +157,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/11.png',
       loading: 'lazy',
     },
   },
@@ -155,7 +168,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/12.jpg',
       loading: 'lazy',
     },
   },
@@ -166,7 +179,7 @@ export const data_section_2 = [
       title: 'ВИБІР ТЕХНІКИ',
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
-      img: '/1-2.png',
+      img: '/programgroup/13.jpg',
       loading: 'lazy',
     },
   },
@@ -178,7 +191,7 @@ export const section_3 = {
   text: 'ПРОФЕСІЙНИЙ АРТ ФЕШН ФОТОГРАФ, ЧЛЕН УКРАЇНСЬКОЇ АСОЦІАЦІЇ ПРОФЕСІЙНИХ ФОТОГРАФІВ, 9 РОКІВ ПРАКТИКИ.',
   text2:
     'РОБОТИ ПУБЛІКУВАЛИСЯ У АМЕРИКАНСЬКИХ, ФРАНЦУЗЬКИХ, ІСПАНСЬКИХ, КАНАДСЬКИХ, БРИТАНСЬКИХ   ЖУРНАЛАХ ТАКИХ ЯК OF TOWN, CONNOR, ISABELLA, 17:23, POZA, VIGOUR, VOUS, ART OF PORTRAIT, MOB, MALVIE, SELIN, ELEGANT, MARIKA, TOP POSTERS.',
-  experience: '  9+ років досвіду'
+  experience: '  9+ років досвіду',
 };
 //04 Section
 export const section_4 = {
@@ -186,9 +199,7 @@ export const section_4 = {
   text2: 'UAPP',
 };
 //05 Section
-export const section_5 = 
- 'ПОРТФОЛІО АВТОРА:'
-
+export const section_5 = 'ПОРТФОЛІО АВТОРА:';
 
 //06 Section
 export const section_6 = {
@@ -295,5 +306,59 @@ export const footer = {
   },
 };
 //Mini carousel- карурсель з блоку "хто веде курс" з  еблемами компаній з якими співрацює автор
-
+export const minicarousel = [
+  {
+    id: 1,
+    alt: 'kava-logo',
+    src: '/carouselmini/kava-logo.png',
+    numberslider: 'number-slide1',
+  },
+  {
+    id: 2,
+    alt: 'agency-logo',
+    src: '/carouselmini/agency-logo.png',
+    numberslider: 'number-slide2',
+  },
+  {
+    id: 3,
+    alt: 'kolaba-logo',
+    src: '/carouselmini/kolaba-logo.png',
+    numberslider: 'number-slide3',
+  },
+  {
+    id: 4,
+    alt: 'vz-logo',
+    src: '/carouselmini/vz-logo.png',
+    numberslider: 'number-slide4',
+  },
+  {
+    id: 5,
+    alt: 'you-logo',
+    src: '/carouselmini/you-logo.png',
+    numberslider: 'number-slide5',
+  },
+  {
+    id: 6,
+    alt: 'milu-logo',
+    src: '/carouselmini/milu-logo.png',
+    numberslider: 'number-slide6',
+  },
+  {
+    id: 7,
+    alt: 'ma-logo',
+    src: '/carouselmini/ma-pizza-logo.png',
+    numberslider: 'number-slide7',
+  },
+];
 //Big carousel - карусель з блоку "портфоліо" з фотграфіями автора
+export const porfoliocarousel = [
+  { id: 3, link: '/carouselportfolio/2.jpg', alt: 'img' },
+  { id: 4, link: '/carouselportfolio/3.jpg', alt: 'img' },
+  { id: 5, link: '/carouselportfolio/4.jpg', alt: 'img' },
+  { id: 1, link: '/carouselportfolio/1.jpg', alt: 'img' },
+  { id: 8, link: '/carouselportfolio/7.jpg', alt: 'img' },
+  { id: 6, link: '/carouselportfolio/5.jpg', alt: 'img' },
+  { id: 7, link: '/carouselportfolio/6.jpg', alt: 'img' },
+  { id: 9, link: '/carouselportfolio/8.jpg', alt: 'img' },
+  { id: 2, link: '/carouselportfolio/9.jpg', alt: 'img' }
+];

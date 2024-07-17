@@ -7,7 +7,7 @@ import{section_6} from '@/db/data'
 const Price = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
-    <section className="bg-background_section_7 ">
+    <section id="price" className="bg-background_section_7 ">
       <div className="container section text-text_2 ">
         <h4 className="text-center">{section_6.title}</h4>
 

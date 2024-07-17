@@ -51,7 +51,9 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                     <div className="w-full pl-3">
                       <Image src="/photo-1-2.png" alt="photoaparat" width={90} height={97} />
                     </div>
-                    <div className="text-center text-4xl">{item.content.title}</div>
+                    <div className="text-center text-4xl  break-words overflow-hidden max-w-full px-4">
+                      {item.content.title}
+                    </div>
                     <div className="flex justify-end">
                       <Image src="/phone-1-2.png" alt="phone" width={114} height={124} />
                     </div>
