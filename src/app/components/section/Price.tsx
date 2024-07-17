@@ -84,7 +84,6 @@ const Price = () => {
             className="w-full text-2xl ont-bold md:px-6 py-2"
           />
 
-          <p className="text-center text-sm mt-4">Гарантія повернення коштів протягом 30 днів</p>
         </div>
 
         <div className="mt-12 text-center">

@@ -35,7 +35,6 @@ const data3 = {
 
 
 const Footer = () => {
-  const thisYear = new Date().getFullYear();
   return (
     <footer className="   text-lg bg-yellow-400 pt-2 tablet:h-full ">
       <div className="grid grid-cols-1 gap-8 px-4 py-3 lg:py-4 md:grid-cols-3 mx-auto w-full max-w-screen-xl">

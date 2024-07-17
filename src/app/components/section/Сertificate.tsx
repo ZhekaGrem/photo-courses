@@ -1,23 +1,23 @@
 import React from 'react'
 import Image from 'next/image';
+import {section_4} from '@/db/data'
+
+type SectionInfo = {
+  text1:string;
+  text2:string;
+};
+
+const data: SectionInfo = section_4;
 const Сertificate = () => {
   return (
     <section className="bg-background_section_4 ">
       <div className="container section flex flex-col lg:flex-row items-center">
         <div className="lg:w-1/2 mb-12 lg:mb-0">
-          <h2 className="text-4xl lg:text-5xl font-bold text-text_2 leading-tight mb-6">
-            UKRAINIAN
-            <br />
-            ASSOCIATION
-            <br />
-            OF PROFESSIONAL
-            <br />
-            PHOTOGRAPHERS
-          </h2>
+          <h2 className="text-4xl lg:text-5xl font-bold text-text_2 leading-tight mb-6">{data.text1}</h2>
           <div className="relative">
             <div className="absolute inset-0 bg-yellow-400 transform -skew-y-6"></div>
-            <h3 className="relative text-8xl lg:text-9xl font-black text-background_section_4 leading-none">
-              UAPP
+            <h3 className="relative text-8xl lg:text-9xl font-black text-background_header leading-none">
+              {data.text2}
             </h3>
           </div>
         </div>
