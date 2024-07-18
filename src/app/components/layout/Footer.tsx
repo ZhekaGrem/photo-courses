@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Instagramicon from '@/app/assets/svg/instagram';
 import {footer, icon} from '@/db/data';
 
 
