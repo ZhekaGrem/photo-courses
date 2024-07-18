@@ -6,9 +6,9 @@
 
 .dot {
   border: none;
-  width: 10px;
-  height: 10px;
-  background: #c5c5c5;
+  width: 15px;
+  height: 15px;
+  background: #ffffff;
   border-radius: 50%;
   margin: 0 5px;
   padding: 5px;
@@ -24,13 +24,12 @@
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #070707;
   cursor: pointer;
 }
 

@@ -1,3 +1,6 @@
+import InstagramIcon from '@/app/components/common/instagram';
+import FacebookIcon from "@/app/components/common/facebook";
+
 //Header
 
 export const header = {
@@ -6,9 +9,9 @@ export const header = {
   btndata: 'ЗАПИСАТИСЬ НА КУРС',
 };
 export const navlink = [
-  { id: 1, name: 'ПРОГРАММА', href: '#program' },
-  { id: 2, name: 'ПРО АВТОРА', href: '#author' },
-  { id: 3, name: 'ВАРТІСТЬ', href: '#price' },
+  { id: 1, name: 'ПРОГРАММА', href: '/#program' },
+  { id: 2, name: 'ПРО АВТОРА', href: '/#author' },
+  { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
 ];
 
 //01 Section
@@ -17,11 +20,7 @@ export const section_1 = {
   text: 'Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів',
   button_text: 'записатись',
 };
-export const icon = [
-  { id: 1, src: '/svg/instagram.svg', alt: 'instagram' },
-  { id: 2, src: '/svg/instagram.svg', alt: 'instagram' },
-  { id: 3, src: '/svg/instagram.svg', alt: 'instagram' },
-];
+
 //02 Section
 
 export const title_2 = 'ПРОГРАМА КУРСУ:';
@@ -51,7 +50,7 @@ export const data_section_2 = [
         'На що впливає діафрагма',
       ],
       img: '/programgroup/2.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -70,7 +69,7 @@ export const data_section_2 = [
         'Показ на практиці як працює довга витримка та високе ISO',
       ],
       img: '/programgroup/3.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -81,7 +80,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/4.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -92,7 +91,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/5.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -103,7 +102,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/6.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -114,7 +113,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/7.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -125,7 +124,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/8.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -136,7 +135,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/9.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -147,7 +146,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/10.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -158,7 +157,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/11.png',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -169,7 +168,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/12.jpg',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
   {
@@ -180,7 +179,7 @@ export const data_section_2 = [
       title2: 'Програма уроку',
       list: ['Кроп та повний кадр', 'Об‘єктиви', '«Універсальний рюкзак»'],
       img: '/programgroup/13.jpg',
-      loading: 'lazy',
+      loading: 'eager',
     },
   },
 ];
@@ -269,20 +268,22 @@ export const section_7 = {
 };
 
 //Icon socials
-
+export const icon = [
+  { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
+  { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
+];
 //Footer
 export const footer = {
   colum1: {
     title: 'НАШІ КОНТАКТИ:',
     list_link: [
-      { id: 1, text: '+38 (066) 867 58 78', href: '#' },
-      { id: 2, text: 'taraskokobi@gmail.com', href: '#' },
-      { id: 3, text: 'Львів, вул. Героїв УПА, 73Ж', href: '#' },
-    ],
-    icon: [
-      { id: 1, src: '/svg/instagram.svg', alt: 'instagram' },
-      { id: 2, src: '/svg/instagram.svg', alt: 'instagram' },
-      { id: 3, src: '/svg/instagram.svg', alt: 'instagram' },
+      { id: 1, text: '+38 (066) 867 58 78', href: 'tel:+380687003020' },
+      { id: 2, text: 'taraskokobi@gmail.com', href: 'malito:taraskokobi@gmail.com' },
+      {
+        id: 3,
+        text: 'Львів, вул. Героїв УПА, 73Ж',
+        href: 'https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%93%D0%B5%D1%80%D0%BE%D1%97%D0%B2+%D0%A3%D0%9F%D0%90,+73%D0%96,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.8283085,23.9904771,17z/data=!3m1!4b1!4m6!3m5!1s0x473ae74dc8eb395d:0x2b588521aa0fe5a4!8m2!3d49.8283085!4d23.993052!16s%2Fg%2F11vt6mryyx?entry=ttu',
+      },
     ],
   },
   colum2: {
@@ -291,13 +292,14 @@ export const footer = {
   colum3: {
     title: 'ІНФО',
     list_link: [
-      { id: 9, text: 'ГОЛОВНА', href: '#', colspan: 'col-span-1' },
-      { id: 10, text: 'ПРО КУРС', href: '#', colspan: 'col-span-1' },
-      { id: 11, text: 'ПОРТФОЛІО АВТОРА', href: '#', colspan: 'col-span-2' },
-      { id: 12, text: 'ПРО АВТОРА', href: '#', colspan: 'col-span-1' },
-      { id: 13, text: 'ВАРТІСТЬ', href: '#', colspan: 'col-span-1' },
+      { id: 9, text: 'ГОЛОВНА', href: '/', colspan: 'col-span-1' },
+      { id: 10, text: 'ПРО КУРС', href: '/#program', colspan: 'col-span-1' },
+      { id: 11, text: 'ПОРТФОЛІО АВТОРА', href: '/#portfolio', colspan: 'col-span-2' },
+      { id: 12, text: 'ПРО АВТОРА', href: '/#author', colspan: 'col-span-1' },
+      { id: 13, text: 'ВАРТІСТЬ', href: '/#price', colspan: 'col-span-1' },
     ],
   },
+
   horizontal_col: {
     text_link: 'Умови надання послуг',
     text2: 'ІПН',

@@ -27,7 +27,7 @@ const First = () => {
               ОНЛАЙН-КУРС
             </span> */}
             <h1 className="text-text_2 text-4xl lg:text-7xl ">{data.title}</h1>
-            <p className=" text-white lg:text-3xl mb-12 max-w-2xl">{data.text}</p>
+            <p className=" text-text_2 lg:text-3xl mb-12 max-w-2xl">{data.text}</p>
 
             <Button
               className="md:px-3 md:py-2   text-xl font-bold transition-all duration-300  hover:shadow-lg "
@@ -45,9 +45,9 @@ const First = () => {
                       rel="noopener noreferrer"
                       aria-label={item.alt}
                       title={item.alt}
-                      href="#"
-                      className="text-white hover:text-yellow-400 transition-colors duration-300">
-                      <Instagramicon />
+                      href={item.src}
+                      className=" transition-colors duration-300 fill-text_2  hover:fill-background_btn_hover">
+                      {item.svg}
                     </a>
                   </li>
                 ))}

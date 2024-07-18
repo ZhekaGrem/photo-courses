@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Instagramicon from '@/app/assets/svg/instagram';
-import {footer} from '@/db/data';
+import {footer, icon} from '@/db/data';
 
 
 
@@ -29,17 +29,17 @@ const Footer = () => {
             ))}
           </ul>
           <ul className="flex gap-x-4">
-            {footer.colum1.icon.map((item) => (
-              <li key={item.id}>
+            {icon.map((item) => (
+              <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
                 <span className="sr-only">{item.alt}</span>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.alt}
                   title={item.alt}
-                  href="#"
-                  className="fill-black">
-                  <Instagramicon />
+                  href={item.src}
+                  className="fill-black hover:fill-background_btn_hover">
+                  {item.svg}
                 </a>
               </li>
             ))}

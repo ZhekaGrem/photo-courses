@@ -46,7 +46,7 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
             transition={{ duration: 0.3 }}
             className="relative min-w-[50%] imgBg2 md:bg-black shadow-lg rounded-2xl">
             <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+              className="absolute top-4 right-4 text-gray-50 hover:text-gray-700 transition-colors"
               onClick={handleClose}>
               <svg
                 className="w-6 h-6"
@@ -62,12 +62,14 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
               </svg>
             </button>
             <div className="w-full flex ">
-              <div className="w-full md:w-1/2 p-8 ">
-                <h3 className="text-2xl leading-6 font-bold text-white mb-4" id="modal-title">
+              <div className="w-full md:w-1/2 bg-black bg-opacity-50 ">
+                <h3
+                  className="p-8 text-3xl md:text-2xl leading-6 font-bold text-[#DDDDDD] mb-4 text-center"
+                  id="modal-title">
                   РЕЄСТРАЦІЯ НА КУРС ФОТОГРАФА
                 </h3>
-                <p className="text-sm text-white mb-6">
-                 {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
+                <p className="text-lg md:text-sm  text-white mb-6 text-center">
+                  {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
                 <PopUp />
               </div>

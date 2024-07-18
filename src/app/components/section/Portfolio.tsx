@@ -6,7 +6,7 @@ const data: string = section_5;
 
 const Portfolio = () => {
   return (
-    <section className=" bg-background_section_8 ">
+    <section id="portfolio" className=" bg-background_section_8 ">
       <div className="section text-text_2">
         <h4>{data}</h4>
         <Carousel />

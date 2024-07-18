@@ -11,7 +11,7 @@ const Price = () => {
       <div className="container section text-text_2 ">
         <h4 className="text-center">{section_6.title}</h4>
 
-        <div className=" rounded-xl shadow-2xl p-6 max-w-3xl mx-auto">
+        <div className=" rounded-xl shadow-2xl p-6 mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h3 className="text-3xl font-bold">{section_6.title2}</h3>
             <span className="bg-yellow-400 text-[#cc3151] text-sm font-bold py-1 px-3 rounded-full">
@@ -41,16 +41,18 @@ const Price = () => {
             ))}
           </ul>
 
-          <div className="text-center mb-8">
-            <p className="text-lg line-through mb-2">{section_6.price.old_price}</p>
-            <p className="text-4xl font-bold text-red-600 mb-4">{section_6.price.new_price}</p>
-            <p className="text-sm text-gray-600">{section_6.price.how_mгch_save}</p>
+          <div className="flex flex-col items-center mb-8">
+            <p className="text-lg w-full line-through mb-2 text-center">{section_6.price.old_price}</p>
+            <p className="text-4xl font-bold text-red-600 mb-4 text-center">{section_6.price.new_price}</p>
+            <p className="text-sm text-gray-600 text-center">{section_6.price.how_mгch_save}</p>
           </div>
-          <Button
-            onClick={() => setIsPortalOpen(true)}
-            text={section_6.button_text}
-            className="w-full text-2xl ont-bold md:px-6 py-2"
-          />
+          <div className="w-full flex justify-center">
+            <Button
+              onClick={() => setIsPortalOpen(true)}
+              text={section_6.button_text}
+              className="xl:w-[40%]  text-2xl ont-bold md:px-6 py-2"
+            />
+          </div>
         </div>
 
         <div className="mt-12 text-center">
