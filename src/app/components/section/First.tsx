@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Instagramicon from '@/app/assets/svg/instagram';
 import Button from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { section_1,icon } from '@/db/data';
