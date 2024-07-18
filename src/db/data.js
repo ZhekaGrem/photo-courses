@@ -15,7 +15,7 @@ export const navlink = [
 export const section_1 = {
   title: 'Курс фотографа\nдля початківців',
   text: 'Під час курсу ви освоїте професію фотографа від вибору фотоапарату і до пошуку перших клієнтів',
-  button_text: 'Курс фотографа\nдля початківців',
+  button_text: 'записатись',
 };
 export const icon = [
   { id: 1, src: '/svg/instagram.svg', alt: 'instagram' },
@@ -352,7 +352,6 @@ export const minicarousel = [
 ];
 //Big carousel - карусель з блоку "портфоліо" з фотграфіями автора
 export const porfoliocarousel = [
-  { id: 3, link: '/carouselportfolio/2.jpg', alt: 'img' },
   { id: 4, link: '/carouselportfolio/3.jpg', alt: 'img' },
   { id: 5, link: '/carouselportfolio/4.jpg', alt: 'img' },
   { id: 1, link: '/carouselportfolio/1.jpg', alt: 'img' },

@@ -30,20 +30,27 @@ export default function Carousel() {
    },
    loop: true,
    mode: 'snap',
-   slides: {
-     perView: 5,
-     spacing: 0,
+   breakpoints: {
+     '(min-width: 1024px)': {
+       slides: { perView: 4, spacing: 0 },
+     },
+     '(min-width: 681px) and (max-width: 1023px)': {
+       slides: { perView: 2, spacing: 0 },
+     },
+     '(min-width: 480px) and (max-width: 680px)': {
+       slides: { perView: 1, spacing: 0 },
+     },
    },
  });
  return (
    <>
      <div className=" relative overflow-hidden">
-       <ul ref={ref} className="keen-slider min-h-96">
+       <ul ref={ref} className="keen-slider ">
          {data.map((item) => (
-           <li key={item.id} className="keen-slider__slide w-auto">
+           <li key={item.id} className="keen-slider__slide w-full">
              <Image
                loading="lazy"
-               className=" h-full shadow-2xl  w-auto object-cover "
+               className=" h-full shadow-2xl  w-full object-cover "
                width={400}
                height={400}
                src={item.link}

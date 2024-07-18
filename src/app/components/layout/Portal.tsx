@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactDOM from 'react-dom';
 import PopUp from './PopUp';
+import Image from 'next/image';
 
 interface PortalProps {
   onClose?: () => void;
@@ -37,13 +38,13 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-50 px-4">
+          className="fixed inset-0 bg-opacity-50  flex items-center justify-center z-50 px-4 rounded-2xl">
           <motion.div
             initial={{ x: '-100%' }}
             animate={{ x: '0%' }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="relative w-1/2 h-1/2 bg-white rounded-lg shadow-lg p-8">
+            className="relative min-w-[50%] imgBg2 md:bg-black shadow-lg rounded-2xl">
             <button
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
               onClick={handleClose}>
@@ -60,7 +61,26 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
                   d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-            <PopUp/>
+            <div className="w-full flex ">
+              <div className="w-full md:w-1/2 p-8 ">
+                <h3 className="text-2xl leading-6 font-bold text-white mb-4" id="modal-title">
+                  РЕЄСТРАЦІЯ НА КУРС ФОТОГРАФА
+                </h3>
+                <p className="text-sm text-white mb-6">
+                  ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!
+                </p>
+                <PopUp />
+              </div>
+              <div className=" hidden md:block w-1/2">
+                <Image
+                  src="/popup.jpg"
+                  alt="Автор курсів"
+                  width={500}
+                  height={300}
+                  className="w-full  object-cover rounded-3xl"
+                />
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       )}
