@@ -1,6 +1,3 @@
-import InstagramIcon from '@/app/components/common/instagram';
-import FacebookIcon from '@/app/components/common/facebook';
-import TiktokIcon from '@/app/components/common/tiktok';
 
 //Header
 
@@ -338,12 +335,7 @@ export const section_7 = {
   text2: 'Перетворіть пристрасть до фотографії на успішну кар\'єру',
 };
 
-//Icon socials
-export const icon = [
-  { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
-  { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
-  { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
-];
+
 //Footer
 export const footer = {
   colum1: {

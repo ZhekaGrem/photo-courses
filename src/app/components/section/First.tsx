@@ -2,8 +2,18 @@
 import React from 'react';
 import Button from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
-import { section_1,icon } from '@/db/data';
+import { section_1 } from '@/db/data';
+import InstagramIcon from '@/app/components/common/instagram';
+import FacebookIcon from '@/app/components/common/facebook';
+import TiktokIcon from '@/app/components/common/tiktok';
 
+
+//Icon socials
+export const icon = [
+  { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
+  { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
+  { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
+];
 
 type SectionInfo = {
   title: string;

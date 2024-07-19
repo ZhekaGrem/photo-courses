@@ -1,7 +1,18 @@
 import Link from "next/link";
 import React from "react";
-import {footer, icon} from '@/db/data';
+import {footer} from '@/db/data';
 import MiniFormFooter from "../form/MiniFormFooter";
+import InstagramIcon from '@/app/components/common/instagram';
+import FacebookIcon from '@/app/components/common/facebook';
+import TiktokIcon from '@/app/components/common/tiktok';
+
+
+//Icon socials
+export const icon = [
+  { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
+  { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
+  { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
+];
 
 
 const Footer = () => {
