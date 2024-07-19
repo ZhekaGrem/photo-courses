@@ -4,8 +4,6 @@ import {footer, icon} from '@/db/data';
 import MiniFormFooter from "../form/MiniFormFooter";
 
 
-
-
 const Footer = () => {
   return (
     <footer className="   text-lg pt-2 tablet:h-full ">
