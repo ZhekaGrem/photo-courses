@@ -1,59 +1,68 @@
 'use client';
-import React,{useState} from 'react';
+import React, { useState, useEffect } from 'react';
 
 type ClosePortal = {
   onClose: () => void;
 };
 
+const initialFormData = {
+  name: '',
+  tel: '',
+};
+
 const PopUp = ({ onClose }: ClosePortal) => {
-    const [formData, setFormData] = useState({
-      name: '',
-      tel: '',
-    });
+  const [formData, setFormData] = useState(initialFormData);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^(\+38|38)?0\d{9}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+  };
 
-   
+  useEffect(() => {
+    const isNameValid = formData.name.trim() !== '';
+    const isPhoneValid = validatePhone(formData.tel);
+    setIsFormValid(isNameValid && isPhoneValid);
+  }, [formData]);
+
   const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
-        const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
+  const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-           const text = `Клієнт Курси Фото:\n
+  const handleSubmit = async (e: React.FormEvent) => {
+    const text = `Клієнт Курси Фото:\n
 Ім'я Клієнта: ${formData.name}\n
 Номер клієнта: ${formData.tel}\n
 `;
-        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-        text
-      )}`;
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+      text
+    )}`;
     e.preventDefault();
- try{
-const response = await fetch(url,{
-  method:'POST',
-  headers:{
-    'Content-type':'applicaton/json',
-  },
-  body:JSON.stringify({
-    chat_id:chat_id,
-    text:text,
-  }),
-});
-const data = await response.json();
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'applicaton/json',
+        },
+        body: JSON.stringify({
+          chat_id: chat_id,
+          text: text,
+        }),
+      });
+      const data = await response.json();
 
-    if (data.ok) {
-    onClose(); 
-    } else {
-      throw new  Error('Помилка при відправці повідомлення')
-      ;
+      if (data.ok) {
+        onClose();
+      } else {
+        throw new Error('Помилка при відправці повідомлення');
+      }
+    } catch (error) {
+      console.error('Помилка:', error);
     }
-  } catch (error) {
-    console.error('Помилка:', error);
-  }
-};
-    
-
+  };
 
   return (
     <>
@@ -89,7 +98,9 @@ const data = await response.json();
 
         <label>
           <input
-            className="text-2xl rounded-3xl p-2 hover:border-double border-4 hover:border-white md:text-xl font-bold md:font-normal text-white"
+            disabled={!isFormValid}
+            title={isFormValid ? 'Відправити' : 'Будь ласка, заповніть всі поля'}
+            className="text-2xl rounded-3xl p-2 hover:border-double border-4 hover:border-white md:text-xl font-bold md:font-normal text-white disabled:text-gray-500 disabled:border-gray-600"
             type="submit"
             value="Замовити"
           />

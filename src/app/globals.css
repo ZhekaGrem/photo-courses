@@ -168,7 +168,7 @@ h4 {
 
 
 
-@media(max-width:768px){
+@media(max-width:767px){
 .imgBg2 {
   background-image: url('./assets/img/bg-popup.jpg');
   background-repeat: no-repeat;

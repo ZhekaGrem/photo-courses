@@ -8,7 +8,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className=" bg-background_section_8 ">
       <div className="section text-text_2">
-        <h4>{data}</h4>
+        <h4 className='container'>{data}</h4>
         <Carousel />
       </div>
     </section>

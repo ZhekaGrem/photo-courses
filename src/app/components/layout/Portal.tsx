@@ -93,7 +93,7 @@ const Portal: React.FC<PortalProps> = ( {onClose} ) => {
                   alt="Автор курсів"
                   width={500}
                   height={300}
-                  className="w-full  object-cover rounded-3xl"
+                  className="w-full  object-cover rounded-r-lg"
                 />
               </div>
             </div>
