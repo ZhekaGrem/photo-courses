@@ -1,6 +1,6 @@
-import InstagramIcon from '@/app/components/common/Instagram';
-import FacebookIcon from '@/app/components/common/Facebook';
-import TiktokIcon from '@/app/components/common/Tiktok';
+import InstagramIcon from '../app/components/common/Instagram';
+import FacebookIcon from '../app/components/common/Facebook';
+import TiktokIcon from '../app/components/common/Tiktok';
 
 //Header
 

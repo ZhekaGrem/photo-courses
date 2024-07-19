@@ -9,8 +9,8 @@ interface PortalProps {
   onClose: () => void;
 }
 
-const Portal: React.FC<PortalProps> = ( {onClose} ) => {
-  const portalRoot = document.getElementById('portal-root');
+const Portal: React.FC<PortalProps> = ({ onClose }) => {
+  const portalRoot = typeof document !== 'undefined' ? document.getElementById('portal-root') : null;
   const modalRef = useRef<HTMLDivElement>(null);
 
   const [isVisible, setIsVisible] = useState(false);
@@ -18,18 +18,18 @@ const Portal: React.FC<PortalProps> = ( {onClose} ) => {
     setIsVisible(true);
     return () => setIsVisible(false);
   }, []);
- useEffect(() => {
-   const handleClickOutside = (event: MouseEvent) => {
-     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-       handleClose();
-     }
-   };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
 
-   document.addEventListener('mousedown', handleClickOutside);
-   return () => {
-     document.removeEventListener('mousedown', handleClickOutside);
-   };
- }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
 
   if (!portalRoot) {
     console.error('Портала немає');
@@ -40,7 +40,7 @@ const Portal: React.FC<PortalProps> = ( {onClose} ) => {
     setIsVisible(false);
     setTimeout(() => {
       if (onClose) onClose();
-    }, 300); 
+    }, 300);
   };
 
   return ReactDOM.createPortal(
