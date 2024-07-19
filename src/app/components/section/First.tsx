@@ -29,7 +29,7 @@ const First = () => {
             <p className=" text-text_2 lg:text-3xl mb-12 max-w-2xl">{data.text}</p>
 
             <Button
-              className="md:px-3 md:py-2   text-xl font-bold transition-all duration-300  hover:shadow-lg "
+              className="md:px-3 md:py-2 hover:underline hover:font-extrabold  text-2xl font-bold transition-all duration-300  hover:shadow-lg "
               text={data.button_text}
               onClick={() => setIsPortalOpen(true)}
             />

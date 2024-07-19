@@ -26,7 +26,7 @@ const Сertificate = () => {
           </div>
         </div>
         <div className="lg:w-1/2 flex justify-center">
-          <div className="w-full overflow-hidden shadow-2xl border-8 border-yellow-400">
+          <div className="w-full overflow-hidden shadow-2xl border-8 ">
             <Image
               className="object-cover h-auto m-auto"
               loading="lazy"

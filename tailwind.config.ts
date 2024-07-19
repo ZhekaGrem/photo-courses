@@ -13,15 +13,12 @@ const config: Config = {
         background_header: '#20242c',
         background_btn: '#FFA500',
         background_btn_hover: '#FF8C00',
-        background_section_2: '#FF7175',
-        background_section_3: '#FFDF55',
+        background_section_2: '#E1E327',
+        background_section_3: '#FF7175',
         background_section_4: '#00B0AB',
-        background_section_5: '#FFFFFF',
-        background_section_6: '#8A2BE2',
-        background_section_7: '#4B0082',
-        background_section_8: '#EC0B88',
-        background_section_9: '#20242c',
-        background_section_10: '#1E90FF',
+        background_section_5: '#FFCE4E',
+        background_section_6: '#EC0B88',
+        background_section_7: '#3D98D3',
         red1: '#FFEB99',
         text_header: '#FFFFFF',
         text_1: '#000000',
@@ -29,7 +26,6 @@ const config: Config = {
         text_3: '#20242c',
         texthover: '#727d91',
         bluesmock: '#57a3eb',
-        yellow:'#FFD700'
         
       },
       backgroundImage: {

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { navlink, header } from '@/db/data';
-import { type } from 'os';
+
 
 type NavLinks = {
   id: number;
@@ -52,7 +52,7 @@ const Header = () => {
             </div>
             <Button
               onClick={() => setIsPortalOpen(true)}
-              className="px-6 py-2 hidden sm:block"
+              className="px-6 py-2 hidden sm:block bg-background_btn  hover:bg-background_btn_hover"
               text={text.btndata}
             />
             <button

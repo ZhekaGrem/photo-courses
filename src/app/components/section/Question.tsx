@@ -16,7 +16,7 @@ const Question = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section className="bg-background_section_10">
+    <section className="bg-background_section_7">
       <div className="container section">
         <h4 className="  text-text_1 mb-12">{section_7.title}</h4>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
@@ -35,7 +35,7 @@ const Question = () => {
                     <div className="flex items-center justify-between">
                       <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
                       <svg
-                        className={`w-6 h-6 transform transition-transform duration-300 ${
+                        className={`min-w-6 h-6 transform transition-transform duration-300 ${
                           openIndex === index ? 'rotate-180' : ''
                         }`}
                         fill="none"

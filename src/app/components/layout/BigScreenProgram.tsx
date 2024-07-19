@@ -41,7 +41,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
           </li>
         ))}
       </ul>
-      <div className=" bg-yellow-400 sticky top-4  w-full py-6 px-6 ">
+      <div className="sticky top-4  w-full py-6 px-6 ">
         <div className="w-full h-full top-0 left-0  ">
           {data.map((item) =>
             item.id === selectedId ? (
@@ -57,7 +57,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                         height={97}
                       />
                     </div>
-                    <div className="text-center text-4xl  break-words overflow-hidden max-w-full px-4">
+                    <div className="text-center text-4xl  font-extrabold  break-words overflow-hidden max-w-full px-4">
                       {item.content.title}
                     </div>
                     <div className="flex justify-end">
@@ -65,10 +65,10 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                     </div>
                   </div>
                   <div className="w-1/2 p-3">
-                    <div className="text-3xl pb-4">{item.content.title2}</div>
+                    <div className="text-2xl font-bold  pb-4">{item.content.title2}</div>
                     <ul>
                       {item.content.list.map((item, index) => (
-                        <li className="text-2xl list-disc list-inside" key={index}>
+                        <li className="text-xl list-disc list-inside" key={index}>
                           {item}
                         </li>
                       ))}

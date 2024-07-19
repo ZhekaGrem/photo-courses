@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import CarouselMini from '../layout/CarouselMini';
 import {section_3} from '@/db/data'
+import CheckmarkIcon from '../common/Checkmark';
 
 type SectionInfo={
   title:string;
@@ -24,33 +25,11 @@ const WhoLeads = () => {
             <div className=" rounded-lg shadow-lg p-6">
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <svg
-                    className="w-6 h-6  mr-2 mt-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"></path>
-                  </svg>
+                  <CheckmarkIcon />
                   <p className="text-gray-700">{data.text}</p>
                 </li>
                 <li className="flex items-start">
-                  <svg
-                    className="w-6 h-6  mr-2 mt-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"></path>
-                  </svg>
+                  <CheckmarkIcon />
                   <p className="text-gray-700">{data.text2}</p>
                 </li>
               </ul>
@@ -66,8 +45,8 @@ const WhoLeads = () => {
                 alt="Олег Сернюк"
                 className="rounded-lg shadow-2xl z-0"
               />
-              <div className="absolute z-10 right-2  md:-right-6 bg-yellow-400 text-text_1 p-1  rounded-lg shadow-lg">
-                <p className=" font-bold text-xl p-1">{data.experience}</p>
+              <div className="flex absolute z-10 right-2  md:-right-6 bg-white text-text_1 p-1 m- rounded-lg shadow-lg">
+                <p className=" font-bold text-lg p-1">{data.experience}</p>
               </div>
             </div>
           </div>
