@@ -102,15 +102,24 @@ section:last-child {
   padding: 2.5rem 0;
 }
 h4 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   line-height: 1.1334;
   font-weight: 700;
+  padding: 0 1.5rem;
+}
+
+.imgBg {
+  background-image: url('assets/img/cosmos-main-mini.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
+   
   }
   h4 {
   font-size: 3.75rem;
@@ -123,16 +132,21 @@ h4 {
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 0 2.5rem;
     max-width: 768px;
   }
+  .imgBg {
+  background-image: url('assets/img/cosmos-main.jpg');
 }
+
+}
+
+
 
 @media (min-width: 1024px) {
   .container {
-    padding-left: 3.75rem;
-    padding-right: 3.75rem;
+    padding: 0 3.75rem;
+
   }
   .section {
     padding: 4rem 0;
@@ -152,22 +166,8 @@ h4 {
 }
 
 
-.imgBg {
-  background-image: url('assets/img/cosmos-main-mini.webp');
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-}
 
 
-@media (min-width: 768px) {
-  .imgBg {
-    background-image: url('assets/img/cosmos-main.jpg');
-  }
-
-
-
-}
 @media(max-width:768px){
 .imgBg2 {
   background-image: url('./assets/img/bg-popup.jpg');
@@ -207,3 +207,5 @@ h1{
     display: block;
   }
 }
+
+

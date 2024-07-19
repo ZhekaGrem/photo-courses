@@ -9,7 +9,7 @@ const Price = () => {
   return (
     <section id="price" className="bg-background_section_7 ">
       <div className="container section text-text_2 ">
-        <h4 className="text-center">{section_6.title}</h4>
+        <h4>{section_6.title}</h4>
 
         <div className=" rounded-xl shadow-2xl p-6 mx-auto">
           <div className="flex justify-between items-center mb-8">

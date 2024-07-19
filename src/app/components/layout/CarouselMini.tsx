@@ -19,9 +19,15 @@ export default function CarouselMini() {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
-      slides: {
-        perView: 4,
+      breakpoints: {
+        '(min-width: 681px)': {
+          slides: { perView: 4, spacing: 0 },
+        },
+        '(min-width: 425px) and (max-width: 680px)': {
+          slides: { perView: 2, spacing: 0 },
+        },
       },
+     
     },
     [
       (slider) => {
@@ -63,7 +69,7 @@ export default function CarouselMini() {
             key={item.id}
             className={`max-w-64 p-2 keen-slider__slide max-h-20 flex items-center justify-center ${item.numberslider}`}>
             <Image
-              className=" max-w-full max-h-full object-contain"
+              className="w-auto max-w-full max-h-full object-contain"
               width={170}
               height={45}
               src={item.src}

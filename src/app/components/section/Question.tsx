@@ -20,7 +20,7 @@ const Question = () => {
       <div className="container section">
         <h4 className=" text-center text-text_1 mb-12">{section_7.text1}</h4>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
-          <div className="lg:w-1/2 w-full">
+          <div className="lg:w-1/2 w-full p-6">
             <ul className="space-y-4">
               {section_7.faqs.map((item, index) => (
                 <motion.li

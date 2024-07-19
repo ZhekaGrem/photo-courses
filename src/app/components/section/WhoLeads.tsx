@@ -20,12 +20,12 @@ const WhoLeads = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
             <h4 className="">{data.title}</h4>
-            <h3 className="text-3xl font-semibold text-yellow-400 mb-8">{data.name}</h3>
+            <h3 className="text-3xl font-semibold  mb-8 px-6">{data.name}</h3>
             <div className=" rounded-lg shadow-lg p-6">
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <svg
-                    className="w-6 h-6 text-yellow-400 mr-2 mt-1 flex-shrink-0"
+                    className="w-6 h-6  mr-2 mt-1 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ const WhoLeads = () => {
                 </li>
                 <li className="flex items-start">
                   <svg
-                    className="w-6 h-6 text-yellow-400 mr-2 mt-1 flex-shrink-0"
+                    className="w-6 h-6  mr-2 mt-1 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

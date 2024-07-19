@@ -2,23 +2,62 @@
 import React,{useState} from 'react';
 
 type ClosePortal = {
-  onClose?: () => void;
+  onClose: () => void;
 };
 
 const PopUp = ({ onClose }: ClosePortal) => {
     const [formData, setFormData] = useState({
       name: '',
-      clientdata: '',
+      tel: '',
     });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+   
+  const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
+        const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+const handleSubmit = async (e: React.FormEvent) => {
+           const text = `Клієнт Курси Фото:\n
+Ім'я Клієнта: ${formData.name}\n
+Номер клієнта: ${formData.tel}\n
+`;
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
+        text
+      )}`;
+    e.preventDefault();
+ try{
+const response = await fetch(url,{
+  method:'POST',
+  headers:{
+    'Content-type':'applicaton/json',
+  },
+  body:JSON.stringify({
+    chat_id:chat_id,
+    text:text,
+  }),
+});
+const data = await response.json();
+
+    if (data.ok) {
+    onClose(); 
+    } else {
+      throw new  Error('Помилка при відправці повідомлення')
+      ;
+    }
+  } catch (error) {
+    console.error('Помилка:', error);
+  }
+};
+    
+
+
   return (
     <>
-      <form className="flex flex-col gap-6 w-full  p-10 content-center text-center">
+      <form className="flex flex-col gap-6 w-full  p-10 content-center text-center" onSubmit={handleSubmit}>
         <div className="relative h-11 w-full  min-w-[200px] ">
           <input
             value={formData.name}
@@ -35,11 +74,11 @@ const PopUp = ({ onClose }: ClosePortal) => {
         </div>
         <div className="relative h-11 w-full min-w-[200px]">
           <input
-            value={formData.name}
+            value={formData.tel}
             onChange={handleChange}
             placeholder={`+380`}
-            type="text"
-            name="name"
+            type="tel"
+            name="tel"
             required
             className="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-2xl md:text-sm  font-normal text-white outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
           />

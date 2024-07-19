@@ -1,25 +1,38 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactDOM from 'react-dom';
-import PopUp from './PopUp';
+import PopUp from '../form/PopUp';
 import Image from 'next/image';
 
 interface PortalProps {
-  onClose?: () => void;
+  onClose: () => void;
 }
 
-const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
+const Portal: React.FC<PortalProps> = ( {onClose} ) => {
   const portalRoot = document.getElementById('portal-root');
+  const modalRef = useRef<HTMLDivElement>(null);
 
-    const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setIsVisible(true);
     return () => setIsVisible(false);
   }, []);
+ useEffect(() => {
+   const handleClickOutside = (event: MouseEvent) => {
+     if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+       handleClose();
+     }
+   };
+
+   document.addEventListener('mousedown', handleClickOutside);
+   return () => {
+     document.removeEventListener('mousedown', handleClickOutside);
+   };
+ }, []);
 
   if (!portalRoot) {
-    console.error('Portal root element not found');
+    console.error('Портала немає');
     return null;
   }
 
@@ -27,7 +40,7 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
     setIsVisible(false);
     setTimeout(() => {
       if (onClose) onClose();
-    }, 300); // Duration of the animation
+    }, 300); 
   };
 
   return ReactDOM.createPortal(
@@ -40,6 +53,7 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
           transition={{ duration: 0.3 }}
           className="fixed inset-0 bg-opacity-50  flex items-center justify-center z-50 px-4 rounded-2xl">
           <motion.div
+            ref={modalRef}
             initial={{ x: '-100%' }}
             animate={{ x: '0%' }}
             exit={{ x: '100%' }}
@@ -62,7 +76,7 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
               </svg>
             </button>
             <div className="w-full flex ">
-              <div className="w-full md:w-1/2 bg-black bg-opacity-50 ">
+              <div className="w-full md:w-1/2 bg-black bg-opacity-50 md:bg-opacity-0 ">
                 <h3
                   className="p-8 text-3xl md:text-2xl leading-6 font-bold text-[#DDDDDD] mb-4 text-center"
                   id="modal-title">
@@ -71,7 +85,7 @@ const Portal: React.FC<PortalProps> = ({ onClose }: PortalProps) => {
                 <p className="text-lg md:text-sm  text-white mb-6 text-center">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
-                <PopUp />
+                <PopUp onClose={onClose} />
               </div>
               <div className=" hidden md:block w-1/2">
                 <Image

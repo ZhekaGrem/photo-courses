@@ -1,5 +1,6 @@
-import InstagramIcon from '@/app/components/common/instagram';
-import FacebookIcon from "@/app/components/common/facebook";
+import InstagramIcon from '@/app/components/common/Instagram';
+import FacebookIcon from '@/app/components/common/Facebook';
+import TiktokIcon from '@/app/components/common/Tiktok';
 
 //Header
 
@@ -271,6 +272,7 @@ export const section_7 = {
 export const icon = [
   { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
   { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
+  { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
 ];
 //Footer
 export const footer = {
@@ -361,5 +363,5 @@ export const porfoliocarousel = [
   { id: 6, link: '/carouselportfolio/5.jpg', alt: 'img' },
   { id: 7, link: '/carouselportfolio/6.jpg', alt: 'img' },
   { id: 9, link: '/carouselportfolio/8.jpg', alt: 'img' },
-  { id: 2, link: '/carouselportfolio/9.jpg', alt: 'img' }
+  { id: 2, link: '/carouselportfolio/9.jpg', alt: 'img' },
 ];

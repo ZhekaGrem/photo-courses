@@ -49,13 +49,19 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                 <div className="flex px-3 pb-3">
                   <div className="w-1/2 p-3">
                     <div className="w-full pl-3">
-                      <Image src="/photo-1-2.png" alt="photoaparat" width={90} height={97} />
+                      <Image
+                        className="w-auto "
+                        src="/photo-1-2.png"
+                        alt="photoaparat"
+                        width={90}
+                        height={97}
+                      />
                     </div>
                     <div className="text-center text-4xl  break-words overflow-hidden max-w-full px-4">
                       {item.content.title}
                     </div>
                     <div className="flex justify-end">
-                      <Image src="/phone-1-2.png" alt="phone" width={114} height={124} />
+                      <Image className="w-auto" src="/phone-1-2.png" alt="phone" width={114} height={124} />
                     </div>
                   </div>
                   <div className="w-1/2 p-3">
@@ -72,7 +78,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                 <div className="w-full px-12 pb-5 flex justify-center">
                   <Image
                     loading={item.content.loading as 'eager' | 'lazy' | undefined}
-                    className=" object-cover rounded-lg shadow-2xl"
+                    className="w-auto object-cover rounded-lg shadow-2xl"
                     src={item.content.img}
                     alt={item.content.title}
                     width={550}

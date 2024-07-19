@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import {footer, icon} from '@/db/data';
+import MiniFormFooter from "../form/MiniFormFooter";
 
 
 
@@ -46,19 +47,7 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{footer.colum2.title}</h3>
-          <form className="flex  flex-col justify-center " action="">
-            <label className=" mb-6" htmlFor="">
-              <input type="text" placeholder="Ваше ім'я" className="p-3  rounded-md bg-[#f2f3f7] w-full" />
-            </label>
-            <label className="mb-6 " htmlFor="">
-              <input type="tel" placeholder="+38" className="p-3 rounded-md bg-[#f2f3f7] w-full" />
-            </label>
-            <label
-              className="py-4 font-bold text-center   rounded-md text-text_header bg-background_btn  hover:bg-background_btn_hover "
-              htmlFor="">
-              <input value="ЗВ'ЯЗАТИСЬ" type="submit" />
-            </label>
-          </form>
+          <MiniFormFooter/>
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{footer.colum3.title}</h3>
