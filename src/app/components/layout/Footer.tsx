@@ -1,11 +1,10 @@
-import Link from "next/link";
-import React from "react";
-import {footer} from '@/db/data';
-import MiniFormFooter from "../form/MiniFormFooter";
-import InstagramIcon from '@/app/components/common/instagram';
-import FacebookIcon from '@/app/components/common/facebook';
-import TiktokIcon from '@/app/components/common/tiktok';
-
+import Link from 'next/link';
+import React from 'react';
+import { footer } from '@/db/data';
+import MiniFormFooter from '../form/MiniFormFooter';
+import InstagramIcon from '@/app/components/common/InstagramIcon';
+import FacebookIcon from '@/app/components/common/FacebookIcon';
+import TiktokIcon from '@/app/components/common/TiktokIcon';
 
 //Icon socials
 export const icon = [
@@ -13,7 +12,6 @@ export const icon = [
   { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
   { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
 ];
-
 
 const Footer = () => {
   return (
@@ -56,7 +54,7 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{footer.colum2.title}</h3>
-          <MiniFormFooter/>
+          <MiniFormFooter />
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{footer.colum3.title}</h3>

@@ -3,10 +3,9 @@ import React from 'react';
 import Button from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { section_1 } from '@/db/data';
-import InstagramIcon from '@/app/components/common/instagram';
-import FacebookIcon from '@/app/components/common/facebook';
-import TiktokIcon from '@/app/components/common/tiktok';
-
+import InstagramIcon from '@/app/components/common/InstagramIcon';
+import FacebookIcon from '@/app/components/common/FacebookIcon';
+import TiktokIcon from '@/app/components/common/TiktokIcon';
 
 //Icon socials
 export const icon = [
@@ -18,11 +17,10 @@ export const icon = [
 type SectionInfo = {
   title: string;
   text: string;
-  button_text:string;
+  button_text: string;
 };
 
 const data: SectionInfo = section_1;
-
 
 const First = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
