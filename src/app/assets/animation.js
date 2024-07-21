@@ -26,11 +26,13 @@ export const a_d_r_i = {
   hidden: {
     y: +100,
     x: 250,
+    rotate: -180,
     opacity: 0,
   },
   visible: (custom) => ({
     y: 0,
-    x:0,
+    x: 0,
+    rotate: 720,
     opacity: 1,
     transition: { delay: custom * 0.3 },
   }),

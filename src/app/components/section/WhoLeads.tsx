@@ -48,7 +48,7 @@ const WhoLeads = () => {
             </motion.div>
           </div>
           <div className="lg:w-1/2 lg:pl-12">
-            <motion.div variants={a_d_r_i} custom={2} className="relative ">
+            <motion.div variants={a_r_t} custom={2} className="relative ">
               <Image
                 loading="lazy"
                 src="/oleg.png"
