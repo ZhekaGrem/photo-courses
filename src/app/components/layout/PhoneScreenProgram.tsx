@@ -69,13 +69,11 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                           {data.map((item) =>
                             item.id === openIndex ? (
                               <motion.div
-                                viewport={{ once: true }}
-                                initial="hidden"
-                                whileInView="visible"
+                           
                                 key={item.id}>
                                 <div className="flex flex-col sm:flex-row sm:px-3 pb-3">
                                   <div className="w-full sm:w-1/2 sm:p-3">
-                                    <motion.div variants={a_l_t} custom={1} className="w-full pl-3">
+                                    <div className="w-full pl-3">
                                       <Image
                                         className="h-auto"
                                         src="/photo-1-2.png"
@@ -83,13 +81,13 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         width={75}
                                         height={87}
                                       />
-                                    </motion.div>
+                                    </div>
                                     <div
                                      
                                       className="text-center text-2xl sm:text-3xl break-words overflow-hidden">
                                       {item.content.title}
                                     </div>
-                                    <motion.div variants={a_r_t} custom={1} className="flex justify-end">
+                                    <div  className="flex justify-end">
                                       <Image
                                         className="h-auto"
                                         src="/phone-1-2.png"
@@ -97,7 +95,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         width={85}
                                         height={104}
                                       />
-                                    </motion.div>
+                                    </div>
                                   </div>
                                   <div className="w-full sm:w-1/2 p-3">
                                     <div className="text-3xl pb-4">
