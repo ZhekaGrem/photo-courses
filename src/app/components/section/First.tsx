@@ -33,7 +33,7 @@ const First = () => {
       viewport={{ once: true }}
       initial="hidden"
       whileInView="visible"
-      className="imgBg bg-cover bg-center min-h-screen flex items-center">
+      className="imgBg bg-cover bg-center min-h-screen flex items-center ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-2/3 mb-12 lg:mb-0">

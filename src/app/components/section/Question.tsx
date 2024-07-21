@@ -18,7 +18,11 @@ const Question = () => {
   };
   return (
     <section className="bg-background_section_7">
-      <motion.div initial="hidden" whileInView="visible" className="container section">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="container section">
         <motion.h4 variants={a_d_t} custom={1} className="  text-text_1 mb-12">
           {section_7.title}
         </motion.h4>
@@ -31,7 +35,7 @@ const Question = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg shadow-md overflow-hidden">
+                  className="bg-white rounded-lg shadow-md ">
                   <button
                     className="w-full text-left p-6 focus:outline-none"
                     onClick={() => handleButtonClick(index)}>
@@ -71,7 +75,7 @@ const Question = () => {
             </ul>
           </div>
           <div className="w-full lg:w-1/2">
-            <div className="relative">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative">
               <Image
                 loading="lazy"
                 className="rounded-lg shadow-2xl"
@@ -89,7 +93,7 @@ const Question = () => {
                   {section_7.text2}
                 </motion.p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

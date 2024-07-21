@@ -24,7 +24,7 @@ const WhoLeads = () => {
       initial="hidden"
       whileInView="visible"
       id="author"
-      className="bg-background_section_3 ">
+      className="bg-background_section_3  ">
       <div className="container section">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 mb-8 lg:mb-0">

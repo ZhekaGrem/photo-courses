@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
-import { First } from '@/app/components/section/sectionsgroup';
 import Loading from './loading';
 
+const First = lazy(() => import('@/app/components/section/First'));
 const CourseProgram = lazy(() => import('@/app/components/section/CourseProgram'));
 const WhoLeads = lazy(() => import('@/app/components/section/WhoLeads'));
 const Сertificate = lazy(() => import('@/app/components/section/Сertificate'));

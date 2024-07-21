@@ -10,7 +10,12 @@ import { a_d_t,a_l_t,a_r_t,a_t_t } from '@/app/assets/animation';
 const Price = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
-    <motion.section initial="hidden" whileInView="visible" id="price" className="bg-background_section_6 ">
+    <motion.section
+      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      id="price"
+      className="bg-background_section_6 ">
       <div className="container section text-text_1 ">
         <motion.h4 variants={a_d_t} custom={0.5}>
           {section_6.title}
