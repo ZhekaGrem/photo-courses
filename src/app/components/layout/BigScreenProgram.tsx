@@ -62,32 +62,29 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                     <motion.div variants={a_l_t} custom={0.4} className="w-full pl-3">
                       <Image src="/photo-1-2.png" alt="photoaparat" width={90} height={97} />
                     </motion.div>
-                    <motion.div
-                      variants={a_d_t}
-                      custom={0.5}
+                    <div
+                     
                       className="text-center text-2xl lg:text-4xl  font-extrabold  break-words overflow-hidden max-w-full px-4">
                       {item.content.title}
-                    </motion.div>
+                    </div>
                     <motion.div variants={a_r_t} custom={0.6} className="flex justify-end">
                       <Image className="" src="/phone-1-2.png" alt="phone" width={100} height={114} />
                     </motion.div>
                   </div>
                   <div className="w-1/2 lg:p-3">
-                    <motion.div
-                      variants={a_t_t}
-                      custom={0.5}
+                    <div
+                     
                       className=" text-xl lg:text-2xl font-bold  pb-4">
                       {item.content.title2}
-                    </motion.div>
+                    </div>
                     <ul>
                       {item.content.list.map((item, index) => (
-                        <motion.li
-                          variants={a_t_t}
-                          custom={index+1}
+                        <li
+                    
                           className="text-lg lg:text-xl list-disc list-inside"
                           key={index}>
                           {item}
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
                   </div>

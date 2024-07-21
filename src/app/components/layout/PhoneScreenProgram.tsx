@@ -84,12 +84,11 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         height={87}
                                       />
                                     </motion.div>
-                                    <motion.div
-                                      variants={a_d_t}
-                                      custom={1}
+                                    <div
+                                     
                                       className="text-center text-2xl sm:text-3xl break-words overflow-hidden">
                                       {item.content.title}
-                                    </motion.div>
+                                    </div>
                                     <motion.div variants={a_r_t} custom={1} className="flex justify-end">
                                       <Image
                                         className="h-auto"
@@ -101,14 +100,14 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                     </motion.div>
                                   </div>
                                   <div className="w-full sm:w-1/2 p-3">
-                                    <motion.div variants={a_t_t} custom={1} className="text-3xl pb-4">
+                                    <div className="text-3xl pb-4">
                                       {item.content.title2}
-                                    </motion.div>
+                                    </div>
                                     <ul>
                                       {item.content.list.map((item, index) => (
-                                        <motion.li variants={a_l_t} custom={index+2} className="text-2xl list-disc list-inside" key={index}>
+                                        <li  className="text-2xl list-disc list-inside" key={index}>
                                           {item}
-                                        </motion.li>
+                                        </li>
                                       ))}
                                     </ul>
                                   </div>

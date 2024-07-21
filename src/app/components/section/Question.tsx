@@ -18,14 +18,12 @@ const Question = () => {
   };
   return (
     <section className="bg-background_section_7">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+      <div
+       
         className="container section">
-        <motion.h4 variants={a_d_t} custom={1} className="  text-text_1 mb-12">
+        <h4  className="  text-text_1 mb-12">
           {section_7.title}
-        </motion.h4>
+        </h4>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           <div className="lg:w-1/2 w-full p-6">
             <ul className="space-y-4">
@@ -75,7 +73,7 @@ const Question = () => {
             </ul>
           </div>
           <div className="w-full lg:w-1/2">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative">
+            <div  className="relative">
               <Image
                 loading="lazy"
                 className="rounded-lg shadow-2xl"
@@ -86,17 +84,17 @@ const Question = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t  to-transparent rounded-lg"></div>
               <div className="absolute bottom-0 left-0 p-8 text-white">
-                <motion.h3 variants={a_t_t} custom={2} className="text-3xl font-bold mb-2">
+                <h3 className="text-3xl font-bold mb-2">
                   {section_7.text1}
-                </motion.h3>
-                <motion.p variants={a_t_t} custom={2.5} className="text-xl">
+                </h3>
+                <p className="text-xl">
                   {section_7.text2}
-                </motion.p>
+                </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -4,52 +4,48 @@ import {Button} from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { section_6 } from '@/db/data';
 import CheckmarkIcon from '../common/Checkmark';
-import { motion } from 'framer-motion';
-import { a_d_t,a_l_t,a_r_t,a_t_t } from '@/app/assets/animation';
+
 
 const Price = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
-    <motion.section
-      viewport={{ once: true }}
-      initial="hidden"
-      whileInView="visible"
+    <section
+     
       id="price"
       className="bg-background_section_6 ">
       <div className="container section text-text_1 ">
-        <motion.h4 variants={a_d_t} custom={0.5}>
+        <h4 >
           {section_6.title}
-        </motion.h4>
+        </h4>
 
         <div className="  p-6 mx-auto ">
           <div className="flex justify-between items-center mb-8">
-            <motion.h3 variants={a_l_t} custom={1} className="text-3xl font-bold">
+            <h3 className="text-3xl font-bold">
               {section_6.title2}
-            </motion.h3>
-            <motion.span
-              variants={a_r_t}
-              custom={1.2}
+            </h3>
+            <span
+             
               className=" text-text_1 text-sm font-bold py-1 px-3 rounded-full">
               {section_6.span}
-            </motion.span>
+            </span>
           </div>
 
           <ul className="text-lg mb-8 space-y-4">
             {section_6.list.map((item, index) => (
-              <motion.li variants={a_l_t} custom={index + 2} key={index} className="flex items-center">
+              <li key={index} className="flex items-center">
                 <CheckmarkIcon />
                 <span>
                   <strong className="text-text_1">{item.textS}</strong> {item.text}
                 </span>
-              </motion.li>
+              </li>
             ))}
           </ul>
 
-          <motion.div variants={a_t_t} custom={1.4} className="flex flex-col items-center mb-8">
+          <div className="flex flex-col items-center mb-8">
             <p className="text-lg w-full line-through mb-2 text-center">{section_6.price.old_price}</p>
             <p className="text-4xl font-bold text-text_1 mb-4 text-center">{section_6.price.new_price}</p>
             <p className="text-sm text-text_1 text-center">{section_6.price.how_mгch_save}</p>
-          </motion.div>
+          </div>
           <div className="w-full flex justify-center">
             <Button
               onClick={() => setIsPortalOpen(true)}
@@ -79,7 +75,7 @@ const Price = () => {
           </ul>
         </div> */}
       </div>
-    </motion.section>
+    </section>
   );
 };
 

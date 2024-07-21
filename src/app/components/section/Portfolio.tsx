@@ -2,26 +2,23 @@
 import React from 'react';
 import Carousel from '../layout/Carousel';
 import { section_5 } from '@/db/data';
-import { motion } from 'framer-motion';
-import { a_d_t } from '@/app/assets/animation';
+
 
 const data: string = section_5;
 
 const Portfolio = () => {
   return (
-    <motion.section
-      viewport={{ once: true }}
-      initial="hidden"
-      whileInView="visible"
+    <section
+   
       id="portfolio"
       className="hidden sm:block bg-background_section_5 ">
       <div className="section text-text_1">
-        <motion.h4 variants={a_d_t} custom={1} className="container">
+        <h4  className="container">
           {data}
-        </motion.h4>
+        </h4>
         <Carousel />
       </div>
-    </motion.section>
+    </section>
   );
 };
 
