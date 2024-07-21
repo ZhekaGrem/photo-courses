@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import Button from '../common/Button';
+import {Button} from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 const data = [
   { id: 1, number: '01', info: 'Обираєте один із двох тарифів курсу' },

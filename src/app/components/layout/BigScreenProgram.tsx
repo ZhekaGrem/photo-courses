@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
-
+import {motion} from 'framer-motion'
+import { a_l_t } from '@/app/assets/animation';
 
 
 type InfoType = {
@@ -26,10 +27,16 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
     setSelectedId(id);
   };
   return (
-    <div className="flex   relative  items-start flex-row ">
+    <motion.div
+      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      className="flex   relative  items-start flex-row ">
       <ul className="w-1/3 p-4 ">
         {data.map((item) => (
-          <li
+          <motion.li
+            variants={a_l_t}
+            custom={item.id}
             key={item.id}
             className={`p-2 mb-5 text-xl font-bold  cursor-pointer break-words ${
               selectedId === item.id
@@ -38,10 +45,10 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
             }`}
             onClick={() => handleClick(item.id)}>
             {item.title}
-          </li>
+          </motion.li>
         ))}
       </ul>
-      <div className="sticky top-4  w-full py-6 px-6 ">
+      <div className="sticky top-4  w-full  px-6 ">
         <div className="w-full h-full top-0 left-0  ">
           {data.map((item) =>
             item.id === selectedId ? (
@@ -49,26 +56,20 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                 <div className="flex px-3 pb-3">
                   <div className="w-1/2 p-3">
                     <div className="w-full pl-3">
-                      <Image
-                        className="w-auto "
-                        src="/photo-1-2.png"
-                        alt="photoaparat"
-                        width={90}
-                        height={97}
-                      />
+                      <Image className=" " src="/photo-1-2.png" alt="photoaparat" width={90} height={97} />
                     </div>
-                    <div className="text-center text-4xl  font-extrabold  break-words overflow-hidden max-w-full px-4">
+                    <div className="text-center text-2xl lg:text-4xl  font-extrabold  break-words overflow-hidden max-w-full px-4">
                       {item.content.title}
                     </div>
                     <div className="flex justify-end">
-                      <Image className="w-auto" src="/phone-1-2.png" alt="phone" width={114} height={124} />
+                      <Image className="" src="/phone-1-2.png" alt="phone" width={100} height={114} />
                     </div>
                   </div>
-                  <div className="w-1/2 p-3">
-                    <div className="text-2xl font-bold  pb-4">{item.content.title2}</div>
+                  <div className="w-1/2 lg:p-3">
+                    <div className=" text-xl lg:text-2xl font-bold  pb-4">{item.content.title2}</div>
                     <ul>
                       {item.content.list.map((item, index) => (
-                        <li className="text-xl list-disc list-inside" key={index}>
+                        <li className="text-lg lg:text-xl list-disc list-inside" key={index}>
                           {item}
                         </li>
                       ))}
@@ -78,7 +79,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
                 <div className="w-full px-12 pb-5 flex justify-center">
                   <Image
                     loading={item.content.loading as 'eager' | 'lazy' | undefined}
-                    className="w-auto object-cover rounded-lg shadow-2xl"
+                    className="w-full object-cover rounded-lg shadow-2xl"
                     src={item.content.img}
                     alt={item.content.title}
                     width={550}
@@ -90,7 +91,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({data}) => {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

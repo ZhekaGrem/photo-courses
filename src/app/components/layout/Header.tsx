@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link'; 
 import Image from 'next/image';
-import Button from '../common/Button';
+import {Button} from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { navlink, header } from '@/db/data';
 
@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full absolute top-0 left-0 z-50 bg-ba text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
+      className={`w-full absolute top-0  left-0 z-50 bg-ba text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
       <nav className="bg-background_header  w-full z-20 top-0 start-0 border-b   ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">

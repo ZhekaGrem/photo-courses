@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { a_l_t } from '@/app/assets/animation';
 
 type IndexType = number | null;
 
@@ -31,13 +32,17 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
     <div className="container section">
       <div className="flex flex-col lg:flex-row gap-12 content-center">
         <div className=" w-full">
-          <ul className="space-y-4 px-6">
+          <motion.ul
+            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            className="space-y-4 px-6">
             {data.map((item, index) => (
               <motion.li
+                variants={a_l_t}
+                custom={item.id}
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+              
                 className="bg-white  rounded-lg shadow-md overflow-hidden  ">
                 <button
                   className="w-full text-left p-3 focus:outline-none flex items-center justify-between"
@@ -120,7 +125,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                 </AnimatePresence>
               </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </div>

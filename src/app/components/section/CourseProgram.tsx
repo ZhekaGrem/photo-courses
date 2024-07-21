@@ -1,5 +1,7 @@
+'use client'
 import React, { Suspense, lazy} from 'react';
-
+import { motion } from 'framer-motion';
+import { a_d_t } from '@/app/assets/animation';
 
 import { data_section_2, title_2 } from '@/db/data';
 import Loading from '@/app/loading';
@@ -26,9 +28,15 @@ const CourseProgram = () => {
   
   return (
     <section id="program" className=" bg-background_section_2">
-      <div className="container section text-text_1">
-        <h4 className=''>{title}</h4>
-        <Suspense fallback={<Loading/>}>
+      <motion.div
+        viewport={{ once: true }}
+        initial="hidden"
+        whileInView="visible"
+        className="container section text-text_1">
+        <motion.h4 variants={a_d_t} custom={2}>
+          {title}
+        </motion.h4>
+        <Suspense fallback={<Loading />}>
           <div className="big-screen">
             <BigScreenProgram data={data} />
           </div>
@@ -36,7 +44,7 @@ const CourseProgram = () => {
             <PhoneScreenProgram data={data} />
           </div>
         </Suspense>
-      </div>
+      </motion.div>
     </section>
   );
 };
