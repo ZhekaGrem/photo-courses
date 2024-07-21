@@ -34,12 +34,10 @@ export default function Carousel() {
      '(min-width: 1024px)': {
        slides: { perView: 4, spacing: 0 },
      },
-     '(min-width: 681px) and (max-width: 1023px)': {
+     '(max-width: 1023px)': {
        slides: { perView: 2, spacing: 0 },
      },
-     '(min-width: 480px) and (max-width: 680px)': {
-       slides: { perView: 1, spacing: 0 },
-     },
+
    },
  });
  return (

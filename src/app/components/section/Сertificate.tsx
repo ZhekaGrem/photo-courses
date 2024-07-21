@@ -1,7 +1,9 @@
+'use client';
 import React from 'react'
 import Image from 'next/image';
 import {section_4} from '@/db/data'
-
+import { motion } from 'framer-motion';
+import { a_r_t,a_l_t } from '@/app/assets/animation';
 type SectionInfo = {
   text1:string;
   text2:string;
@@ -10,22 +12,25 @@ type SectionInfo = {
 const data: SectionInfo = section_4;
 const Сertificate = () => {
   return (
-    <section className="bg-background_section_4 ">
+    <motion.section
+      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      className="bg-background_section_4 ">
       <div className="container section flex flex-col lg:flex-row items-center">
-        <div className="lg:w-1/2 mb-12 lg:mb-0 px-6">
-          <a href="https://ukrainianphotographers.com/" target="_blank" >
-
-          <h2 className="text-4xl lg:text-5xl font-bold text-text_2 leading-tight mb-6">{data.text1}</h2>
+        <motion.div variants={a_l_t} custom={1} className="lg:w-1/2 mb-12 lg:mb-0 px-6">
+          <a href="https://ukrainianphotographers.com/" target="_blank">
+            <h2 className="text-4xl lg:text-5xl font-bold text-text_2 leading-tight mb-6">{data.text1}</h2>
           </a>
           <div className="relative">
-            <a href="https://ukrainianphotographers.com/" target="_blank" >
+            <a href="https://ukrainianphotographers.com/" target="_blank">
               <h3 className="relative text-8xl lg:text-9xl font-black text-background_header leading-none">
                 {data.text2}
               </h3>
             </a>
           </div>
-        </div>
-        <div className="lg:w-1/2 flex justify-center">
+        </motion.div>
+        <motion.div variants={a_r_t} custom={1.5} className="lg:w-1/2 flex justify-center">
           <div className="w-full overflow-hidden shadow-2xl border-8 ">
             <Image
               className="object-cover h-auto m-auto"
@@ -36,9 +41,9 @@ const Сertificate = () => {
               alt="Сертифікат UAPP"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

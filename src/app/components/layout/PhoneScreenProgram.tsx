@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { a_l_t } from '@/app/assets/animation';
+import { a_l_t,a_r_t,a_d_t,a_t_t } from '@/app/assets/animation';
 
 type IndexType = number | null;
 
@@ -42,7 +42,6 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                 variants={a_l_t}
                 custom={item.id}
                 key={item.id}
-              
                 className="bg-white  rounded-lg shadow-md overflow-hidden  ">
                 <button
                   className="w-full text-left p-3 focus:outline-none flex items-center justify-between"
@@ -69,10 +68,14 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                         <div className="w-full h-full top-0 left-0  ">
                           {data.map((item) =>
                             item.id === openIndex ? (
-                              <div key={item.id}>
+                              <motion.div
+                                viewport={{ once: true }}
+                                initial="hidden"
+                                whileInView="visible"
+                                key={item.id}>
                                 <div className="flex flex-col sm:flex-row sm:px-3 pb-3">
                                   <div className="w-full sm:w-1/2 sm:p-3">
-                                    <div className="w-full pl-3">
+                                    <motion.div variants={a_l_t} custom={1} className="w-full pl-3">
                                       <Image
                                         className="h-auto"
                                         src="/photo-1-2.png"
@@ -80,11 +83,14 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         width={75}
                                         height={87}
                                       />
-                                    </div>
-                                    <div className="text-center text-2xl sm:text-3xl break-words overflow-hidden">
+                                    </motion.div>
+                                    <motion.div
+                                      variants={a_d_t}
+                                      custom={1}
+                                      className="text-center text-2xl sm:text-3xl break-words overflow-hidden">
                                       {item.content.title}
-                                    </div>
-                                    <div className="flex justify-end">
+                                    </motion.div>
+                                    <motion.div variants={a_r_t} custom={1} className="flex justify-end">
                                       <Image
                                         className="h-auto"
                                         src="/phone-1-2.png"
@@ -92,10 +98,12 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         width={85}
                                         height={104}
                                       />
-                                    </div>
+                                    </motion.div>
                                   </div>
                                   <div className="w-full sm:w-1/2 p-3">
-                                    <div className="text-3xl pb-4">{item.content.title2}</div>
+                                    <motion.div variants={a_t_t} custom={1} className="text-3xl pb-4">
+                                      {item.content.title2}
+                                    </motion.div>
                                     <ul>
                                       {item.content.list.map((item, index) => (
                                         <li className="text-2xl list-disc list-inside" key={index}>
@@ -115,7 +123,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                     height={350}
                                   />
                                 </div>
-                              </div>
+                              </motion.div>
                             ) : null
                           )}
                         </div>

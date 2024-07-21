@@ -26,7 +26,7 @@ export const a_d_r_i = {
   hidden: {
     y: +100,
     x: 250,
-    opacity: 0.4,
+    opacity: 0,
   },
   visible: (custom) => ({
     y: 0,
@@ -39,7 +39,7 @@ export const a_d_l_i = {
   hidden: {
     y: -100,
     x: -250,
-    opacity: 0.2,
+    opacity: 0,
   },
   visible: (custom) => ({
     y: 0,
@@ -51,6 +51,17 @@ export const a_d_l_i = {
 export const a_d_t = {
   hidden: {
     y: +200,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.3 },
+  }),
+};
+export const a_t_t = {
+  hidden: {
+    y: -200,
     opacity: 0,
   },
   visible: (custom) => ({

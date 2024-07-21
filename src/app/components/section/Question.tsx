@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { a_d_t, a_t_t } from '@/app/assets/animation';
 
 import {section_7} from '@/db/data'
 
@@ -17,8 +18,10 @@ const Question = () => {
   };
   return (
     <section className="bg-background_section_7">
-      <div className="container section">
-        <h4 className="  text-text_1 mb-12">{section_7.title}</h4>
+      <motion.div initial="hidden" whileInView="visible" className="container section">
+        <motion.h4 variants={a_d_t} custom={1} className="  text-text_1 mb-12">
+          {section_7.title}
+        </motion.h4>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           <div className="lg:w-1/2 w-full p-6">
             <ul className="space-y-4">
@@ -79,13 +82,17 @@ const Question = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t  to-transparent rounded-lg"></div>
               <div className="absolute bottom-0 left-0 p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">{section_7.text1}</h3>
-                <p className="text-xl">{section_7.text2}</p>
+                <motion.h3 variants={a_t_t} custom={2} className="text-3xl font-bold mb-2">
+                  {section_7.text1}
+                </motion.h3>
+                <motion.p variants={a_t_t} custom={2.5} className="text-xl">
+                  {section_7.text2}
+                </motion.p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
