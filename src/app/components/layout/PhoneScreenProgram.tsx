@@ -106,9 +106,9 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                     </motion.div>
                                     <ul>
                                       {item.content.list.map((item, index) => (
-                                        <li className="text-2xl list-disc list-inside" key={index}>
+                                        <motion.li variants={a_l_t} custom={index+2} className="text-2xl list-disc list-inside" key={index}>
                                           {item}
-                                        </li>
+                                        </motion.li>
                                       ))}
                                     </ul>
                                   </div>
