@@ -36,10 +36,10 @@ const First = () => {
             {/* <span className="inline-block bg-[#cc3151] text-white text-xl font-bold px-4 py-2 rounded-full mb-6">
               ОНЛАЙН-КУРС
             </span> */}
-            <h1  className="text-text_2 text-4xl lg:text-7xl ">
+            <h1  className="content-end text-text_2 text-2xl lg:text-5xl ">
               {data.title}
             </h1>
-            <p className=" text-text_2 lg:text-3xl mb-12 ">
+            <p className=" text-text_2 lg:text-3xl mb-12 max-w-[50%] lg:max-w-[70%] ">
               {data.text}
             </p>
 
