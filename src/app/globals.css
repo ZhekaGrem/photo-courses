@@ -204,3 +204,9 @@ h1{
   min-height: auto;
   padding: 2rem 0;
 }
+
+.BgGradient{
+background: rgb(255, 113, 112);
+background: linear-gradient(0deg, rgba(255, 113, 112, 1) 0%, rgba(32, 36, 44, 1) 23%);
+
+}
