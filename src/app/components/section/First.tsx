@@ -36,11 +36,14 @@ const First = () => {
           <div className="lg:w-2/3 mb-12 lg:mb-0">
          
             <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
-             <div className='text-8xl lg:text-5xl'> {data.title} </div>  
-               <span className="inline-block bg-background_btn text-white text-xl font-bold px-4  rounded-full ">
-              ОНЛАЙН
+            <span className="inline-block bg-background_btn text-white text-xl font-bold px-4  rounded-full lg:text-4xl md:hidden ">
+              ONLINE
             </span>
-            {data.title2}
+             <div className='text-8xl lg:text-5xl'>   {data.title}   <span className="hidden bg-background_btn text-white  font-bold px-4  rounded-full text-5xl md:inline-block ">
+              ONLINE
+            </span>  </div>  
+            {data.title2} 
+            
             </h1>
             <div className='pt-60 md:pt-0'>
 
