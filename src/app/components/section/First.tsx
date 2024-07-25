@@ -34,11 +34,13 @@ const First = () => {
       <div className="container mx-auto ">
         <div className="flex flex-col lg:flex-row  ">
           <div className="lg:w-2/3 mb-12 lg:mb-0">
-            {/* <span className="inline-block bg-[#cc3151] text-white text-xl font-bold px-4 py-2 rounded-full mb-6">
-              ОНЛАЙН-КУРС
-            </span> */}
+         
             <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
-             <div className='text-8xl lg:text-5xl'> </div> {data.title} {data.title2}
+             <div className='text-8xl lg:text-5xl'> {data.title} </div>  
+               <span className="inline-block bg-background_btn text-white text-xl font-bold px-4  rounded-full ">
+              ОНЛАЙН
+            </span>
+            {data.title2}
             </h1>
             <div className='pt-60 md:pt-0'>
 
@@ -55,7 +57,7 @@ const First = () => {
             </div>
           </div>
           <div className=" absolute  top-60 right-0 lg:right-[21%] ">
-            <div className="   rounded-2xl p-6 mt-9">
+            <div className="   rounded-2xl p-5 mt-9">
               <ul className="flex flex-col gap-y-6">
                 {icon.map((item) => (
                   <li
