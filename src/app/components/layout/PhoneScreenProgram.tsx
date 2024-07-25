@@ -64,7 +64,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}>
-                      <div className="px-6 pb-6 text-gray-600">
+                      <div className="px-6 pb-6 text-gray-700">
                         <div className="w-full h-full top-0 left-0  ">
                           {data.map((item) =>
                             item.id === openIndex ? (
@@ -72,8 +72,8 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                            
                                 key={item.id}>
                                 <div className="flex flex-col sm:flex-row sm:px-3 pb-3">
-                                  <div className="w-full sm:w-1/2 sm:p-3">
-                                    <div className="w-full pl-3">
+                                  <div className="w-full sm:w-1/2 sm:p-3 hidden">
+                                    {/* <div className="w-full pl-3">
                                       <Image
                                         className="h-auto"
                                         src="/photo-1-2.png"
@@ -81,13 +81,13 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         width={75}
                                         height={87}
                                       />
-                                    </div>
-                                    <div
+                                    </div> */}
+                                    {/* <div
                                      
-                                      className="text-center text-2xl sm:text-3xl break-words overflow-hidden">
+                                      className="text-center text-2xl sm:text-3xl break-words overflow-hidden font-bold">
                                       {item.content.title}
-                                    </div>
-                                    <div  className="flex justify-end">
+                                    </div> */}
+                                    {/* <div  className="flex justify-end">
                                       <Image
                                         className="h-auto"
                                         src="/phone-1-2.png"
@@ -95,15 +95,15 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                         width={85}
                                         height={104}
                                       />
-                                    </div>
+                                    </div> */}
                                   </div>
-                                  <div className="w-full sm:w-1/2 p-3">
-                                    <div className="text-3xl pb-4">
-                                      {item.content.title2}
+                                  <div className="w-full  p-3">
+                                    <div className="text-2xl font-semibold pb-4">
+                                      {item.content.title}
                                     </div>
                                     <ul>
                                       {item.content.list.map((item, index) => (
-                                        <li  className="text-2xl list-disc list-inside" key={index}>
+                                        <li  className=" list-disc list-inside" key={index}>
                                           {item}
                                         </li>
                                       ))}

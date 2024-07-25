@@ -418,12 +418,17 @@ export const minicarousel = [
 ];
 //Big carousel - карусель з блоку "портфоліо" з фотграфіями автора
 export const porfoliocarousel = [
-  { id: 4, link: '/carouselportfolio/3.jpg', alt: 'img' },
-  { id: 5, link: '/carouselportfolio/4.jpg', alt: 'img' },
+  { id: 3, link: '/carouselportfolio/3.jpg', alt: 'img' },
   { id: 1, link: '/carouselportfolio/1.jpg', alt: 'img' },
-  { id: 8, link: '/carouselportfolio/7.jpg', alt: 'img' },
-  { id: 6, link: '/carouselportfolio/5.jpg', alt: 'img' },
-  { id: 7, link: '/carouselportfolio/6.jpg', alt: 'img' },
-  { id: 9, link: '/carouselportfolio/8.jpg', alt: 'img' },
-  { id: 2, link: '/carouselportfolio/9.jpg', alt: 'img' },
+  { id: 2, link: '/carouselportfolio/2.jpg', alt: 'img' },
+  { id: 5, link: '/carouselportfolio/5.jpg', alt: 'img' },
+  { id: 4, link: '/carouselportfolio/4.jpg', alt: 'img' },
+  { id: 6, link: '/carouselportfolio/6.jpg', alt: 'img' },
+  { id: 7, link: '/carouselportfolio/7.jpg', alt: 'img' },
+  { id: 8, link: '/carouselportfolio/8.jpg', alt: 'img' },
+  { id: 9, link: '/carouselportfolio/9.jpg', alt: 'img' },
+  { id: 10, link: '/carouselportfolio/10.jpg', alt: 'img' },
+  { id: 12, link: '/carouselportfolio/12.jpg', alt: 'img' },
+  { id: 13, link: '/carouselportfolio/13.jpg', alt: 'img' },
+  { id: 14, link: '/carouselportfolio/14.jpg', alt: 'img' },
 ];
