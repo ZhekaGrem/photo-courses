@@ -38,12 +38,12 @@ const First = () => {
               ОНЛАЙН-КУРС
             </span> */}
             <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
-             <div className='text-8xl lg:text-5xl'> {data.title}</div> {data.title2}
+             <div className='text-8xl lg:text-5xl'> </div> {data.title} {data.title2}
             </h1>
-            <div className='pt-28 md:pt-0'>
+            <div className='pt-60 md:pt-0'>
 
             
-            <p className=" text-text_2 lg:text-2xl mb-12 sm:max-w-[70%] ">
+            <p className="font-bold text-text_2 lg:text-2xl mb-12 max-w-[90%] sm:max-w-[70%] ">
               {data.text}
             </p>
 
@@ -54,7 +54,7 @@ const First = () => {
             />
             </div>
           </div>
-          <div className="lg:w-1/3 absolute lg:flex lg:justify-end top-60 right-0 lg:right-[21%] ">
+          <div className=" absolute  top-60 right-0 lg:right-[21%] ">
             <div className="   rounded-2xl p-6 mt-9">
               <ul className="flex flex-col gap-y-6">
                 {icon.map((item) => (
