@@ -58,7 +58,7 @@ const Header = () => {
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="  kinline-flex items-center p-3 w-10 h-10 justify-center text-xs  rounded-lg lg:hidden bg-background_btn hover:bg-background_btn_hover  focus:outline-none focus:ring-2  "
+              className="  kinline-flex items-center p-3 w-10 h-10 justify-center text-xs  rounded-lg lg:hidden bg-transparent   focus:outline-none focus:ring-2  "
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={handleBurgerButtonClick}>

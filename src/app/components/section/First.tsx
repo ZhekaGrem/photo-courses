@@ -59,7 +59,7 @@ const First = () => {
             />
             </div>
           </div>
-          <div className=" absolute  top-60 right-0 lg:right-[21%] ">
+          <div className=" absolute  top-72 right-0 lg:right-[21%] ">
             <div className="   rounded-2xl p-5 mt-9">
               <ul className="flex flex-col gap-y-6">
                 {icon.map((item) => (
