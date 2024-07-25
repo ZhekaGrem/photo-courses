@@ -36,10 +36,13 @@ const First = () => {
             {/* <span className="inline-block bg-[#cc3151] text-white text-xl font-bold px-4 py-2 rounded-full mb-6">
               ОНЛАЙН-КУРС
             </span> */}
-            <h1  className="content-end text-text_2 text-2xl lg:text-5xl ">
+            <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
               {data.title}
             </h1>
-            <p className=" text-text_2 lg:text-3xl mb-12 max-w-[50%] lg:max-w-[70%] ">
+            <div className='pt-52 md:pt-0'>
+
+            
+            <p className=" text-text_2 lg:text-2xl mb-12 sm:max-w-[70%] ">
               {data.text}
             </p>
 
@@ -48,6 +51,7 @@ const First = () => {
               text={data.button_text}
               onClick={() => setIsPortalOpen(true)}
             />
+            </div>
           </div>
           <div className="lg:w-1/3 hidden lg:flex justify-end ">
             <div className="   rounded-2xl p-6">
