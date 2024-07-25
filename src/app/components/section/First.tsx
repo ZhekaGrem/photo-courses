@@ -29,9 +29,9 @@ const First = () => {
   return (
     <section
     
-      className="imgBg bg-cover bg-center min-h-screen flex items-center ">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center">
+      className="imgBg bg-cover bg-center min-h-screen flex p-9 ">
+      <div className="container mx-auto ">
+        <div className="flex flex-col lg:flex-row ">
           <div className="lg:w-2/3 mb-12 lg:mb-0">
             {/* <span className="inline-block bg-[#cc3151] text-white text-xl font-bold px-4 py-2 rounded-full mb-6">
               ОНЛАЙН-КУРС
@@ -39,7 +39,7 @@ const First = () => {
             <h1  className="text-text_2 text-4xl lg:text-7xl ">
               {data.title}
             </h1>
-            <p className=" text-text_2 lg:text-3xl mb-12 max-w-2xl">
+            <p className=" text-text_2 lg:text-3xl mb-12 ">
               {data.text}
             </p>
 
