@@ -53,8 +53,8 @@ const First = () => {
             />
             </div>
           </div>
-          <div className="lg:w-1/3 hidden lg:flex justify-end ">
-            <div className="   rounded-2xl p-6">
+          <div className="lg:w-1/3 absolute lg:flex lg:justify-end top-20 right-0 mt-14">
+            <div className="   rounded-2xl p-6 mt-9">
               <ul className="flex flex-col gap-y-6">
                 {icon.map((item) => (
                   <li
