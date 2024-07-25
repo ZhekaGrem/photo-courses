@@ -52,7 +52,7 @@ const Header = () => {
             </div>
             <Button
               onClick={() => setIsPortalOpen(true)}
-              className="px-6 py-2 hidden sm:block bg-background_btn  hover:bg-background_btn_hover"
+              className="px-6 py-2 hidden sm:block bg-background_btn_burger "
               text={text.btndata}
             />
             <button
