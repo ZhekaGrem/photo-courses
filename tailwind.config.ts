@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         background_header: '#20242c',
         background_btn: '#4C98EE',
-        background_btn_hover: '#FF8C00',
+        background_btn_hover: '#4C98EE',
         background_section_2: '#E1E327',
         background_section_3: '#FF7175',
         background_section_4: '#00B0AB',

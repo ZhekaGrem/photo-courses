@@ -25,10 +25,10 @@ const title: string = title_2;
 const data: InfoType[] = data_section_2;
 const CourseProgram = () => {
   return (
-    <section id="program" className=" bg-background_section_2">
+    <section id="program" className=" bg-background_header">
       <div
  
-        className="container section text-text_1">
+        className="container section text-text_2">
         <h4>
           {title}
         </h4>
