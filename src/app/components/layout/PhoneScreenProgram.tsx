@@ -38,9 +38,9 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
             whileInView="visible"
             className="space-y-4 px-6">
             {data.map((item, index) => (
-              <motion.li
-                variants={a_l_t}
-                custom={item.id}
+              <li
+              
+              
                 key={item.id}
                 className="bg-white  rounded-lg shadow-md overflow-hidden  ">
                 <button
@@ -128,7 +128,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.li>
+              </li>
             ))}
           </motion.ul>
         </div>
