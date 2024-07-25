@@ -39,7 +39,7 @@ const First = () => {
             <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
               {data.title}
             </h1>
-            <div className='pt-52 md:pt-0'>
+            <div className='pt-28 md:pt-0'>
 
             
             <p className=" text-text_2 lg:text-2xl mb-12 sm:max-w-[70%] ">
@@ -53,7 +53,7 @@ const First = () => {
             />
             </div>
           </div>
-          <div className="lg:w-1/3 absolute lg:flex lg:justify-end top-20 right-0 mt-14">
+          <div className="lg:w-1/3 absolute lg:flex lg:justify-end top-60 right-0 ">
             <div className="   rounded-2xl p-6 mt-9">
               <ul className="flex flex-col gap-y-6">
                 {icon.map((item) => (
