@@ -36,7 +36,7 @@ const First = () => {
             {/* <span className="inline-block bg-[#cc3151] text-white text-xl font-bold px-4 py-2 rounded-full mb-6">
               ОНЛАЙН-КУРС
             </span> */}
-            <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
+            <h1  className="content-end text-text_2 text-3xl lg:text-5xl ">
               {data.title}
             </h1>
             <div className='pt-28 md:pt-0'>
