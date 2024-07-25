@@ -44,7 +44,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
         ))}
       </ul>
       <div className="sticky top-4  w-full  px-6 ">
-        <div className="w-full h-full top-0 left-0  ">
+        <div className="w-full h-full top-0 left-0  pt-4">
           {data.map((item) =>
             item.id === selectedId ? (
               <div

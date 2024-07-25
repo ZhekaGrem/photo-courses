@@ -98,10 +98,7 @@ section:last-child {
   padding-bottom: 0px;
 }
 
-.section {
-  min-height: auto;
-  padding: 2.5rem 0;
-}
+
 h4 {
   font-size: 2rem;
   line-height: 1.1334;
@@ -110,10 +107,11 @@ h4 {
 }
 
 .imgBg {
-  background-image: url('assets/img/cosmos-main-mini.webp');
+  background-image: url('assets/img/small.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
 }
 
 
@@ -137,7 +135,7 @@ h4 {
     max-width: 768px;
   }
   .imgBg {
-  background-image: url('assets/img/cosmos-main.jpg');
+  background-image: url('assets/img/larg.jpg');
 }
 
 }
@@ -149,9 +147,7 @@ h4 {
     padding: 0 3.75rem;
 
   }
-  .section {
-    padding: 4rem 0;
-  }
+
 }
 @media (min-width: 1280px) {
   .container {
@@ -159,12 +155,7 @@ h4 {
   }
 }
 
-@media (min-width: 1536px) {
 
-  .section {
-    padding: 6rem 0;
-  }
-}
 
 
 
@@ -209,4 +200,7 @@ h1{
   }
 }
 
-
+.section {
+  min-height: auto;
+  padding: 2rem 0;
+}
