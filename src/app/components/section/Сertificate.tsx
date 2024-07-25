@@ -16,7 +16,7 @@ const Сertificate = () => {
    
       className="bg-background_section_4 ">
       <div className="container section flex flex-col lg:flex-row items-center">
-        <div  className="lg:w-1/2 mb-12 lg:mb-0 px-6">
+        <div  className="lg:w-1/2 mb-12 lg:mb-0 sm:px-6">
           <a href="https://ukrainianphotographers.com/" target="_blank">
             <h2 className="text-4xl lg:text-5xl font-bold text-text_2 leading-tight mb-6">{data.text1}</h2>
           </a>

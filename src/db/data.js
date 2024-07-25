@@ -25,7 +25,7 @@ export const title_2 = 'ПРОГРАМА КУРСУ:';
 export const data_section_2 = [
   {
     id: 0,
-    title: '01 ОСНОВИ ФОТОТЕХНІКИ',
+    title: ' ОСНОВИ ФОТОТЕХНІКИ',
     content: {
       title: 'ВИБІР ТА ОСВОЄННЯ ТЕХНІКИ',
       title2: 'Програма уроку',
@@ -41,7 +41,7 @@ export const data_section_2 = [
   },
   {
     id: 1,
-    title: '02 СЕКРЕТИ ІДЕАЛЬНОЇ ЕКСПОЗИЦІЇ',
+    title: ' СЕКРЕТИ ЕКСПОЗИЦІЇ',
     content: {
       title: 'ЕКСПОЗИЦІЯ ТА ДІАФРАГМА',
       title2: 'Програма уроку',
@@ -58,7 +58,7 @@ export const data_section_2 = [
   },
   {
     id: 2,
-    title: '03 МАГІЯ  ВИТРИМКА ТА ISO ',
+    title: ' МАГІЯ  ВИТРИМКА ТА ISO ',
     content: {
       title: 'ВИТРИМКА \n ТА \n ISO (СВІТЛОЧУТЛИВІСТЬ)',
       title2: 'Програма уроку',
@@ -75,7 +75,7 @@ export const data_section_2 = [
   },
   {
     id: 3,
-    title: '04 МИСТЕЦТВО КОМПОЗИЦІЇ',
+    title: 'МИСТЕЦТВО КОМПОЗИЦІЇ',
     content: {
       title: 'КОМПОЗИЦІЯ',
       title2: 'Програма уроку',
@@ -92,7 +92,7 @@ export const data_section_2 = [
   },
   {
     id: 4,
-    title: '05 ПСИХОЛОГІЯ КОЛЬОРУ У ФОТОГРАФІЇ',
+    title: 'ПСИХОЛОГІЯ КОЛЬОРУ',
     content: {
       title: 'КОЛІР',
       title2: 'Програма уроку',
@@ -109,7 +109,7 @@ export const data_section_2 = [
   },
   {
     id: 5,
-    title: '06 ПРОФЕСІЙНЕ ОСВІТЛЕННЯ',
+    title: ' ПРОФЕСІЙНЕ ОСВІТЛЕННЯ',
     content: {
       title: 'СВІТЛО',
       title2: 'Програма уроку',
@@ -126,7 +126,7 @@ export const data_section_2 = [
   },
   {
     id: 6,
-    title: '07 СТВОРЕННЯ ВРАЖАЮЧОГО ПОРТФОЛІО',
+    title: ' ФОРМУВАННЯ ПОРТФОЛІО',
     content: {
       title: 'ПОРТФОЛІО',
       title2: 'Програма уроку',
@@ -143,7 +143,7 @@ export const data_section_2 = [
   },
   {
     id: 7,
-    title: '08 МАЙСТЕРНІСТЬ СТУДІЙНОЇ ЗЙОМКИ',
+    title: ' СТУДІЙНА ЗЙОМКА',
     content: {
       title: 'ІМПРОВІЗАЦІЙНА ЗЙОМКА ВІД ВХОДУ У СТУДІЮ ДО ВИХОДУ',
       title2: 'Програма уроку',
@@ -160,7 +160,7 @@ export const data_section_2 = [
   },
   {
     id: 8,
-    title: '09 ПРОФЕСІЙНА ЕТИКА ТА КОМУНІКАЦІЯ',
+    title: 'ПРОФЕСІЙНА ЕТИКА',
     content: {
       title: 'ФОТОГРАФ ОЧИМА КОМАНДИ',
       title2: 'Програма уроку',
@@ -177,7 +177,7 @@ export const data_section_2 = [
   },
   {
     id: 9,
-    title: '10 МАГІЯ ПОСТ-ОБРОБКИ',
+    title: ' МАГІЯ ПОСТ-ОБРОБКИ',
     content: {
       title: 'ВИБІР ТА ПРОЯВКА В LIGHTROOM',
       title2: 'Програма уроку',
@@ -194,7 +194,7 @@ export const data_section_2 = [
   },
   {
     id: 10,
-    title: "11 СТАРТ КАР'ЄРИ ФОТОГРАФА",
+    title: " СТАРТ КАР'ЄРИ",
     content: {
       title: 'ЯК ЗНАЙТИ ПЕРШОГО КЛІЄНТА',
       title2: 'Програма уроку',
@@ -211,7 +211,7 @@ export const data_section_2 = [
   },
   {
     id: 11,
-    title: '12 АНАЛІЗ ТА ВДОСКОНАЛЕННЯ',
+    title: ' АНАЛІЗ РОБІТ',
     content: {
       title: 'РОЗБІР ВАШИХ РОБІТ ТА ДОМАШНІХ ЗАВДАНЬ',
       title2: 'Програма уроку',
@@ -228,7 +228,7 @@ export const data_section_2 = [
   },
   {
     id: 12,
-    title: '13 СЕКРЕТИ УСПІХУ ВІД ПРОФЕСІОНАЛІВ',
+    title: ' СЕКРЕТИ УСПІХУ',
     content: {
       title: 'БОНУСНИЙ УРОК',
       title2: 'Програма уроку',
