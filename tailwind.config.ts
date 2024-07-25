@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         background_header: '#20242c',
-        background_btn: '#FFA500',
+        background_btn: '#4C98EE',
         background_btn_hover: '#FF8C00',
         background_section_2: '#E1E327',
         background_section_3: '#FF7175',
