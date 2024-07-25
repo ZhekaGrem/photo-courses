@@ -45,18 +45,21 @@ const First = () => {
             {data.title2} 
             
             </h1>
-            <div className='pt-60 md:pt-0'>
+            <div className='pt-48 w-full text-end'>
+ <Button
+              className="md:px-3 md:py-2 hover:underline hover:font-extrabold  text-2xl font-bold transition-all duration-300  hover:shadow-lg bg-background_btn_burger"
+              text={data.button_text}
+              onClick={() => setIsPortalOpen(true)}
+            />
+</div>
+            <div className='pt-20 md:pt-0'>
 
             
+           
             <p className="font-bold text-text_2 lg:text-2xl mb-12 max-w-[90%] sm:max-w-[70%] ">
               {data.text}
             </p>
 
-            <Button
-              className="md:px-3 md:py-2 hover:underline hover:font-extrabold  text-2xl font-bold transition-all duration-300  hover:shadow-lg "
-              text={data.button_text}
-              onClick={() => setIsPortalOpen(true)}
-            />
             </div>
           </div>
           <div className=" absolute  top-72 right-0 lg:right-[21%] ">
