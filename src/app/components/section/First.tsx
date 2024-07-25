@@ -29,7 +29,7 @@ const First = () => {
   return (
     <section
     
-      className="imgBg bg-cover bg-center min-h-screen flex p-9 ">
+      className="imgBg bg-cover bg-center min-h-screen flex">
       <div className="container mx-auto ">
         <div className="flex flex-col lg:flex-row ">
           <div className="lg:w-2/3 mb-12 lg:mb-0">
