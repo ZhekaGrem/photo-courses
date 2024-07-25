@@ -35,7 +35,7 @@ const Price = () => {
               <li key={index} className="flex items-center">
                 <CheckmarkIcon />
                 <span>
-                  <strong className="text-text_1">{item.textS}</strong> {item.text}
+                  <strong className="text-text_2">{item.textS}</strong> {item.text}
                 </span>
               </li>
             ))}

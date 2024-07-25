@@ -50,24 +50,11 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
               <div
               
                 key={item.id}>
-                <div className="flex px-3 pb-3">
-                  <div className="w-1/2 p-3 hidden">
-                    {/* <div  className="w-full pl-3">
-                      <Image src="/photo-1-2.png" alt="photoaparat" width={90} height={97} />
-                    </div> */}
+                <div className="flex px-3 pb-5 justify-center">
+             
+                  <div className="w-full   px-12  flex flex-col justify-center">
                     <div
-
-                      className="text-center text-2xl lg:text-4xl  font-extrabold  break-words overflow-hidden max-w-full mt-4 p-4">
-                      {item.content.title}
-                    </div>
-                    {/* <div  className="flex justify-end">
-                      <Image className="" src="/phone-1-2.png" alt="phone" width={100} height={114} />
-                    </div> */}
-                  </div>
-                  <div className="w-full lg:p-3">
-                    <div
-                    
-                      className=" text-xl lg:text-2xl font-bold  pb-4">
+                      className=" text-xl lg:text-2xl font-bold pb-3  ">
                       {item.content.title}
                     </div>
                     <ul>
