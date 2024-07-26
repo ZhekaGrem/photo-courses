@@ -40,7 +40,7 @@ const Header = () => {
               className="h-auto w-full  "
               width={80}
               height={80}
-              src="/screen.svg"
+              src="/logo3.png"
               alt="logo"
             />
           </a>
