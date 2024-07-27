@@ -35,13 +35,13 @@ export default function Home() {
         <PhonePortfolio />
       </Suspense>
       {/* <Suspense fallback={<Loading />}>
-        <CourseSteps />
-      </Suspense> */}
-      {/* <Suspense fallback={<Loading />}>
         <Price />
       </Suspense> */}
       <Suspense fallback={<Loading />}>
         <Price2 />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <CourseSteps />
       </Suspense>
       <Suspense fallback={<Loading />}>
         <Question />
