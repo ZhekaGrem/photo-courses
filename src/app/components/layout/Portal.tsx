@@ -7,9 +7,10 @@ import Image from 'next/image';
 
 interface PortalProps {
   onClose: () => void;
+  title:string;
 }
 
-const Portal: React.FC<PortalProps> = ({ onClose }) => {
+const Portal: React.FC<PortalProps> = ({title,onClose }) => {
   const portalRoot = typeof document !== 'undefined' ? document.getElementById('portal-root') : null;
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -85,7 +86,7 @@ const Portal: React.FC<PortalProps> = ({ onClose }) => {
                 <p className="mx-6 mb-6 text-center text-lg text-white md:text-sm">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
-                <PopUp onClose={onClose} />
+                <PopUp onClose={onClose} title={title} />
               </div>
               <div className="hidden w-1/2 md:block">
                 <Image

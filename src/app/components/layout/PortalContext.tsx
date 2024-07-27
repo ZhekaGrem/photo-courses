@@ -5,16 +5,20 @@ import Portal from './Portal';
 type PortalContextType = {
   isPortalOpen: boolean;
   setIsPortalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  title?: string;
+  setTitle?: React.Dispatch<React.SetStateAction<string>>;
 };
 const PortalContext = createContext<PortalContextType | undefined>(undefined);
 
 export const PortalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isPortalOpen, setIsPortalOpen] = useState(false);
+  const [title, setTitle] = useState('');
+  
 
   return (
-    <PortalContext.Provider value={{ isPortalOpen, setIsPortalOpen }}>
+    <PortalContext.Provider value={{ isPortalOpen, setIsPortalOpen, title, setTitle }}>
       {children}
-      {isPortalOpen && <Portal onClose={() => setIsPortalOpen(false)} />}
+      {isPortalOpen && <Portal title={title}  onClose={() => setIsPortalOpen(false)} />}
     </PortalContext.Provider>
   );
 };

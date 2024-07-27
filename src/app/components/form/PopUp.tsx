@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 type ClosePortal = {
   onClose: () => void;
+  title:string;
 };
 
 const initialFormData = {
@@ -10,7 +11,7 @@ const initialFormData = {
   tel: '',
 };
 
-const PopUp = ({ onClose }: ClosePortal) => {
+const PopUp = ({ title, onClose }: ClosePortal) => {
   const [formData, setFormData] = useState(initialFormData);
   const [isFormValid, setIsFormValid] = useState(false);
   const validatePhone = (phone: string) => {
@@ -34,8 +35,9 @@ const PopUp = ({ onClose }: ClosePortal) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     const text = `Клієнт Курси Фото:\n
-Ім'я Клієнта: ${formData.name}\n
-Номер клієнта: ${formData.tel}\n
+    Ім'я Клієнта: ${formData.name}\n
+    Номер клієнта: ${formData.tel}\n
+    Який курс обрав клієнт ${title}\n
 `;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
       text

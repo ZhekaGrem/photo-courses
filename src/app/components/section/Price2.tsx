@@ -38,8 +38,18 @@ const plans = [
   },
 ];
 
+
+
 const Price2 = () => {
-  const { isPortalOpen, setIsPortalOpen } = usePortal();
+const { setIsPortalOpen, setTitle } = usePortal() as {
+  setIsPortalOpen: (isOpen: boolean) => void;
+  setTitle: (title: string) => void;
+};
+
+const openPortal = (title: string) => {
+  setTitle(title);
+  setIsPortalOpen(true);
+};
   return (
     <section id="price" className="bg-background_section_6">
       <div className="container mx-auto">
@@ -59,7 +69,7 @@ const Price2 = () => {
                 <p className="mb-6 min-h-20 text-gray-600">{plan.description}</p>
                 <Button
                   text="Замовити"
-                  onClick={() => setIsPortalOpen(true)}
+                  onClick={() => openPortal(plan.title)}
                   className="w-full rounded-lg bg-background_section_6 px-4 py-3 font-bold text-white transition-colors hover:bg-opacity-90"
                 />
               </div>
