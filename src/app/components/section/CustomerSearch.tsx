@@ -3,27 +3,27 @@ import Image from 'next/image';
 
 const CustomerSearch = () => {
   return (
-    <section className="bg-background_section_5 overflow-hidden">
-      <div className="container section">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 mb-12 lg:mb-0 relative">
-            <div className="absolute top-0 left-0 w-full h-full bg-yellow-400 transform -skew-x-12 -translate-x-1/4 z-0"></div>
+    <section className="overflow-hidden bg-background_section_5">
+      <div className="section container">
+        <div className="flex flex-col items-center lg:flex-row">
+          <div className="relative mb-12 lg:mb-0 lg:w-1/2">
+            <div className="absolute left-0 top-0 z-0 h-full w-full -translate-x-1/4 -skew-x-12 transform bg-yellow-400"></div>
             <div className="relative z-10">
               <Image loading="lazy" src="/3.png" width={360} height={670} alt="Автор курсу" />
             </div>
           </div>
           <div className="lg:w-1/2 lg:pl-16">
-            <h4 className=" text-text_3 mb-6 relative">
+            <h4 className="relative mb-6 text-text_3">
               ПОШУК КЛІЄНТІВ:
               <span className="absolute -left-8 top-0 h-full w-2 bg-yellow-400"></span>
             </h4>
-            <p className="text-2xl font-bold text-text_3 mb-8">
+            <p className="mb-8 text-2xl font-bold text-text_3">
               ПІСЛЯ КУРСУ ВИ ОСВОЇТЕ ПРОФЕСІЮ ФОТОГРАФА ВІД ВИБОРУ ФОТОАПАРАТУ І ДО ПОШУКУ ПЕРШИХ КЛІЄНТІВ
             </p>
             <ul className="space-y-4">
               <li className="flex items-center">
                 <svg
-                  className="w-6 h-6 text-yellow-400 mr-2"
+                  className="mr-2 h-6 w-6 text-yellow-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ const CustomerSearch = () => {
               </li>
               <li className="flex items-center">
                 <svg
-                  className="w-6 h-6 text-yellow-400 mr-2"
+                  className="mr-2 h-6 w-6 text-yellow-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ const CustomerSearch = () => {
               </li>
               <li className="flex items-center">
                 <svg
-                  className="w-6 h-6 text-yellow-400 mr-2"
+                  className="mr-2 h-6 w-6 text-yellow-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -67,7 +67,7 @@ const CustomerSearch = () => {
                 <span className="text-lg">Стратегії ціноутворення</span>
               </li>
             </ul>
-            <button className="mt-8 bg-yellow-400 text-background_section_5 font-bold py-3 px-6 rounded-full hover:bg-yellow-500 transition-colors duration-300">
+            <button className="mt-8 rounded-full bg-yellow-400 px-6 py-3 font-bold text-background_section_5 transition-colors duration-300 hover:bg-yellow-500">
               ДІЗНАТИСЯ БІЛЬШЕ
             </button>
           </div>

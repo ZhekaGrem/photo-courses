@@ -10,6 +10,7 @@ const Portfolio = lazy(() => import('@/app/components/section/Portfolio'));
 const PhonePortfolio = lazy(() => import('@/app/components/section/PhonePortfolio'));
 const CourseSteps = lazy(() => import('@/app/components/section/CourseSteps'));
 const Price = lazy(() => import('@/app/components/section/Price'));
+const Price2 = lazy(() => import('@/app/components/section/Price2'));
 const Question = lazy(() => import('@/app/components/section/Question'));
 
 export default function Home() {
@@ -36,8 +37,11 @@ export default function Home() {
       {/* <Suspense fallback={<Loading />}>
         <CourseSteps />
       </Suspense> */}
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}>
         <Price />
+      </Suspense> */}
+      <Suspense fallback={<Loading />}>
+        <Price2 />
       </Suspense>
       <Suspense fallback={<Loading />}>
         <Question />

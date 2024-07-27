@@ -62,8 +62,8 @@ function MiniFormFooter() {
   };
   return (
     <>
-      <form className="flex  flex-col justify-center " onSubmit={handleSubmit}>
-        <label className=" mb-6" htmlFor="">
+      <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
+        <label className="mb-6" htmlFor="">
           <input
             type="text"
             value={formData.name}
@@ -71,10 +71,10 @@ function MiniFormFooter() {
             placeholder={`Ваше ім'я`}
             name="name"
             required
-            className="p-3  rounded-md bg-[#f2f3f7] w-full"
+            className="w-full rounded-md bg-[#f2f3f7] p-3"
           />
         </label>
-        <label className="mb-6 " htmlFor="">
+        <label className="mb-6" htmlFor="">
           <input
             type="tel"
             placeholder="+380"
@@ -82,12 +82,12 @@ function MiniFormFooter() {
             onChange={handleChange}
             name="tel"
             required
-            className="p-3 rounded-md bg-[#f2f3f7] w-full"
+            className="w-full rounded-md bg-[#f2f3f7] p-3"
           />
         </label>
 
         <input
-          className="py-4 font-bold text-center  w-full rounded-md text-text_header disabled:bg-slate-400 bg-background_btn  hover:bg-background_btn_hover "
+          className="w-full rounded-md bg-background_btn py-4 text-center font-bold text-text_header hover:bg-background_btn_hover disabled:bg-slate-400"
           value={`ЗВ'ЯЗАТИСЬ`}
           type="submit"
           disabled={!isFormValid}

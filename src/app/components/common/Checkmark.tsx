@@ -1,8 +1,12 @@
-const CheckmarkIcon = () => {
+interface IconProps {
+  className?: string;
+}
+
+const CheckmarkIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <>
       <svg
-        className="w-6 h-6  mr-2 mt-1 flex-shrink-0"
+        className={`${className} mr-2 mt-1 h-5 w-5 flex-shrink-0`}
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

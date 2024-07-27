@@ -51,19 +51,19 @@ const Portal: React.FC<PortalProps> = ({ onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-opacity-50  flex items-center justify-center z-50 px-4 rounded-2xl">
+          className="fixed inset-0 z-50 flex items-center justify-center rounded-2xl bg-opacity-50 px-4">
           <motion.div
             ref={modalRef}
             initial={{ x: '-100%' }}
             animate={{ x: '0%' }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="relative min-w-[50%] imgBg2 md:bg-black shadow-lg rounded-2xl">
+            className="imgBg2 relative min-w-[50%] rounded-2xl shadow-lg md:bg-black">
             <button
-              className="absolute top-4 right-4 text-gray-50 hover:text-gray-700 transition-colors"
+              className="absolute right-4 top-4 text-gray-50 transition-colors hover:text-gray-700"
               onClick={handleClose}>
               <svg
-                className="w-6 h-6"
+                className="h-6 w-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -75,25 +75,25 @@ const Portal: React.FC<PortalProps> = ({ onClose }) => {
                   d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-            <div className="w-full flex ">
-              <div className="w-full md:w-1/2 bg-black bg-opacity-50 md:bg-opacity-0 ">
+            <div className="flex w-full">
+              <div className="w-full bg-black bg-opacity-50 md:w-1/2 md:bg-opacity-0">
                 <h3
-                  className="p-8 text-3xl md:text-2xl leading-6 font-bold text-[#DDDDDD] mb-4 text-center"
+                  className="mb-4 p-8 text-center text-3xl font-bold leading-6 text-[#DDDDDD] md:text-2xl"
                   id="modal-title">
                   РЕЄСТРАЦІЯ НА КУРС ФОТОГРАФА
                 </h3>
-                <p className="text-lg md:text-sm  text-white mb-6 mx-6 text-center">
+                <p className="mx-6 mb-6 text-center text-lg text-white md:text-sm">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
                 <PopUp onClose={onClose} />
               </div>
-              <div className=" hidden md:block w-1/2">
+              <div className="hidden w-1/2 md:block">
                 <Image
                   src="/popup.jpg"
                   alt="Автор курсів"
                   width={500}
                   height={300}
-                  className="w-full  object-cover rounded-r-lg"
+                  className="w-full rounded-r-lg object-cover"
                 />
               </div>
             </div>

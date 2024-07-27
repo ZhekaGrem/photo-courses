@@ -1,36 +1,24 @@
 'use client';
 import React from 'react';
-import {Button} from '../common/Button';
+import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { section_6 } from '@/db/data';
 import CheckmarkIcon from '../common/Checkmark';
 
-
 const Price = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
-    <section
-     
-      id="price"
-      className="bg-background_section_6 ">
-      <div className="container section text-text_1 ">
-        <h4 >
-          {section_6.title}
-        </h4>
+    <section id="price" className="bg-background_section_6">
+      <div className="section container text-text_1">
+        <h4>{section_6.title}</h4>
 
-        <div className="  p-6 mx-auto ">
-          <div className="flex justify-between items-center mb-8">
-            <h3 className="text-3xl font-bold">
-              {section_6.title2}
-            </h3>
-            <span
-             
-              className=" text-text_1 text-sm font-bold py-1 px-3 rounded-full">
-              {section_6.span}
-            </span>
+        <div className="mx-auto p-6">
+          <div className="mb-8 flex items-center justify-between">
+            <h3 className="text-3xl font-bold">{section_6.title2}</h3>
+            <span className="rounded-full px-3 py-1 text-sm font-bold text-text_1">{section_6.span}</span>
           </div>
 
-          <ul className="text-lg mb-8 space-y-4">
+          <ul className="mb-8 space-y-4 text-lg">
             {section_6.list.map((item, index) => (
               <li key={index} className="flex items-center">
                 <CheckmarkIcon />
@@ -41,16 +29,16 @@ const Price = () => {
             ))}
           </ul>
 
-          <div className="flex flex-col items-center mb-8">
-            <p className="text-lg w-full line-through mb-2 text-center">{section_6.price.old_price}</p>
-            <p className="text-4xl font-bold text-text_1 mb-4 text-center">{section_6.price.new_price}</p>
-            <p className="text-sm text-text_1 text-center">{section_6.price.how_mгch_save}</p>
+          <div className="mb-8 flex flex-col items-center">
+            <p className="mb-2 w-full text-center text-lg line-through">{section_6.price.old_price}</p>
+            <p className="mb-4 text-center text-4xl font-bold text-text_1">{section_6.price.new_price}</p>
+            <p className="text-center text-sm text-text_1">{section_6.price.how_mгch_save}</p>
           </div>
-          <div className="w-full flex justify-center">
+          <div className="flex w-full justify-center">
             <Button
               onClick={() => setIsPortalOpen(true)}
               text={section_6.button_text}
-              className="xl:w-[40%]   text-2xl font-bold md:px-6 py-2   bg-transparent  hover:bg-transparent border border-solid  hover:border-black hover:text-text_1"
+              className="border border-solid bg-transparent py-2 text-2xl font-bold hover:border-black hover:bg-transparent hover:text-text_1 md:px-6 xl:w-[40%]"
             />
           </div>
         </div>

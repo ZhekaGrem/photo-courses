@@ -1,6 +1,6 @@
-'use client'
+'use client';
 import React from 'react';
-import {Button} from '../common/Button';
+import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 const data = [
   { id: 1, number: '01', info: 'Обираєте один із двох тарифів курсу' },
@@ -13,13 +13,13 @@ const data = [
 const CourseSteps = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
   return (
-    <section className=" bg-background_section_7 ">
-      <div className="container section text-text_2">
+    <section className="bg-background_section_7">
+      <div className="section container text-text_2">
         <h4>ЯК ПРОХОДИТь КУРС:</h4>
-        <ul className="grid  grid-cols-1  md:grid-cols-3  grid-rows-2 p-2 gap-2 ">
+        <ul className="grid grid-cols-1 grid-rows-2 gap-2 p-2 md:grid-cols-3">
           {data.map((list) => (
             <li key={list.id} className="flex items-center">
-              <div className="font-extrabold text-6xl mr-2.5">{list.number}</div>{' '}
+              <div className="mr-2.5 text-6xl font-extrabold">{list.number}</div>{' '}
               <div className="max-w-3/4 text-2xl font-normal">{list.info}</div>
             </li>
           ))}

@@ -1,5 +1,3 @@
-
-
 export const a_r_t = {
   hidden: {
     x: +100,
@@ -45,7 +43,7 @@ export const a_d_l_i = {
   },
   visible: (custom) => ({
     y: 0,
-    x:0,
+    x: 0,
     opacity: 1,
     transition: { delay: custom * 0.3 },
   }),

@@ -25,13 +25,9 @@ const title: string = title_2;
 const data: InfoType[] = data_section_2;
 const CourseProgram = () => {
   return (
-    <section id="program" className=" bg-background_header">
-      <div
- 
-        className="container section text-text_2">
-        <h4>
-          {title}
-        </h4>
+    <section id="program" className="bg-background_header">
+      <div className="section container text-text_2">
+        <h4>{title}</h4>
         <Suspense fallback={<Loading />}>
           <div className="big-screen">
             <BigScreenProgram data={data} />

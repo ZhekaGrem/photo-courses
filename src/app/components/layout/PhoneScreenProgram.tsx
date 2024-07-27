@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { a_l_t,a_r_t,a_d_t,a_t_t } from '@/app/assets/animation';
+import { a_l_t, a_r_t, a_d_t, a_t_t } from '@/app/assets/animation';
 
 type IndexType = number | null;
 
@@ -23,35 +23,31 @@ type ComponentProps = {
   data: InfoType[];
 };
 
-const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
+const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
   const [openIndex, setOpenIndex] = useState<IndexType>(null);
   const handleButtonClick: HandleClickButton = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className="container section">
-      <div className="flex flex-col lg:flex-row gap-12 content-center">
-        <div className=" w-full">
+    <div className="section container">
+      <div className="flex flex-col content-center gap-12 lg:flex-row">
+        <div className="w-full">
           <motion.ul
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
             className="space-y-4 px-6">
             {data.map((item, index) => (
-              <li
-              
-              
-                key={item.id}
-                className="bg-white  rounded-lg shadow-md overflow-hidden  ">
+              <li key={item.id} className="overflow-hidden rounded-lg bg-white shadow-md">
                 <button
-                  className="w-full text-left p-3 focus:outline-none flex items-center justify-between"
+                  className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
                   onClick={() => handleButtonClick(index)}>
                   <h3 className="text-base font-semibold text-gray-800">{item.title}</h3>
                   <motion.div
                     initial={false}
                     animate={{ rotate: openIndex === index ? 135 : 0 }}
                     transition={{ duration: 0.2 }}
-                    className="min-w-10 h-4 flex items-center justify-center ">
+                    className="flex h-4 min-w-10 items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="35px" height="40px">
                       <path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 24 13 L 24 24 L 13 24 L 13 26 L 24 26 L 24 37 L 26 37 L 26 26 L 37 26 L 37 24 L 26 24 L 26 13 L 24 13 z" />
                     </svg>
@@ -65,14 +61,12 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}>
                       <div className="px-6 pb-6 text-gray-700">
-                        <div className="w-full h-full top-0 left-0  ">
+                        <div className="left-0 top-0 h-full w-full">
                           {data.map((item) =>
                             item.id === openIndex ? (
-                              <motion.div
-                           
-                                key={item.id}>
-                                <div className="flex flex-col sm:flex-row sm:px-3 pb-3">
-                                  <div className="w-full sm:w-1/2 sm:p-3 hidden">
+                              <motion.div key={item.id}>
+                                <div className="flex flex-col pb-3 sm:flex-row sm:px-3">
+                                  <div className="hidden w-full sm:w-1/2 sm:p-3">
                                     {/* <div className="w-full pl-3">
                                       <Image
                                         className="h-auto"
@@ -97,23 +91,21 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({data}) => {
                                       />
                                     </div> */}
                                   </div>
-                                  <div className="w-full  p-3">
-                                    <div className="text-2xl font-semibold pb-4">
-                                      {item.content.title}
-                                    </div>
+                                  <div className="w-full p-3">
+                                    <div className="pb-4 text-2xl font-semibold">{item.content.title}</div>
                                     <ul>
                                       {item.content.list.map((item, index) => (
-                                        <li  className=" list-disc list-inside" key={index}>
+                                        <li className="list-inside list-disc" key={index}>
                                           {item}
                                         </li>
                                       ))}
                                     </ul>
                                   </div>
                                 </div>
-                                <div className="w-full sm:px-12 sm:pb-5 flex justify-center">
+                                <div className="flex w-full justify-center sm:px-12 sm:pb-5">
                                   <Image
                                     loading={item.content.loading as 'eager' | 'lazy' | undefined}
-                                    className=" object-cover rounded-lg shadow-2xl h-auto"
+                                    className="h-auto rounded-lg object-cover shadow-2xl"
                                     src={item.content.img}
                                     alt={item.content.title}
                                     width={550}

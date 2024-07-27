@@ -19,10 +19,10 @@ export const PortalProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export function usePortal(): PortalContextType  {
-     const context = useContext(PortalContext);
-     if (context === undefined) {
-       throw new Error('usePortal must be used within a PortalProvider');
-     }
+export function usePortal(): PortalContextType {
+  const context = useContext(PortalContext);
+  if (context === undefined) {
+    throw new Error('usePortal must be used within a PortalProvider');
+  }
   return context;
-};
+}

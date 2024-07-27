@@ -28,21 +28,18 @@ export default function PhoneCarousel() {
     },
     loop: true,
     mode: 'snap',
-  
-    
-        slides: { perView: 1, spacing: 0 },
-    
 
+    slides: { perView: 1, spacing: 0 },
   });
   return (
     <>
-      <div className=" relative overflow-hidden">
-        <ul ref={ref} className="keen-slider ">
+      <div className="relative overflow-hidden">
+        <ul ref={ref} className="keen-slider">
           {data.map((item) => (
             <li key={item.id} className="keen-slider__slide w-full">
               <Image
                 loading="lazy"
-                className=" h-full shadow-2xl  w-full object-cover "
+                className="h-full w-full object-cover shadow-2xl"
                 width={400}
                 height={400}
                 src={item.link}
@@ -67,7 +64,7 @@ function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
   return (
     <svg
       onClick={props.onClick}
-      className={`arrow fill-background_section_5 max-w-6 shadow-xl transition-transform duration-300 active:scale-150 ${
+      className={`arrow max-w-6 fill-background_section_5 shadow-xl transition-transform duration-300 active:scale-150 ${
         props.left ? 'arrow--left' : 'arrow--right'
       } `}
       xmlns="http://www.w3.org/2000/svg"

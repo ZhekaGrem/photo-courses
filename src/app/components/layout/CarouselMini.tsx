@@ -1,19 +1,18 @@
-'use client'
+'use client';
 import * as React from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import Image from 'next/image';
-import {minicarousel} from '@/db/data'
+import { minicarousel } from '@/db/data';
 
-type TypeImange ={
-id:number;
-alt:string;
-src:string;
-numberslider:string;
-}
+type TypeImange = {
+  id: number;
+  alt: string;
+  src: string;
+  numberslider: string;
+};
 
-const data:TypeImange[]=minicarousel;
-
+const data: TypeImange[] = minicarousel;
 
 export default function CarouselMini() {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
@@ -27,7 +26,6 @@ export default function CarouselMini() {
           slides: { perView: 2, spacing: 0 },
         },
       },
-     
     },
     [
       (slider) => {
@@ -63,13 +61,13 @@ export default function CarouselMini() {
 
   return (
     <>
-      <div ref={sliderRef} className="keen-slider bg-white rounded-2xl shadow-xl">
+      <div ref={sliderRef} className="keen-slider rounded-2xl bg-white shadow-xl">
         {data.map((item) => (
           <div
             key={item.id}
-            className={`max-w-64 p-2 keen-slider__slide max-h-20 flex items-center justify-center ${item.numberslider}`}>
+            className={`keen-slider__slide flex max-h-20 max-w-64 items-center justify-center p-2 ${item.numberslider}`}>
             <Image
-              className="w-auto max-w-full max-h-full object-contain"
+              className="max-h-full w-auto max-w-full object-contain"
               width={170}
               height={45}
               src={item.src}

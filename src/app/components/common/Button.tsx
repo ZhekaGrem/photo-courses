@@ -1,10 +1,9 @@
-import React,{forwardRef} from 'react';
+import React, { forwardRef } from 'react';
 
 interface ButtonProps {
   text: string;
   className?: string;
   onClick?: () => void;
-  
 }
 
 export const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
@@ -16,4 +15,3 @@ export const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
     </button>
   );
 };
-

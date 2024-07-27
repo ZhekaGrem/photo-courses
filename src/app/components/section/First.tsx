@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import {Button} from '../common/Button';
+import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 
 import { section_1 } from '@/db/data';
@@ -28,54 +28,48 @@ const First = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
 
   return (
-    <section
-    
-      className="imgBg bg-cover bg-center min-h-screen flex">
-      <div className="container mx-auto ">
-        <div className="flex flex-col lg:flex-row  ">
-          <div className="lg:w-2/3 mb-12 lg:mb-0">
-         
-            <h1  className="content-end text-text_2 text-4xl lg:text-5xl ">
-            <span className="inline-block bg-background_btn text-white text-xl font-bold px-4  rounded-full lg:text-4xl md:hidden ">
-              ONLINE
-            </span>
-             <div className='text-8xl lg:text-5xl'>   {data.title}   <span className="hidden bg-background_btn text-white  font-bold px-4  rounded-full text-5xl md:inline-block ">
-              ONLINE
-            </span>  </div>  
-            {data.title2} 
-            
+    <section className="imgBg flex min-h-screen bg-cover bg-center">
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row">
+          <div className="mb-12 lg:mb-0 lg:w-2/3">
+            <h1 className="content-end text-4xl text-text_2 lg:text-5xl">
+              <span className="inline-block rounded-full bg-background_btn px-4 text-xl font-bold text-white md:hidden lg:text-4xl">
+                ONLINE
+              </span>
+              <div className="text-8xl lg:text-5xl">
+                {' '}
+                {data.title}{' '}
+                <span className="hidden rounded-full bg-background_btn px-4 text-5xl font-bold text-white md:inline-block">
+                  ONLINE
+                </span>{' '}
+              </div>
+              {data.title2}
             </h1>
-            <div className='pt-60 w-full text-end'>
- <Button
-              className="md:px-3 md:py-2 hover:underline hover:font-extrabold  text-2xl font-bold transition-all duration-300  hover:shadow-lg bg-background_btn_burger sm:hidden"
-              text={data.button_text}
-              onClick={() => setIsPortalOpen(true)}
-            />
-</div>
-            <div className='pt-20 md:pt-0'>
-
-            
-           
-            <p className="font-bold text-text_2 lg:text-2xl mb-12 max-w-[90%] sm:max-w-[70%] ">
-              {data.text}
-            </p>
-
+            <div className="w-full pt-60 text-end">
+              <Button
+                className="bg-background_btn_burger text-2xl font-bold transition-all duration-300 hover:font-extrabold hover:underline hover:shadow-lg sm:hidden md:px-3 md:py-2"
+                text={data.button_text}
+                onClick={() => setIsPortalOpen(true)}
+              />
+            </div>
+            <div className="pt-20 md:pt-0">
+              <p className="mb-12 max-w-[90%] font-bold text-text_2 sm:max-w-[70%] lg:text-2xl">
+                {data.text}
+              </p>
             </div>
           </div>
-          <div className=" absolute  top-72 right-0 lg:right-[21%] ">
-            <div className="   rounded-2xl p-5 mt-9">
+          <div className="absolute right-0 top-72 lg:right-[21%]">
+            <div className="mt-9 rounded-2xl p-5">
               <ul className="flex flex-col gap-y-6">
                 {icon.map((item) => (
-                  <li
-                    key={item.id}
-                    className="transform transition-transform duration-300 hover:scale-110">
+                  <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={item.alt}
                       title={item.alt}
                       href={item.src}
-                      className=" transition-colors duration-300 fill-text_2  hover:fill-background_btn_hover">
+                      className="fill-text_2 transition-colors duration-300 hover:fill-background_btn_hover">
                       {item.svg}
                     </a>
                   </li>

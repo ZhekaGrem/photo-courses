@@ -23,54 +23,42 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
     setSelectedId(id);
   };
   return (
-    <div
-  
-      className="flex   relative  items-start flex-row ">
-      <ul className="w-1/3 p-4 ">
+    <div className="relative flex flex-row items-start">
+      <ul className="w-1/3 p-4">
         {data.map((item) => (
           <li
-           
             key={item.id}
-            className={`p-2 mb-5 text-xl font-bold  cursor-pointer break-words ${
+            className={`mb-5 cursor-pointer break-words p-2 text-xl font-bold ${
               selectedId === item.id
-                ? ' border-b-4 border-text-text_2 border-solid'
-                : ' border-text-text_2 border-solid border-b-2  '
+                ? 'border-text-text_2 border-b-4 border-solid'
+                : 'border-text-text_2 border-b-2 border-solid'
             }`}
             onClick={() => handleClick(item.id)}>
             {item.title}
           </li>
         ))}
       </ul>
-      <div className="sticky top-4  w-full  px-6 ">
-        <div className="w-full h-full top-0 left-0  pt-4">
+      <div className="sticky top-4 w-full px-6">
+        <div className="left-0 top-0 h-full w-full pt-4">
           {data.map((item) =>
             item.id === selectedId ? (
-              <div
-              
-                key={item.id}>
-                <div className="flex px-3 pb-5 justify-center">
-             
-                  <div className="w-full   px-12  flex flex-col justify-center">
-                    <div
-                      className=" text-xl lg:text-2xl font-bold pb-3  ">
-                      {item.content.title}
-                    </div>
+              <div key={item.id}>
+                <div className="flex justify-center px-3 pb-5">
+                  <div className="flex w-full flex-col justify-center px-12">
+                    <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
                     <ul>
                       {item.content.list.map((item, index) => (
-                        <li
-                       
-                          className="text-lg lg:text-xl list-disc list-inside"
-                          key={index}>
+                        <li className="list-inside list-disc text-lg lg:text-xl" key={index}>
                           {item}
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-                <div  className="w-full px-12 pb-5 flex justify-center">
+                <div className="flex w-full justify-center px-12 pb-5">
                   <Image
                     loading={item.content.loading as 'eager' | 'lazy' | undefined}
-                    className="w-full object-cover rounded-lg shadow-2xl"
+                    className="w-full rounded-lg object-cover shadow-2xl"
                     src={item.content.img}
                     alt={item.content.title}
                     width={550}

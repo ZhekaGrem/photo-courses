@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const Feedback = () => {
   return (
     <section className="bg-background_section_8">
-      <div className="container section text-text_2 ">
+      <div className="section container text-text_2">
         <h4>ЧОМУ CREEN?</h4>
         <div className="grid grid-cols-2 gap-12">
           <div>
@@ -17,7 +17,6 @@ const Feedback = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen></iframe>
             </div>
-           
           </div>
           <div>
             <div className="aspect-w-16 aspect-h-9">
@@ -30,7 +29,6 @@ const Feedback = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen></iframe>
             </div>
-           
           </div>
         </div>
       </div>

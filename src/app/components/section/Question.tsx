@@ -4,12 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { a_d_t, a_t_t } from '@/app/assets/animation';
 
-import {section_7} from '@/db/data'
+import { section_7 } from '@/db/data';
 
 type IndexType = number | null;
 
 type HandleClickButton = (index: number) => void;
-
 
 const Question = () => {
   const [openIndex, setOpenIndex] = useState<IndexType>(null);
@@ -18,14 +17,10 @@ const Question = () => {
   };
   return (
     <section className="bg-background_section_7">
-      <div
-       
-        className="container section">
-        <h4  className="  text-text_1 mb-12">
-          {section_7.title}
-        </h4>
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
-          <div className="lg:w-1/2 w-full p-6">
+      <div className="section container">
+        <h4 className="mb-12 text-text_1">{section_7.title}</h4>
+        <div className="flex flex-col items-start gap-12 lg:flex-row">
+          <div className="w-full p-6 lg:w-1/2">
             <ul className="space-y-4">
               {section_7.faqs.map((item, index) => (
                 <motion.li
@@ -33,14 +28,14 @@ const Question = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg shadow-md ">
+                  className="rounded-lg bg-white shadow-md">
                   <button
-                    className="w-full text-left p-6 focus:outline-none"
+                    className="w-full p-6 text-left focus:outline-none"
                     onClick={() => handleButtonClick(index)}>
                     <div className="flex items-center justify-between">
                       <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
                       <svg
-                        className={`min-w-6 h-6 transform transition-transform duration-300 ${
+                        className={`h-6 min-w-6 transform transition-transform duration-300 ${
                           openIndex === index ? 'rotate-180' : ''
                         }`}
                         fill="none"
@@ -73,7 +68,7 @@ const Question = () => {
             </ul>
           </div>
           <div className="w-full lg:w-1/2">
-            <div  className="relative">
+            <div className="relative">
               <Image
                 loading="lazy"
                 className="rounded-lg shadow-2xl"
@@ -82,14 +77,10 @@ const Question = () => {
                 height={860}
                 alt="Фотограф за роботою"
               />
-              <div className="absolute inset-0 bg-gradient-to-t  to-transparent rounded-lg"></div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-t to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8 text-white">
-                <h3 className="text-3xl font-bold mb-2">
-                  {section_7.text1}
-                </h3>
-                <p className="text-xl">
-                  {section_7.text2}
-                </p>
+                <h3 className="mb-2 text-3xl font-bold">{section_7.text1}</h3>
+                <p className="text-xl">{section_7.text2}</p>
               </div>
             </div>
           </div>
