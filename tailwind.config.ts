@@ -18,7 +18,7 @@ const config: Config = {
         background_section_3: '#FF7175',
         background_section_4: '#00B0AB',
         background_section_5: '#FFCE4E',
-        background_section_6: '#EC0B88',
+        background_section_6: '#e4722b',
         background_section_7: '#3D98D3',
         red1: '#FFEB99',
         text_header: '#FFFFFF',

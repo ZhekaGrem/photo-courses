@@ -43,10 +43,10 @@ const Price2 = () => {
     setIsPortalOpen(true);
   };
   return (
-    <section id="price" className="section bg-background_section_6">
-      <div className="container mx-auto">
-        <h4>{section_6.title}</h4>
-        <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2>
+    <section id="price" className="bg-[#e4722b]">
+      <div className="section container mx-auto">
+        <h4 className="mb-12 text-text_1">Вартість навчання</h4>
+        {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
@@ -54,24 +54,24 @@ const Price2 = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="overflow-hidden rounded-2xl bg-white shadow-xl">
+              className="overflow-hidden rounded-2xl bg-white shadow-2xl">
               <div className="p-8">
-                <h3 className="mb-4 text-2xl font-bold text-gray-800">{plan.title}</h3>
-                <p className="mb-4 text-4xl font-bold text-background_section_6">{plan.price}</p>
-                <p className="mb-6 min-h-20 text-gray-600">{plan.description}</p>
+                <h3 className="mb-4 text-2xl font-bold text-[#2b2b2b]">{plan.title}</h3>
+                <p className="mb-4 text-4xl font-bold text-[#e4722b]">{plan.price}</p>
+                <p className="mb-6 min-h-20 text-[#4a4a4a]">{plan.description}</p>
                 <Button
                   text="Замовити"
                   onClick={() => openPortal(plan.title)}
-                  className="w-full rounded-lg bg-background_section_6 px-4 py-3 font-bold text-white transition-colors hover:bg-opacity-90"
+                  className="w-full rounded-lg bg-[#e4722b] px-4 py-3 font-bold text-white transition-colors hover:bg-opacity-90"
                 />
               </div>
-              <div className="bg-gray-50 p-8">
-                <h3 className="mb-4 font-semibold text-gray-800">Що входить:</h3>
+              <div className="bg-[#fff5f0] p-8">
+                <h3 className="mb-4 font-semibold text-[#2b2b2b]">Що входить:</h3>
                 <ul className="space-y-2">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <CheckmarkIcon className="text-background_section_6" />
-                      {feature}
+                      <CheckmarkIcon className="text-[#e4722b]" />
+                      <span className="ml-2 text-[#4a4a4a]">{feature}</span>
                     </li>
                   ))}
                 </ul>
