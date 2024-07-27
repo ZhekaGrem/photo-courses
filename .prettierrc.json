@@ -4,7 +4,6 @@
   "bracketSpacing": true,
   "bracketSameLine": true,
   "embeddedLanguageFormatting": "auto",
-  "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "css",
   "jsxSingleQuote": false,
   "printWidth": 110,
