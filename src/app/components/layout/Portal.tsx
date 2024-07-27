@@ -7,10 +7,10 @@ import Image from 'next/image';
 
 interface PortalProps {
   onClose: () => void;
-  title:string;
+  title: string;
 }
 
-const Portal: React.FC<PortalProps> = ({title,onClose }) => {
+const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
   const portalRoot = typeof document !== 'undefined' ? document.getElementById('portal-root') : null;
   const modalRef = useRef<HTMLDivElement>(null);
 

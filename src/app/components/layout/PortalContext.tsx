@@ -13,12 +13,11 @@ const PortalContext = createContext<PortalContextType | undefined>(undefined);
 export const PortalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isPortalOpen, setIsPortalOpen] = useState(false);
   const [title, setTitle] = useState('');
-  
 
   return (
     <PortalContext.Provider value={{ isPortalOpen, setIsPortalOpen, title, setTitle }}>
       {children}
-      {isPortalOpen && <Portal title={title}  onClose={() => setIsPortalOpen(false)} />}
+      {isPortalOpen && <Portal title={title} onClose={() => setIsPortalOpen(false)} />}
     </PortalContext.Provider>
   );
 };

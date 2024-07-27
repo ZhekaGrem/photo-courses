@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 type ClosePortal = {
   onClose: () => void;
-  title:string;
+  title: string;
 };
 
 const initialFormData = {

@@ -38,18 +38,16 @@ const plans = [
   },
 ];
 
-
-
 const Price2 = () => {
-const { setIsPortalOpen, setTitle } = usePortal() as {
-  setIsPortalOpen: (isOpen: boolean) => void;
-  setTitle: (title: string) => void;
-};
+  const { setIsPortalOpen, setTitle } = usePortal() as {
+    setIsPortalOpen: (isOpen: boolean) => void;
+    setTitle: (title: string) => void;
+  };
 
-const openPortal = (title: string) => {
-  setTitle(title);
-  setIsPortalOpen(true);
-};
+  const openPortal = (title: string) => {
+    setTitle(title);
+    setIsPortalOpen(true);
+  };
   return (
     <section id="price" className="bg-background_section_6">
       <div className="container mx-auto">
