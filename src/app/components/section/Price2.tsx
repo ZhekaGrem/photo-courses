@@ -35,17 +35,15 @@ const plans = [
   },
 ];
 
-
-
 const Price2 = () => {
-const { setIsPortalOpen, setTitle } = usePortal();
+  const { setIsPortalOpen, setTitle } = usePortal();
 
-const openPortal = (title: string) => {
-  setTitle?.(title);
-  setIsPortalOpen(true);
-};
+  const openPortal = (title: string) => {
+    setTitle?.(title);
+    setIsPortalOpen(true);
+  };
   return (
-    <section id="price" className="bg-background_section_6 section">
+    <section id="price" className="section bg-background_section_6">
       <div className="container mx-auto">
         <h4>{section_6.title}</h4>
         <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2>

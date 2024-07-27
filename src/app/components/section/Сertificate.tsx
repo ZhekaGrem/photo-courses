@@ -14,7 +14,7 @@ const Сertificate = () => {
   return (
     <section className="bg-background_section_4">
       <div className="section container flex flex-col items-center lg:flex-row">
-        <div className="mb-12 sm:px-6 lg:mb-0 lg:w-1/2 p-5 sm:p-0">
+        <div className="mb-12 p-5 sm:p-0 sm:px-6 lg:mb-0 lg:w-1/2">
           <a href="https://ukrainianphotographers.com/" target="_blank">
             <h2 className="mb-6 text-4xl font-bold leading-tight text-text_2 lg:text-5xl">{data.text1}</h2>
           </a>
