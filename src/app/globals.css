@@ -105,11 +105,11 @@ h4 {
   background-position: center;
   background-size: cover;
 }
-  .imgBg3 {
-    background-image: url('./assets/img/BG_block.png');
-      background-repeat: no-repeat;
+.imgBg3 {
+  background-image: url('./assets/img/BG_block.png');
+  background-repeat: no-repeat;
   background-position: center;
-  }
+}
 
 @media (min-width: 640px) {
   .container {
@@ -146,15 +146,11 @@ h4 {
 @media (max-width: 767px) {
   .imgBg2 {
     background-image: url('./assets/img/bg-popup.jpg');
-   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
-
-
-
-
 
 h1 {
   font-weight: 900;
