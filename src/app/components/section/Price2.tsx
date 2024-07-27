@@ -8,48 +8,44 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    title: 'Хочу самостійно',
-    price: '4900₴',
-    description: 'Проходьте самостійно навчання, без викладача.',
-    features: ['Доступ до відео матеріалів', 'Доступ до додаткових матеріалів'],
+    title: 'Базовий',
+    price: '3k₴',
+    description: "П'ятигодинний курс на дванадцять уроків ",
+    features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
   },
   {
-    title: 'Стандарт',
-    price: '5900₴',
+    title: 'Досвідчений',
+    price: '5.5k₴',
     description: 'Навчання проходить з викладачем',
     features: [
-      'Доступ до відео матеріалів',
-      'Доступ до додаткових матеріалів',
-      'Достіп до загального телеграм чату учнів(всіх потоків)',
-      'Індивідувальне вирішення питань з викладачем',
+      'Доступ до (5+)годинного курсу на дванадцять уроків',
+      'Розбір домашніх завдань(по розкладу)',
+      'Індивідуальна школа',
     ],
   },
   {
     title: 'Індивідуальний',
-    price: '10900₴',
+    price: '20k₴',
     description: 'Індивідуально з викладачем (до 5 осіб)',
     features: [
-      'Доступ до відео матеріалів',
-      'Доступ до додаткових матеріалів',
-      'Достіп до загального телеграм чату учнів(всіх потоків)',
-      'Індивідувальне вирішення питань з викладачем',
-      'Консультація з викладачем після курсу(пів року)',
+      'Доступ до (5+)годинного курсу на дванадцять уроків',
+      'Розбір домашніх завдань(по розкладу)',
+      'Індивідуальна школа',
     ],
   },
 ];
 
-const Price2 = () => {
-  const { setIsPortalOpen, setTitle } = usePortal() as {
-    setIsPortalOpen: (isOpen: boolean) => void;
-    setTitle: (title: string) => void;
-  };
 
-  const openPortal = (title: string) => {
-    setTitle(title);
-    setIsPortalOpen(true);
-  };
+
+const Price2 = () => {
+const { setIsPortalOpen, setTitle } = usePortal();
+
+const openPortal = (title: string) => {
+  setTitle?.(title);
+  setIsPortalOpen(true);
+};
   return (
-    <section id="price" className="bg-background_section_6">
+    <section id="price" className="bg-background_section_6 section">
       <div className="container mx-auto">
         <h4>{section_6.title}</h4>
         <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2>
