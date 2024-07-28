@@ -45,7 +45,7 @@ const CourseSteps = () => {
   return (
     <section id="price" className="imgBg3 min-h-screen bg-cover bg-center">
       <div className="section container mx-auto text-text_2">
-        <h4 className="drop-shadow-2xl">Роботи учнів </h4>
+        <h4 className="drop-shadow-2xl text-shadow-black">РОБОТИ УЧНІВ </h4>
       </div>
     </section>
   );

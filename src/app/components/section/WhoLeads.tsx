@@ -23,20 +23,20 @@ const WhoLeads = () => {
           <div className="mb-8 lg:mb-0 lg:w-1/2">
             <h4>{data.title}</h4>
             <h3 className="mb-8 px-6 text-3xl font-semibold">{data.name}</h3>
-            <div className="rounded-lg p-6 shadow-lg">
-              <ul className="space-y-4">
-                <li className="flex items-start">
+            <div className="">
+              <ul className="space-y-4 rounded-lg p-6 shadow-none sm:shadow-lg">
+                <li className="flex items-start shadow-lg sm:shadow-none">
                   <CheckmarkIcon />
                   <p className="text-gray-700">{data.text}</p>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start shadow-lg sm:shadow-none">
                   <CheckmarkIcon />
                   <p className="text-gray-700">{data.text2}</p>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="lg:w-1/2 lg:pl-12">
+          <div className="px-6 sm:px-0 lg:w-1/2 lg:pl-12">
             <div className="relative">
               <Image
                 loading="lazy"

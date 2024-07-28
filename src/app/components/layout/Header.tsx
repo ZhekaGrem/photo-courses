@@ -37,9 +37,9 @@ const Header = () => {
             <Image
               loading="lazy"
               className="h-auto w-full"
-              width={80}
+              width={100}
               height={80}
-              src="/logo3.png"
+              src="/logo4.png"
               alt="logo"
             />
           </a>

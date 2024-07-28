@@ -32,7 +32,7 @@ const First = () => {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           <div className="mb-12 lg:mb-0 lg:w-2/3">
-            <h1 className="content-end text-4xl text-text_2 lg:text-5xl">
+            <h1 className="text-4xl text-text_2 lg:text-5xl">
               <span className="inline-block rounded-full bg-background_btn px-4 text-xl font-bold text-white md:hidden lg:text-4xl">
                 ONLINE
               </span>
@@ -58,29 +58,33 @@ const First = () => {
               </p>
             </div>
           </div>
-          <div className="absolute right-0 top-72 lg:right-[21%]">
-            <div className="mt-9 rounded-2xl p-5">
-              <ul className="flex flex-col gap-y-6">
-                {icon.map((item) => (
-                  <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={item.alt}
-                      title={item.alt}
-                      href={item.src}
-                      className="fill-text_2 transition-colors duration-300 hover:fill-background_btn_hover">
-                      {item.svg}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <IconList />
         </div>
       </div>
     </section>
   );
 };
+
+const IconList = () => (
+  <div className="absolute right-0 top-72 lg:right-[21%]">
+    <div className="mt-9 rounded-2xl p-5">
+      <ul className="flex flex-col gap-y-6">
+        {icon.map((item) => (
+          <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={item.alt}
+              title={item.alt}
+              href={item.src}
+              className="fill-text_2 transition-colors duration-300 hover:fill-background_btn_hover">
+              {item.svg}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
 
 export default First;
