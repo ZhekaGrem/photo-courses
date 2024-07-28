@@ -265,7 +265,7 @@ export const section_4 = {
   text2: 'UAPP',
 };
 //05 Section
-export const section_5 = 'ПОРТФОЛІО АВТОРА:';
+export const section_5 = 'ПОРТФОЛІО:';
 
 //06 Section
 export const section_6 = {

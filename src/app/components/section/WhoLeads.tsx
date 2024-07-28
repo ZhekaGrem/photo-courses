@@ -52,7 +52,7 @@ const WhoLeads = () => {
             </div>
           </div>
         </div>
-        <div className="mt-16">
+        <div className="mt-16 px-6 sm:px-0">
           <CarouselMini />
         </div>
       </div>

@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
     title: "Курс фотографії для початківців | Старт вашої кар'єри",
     description:
       'Отримайте навички професійного фотографа за 2 місяці. Практика, теорія, робота з реальними проектами.',

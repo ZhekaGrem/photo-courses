@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
-import { section_6 } from '@/db/data';
 import CheckmarkIcon from '../common/Checkmark';
 import { motion } from 'framer-motion';
 
@@ -27,11 +26,7 @@ const plans = [
     title: 'Індивідуальний',
     price: '20k₴',
     description: 'Індивідуально з викладачем (до 5 осіб)',
-    features: [
-      'Доступ до (5+)годинного курсу на дванадцять уроків',
-      'Розбір домашніх завдань(по розкладу)',
-      'Індивідуальна школа',
-    ],
+    features: ['Доступ до (5+)годинного курсу на дванадцять уроків', 'Розбір домашніх завдань(по розкладу)'],
   },
 ];
 
@@ -47,7 +42,7 @@ const Price2 = () => {
       <div className="section container mx-auto">
         <h4 className="mb-12 text-text_1">Вартість навчання</h4>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.title}

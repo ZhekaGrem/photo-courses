@@ -43,11 +43,9 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <CourseSteps />
       </Suspense>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}>
         <Question />
-      </Suspense>
-
-      {/* <Feedback /> */}
+      </Suspense> */}
     </>
   );
 }
