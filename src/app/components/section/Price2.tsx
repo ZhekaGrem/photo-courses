@@ -36,7 +36,7 @@ const Price2 = () => {
   return (
     <section id="price" className="bg-background_section_6">
       <div className="section container mx-auto">
-        <h4 className="mb-12 text-text_1">ВАРТІСТЬ НАВЧАННЯ</h4>
+        <h4 className="mb-12 text-center text-text_1">ВАРТІСТЬ НАВЧАННЯ</h4>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
         <div className="grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
           {plans.map((plan, index) => (

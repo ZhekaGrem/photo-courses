@@ -44,8 +44,10 @@ const CourseSteps = () => {
   };
   return (
     <section id="price" className="imgBg3 min-h-screen bg-cover bg-center">
-      <div className="section container mx-auto text-text_2">
-        <h4 className="drop-shadow-2xl text-shadow-black">РОБОТИ УЧНІВ </h4>
+      <div className="section container mx-auto flex justify-center text-text_2">
+        <h4 className="justify-center rounded-3xl bg-background_section_6 drop-shadow-2xl text-shadow-orange">
+          РОБОТИ УЧНІВ{' '}
+        </h4>
       </div>
     </section>
   );
