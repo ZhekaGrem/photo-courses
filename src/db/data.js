@@ -340,7 +340,7 @@ export const footer = {
   colum1: {
     title: 'НАШІ КОНТАКТИ:',
     list_link: [
-      { id: 1, text: '+38 (098) 875 84 42', href: 'tel:+380687003020' },
+      { id: 1, text: '+38 (098) 875 84 42', href: 'tel:+380988758442' },
       // { id: 2, text: 'taraskokobi@gmail.com', href: 'malito:taraskokobi@gmail.com' },
       // {
       //   id: 3,
