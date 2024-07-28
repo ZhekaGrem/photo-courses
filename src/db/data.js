@@ -340,13 +340,13 @@ export const footer = {
   colum1: {
     title: 'НАШІ КОНТАКТИ:',
     list_link: [
-      { id: 1, text: '+38 (066) 867 58 78', href: 'tel:+380687003020' },
-      { id: 2, text: 'taraskokobi@gmail.com', href: 'malito:taraskokobi@gmail.com' },
-      {
-        id: 3,
-        text: 'Львів, вул. Героїв УПА, 73Ж',
-        href: 'https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%93%D0%B5%D1%80%D0%BE%D1%97%D0%B2+%D0%A3%D0%9F%D0%90,+73%D0%96,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.8283085,23.9904771,17z/data=!3m1!4b1!4m6!3m5!1s0x473ae74dc8eb395d:0x2b588521aa0fe5a4!8m2!3d49.8283085!4d23.993052!16s%2Fg%2F11vt6mryyx?entry=ttu',
-      },
+      { id: 1, text: '+38 (098) 875 84 42', href: 'tel:+380687003020' },
+      // { id: 2, text: 'taraskokobi@gmail.com', href: 'malito:taraskokobi@gmail.com' },
+      // {
+      //   id: 3,
+      //   text: 'Львів, вул. Героїв УПА, 73Ж',
+      //   href: 'https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%93%D0%B5%D1%80%D0%BE%D1%97%D0%B2+%D0%A3%D0%9F%D0%90,+73%D0%96,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+79000/@49.8283085,23.9904771,17z/data=!3m1!4b1!4m6!3m5!1s0x473ae74dc8eb395d:0x2b588521aa0fe5a4!8m2!3d49.8283085!4d23.993052!16s%2Fg%2F11vt6mryyx?entry=ttu',
+      // },
     ],
   },
   colum2: {
