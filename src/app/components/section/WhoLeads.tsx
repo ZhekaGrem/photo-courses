@@ -24,12 +24,12 @@ const WhoLeads = () => {
             <h4>{data.title}</h4>
             <h3 className="mb-8 px-6 text-3xl font-semibold">{data.name}</h3>
             <div className="">
-              <ul className="space-y-4 rounded-lg p-6 shadow-none sm:shadow-lg">
-                <li className="flex items-start shadow-lg sm:shadow-none">
+              <ul className="space-y-4 rounded-lg p-6 ">
+                <li className="flex items-start ">
                   <CheckmarkIcon />
                   <p className="text-gray-700">{data.text}</p>
                 </li>
-                <li className="flex items-start shadow-lg sm:shadow-none">
+                <li className="flex items-start ">
                   <CheckmarkIcon />
                   <p className="text-gray-700">{data.text2}</p>
                 </li>
@@ -44,7 +44,7 @@ const WhoLeads = () => {
                 width={600}
                 height={600}
                 alt="Олег Сернюк"
-                className="z-0 rounded-lg shadow-2xl"
+                className="z-0 rounded-lg "
               />
               <div className="m- absolute right-2 z-10 flex rounded-lg bg-white p-1 text-text_1 shadow-lg md:-right-6">
                 <p className="p-1 text-lg font-bold">{data.experience}</p>
