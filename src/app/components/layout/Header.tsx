@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { navlink, header } from '@/db/data';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 type NavLinks = {
   id: number;
@@ -24,6 +25,7 @@ const Header = () => {
   const [burgerMenu, setBurgerMenu] = useState(!false);
   const handleBurgerButtonClick = () => {
     setBurgerMenu(!burgerMenu);
+    sendGTMEvent({ event: 'нажав на кнопку', value: 'Перша кнопка зверху' });
   };
 
   return (

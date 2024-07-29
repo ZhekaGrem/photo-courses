@@ -63,7 +63,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <Script id="schema-org" type="application/ld+json">
+      <head>
+        <Script id="schema-org" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Course',
+            name: 'Курс фотографії для початківців',
+            description:
+              'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
+            provider: {
+              '@type': 'Organization',
+              name: 'Школа фотографії',
+              sameAs: 'https://www.screenphotoschool.com.ua',
+            },
+          })}
+        </Script>
+        <GoogleTagManager gtmId={google_tag} />
+      </head>
+      {/* <Script id="schema-org" type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Course',
@@ -77,10 +94,10 @@ export default function RootLayout({
           },
         })}
       </Script>
+      <GoogleTagManager gtmId="GTM-NB39DGF6" /> */}
       {/*
       <GoogleAnalytics gaId={google_id} /> */}
       <body className={montrat.className}>
-        <GoogleTagManager gtmId={google_tag} />
         <PortalProvider>
           <Header />
           <main>{children}</main>
