@@ -9,7 +9,7 @@ const PhonePortfolio = () => {
   return (
     <section id="portfolio" className="pb-0">
       <div className="block text-background_section_5 sm:hidden">
-        <h4 className="absolute z-10 pt-6">{data}</h4>
+        <h2 className="absolute z-10 pt-6">{data}</h2>
         <PhoneCarousel />
       </div>
     </section>

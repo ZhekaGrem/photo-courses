@@ -1,13 +1,21 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import { PortalProvider } from './components/layout/PortalContext';
-import Head from 'next/head';
 import Link from 'next/link';
 import Script from 'next/script';
+// import { GoogleTagManager,GoogleAnalytics } from '@next/third-parties/google';
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
+
+// const google_tag = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID as string;
+// const google_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string;
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+};
 
 export const metadata: Metadata = {
   title: 'Школа фотографії',
@@ -37,6 +45,16 @@ export const metadata: Metadata = {
     images: ['https://example.com/twitter-image.jpg'],
   },
   robots: 'index, follow',
+  alternates: {
+    canonical: 'https://www.screenphotoschool.com.ua/',
+    languages: {
+      uk: 'https://www.screenphotoschool.com.ua/',
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
+  authors: [{ name: 'Oleg Serniuk' }],
 };
 
 export default function RootLayout({
@@ -46,16 +64,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <Head>
-        <meta name="Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою. Старт кар'єри фотографа. Записуйтесь зараз!" />
-        <Link rel="icon" href="/favicon.ico" />
-        <Link rel="alternate" hrefLang="uk" href="https://www.screenphotoschool.com.ua/" />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="index, follow" />
-        <Link rel="canonical" href="https://www.screenphotoschool.com.ua/" />
-        <meta name="author" content="screen" />
-      </Head>
       <Script id="schema-org" type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
@@ -70,6 +78,8 @@ export default function RootLayout({
           },
         })}
       </Script>
+      {/* <GoogleTagManager gtmId={google_tag} />
+      <GoogleAnalytics gaId={google_id} /> */}
       <body className={montrat.className}>
         <PortalProvider>
           <Header />

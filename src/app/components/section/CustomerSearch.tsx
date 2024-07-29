@@ -13,10 +13,10 @@ const CustomerSearch = () => {
             </div>
           </div>
           <div className="lg:w-1/2 lg:pl-16">
-            <h4 className="relative mb-6 text-text_3">
+            <h2 className="relative mb-6 text-text_3">
               ПОШУК КЛІЄНТІВ:
               <span className="absolute -left-8 top-0 h-full w-2 bg-yellow-400"></span>
-            </h4>
+            </h2>
             <p className="mb-8 text-2xl font-bold text-text_3">
               ПІСЛЯ КУРСУ ВИ ОСВОЇТЕ ПРОФЕСІЮ ФОТОГРАФА ВІД ВИБОРУ ФОТОАПАРАТУ І ДО ПОШУКУ ПЕРШИХ КЛІЄНТІВ
             </p>

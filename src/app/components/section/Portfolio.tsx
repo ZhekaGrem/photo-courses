@@ -9,7 +9,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="hidden bg-background_section_5 sm:block">
       <div className="section text-text_1">
-        <h4 className="container">{data}</h4>
+        <h2 className="container">{data}</h2>
         <Carousel />
       </div>
     </section>

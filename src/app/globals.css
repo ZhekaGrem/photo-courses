@@ -92,7 +92,7 @@ section:last-child {
   padding-bottom: 0px;
 }
 
-h4 {
+h2 {
   font-size: 2rem;
   line-height: 1.1334;
   font-weight: 700;
@@ -116,7 +116,7 @@ h4 {
   .container {
     max-width: 640px;
   }
-  h4 {
+  h2 {
     font-size: 3.75rem;
     line-height: 1.1334;
     font-weight: 900;

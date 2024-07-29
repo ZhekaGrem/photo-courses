@@ -16,7 +16,7 @@ const Сertificate = () => {
       <div className="section container flex flex-col items-center lg:flex-row">
         <div className="mb-12 px-6 sm:p-0 lg:mb-0 lg:w-1/2">
           <a href="https://ukrainianphotographers.com/" target="_blank">
-            <h2 className="mb-6 text-3xl font-bold leading-tight text-text_2 lg:text-5xl">{data.text1}</h2>
+            <h3 className="mb-6 text-3xl font-bold leading-tight text-text_2 lg:text-5xl">{data.text1}</h3>
           </a>
           <div className="relative">
             <a href="https://ukrainianphotographers.com/" target="_blank">

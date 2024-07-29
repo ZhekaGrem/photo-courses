@@ -18,7 +18,7 @@ const Question = () => {
   return (
     <section className="bg-background_section_7">
       <div className="section container">
-        <h4 className="mb-12 text-text_1">{section_7.title}</h4>
+        <h2 className="mb-12 text-text_1">{section_7.title}</h2>
         <div className="flex flex-col items-start gap-12 lg:flex-row">
           <div className="w-full p-6 lg:w-1/2">
             <ul className="space-y-4">

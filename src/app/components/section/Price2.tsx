@@ -8,19 +8,19 @@ import { motion } from 'framer-motion';
 const plans = [
   {
     title: 'Базовий',
-    price: '3k₴',
+    price: '3000₴',
     description: "П'ятигодинний курс на дванадцять уроків ",
     features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
   },
   {
     title: 'Досвідчений',
-    price: '5.5k₴',
+    price: '5.500₴',
     description: 'Навчання проходить з викладачем',
     features: ['Доступ до (5+)годинного курсу на дванадцять уроків', 'Розбір домашніх завдань(по розкладу)'],
   },
   {
     title: 'Індивідуальний',
-    price: '20k₴',
+    price: '500$',
     description: 'Індивідуально з викладачем (до 5 осіб)',
     features: ['Доступ до (5+)годинного курсу на дванадцять уроків', 'Розбір домашніх завдань(по розкладу)'],
   },
@@ -34,11 +34,11 @@ const Price2 = () => {
     setIsPortalOpen(true);
   };
   return (
-    <section id="price" className="bg-background_section_6">
+    <section className="bg-background_section_6">
       <div className="section container mx-auto">
-        <h4 className="mb-12 text-center text-text_1">ВАРТІСТЬ НАВЧАННЯ</h4>
+        <h2 className="mb-12 text-center text-text_1">ВАРТІСТЬ НАВЧАННЯ</h2>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
-        <div className="grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
+        <div id="price" className="grid grid-cols-1 gap-8 px-6 md:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.title}
@@ -48,7 +48,7 @@ const Price2 = () => {
               className="overflow-hidden rounded-2xl bg-white shadow-2xl">
               <div className="p-8">
                 <h3 className="mb-4 text-2xl font-bold text-text_1">{plan.title}</h3>
-                <p className="mb-4 text-4xl font-bold">{plan.price}</p>
+                <h4 className="mb-4 text-4xl font-bold">{plan.price}</h4>
                 <p className="mb-6 min-h-20 text-[#4a4a4a]">{plan.description}</p>
                 <Button
                   text="Замовити"

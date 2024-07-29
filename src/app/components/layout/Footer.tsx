@@ -69,7 +69,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="bg-gray-700">
+      {/* <div className="bg-gray-700">
         <div className="container px-4 py-6 text-text_2 md:flex md:items-center md:justify-between">
           <span className="text-sm sm:text-center">
             <Link href="terms_of_service">{footer.horizontal_col.text_link}</Link>
@@ -81,7 +81,7 @@ const Footer = () => {
             <a href={footer.horizontal_col.telephone}>{footer.horizontal_col.telephone_text}</a>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };

@@ -6,7 +6,7 @@ export const header = {
   btndata: 'ЗАПИСАТИСЬ НА КУРС',
 };
 export const navlink = [
-  { id: 1, name: 'ПРОГРАММА', href: '/#program' },
+  { id: 1, name: 'ПРОГРАМА', href: '/#program' },
   { id: 2, name: 'ПРО АВТОРА', href: '/#author' },
   { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
 ];
@@ -427,7 +427,6 @@ export const porfoliocarousel = [
   { id: 8, link: '/carouselportfolio/8.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 9, link: '/carouselportfolio/9.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 10, link: '/carouselportfolio/10.jpg', alt: 'ОЛЕГ СЕРНЮК' },
-  { id: 12, link: '/carouselportfolio/12.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 13, link: '/carouselportfolio/13.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 14, link: '/carouselportfolio/14.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 15, link: '/carouselportfolio/15.jpg', alt: 'ОЛЕГ СЕРНЮК' },

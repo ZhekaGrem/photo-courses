@@ -63,24 +63,28 @@ function MiniFormFooter() {
   return (
     <>
       <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
-        <label className="mb-6" htmlFor="">
+        <label className="mb-6" htmlFor="name">
           <input
             type="text"
             value={formData.name}
             onChange={handleChange}
             placeholder={`Ваше ім'я`}
             name="name"
+            id="name"
             required
+            autoComplete="name"
             className="w-full rounded-md bg-[#f2f3f7] p-3"
           />
         </label>
-        <label className="mb-6" htmlFor="">
+        <label className="mb-6" htmlFor="tel">
           <input
             type="tel"
             placeholder="+380"
             value={formData.tel}
             onChange={handleChange}
             name="tel"
+            id="tel"
+            autoComplete="tel"
             required
             className="w-full rounded-md bg-[#f2f3f7] p-3"
           />

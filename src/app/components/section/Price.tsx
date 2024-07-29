@@ -10,7 +10,7 @@ const Price = () => {
   return (
     <section id="price" className="bg-background_section_6">
       <div className="section container text-text_1">
-        <h4>{section_6.title}</h4>
+        <h2>{section_6.title}</h2>
 
         <div className="mx-auto p-6">
           <div className="mb-8 flex items-center justify-between">
@@ -44,7 +44,7 @@ const Price = () => {
         </div>
 
         {/* <div className="mt-12 text-center">
-          <h4 className="text-2xl font-bold mb-4 text-text_1">{section_6.title_reviews}</h4>
+          <h2 className="text-2xl font-bold mb-4 text-text_1">{section_6.title_reviews}</h2>
           <ul className="flex justify-center space-x-4">
             {section_6.reviews.map((item, index) => (
               <li key={index} className=" p-4 rounded-lg shadow max-w-xs">

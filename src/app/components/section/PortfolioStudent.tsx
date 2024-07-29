@@ -45,7 +45,7 @@ const PortfolioStudent = () => {
   return (
     <section id="price" className="imgBg3 min-h-screen bg-cover bg-center">
       <div className="section container mx-auto flex justify-center text-text_2">
-        <h4 className="justify-center rounded-3xl drop-shadow-2xl text-shadow-black">РОБОТИ УЧНІВ </h4>
+        <h2 className="justify-center rounded-3xl drop-shadow-2xl text-shadow-black">РОБОТИ УЧНІВ </h2>
       </div>
     </section>
   );
