@@ -43,9 +43,7 @@ const Price2 = () => {
   return (
     <section className="bg-[#e4722b]">
       <div className="sm:contain section container mx-auto">
-        <h2 className="mb-12 text-center text-text_2 drop-shadow-2xl text-shadow-black2">
-          ВАРТІСТЬ НАВЧАННЯ
-        </h2>
+        <h2 className="mb-12 text-center text-text_2">ВАРТІСТЬ НАВЧАННЯ</h2>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
 
         <div
@@ -70,6 +68,7 @@ const Price2 = () => {
                   />
                 </div>
               </div>
+
               <div className="bg-[#fff5f0] p-8">
                 <h3 className="mb-4 font-semibold text-text_1">Що входить:</h3>
                 <ul className="space-y-2">
