@@ -107,7 +107,7 @@ h2 {
   transition: background-image 0.5s ease-in-out;
 }
 .imgBg3 {
-  background-image: url('./assets/img/BG_block.png');
+  background-image: url('./assets/img/BG_block2.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
