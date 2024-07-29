@@ -47,7 +47,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
                     <ul className=" ">
                       {item.content.list.map((item, index) => (
-                        <li className="list-inside list-disc text-lg lg:text-xl" key={index}>
+                        <li className="list-inside list-disc pb-2 text-lg lg:text-xl" key={index}>
                           {item}
                         </li>
                       ))}

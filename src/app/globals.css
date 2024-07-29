@@ -106,12 +106,12 @@ h2 {
   background-size: cover;
   transition: background-image 0.5s ease-in-out;
 }
-.imgBg3 {
+/* .imgBg3 {
   background-image: url('./assets/img/BG_block2.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
+} */
 
 @media (min-width: 640px) {
   .container {

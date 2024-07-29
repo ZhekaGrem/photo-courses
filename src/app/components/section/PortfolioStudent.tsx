@@ -1,10 +1,7 @@
 'use client';
+import Image from 'next/image';
 import React from 'react';
-import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
-import { section_6 } from '@/db/data';
-import CheckmarkIcon from '../common/Checkmark';
-import { motion } from 'framer-motion';
 
 const plans = [
   {
@@ -43,12 +40,26 @@ const PortfolioStudent = () => {
     setIsPortalOpen(true);
   };
   return (
-    <section id="price" className="imgBg3 min-h-screen bg-cover bg-center pb-0">
-      <div className="section container mx-auto flex justify-center text-text_2">
+    <section className="relative">
+      <div className="section absolute z-10 mx-auto flex w-full justify-center text-text_2">
         <h2 className="justify-center rounded-3xl drop-shadow-2xl text-shadow-black">РОБОТИ УЧНІВ </h2>
       </div>
+      <FullScreenImage />
     </section>
   );
 };
 
 export default PortfolioStudent;
+
+const FullScreenImage = () => (
+  <div className="relative h-screen w-full">
+    <Image
+      loading="lazy"
+      src="/BG_block2.png"
+      alt="PortfolioStudent"
+      layout="fill"
+      objectFit="cover"
+      quality={100}
+    />
+  </div>
+);
