@@ -4,12 +4,11 @@ import './globals.css';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import { PortalProvider } from './components/layout/PortalContext';
-import Link from 'next/link';
 import Script from 'next/script';
-// import { GoogleTagManager,GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
 
-// const google_tag = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID as string;
+const google_tag = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID as string;
 // const google_id = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string;
 
 export const viewport: Viewport = {
@@ -78,9 +77,10 @@ export default function RootLayout({
           },
         })}
       </Script>
-      {/* <GoogleTagManager gtmId={google_tag} />
+      {/*
       <GoogleAnalytics gaId={google_id} /> */}
       <body className={montrat.className}>
+        <GoogleTagManager gtmId={google_tag} />
         <PortalProvider>
           <Header />
           <main>{children}</main>

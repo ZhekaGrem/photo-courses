@@ -1,8 +1,6 @@
 //Header
 
 export const header = {
-  startdata1: 'СТАРТ НАСТУПНОГО',
-  startdata2: 'ПОТОКУ: 24.07.2023',
   btndata: 'ЗАПИСАТИСЬ НА КУРС',
 };
 export const navlink = [
@@ -429,5 +427,5 @@ export const porfoliocarousel = [
   { id: 10, link: '/carouselportfolio/10.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 13, link: '/carouselportfolio/13.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 14, link: '/carouselportfolio/14.jpg', alt: 'ОЛЕГ СЕРНЮК' },
-  { id: 15, link: '/carouselportfolio/15.jpg', alt: 'ОЛЕГ СЕРНЮК' },
+  // { id: 15, link: '/carouselportfolio/15.jpg', alt: 'ОЛЕГ СЕРНЮК' },
 ];

@@ -13,8 +13,6 @@ type NavLinks = {
 };
 
 type InfoType = {
-  startdata1: string;
-  startdata2: string;
   btndata: string;
 };
 
@@ -44,11 +42,6 @@ const Header = () => {
             />
           </a>
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
-            <div className="mr-3 hidden text-xs md:block">
-              {text.startdata1}
-              <br />
-              {text.startdata2}
-            </div>
             <Button
               onClick={() => setIsPortalOpen(true)}
               className="hidden bg-background_btn_burger px-6 py-2 sm:block"
