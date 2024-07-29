@@ -52,7 +52,6 @@ const Header = () => {
             <button
               type="button"
               className="kinline-flex h-10 w-10 items-center justify-center rounded-lg bg-transparent p-3 text-xs focus:outline-none focus:ring-2 lg:hidden"
-          
               onClick={handleBurgerButtonClick}>
               <span className="sr-only">Відкрити меню</span>
               <svg
@@ -74,8 +73,7 @@ const Header = () => {
           <div
             className={`w-full items-center justify-between lg:order-1 lg:flex lg:w-auto ${
               burgerMenu ? 'hidden' : 'bloc text-center text-3xl'
-            }`}
-            >
+            }`}>
             <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 font-bold lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:p-0 rtl:space-x-reverse">
               {dataLink.map((list) => (
                 <li key={list.id} className={` ${burgerMenu ? '' : 'p-6'}`}>
