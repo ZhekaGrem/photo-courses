@@ -19,7 +19,7 @@ export const section_1 = {
 
 //02 Section
 
-export const title_2 = 'ПРОГРАМА КУРСУ:';
+export const title_2 = 'ПРОГРАМА КУРСУ "ШВИДКИЙ СТАРТ": ';
 export const data_section_2 = [
   {
     id: 0,
