@@ -44,9 +44,9 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
             item.id === selectedId ? (
               <div key={item.id}>
                 <div className="flex justify-center px-3 pb-5">
-                  <div className="flex w-full flex-col justify-center px-12">
+                  <div className="  px-12">
                     <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
-                    <ul>
+                    <ul className="flex w-full flex-col justify-center px-12 pb-5">
                       {item.content.list.map((item, index) => (
                         <li className="list-inside list-disc text-lg lg:text-xl" key={index}>
                           {item}
@@ -58,7 +58,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                 <div className="flex w-full justify-center px-12 pb-5">
                   <Image
                     loading={item.content.loading as 'eager' | 'lazy' | undefined}
-                    className="w-full rounded-lg object-cover shadow-2xl"
+                    className="w-auto rounded-lg object-cover shadow-2xl"
                     src={item.content.img}
                     alt={item.content.title}
                     width={550}

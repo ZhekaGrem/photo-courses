@@ -43,7 +43,7 @@ const PortfolioStudent = () => {
     setIsPortalOpen(true);
   };
   return (
-    <section id="price" className="imgBg3 min-h-screen bg-cover bg-center">
+    <section id="price" className="imgBg3 min-h-screen bg-cover bg-center pb-0">
       <div className="section container mx-auto flex justify-center text-text_2">
         <h2 className="justify-center rounded-3xl drop-shadow-2xl text-shadow-black">РОБОТИ УЧНІВ </h2>
       </div>

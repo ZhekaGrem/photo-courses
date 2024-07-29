@@ -7,9 +7,9 @@ const data: string = section_5;
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="hidden bg-background_section_5 sm:block">
-      <div className="section text-text_1">
-        <h2 className="container">{data}</h2>
+    <section id="portfolio" className="hidden p-0 sm:block">
+      <div className="flex justify-center text-text_2">
+        <h2 className="absolute z-10 justify-center rounded-3xl drop-shadow-2xl text-shadow-black pt-6">{data}</h2>
         <Carousel />
       </div>
     </section>
