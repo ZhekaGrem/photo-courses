@@ -37,12 +37,12 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
           </li>
         ))}
       </ul>
-      <div className="sticky top-4 w-full px-6">
+      <div className="sticky top-4 w-full px-24">
         <div className="left-0 top-0 h-full w-full pt-4">
           {data.map((item) =>
             item.id === selectedId ? (
               <div key={item.id}>
-                <div className="px-14 pb-5">
+                <div className=" pb-5">
                   <div>
                     <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
                     <ul className=" ">
@@ -54,9 +54,9 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     </ul>
                   </div>
                 </div>
-                <div className="px-16 pb-5">
+                <div >
                   <Image
-                    className="h-full w-auto rounded-lg object-cover shadow-2xl"
+                    className="h-full  rounded-lg object-cover shadow-2xl"
                     src={item.content.img}
                     alt={item.content.title}
                     width={640}

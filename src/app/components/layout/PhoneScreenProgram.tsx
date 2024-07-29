@@ -104,12 +104,12 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                 </div>
                                 <div className="flex w-full justify-center sm:px-12 sm:pb-5">
                                   <Image
-                                    loading={item.content.loading as 'eager' | 'lazy' | undefined}
                                     className="h-auto rounded-lg object-cover shadow-2xl"
                                     src={item.content.img}
                                     alt={item.content.title}
-                                    width={550}
-                                    height={350}
+                                    width={640}
+                                    height={360}
+                                    priority={true}
                                   />
                                 </div>
                               </motion.div>
