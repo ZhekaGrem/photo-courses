@@ -49,6 +49,7 @@ export default function Carousel() {
                 height={400}
                 src={item.link}
                 alt={item.alt}
+                priority={true}
               />
             </li>
           ))}

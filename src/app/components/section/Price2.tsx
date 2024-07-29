@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    title: 'Відеокурс "PRO світло"',
+    title: '"PRO світло"',
     price: '3000₴',
     coming: 'Незабаром',
     description: "П'ятигодинний курс на дванадцять уроків ",
@@ -68,7 +68,6 @@ const Price2 = () => {
                   />
                 </div>
               </div>
-
               <div className="bg-[#fff5f0] p-8">
                 <h3 className="mb-4 font-semibold text-text_1">Що входить:</h3>
                 <ul className="space-y-2">
