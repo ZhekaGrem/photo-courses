@@ -8,7 +8,7 @@ const Сertificate = lazy(() => import('@/app/components/section/Сertificate'))
 const CustomerSearch = lazy(() => import('@/app/components/section/CustomerSearch'));
 const Portfolio = lazy(() => import('@/app/components/section/Portfolio'));
 const PhonePortfolio = lazy(() => import('@/app/components/section/PhonePortfolio'));
-const CourseSteps = lazy(() => import('@/app/components/section/CourseSteps'));
+const PortfolioStudent = lazy(() => import('@/app/components/section/PortfolioStudent'));
 const Price = lazy(() => import('@/app/components/section/Price'));
 const Price2 = lazy(() => import('@/app/components/section/Price2'));
 const Question = lazy(() => import('@/app/components/section/Question'));
@@ -16,8 +16,12 @@ const Question = lazy(() => import('@/app/components/section/Question'));
 export default function Home() {
   return (
     <>
-      <First />
-      <CourseProgram />
+      <Suspense fallback={<Loading />}>
+        <First />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <CourseProgram />
+      </Suspense>
       <Suspense fallback={<Loading />}>
         <WhoLeads />
       </Suspense>
@@ -41,7 +45,7 @@ export default function Home() {
         <Price2 />
       </Suspense>
       <Suspense fallback={<Loading />}>
-        <CourseSteps />
+        <PortfolioStudent />
       </Suspense>
       {/* <Suspense fallback={<Loading />}>
         <Question />

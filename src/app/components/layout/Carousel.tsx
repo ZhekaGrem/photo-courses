@@ -15,7 +15,7 @@ type ImgType = {
 
 const data: ImgType[] = porfoliocarousel;
 
-export default function Carousel() {
+const Carousel = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const [ref, instanceRef] = useKeenSlider<HTMLUListElement>({
@@ -78,7 +78,7 @@ export default function Carousel() {
       )}
     </>
   );
-}
+};
 
 function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
   return (
@@ -92,3 +92,5 @@ function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
     </svg>
   );
 }
+
+export default Carousel;

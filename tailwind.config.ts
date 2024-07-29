@@ -36,7 +36,7 @@ const config: Config = {
       textShadow: {
         default: '2px 2px 4px rgba(0, 0, 0, 0.6)',
         white: '0.2px 0.2px 0.5px white, 0 0 0.5em white, 0 0 0.2em white',
-        black: '0.2px 0.2px 0.5px black, 0 0 0.5em black, 0 0 0.2em black',
+        black: '0.5px 0.5px 1px black, 0 0 1em black, 0 0 0.5em black',
         orange: '0.5px 0.5px 1px #e4722b, 0 0 1em black, 0 0 0.5em #e4722b',
       },
     },
