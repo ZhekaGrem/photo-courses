@@ -33,6 +33,9 @@ export default function Carousel() {
         slides: { perView: 4, spacing: 0 },
       },
       '(max-width: 1023px)': {
+        slides: { perView: 3, spacing: 0 },
+      },
+      '(max-width: 800px)': {
         slides: { perView: 2, spacing: 0 },
       },
     },
@@ -44,9 +47,9 @@ export default function Carousel() {
           {data.map((item) => (
             <li key={item.id} className="keen-slider__slide w-full">
               <Image
-                className="h-full w-auto object-cover shadow-2xl"
-                width={400}
-                height={400}
+                className="h-full w-full object-cover shadow-2xl"
+                width={800}
+                height={640}
                 src={item.link}
                 alt={item.alt}
                 priority={true}

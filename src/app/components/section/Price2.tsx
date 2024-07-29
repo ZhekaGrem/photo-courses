@@ -44,13 +44,13 @@ const Price2 = () => {
   };
   return (
     <section className="bg-[#e4722b]">
-      <div className="sm:contain section container mx-auto">
+      <div className="section container mx-auto">
         <h2 className="mb-12 text-center text-text_2">ВАРТІСТЬ НАВЧАННЯ</h2>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
 
         <div
           id="price"
-          className="https://www.tailwindhelper.com/ grid grid-cols-1 gap-8 px-6 md:grid-cols-3 lg:gap-12">
+          className="https://www.tailwindhelper.com/ grid grid-cols-1 gap-8 px-6 xl:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.title}
@@ -61,7 +61,7 @@ const Price2 = () => {
               <div className="p-8">
                 <h3 className="mb-4 text-2xl font-bold text-text_1">{plan.title}</h3>
                 <h4 className="mb-4 text-4xl font-bold">{plan.price}</h4>
-                <p className="mb-6 min-h-20 text-[#4a4a4a]">{plan.description}</p>
+                <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.description}</p>
                 <div className="text-center">
                   <Button
                     text="Замовити"
