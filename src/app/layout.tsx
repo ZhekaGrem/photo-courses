@@ -78,7 +78,7 @@ export default function RootLayout({
             },
           })}
         </Script>
-        <GoogleTagManager gtmId={google_tag} />
+        <GoogleTagManager gtmId="GTM-NB39DGF6" />
       </head>
       {/* <Script id="schema-org" type="application/ld+json">
         {JSON.stringify({
