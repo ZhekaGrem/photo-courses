@@ -64,7 +64,7 @@ function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
   return (
     <svg
       onClick={props.onClick}
-      className={`arrow max-w-6 fill-background_section_5 shadow-xl transition-transform duration-300 active:scale-150 ${
+      className={`arrow max-w-6 fill-text_2 shadow-xl transition-transform duration-300 active:scale-150 ${
         props.left ? 'arrow--left' : 'arrow--right'
       } `}
       xmlns="http://www.w3.org/2000/svg"

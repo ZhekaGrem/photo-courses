@@ -34,7 +34,6 @@ export const data_section_2 = [
         'Практичні поради з використання техніки',
       ],
       img: '/programgroup/1.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -51,7 +50,6 @@ export const data_section_2 = [
         'Практикум: створення вражаючих фото з різною експозицією',
       ],
       img: '/programgroup/2.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -68,7 +66,6 @@ export const data_section_2 = [
         'Майстер-клас: зйомка в складних світлових умовах',
       ],
       img: '/programgroup/3.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -85,7 +82,6 @@ export const data_section_2 = [
         'Практикум: створення виразних композицій',
       ],
       img: '/programgroup/4.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -102,7 +98,6 @@ export const data_section_2 = [
         'Майстер-клас: робота з кольором у різних жанрах',
       ],
       img: '/programgroup/5.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -119,7 +114,6 @@ export const data_section_2 = [
         'Практикум: створення професійних портретів',
       ],
       img: '/programgroup/6.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -136,7 +130,6 @@ export const data_section_2 = [
         'Практикум: зйомка для вашого першого портфоліо',
       ],
       img: '/programgroup/7.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -153,7 +146,6 @@ export const data_section_2 = [
         'Практикум: проведення повноцінної фотосесії в студії',
       ],
       img: '/programgroup/8.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -170,7 +162,6 @@ export const data_section_2 = [
         'Майстер-клас: проведення професійної фотосесії з командою',
       ],
       img: '/programgroup/9.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -187,7 +178,6 @@ export const data_section_2 = [
         'Практикум: обробка різних типів фотографій',
       ],
       img: '/programgroup/10.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -204,24 +194,22 @@ export const data_section_2 = [
         'Майстер-клас: створення першої рекламної кампанії',
       ],
       img: '/programgroup/11.jpeg',
-      loading: 'eager',
     },
   },
   {
     id: 11,
-    title: ' АНАЛІЗ РОБІТ',
+    title: ' ТАРГЕТ',
     content: {
-      title: 'РОЗБІР ВАШИХ РОБІТ ТА ДОМАШНІХ ЗАВДАНЬ',
+      title: 'ТАРГЕТ',
       title2: 'Програма уроку',
       list: [
-        'Індивідуальний аналіз робіт кожного студента',
-        'Виявлення сильних сторін та зон для росту',
-        'Практичні поради щодо вдосконалення техніки',
-        'Обговорення творчого підходу та стилю',
-        'Планування подальшого розвитку в фотографії',
+        'Запуск таргетованої реклами',
+        'Створення бізнес сторінки',
+        'Створення бізнес менеджера',
+        'Створення рекламного кабінету',
+        'Запуск реклами',
       ],
       img: '/programgroup/12.jpeg',
-      loading: 'eager',
     },
   },
   {
@@ -238,7 +226,6 @@ export const data_section_2 = [
         'Натхнення та мотивація для подальшого росту',
       ],
       img: '/programgroup/13.jpg',
-      loading: 'eager',
     },
   },
 ];
