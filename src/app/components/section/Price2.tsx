@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const plans = [
   {
-    title: '"PRO світло"',
+    title: 'Відеокурс "PRO світло"',
     price: '3000₴',
     coming: 'Незабаром',
     description: "П'ятигодинний курс на дванадцять уроків ",

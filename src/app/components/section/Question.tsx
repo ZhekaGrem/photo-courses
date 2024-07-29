@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { a_d_t, a_t_t } from '@/app/assets/animation';
 
 import { section_7 } from '@/db/data';
 

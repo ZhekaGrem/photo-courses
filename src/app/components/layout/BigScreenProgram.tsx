@@ -63,6 +63,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     alt={item.content.title}
                     width={550}
                     height={350}
+                    priority={true}
                   />
                 </div>
               </div>
