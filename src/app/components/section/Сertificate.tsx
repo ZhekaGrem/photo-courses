@@ -29,9 +29,9 @@ const Сertificate = () => {
         <div className="flex justify-center px-6 sm:p-0 lg:w-1/2">
           <div className="w-full overflow-hidden border-8">
             <Image
-              className="m-auto h-auto object-cover"
+              className="m-auto h-auto rounded-lg object-cover"
               loading="lazy"
-              src="/Rectangle-e1676897018833.png"
+              src="/certifies.jpg"
               width={520}
               height={465}
               alt="Сертифікат UAPP"

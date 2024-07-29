@@ -4,11 +4,13 @@ import './globals.css';
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import { PortalProvider } from './components/layout/PortalContext';
-
+import Head from 'next/head';
+import Link from 'next/link';
+import Script from 'next/script';
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
-  title: 'Професійний курс фотографії для початківців | Стань експертом',
+  title: 'Школа фотографії',
   description:
     "Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою. Старт кар'єри фотографа. Записуйтесь зараз!",
   keywords:
@@ -44,14 +46,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
+      <Head>
+        <meta name="Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою. Старт кар'єри фотографа. Записуйтесь зараз!" />
+        <Link rel="icon" href="/favicon.ico" />
+        <Link rel="alternate" hrefLang="uk" href="https://www.screenphotoschool.com.ua/" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://example.com" />
+        <Link rel="canonical" href="https://www.screenphotoschool.com.ua/" />
         <meta name="author" content="screen" />
-      </head>
+        <Script id="schema-org" type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Course',
+            name: 'Курс фотографії для початківців',
+            description:
+              'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
+            provider: {
+              '@type': 'Organization',
+              name: 'Школа фотографії',
+              sameAs: 'https://example.com',
+            },
+          })}
+        </Script>
+      </Head>
       <body className={montrat.className}>
         <PortalProvider>
           <Header />
