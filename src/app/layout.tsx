@@ -55,21 +55,21 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <Link rel="canonical" href="https://www.screenphotoschool.com.ua/" />
         <meta name="author" content="screen" />
-        <Script id="schema-org" type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Course',
-            name: 'Курс фотографії для початківців',
-            description:
-              'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
-            provider: {
-              '@type': 'Organization',
-              name: 'Школа фотографії',
-              sameAs: 'https://example.com',
-            },
-          })}
-        </Script>
       </Head>
+      <Script id="schema-org" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Course',
+          name: 'Курс фотографії для початківців',
+          description:
+            'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
+          provider: {
+            '@type': 'Organization',
+            name: 'Школа фотографії',
+            sameAs: 'https://www.screenphotoschool.com.ua',
+          },
+        })}
+      </Script>
       <body className={montrat.className}>
         <PortalProvider>
           <Header />
