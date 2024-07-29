@@ -6,13 +6,13 @@ import CheckmarkIcon from '../common/Checkmark';
 import { motion } from 'framer-motion';
 
 const plans = [
-  // {
-  //   title: '"PRO світло"',
-  //   price: '3000₴',
-  //   coming:'Незабаром',
-  //   description: "П'ятигодинний курс на дванадцять уроків ",
-  //   features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
-  // },
+  {
+    title: 'Відеокурс "PRO світло"',
+    price: '3000₴',
+    coming: 'Незабаром',
+    description: "П'ятигодинний курс на дванадцять уроків ",
+    features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
+  },
   {
     title: 'Відеокурс "Швидкий Старт"',
     price: '3000₴',
@@ -43,7 +43,9 @@ const Price2 = () => {
   return (
     <section className="bg-[#e4722b]">
       <div className="sm:contain section container mx-auto">
-        <h2 className="mb-12 text-center text-text_1">ВАРТІСТЬ НАВЧАННЯ</h2>
+        <h2 className="mb-12 text-center text-text_2 drop-shadow-2xl text-shadow-black2">
+          ВАРТІСТЬ НАВЧАННЯ
+        </h2>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
 
         <div

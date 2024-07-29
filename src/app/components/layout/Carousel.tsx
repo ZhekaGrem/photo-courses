@@ -15,7 +15,7 @@ type ImgType = {
 
 const data: ImgType[] = porfoliocarousel;
 
-const Carousel = () => {
+export default function Carousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const [ref, instanceRef] = useKeenSlider<HTMLUListElement>({
@@ -40,12 +40,11 @@ const Carousel = () => {
   return (
     <>
       <div className="relative overflow-hidden">
-        <ul ref={ref} className="keen-slider">
+        <ul ref={ref} className="keen-slider min-h-96">
           {data.map((item) => (
             <li key={item.id} className="keen-slider__slide w-full">
               <Image
-                loading="lazy"
-                className="h-full w-full object-cover shadow-2xl"
+                className="h-full w-auto object-cover shadow-2xl"
                 width={400}
                 height={400}
                 src={item.link}
@@ -64,7 +63,7 @@ const Carousel = () => {
       </div>
     </>
   );
-};
+}
 
 function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
   return (
@@ -78,5 +77,3 @@ function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
     </svg>
   );
 }
-
-export default Carousel;

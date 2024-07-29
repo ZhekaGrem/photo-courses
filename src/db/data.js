@@ -417,7 +417,6 @@ export const minicarousel = [
 export const porfoliocarousel = [
   { id: 3, link: '/carouselportfolio/3.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 1, link: '/carouselportfolio/1.jpg', alt: 'ОЛЕГ СЕРНЮК' },
-  // { id: 2, link: '/carouselportfolio/2.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 5, link: '/carouselportfolio/5.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 4, link: '/carouselportfolio/4.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 6, link: '/carouselportfolio/6.jpg', alt: 'ОЛЕГ СЕРНЮК' },
@@ -427,5 +426,4 @@ export const porfoliocarousel = [
   { id: 10, link: '/carouselportfolio/10.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 13, link: '/carouselportfolio/13.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 14, link: '/carouselportfolio/14.jpg', alt: 'ОЛЕГ СЕРНЮК' },
-  // { id: 15, link: '/carouselportfolio/15.jpg', alt: 'ОЛЕГ СЕРНЮК' },
 ];

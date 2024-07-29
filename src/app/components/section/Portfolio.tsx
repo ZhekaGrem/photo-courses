@@ -1,7 +1,8 @@
 'use client';
-import React from 'react';
-import Carousel from '../layout/Carousel';
+import React, { lazy, Suspense } from 'react';
+import Loading from '@/app/loading';
 import { section_5 } from '@/db/data';
+const Carousel = lazy(() => import('@/app/components/layout/Carousel'));
 
 const data: string = section_5;
 
@@ -12,7 +13,9 @@ const Portfolio = () => {
         <h2 className="absolute z-10 justify-center rounded-3xl pt-6 drop-shadow-2xl text-shadow-black">
           {data}
         </h2>
-        <Carousel />
+        <Suspense fallback={<Loading />}>
+          <Carousel />
+        </Suspense>
       </div>
     </section>
   );

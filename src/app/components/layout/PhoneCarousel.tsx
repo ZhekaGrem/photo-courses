@@ -15,7 +15,7 @@ type ImgType = {
 
 const data: ImgType[] = porfoliocarousel;
 
-const PhoneCarousel = () => {
+export default function PhoneCarousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const [ref, instanceRef] = useKeenSlider<HTMLUListElement>({
@@ -58,7 +58,7 @@ const PhoneCarousel = () => {
       </div>
     </>
   );
-};
+}
 
 function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
   return (
@@ -74,5 +74,3 @@ function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
     </svg>
   );
 }
-
-export default PhoneCarousel;
