@@ -44,7 +44,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
             item.id === selectedId ? (
               <div key={item.id}>
                 <div className="flex justify-center px-3 pb-5">
-                  <div className="  px-12">
+                  <div className="px-12">
                     <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
                     <ul className="flex w-full flex-col justify-center px-12 pb-5">
                       {item.content.list.map((item, index) => (

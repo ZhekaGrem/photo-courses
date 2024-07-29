@@ -45,8 +45,7 @@ const Price2 = () => {
       <div className="sm:contain section container mx-auto">
         <h2 className="mb-12 text-center text-text_1">ВАРТІСТЬ НАВЧАННЯ</h2>
         {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
-        
-       
+
         <div
           id="price"
           className="https://www.tailwindhelper.com/ grid grid-cols-1 gap-8 px-6 md:grid-cols-2 lg:gap-12">
