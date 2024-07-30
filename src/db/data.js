@@ -413,4 +413,5 @@ export const porfoliocarousel = [
   { id: 10, link: '/carouselportfolio/10.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 13, link: '/carouselportfolio/13.jpg', alt: 'ОЛЕГ СЕРНЮК' },
   { id: 14, link: '/carouselportfolio/14.jpg', alt: 'ОЛЕГ СЕРНЮК' },
+  { id: 2, link: '/carouselportfolio/2.jpg', alt: 'ОЛЕГ СЕРНЮК' },
 ];
