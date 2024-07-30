@@ -45,3 +45,17 @@
 .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
 }
+
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev {
+  color: #ffffff; /* Цвет стрелок */
+  padding: 40px; /* Размер кнопки */
+}
+
+/* Изменение цвета при наведении */
+
+/* Убираем фоновый круг у стрелок по умолчанию */
+.custom-swiper .swiper-button-next::after,
+.custom-swiper .swiper-button-prev::after {
+  font-size: 30px; /* Размер стрелок */
+}

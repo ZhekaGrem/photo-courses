@@ -37,11 +37,11 @@ export default function Carousel() {
             slidesPerGroup: 4,
           },
         }}
-        className="h-full">
+        className="custom-swiper h-full">
         {data.map((item) => (
           <SwiperSlide key={item.id}>
             <Image
-              className="h-full object-fill"
+              className="h-full object-cover"
               width={800}
               height={640}
               src={item.link}
