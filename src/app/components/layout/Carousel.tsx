@@ -52,7 +52,7 @@ export default function Carousel() {
                 height={640}
                 src={item.link}
                 alt={item.alt}
-                loading="eager"
+                priority={true}
               />
             </li>
           ))}
