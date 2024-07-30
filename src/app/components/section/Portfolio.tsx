@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
 import { section_5 } from '@/db/data';
 const Carousel = lazy(() => import('@/app/components/layout/Carousel'));

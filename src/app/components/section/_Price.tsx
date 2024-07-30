@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import { Button } from '../common/Button';
 import { usePortal } from '@/app/components/layout/PortalContext';
 import { section_6 } from '@/db/data';

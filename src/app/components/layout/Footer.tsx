@@ -1,4 +1,3 @@
-import React from 'react';
 import { footer } from '@/db/data';
 import MiniFormFooter from '../form/MiniFormFooter';
 import InstagramIcon from '@/app/components/common/InstagramIcon';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Feedback = () => {
   return (
     <section className="bg-background_section_8">

@@ -47,12 +47,12 @@ export default function Carousel() {
           {data.map((item) => (
             <li key={item.id} className="keen-slider__slide w-full">
               <Image
-                className="h-full w-full object-cover shadow-2xl"
+                className="h-full w-full object-cover"
                 width={800}
                 height={640}
                 src={item.link}
                 alt={item.alt}
-                priority={true}
+                loading="eager"
               />
             </li>
           ))}

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
 const FullScreenImage = lazy(() => import('@/app/components/common/BgImage'));
 

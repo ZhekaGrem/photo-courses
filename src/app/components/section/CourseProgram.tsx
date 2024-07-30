@@ -1,5 +1,5 @@
 'use client';
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { data_section_2, title_2 } from '@/db/data';
 import Loading from '@/app/loading';
 
