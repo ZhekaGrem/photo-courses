@@ -46,7 +46,7 @@ export default function Carousel() {
               height={640}
               src={item.link}
               alt={item.alt}
-              priority={true}
+              loading="lazy"
             />
           </SwiperSlide>
         ))}
