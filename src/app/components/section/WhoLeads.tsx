@@ -26,11 +26,11 @@ const WhoLeads = () => {
               <ul className="space-y-4 rounded-lg p-6">
                 <li className="flex items-start">
                   <CheckmarkIcon />
-                  <p className="text-gray-700">{data.text}</p>
+                  <p className="text-gray-800">{data.text}</p>
                 </li>
                 <li className="flex items-start">
                   <CheckmarkIcon />
-                  <p className="text-gray-700">{data.text2}</p>
+                  <p className="text-gray-800">{data.text2}</p>
                 </li>
               </ul>
             </div>
