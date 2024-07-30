@@ -32,7 +32,7 @@ const First = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="mb-12 lg:mb-0 lg:w-2/3">
             <h1 className="text-4xl text-text_2 lg:text-5xl">
-              <span className="bg-background_span inline-block rounded-full px-4 text-xl font-bold text-text_2 md:hidden lg:text-4xl">
+              <span className="inline-block rounded-full bg-background_span px-4 text-xl font-bold text-text_2 md:hidden lg:text-4xl">
                 ONLINE
               </span>
               <div className="text-8xl lg:text-5xl">
