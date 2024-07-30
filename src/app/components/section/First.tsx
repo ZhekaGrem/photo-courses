@@ -51,7 +51,7 @@ const First = () => {
                 onClick={() => setIsPortalOpen(true)}
               />
             </div>
-            <div className="pt-20 md:pt-0">
+            <div className="pt-20 md:pt-0 xl:pt-28">
               <p className="mb-12 max-w-[90%] font-bold text-text_2 sm:max-w-[70%] lg:text-2xl">
                 {data.text}
               </p>
