@@ -36,8 +36,15 @@ export default function PhoneCarousel() {
       <div className="relative overflow-hidden">
         <ul ref={ref} className="keen-slider">
           {data.map((item) => (
-            <li key={item.id} className="keen-slider__slide h-screen">
-              <Image loading="lazy" className="object-cover" layout="fill" src={item.link} alt={item.alt} />
+            <li key={item.id} className="keen-slider__slide w-full">
+              <Image
+                loading="lazy"
+                className="h-full w-full object-cover shadow-2xl"
+                width={400}
+                height={400}
+                src={item.link}
+                alt={item.alt}
+              />
             </li>
           ))}
         </ul>
