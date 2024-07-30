@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import Loading from './loading';
+import Loading from '@/app/loading';
 
 const First = lazy(() => import('@/app/components/section/First'));
 const CourseProgram = lazy(() => import('@/app/components/section/CourseProgram'));
@@ -19,6 +19,7 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <First />
       </Suspense>
+
       <Suspense fallback={<Loading />}>
         <CourseProgram />
       </Suspense>

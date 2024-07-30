@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { footer } from '@/db/data';
 import MiniFormFooter from '../form/MiniFormFooter';

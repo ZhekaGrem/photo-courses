@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { a_l_t, a_r_t, a_d_t, a_t_t } from '@/app/assets/animation';
 
 type IndexType = number | null;
 

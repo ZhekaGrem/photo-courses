@@ -1,4 +1,4 @@
-.dots {
+/* .dots {
   display: flex;
   padding: 10px 0;
   justify-content: center;
@@ -21,7 +21,7 @@
 
 .dot.active {
   background: #000;
-}
+} */
 
 .arrow {
   width: 35px;

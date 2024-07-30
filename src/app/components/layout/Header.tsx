@@ -74,7 +74,7 @@ const Header = () => {
             className={`w-full items-center justify-between lg:order-1 lg:flex lg:w-auto ${
               burgerMenu ? 'hidden' : 'bloc text-center text-3xl'
             }`}>
-            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 font-bold lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:p-0 rtl:space-x-reverse">
+            <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 font-bold lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:p-0">
               {dataLink.map((list) => (
                 <li key={list.id} className={` ${burgerMenu ? '' : 'p-6'}`}>
                   <Link

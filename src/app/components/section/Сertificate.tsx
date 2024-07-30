@@ -2,8 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { section_4 } from '@/db/data';
-import { motion } from 'framer-motion';
-import { a_r_t, a_l_t } from '@/app/assets/animation';
+
 type SectionInfo = {
   text1: string;
   text2: string;

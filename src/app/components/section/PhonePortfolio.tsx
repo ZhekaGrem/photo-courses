@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import PhoneCarousel from '../layout/PhoneCarousel';
 import { section_5 } from '@/db/data';

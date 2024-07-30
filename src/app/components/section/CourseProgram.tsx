@@ -1,8 +1,5 @@
 'use client';
 import React, { Suspense, lazy } from 'react';
-import { motion } from 'framer-motion';
-import { a_d_t } from '@/app/assets/animation';
-
 import { data_section_2, title_2 } from '@/db/data';
 import Loading from '@/app/loading';
 

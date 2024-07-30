@@ -1,16 +1,6 @@
-import Head from 'next/head';
-
 const Terms_of_service = () => {
   return (
     <div className="min-h-screen bg-background_header px-4 py-12 sm:px-6 lg:px-8">
-      <Head>
-        <title>Умови надання послуг та повернення коштів | Фотокурс для початківців</title>
-        <meta
-          name="description"
-          content="Ознайомтеся з нашими умовами надання послуг та політикою повернення коштів для онлайн фотокурсу. Гарантія якості та задоволення клієнтів - наш пріоритет."
-        />
-      </Head>
-
       <div className="mx-auto max-w-3xl">
         <div className="rounded-2xl bg-gray-100 p-8 shadow-[inset_-5px_-5px_15px_rgba(255,255,255,0.8),inset_5px_5px_10px_rgba(0,0,0,0.1)]">
           <h1 className="mb-6 text-3xl font-bold text-gray-800">Умови надання послуг та повернення коштів</h1>

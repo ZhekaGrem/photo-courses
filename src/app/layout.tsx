@@ -6,6 +6,7 @@ import Header from './components/layout/Header';
 import { PortalProvider } from './components/layout/PortalContext';
 import Script from 'next/script';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
 
 export const viewport: Viewport = {
@@ -18,27 +19,27 @@ export const metadata: Metadata = {
   description:
     "Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою. Старт кар'єри фотографа. Записуйтесь зараз!",
   keywords:
-    'курс фотографії, навчання фотографії, фотокурси для початківців, професійна фотографія, фотошкола',
+    'курс фотографії, навчання фотографії, фотокурси для початківців, професійна фотографія, фотошкола, школа фотографії',
   openGraph: {
-    title: 'Курс фотографії для початківців | Від основ до професіонала',
+    title: 'Курс фотографії для початківців | Від основ до професіонала | Школа фотографії',
     description:
       'Навчіться створювати вражаючі фотографії, освоїте роботу з камерою та світлом. Практичні заняття та підтримка експертів.',
     images: [
       {
-        url: 'https://example.com/og-image.jpg',
+        url: 'https://www.screenphotoschool.com.ua/_next/static/media/small.0cd81a37.jpg',
         width: 1200,
         height: 630,
-        alt: 'Курс фотографії для початківців',
+        alt: 'Курс фотографії для початківців,  Школа фотографії',
       },
     ],
     locale: 'uk_UA',
     type: 'website',
   },
   twitter: {
-    title: "Курс фотографії для початківців | Старт вашої кар'єри",
+    title: "Школа фотографії для початківців | Старт вашої кар'єри",
     description:
       'Отримайте навички професійного фотографа за 2 місяці. Практика, теорія, робота з реальними проектами.',
-    images: ['https://example.com/twitter-image.jpg'],
+    images: ['https://www.screenphotoschool.com.ua/_next/static/media/small.0cd81a37.jpg'],
   },
   robots: 'index, follow',
   alternates: {
@@ -61,7 +62,18 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <head>
-        <Script id="schema-org" type="application/ld+json">
+        <GoogleTagManager gtmId="GTM-NB39DGF6" />
+        <GoogleAnalytics gaId="G-0SG93S79Y0" />
+      </head>
+
+      <body className={montrat.className}>
+        <PortalProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <div id="portal-root" />
+        </PortalProvider>
+        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Course',
@@ -75,32 +87,6 @@ export default function RootLayout({
             },
           })}
         </Script>
-        <GoogleTagManager gtmId="GTM-NB39DGF6" />
-        <GoogleAnalytics gaId="G-0SG93S79Y0" />
-      </head>
-      {/* <Script id="schema-org" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Course',
-          name: 'Курс фотографії для початківців',
-          description:
-            'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
-          provider: {
-            '@type': 'Organization',
-            name: 'Школа фотографії',
-            sameAs: 'https://www.screenphotoschool.com.ua',
-          },
-        })}
-      </Script>
-      <GoogleTagManager gtmId="GTM-NB39DGF6" /> */}
-
-      <body className={montrat.className}>
-        <PortalProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <div id="portal-root" />
-        </PortalProvider>
       </body>
     </html>
   );

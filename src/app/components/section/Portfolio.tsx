@@ -1,4 +1,3 @@
-'use client';
 import React, { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
 import { section_5 } from '@/db/data';
