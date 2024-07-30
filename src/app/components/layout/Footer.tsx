@@ -7,11 +7,12 @@ import FacebookIcon from '@/app/components/common/FacebookIcon';
 import TiktokIcon from '@/app/components/common/TiktokIcon';
 
 //Icon socials
-export const icon = [
+const icon = [
   { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
   { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
   { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
 ];
+const date = new Date().getFullYear();
 
 const Footer = () => {
   return (
@@ -61,7 +62,7 @@ const Footer = () => {
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {footer.colum3.list_link.map((link) => (
               <li key={link.id} className={`mb-4 ${link.colspan}`}>
-                <a href={link.href} className="hover:underline">
+                <a target="_blank" rel="noopener noreferrer" href={link.href} className="hover:underline">
                   {link.text}
                 </a>
               </li>
@@ -69,19 +70,22 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      {/* <div className="bg-gray-700">
+      <div className="bg-gray-700">
         <div className="container px-4 py-6 text-text_2 md:flex md:items-center md:justify-between">
-          <span className="text-sm sm:text-center">
-            <Link href="terms_of_service">{footer.horizontal_col.text_link}</Link>
-          </span>
-          <div>
-            <span>{footer.horizontal_col.text2}</span>
+          <div className="text-center md:text-left">
+            <p>&copy; {date} Євгеній Грем. Усі права захищено.</p>
           </div>
-          <div className="mt-4 flex space-x-5 sm:justify-center md:mt-0 rtl:space-x-reverse">
-            <a href={footer.horizontal_col.telephone}>{footer.horizontal_col.telephone_text}</a>
+          <div className="mt-4 flex justify-center md:mt-0">
+            <a
+              href="https://t.me/GremYevhenii"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 transition-colors hover:text-white">
+              Зв'язатися з розробником
+            </a>
           </div>
         </div>
-      </div> */}
+      </div>
     </footer>
   );
 };

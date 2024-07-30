@@ -33,7 +33,7 @@ const Header = () => {
       className={`bg-ba absolute left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
       <nav className="start-0 top-0 z-20 w-full border-b bg-background_header">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <Image
               loading="lazy"
               className="h-auto w-full"
@@ -42,7 +42,7 @@ const Header = () => {
               src="/logo4.png"
               alt="logo"
             />
-          </a>
+          </Link>
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             <Button
               onClick={() => setIsPortalOpen(true)}

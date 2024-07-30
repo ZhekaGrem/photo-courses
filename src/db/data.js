@@ -33,7 +33,7 @@ export const data_section_2 = [
         '«Універсальний рюкзак»: must-have для фотографа',
         'Практичні поради з використання техніки',
       ],
-      img: '/programgroup/1.jpeg',
+      img: '/programgroup/1.jpg',
     },
   },
   {
@@ -49,7 +49,7 @@ export const data_section_2 = [
         'Діафрагма: як керувати глибиною різкості',
         'Практикум: створення вражаючих фото з різною експозицією',
       ],
-      img: '/programgroup/2.jpeg',
+      img: '/programgroup/2.jpg',
     },
   },
   {
@@ -65,7 +65,7 @@ export const data_section_2 = [
         'Взаємодія ISO, витримки та діафрагми',
         'Майстер-клас: зйомка в складних світлових умовах',
       ],
-      img: '/programgroup/3.jpeg',
+      img: '/programgroup/3.jpg',
     },
   },
   {
@@ -81,7 +81,7 @@ export const data_section_2 = [
         'Техніки утримання уваги глядача',
         'Практикум: створення виразних композицій',
       ],
-      img: '/programgroup/4.jpeg',
+      img: '/programgroup/4.jpg',
     },
   },
   {
@@ -97,7 +97,7 @@ export const data_section_2 = [
         'Баланс білого: технічні та творчі аспекти',
         'Майстер-клас: робота з кольором у різних жанрах',
       ],
-      img: '/programgroup/5.jpeg',
+      img: '/programgroup/5.jpg',
     },
   },
   {
@@ -113,7 +113,7 @@ export const data_section_2 = [
         'Світлоформуючі насадки: розширюємо можливості',
         'Практикум: створення професійних портретів',
       ],
-      img: '/programgroup/6.jpeg',
+      img: '/programgroup/6.jpg',
     },
   },
   {
@@ -129,7 +129,7 @@ export const data_section_2 = [
         'Робота в команді: фотограф, модель, стиліст',
         'Практикум: зйомка для вашого першого портфоліо',
       ],
-      img: '/programgroup/7.jpeg',
+      img: '/programgroup/7.jpg',
     },
   },
   {
@@ -145,7 +145,7 @@ export const data_section_2 = [
         'Секрети вдалих ракурсів та поз',
         'Практикум: проведення повноцінної фотосесії в студії',
       ],
-      img: '/programgroup/8.jpeg',
+      img: '/programgroup/8.jpg',
     },
   },
   {
@@ -161,7 +161,7 @@ export const data_section_2 = [
         'Вирішення конфліктних ситуацій на зйомці',
         'Майстер-клас: проведення професійної фотосесії з командою',
       ],
-      img: '/programgroup/9.jpeg',
+      img: '/programgroup/9.jpg',
     },
   },
   {
@@ -177,7 +177,7 @@ export const data_section_2 = [
         'Створення власних пресетів для швидкої обробки',
         'Практикум: обробка різних типів фотографій',
       ],
-      img: '/programgroup/10.jpeg',
+      img: '/programgroup/10.jpg',
     },
   },
   {
@@ -193,7 +193,7 @@ export const data_section_2 = [
         'Техніки залучення та утримання клієнтів',
         'Майстер-клас: створення першої рекламної кампанії',
       ],
-      img: '/programgroup/11.jpeg',
+      img: '/programgroup/11.jpg',
     },
   },
   {
@@ -209,12 +209,12 @@ export const data_section_2 = [
         'Створення рекламного кабінету',
         'Запуск реклами',
       ],
-      img: '/programgroup/12.jpeg',
+      img: '/programgroup/12.jpg',
     },
   },
   {
     id: 12,
-    title: ' СЕКРЕТИ УСПІХУ',
+    title: 'СЕКРЕТИ УСПІХУ',
     content: {
       title: 'БОНУСНИЙ УРОК',
       title2: 'Програма уроку',

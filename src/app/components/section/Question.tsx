@@ -32,7 +32,7 @@ const Question = () => {
                     className="w-full p-6 text-left focus:outline-none"
                     onClick={() => handleButtonClick(index)}>
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+                      <p className="text-xl font-semibold text-gray-800">{item.title}</p>
                       <svg
                         className={`h-6 min-w-6 transform transition-transform duration-300 ${
                           openIndex === index ? 'rotate-180' : ''

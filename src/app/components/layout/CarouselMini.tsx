@@ -75,65 +75,6 @@ export default function CarouselMini() {
             />
           </div>
         ))}
-        {/* <div className="keen-slider__slide number-slide1">
-          <Image
-            className="rounded-3xl w-full h-auto"
-            width={222}
-            height={222}
-            src="/carouselmini/kava-logo.png"
-            alt="kek"
-          />
-        </div>
-        <div className="keen-slider__slide number-slide2">
-          <Image
-            loading="lazy"
-            className="rounded-3xl w-full h-auto"
-            width={222}
-            height={222}
-            src="/4.png"
-            alt="kek"
-          />
-        </div>
-        <div className="keen-slider__slide number-slide3">
-          <Image
-            loading="lazy"
-            className="rounded-3xl w-full h-auto"
-            width={222}
-            height={222}
-            src="/4.png"
-            alt="kek"
-          />
-        </div>
-        <div className="keen-slider__slide number-slide4">
-          <Image
-            loading="lazy"
-            className="rounded-3xl w-full h-auto"
-            width={222}
-            height={222}
-            src="/4.png"
-            alt="kek"
-          />
-        </div>
-        <div className="keen-slider__slide number-slide5">
-          <Image
-            loading="lazy"
-            className="rounded-3xl w-full h-auto"
-            width={222}
-            height={222}
-            src="/4.png"
-            alt="kek"
-          />
-        </div>
-        <div className="keen-slider__slide number-slide6">
-          <Image
-            loading="lazy"
-            className="rounded-3xl w-full h-auto"
-            width={222}
-            height={222}
-            src="/4.png"
-            alt="kek"
-          />
-        </div> */}
       </div>
     </>
   );

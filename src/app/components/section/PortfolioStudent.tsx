@@ -54,11 +54,11 @@ export default PortfolioStudent;
 const FullScreenImage = () => (
   <div className="relative h-screen w-full">
     <Image
+      className="object-cover"
       loading="lazy"
       src="/BG_block2.png"
-      alt="PortfolioStudent"
+      alt=" Student Portfolio"
       layout="fill"
-      objectFit="cover"
       quality={100}
     />
   </div>
