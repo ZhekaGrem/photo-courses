@@ -33,7 +33,7 @@ export const data_section_2 = [
         '«Універсальний рюкзак»: must-have для фотографа',
         'Практичні поради з використання техніки',
       ],
-      img: '/programgroup/1.jpg',
+      img: '/programgroup/1.webp',
     },
   },
   {
@@ -49,7 +49,7 @@ export const data_section_2 = [
         'Діафрагма: як керувати глибиною різкості',
         'Практикум: створення вражаючих фото з різною експозицією',
       ],
-      img: '/programgroup/2.jpg',
+      img: '/programgroup/2.webp',
     },
   },
   {
@@ -65,7 +65,7 @@ export const data_section_2 = [
         'Взаємодія ISO, витримки та діафрагми',
         'Майстер-клас: зйомка в складних світлових умовах',
       ],
-      img: '/programgroup/3.jpg',
+      img: '/programgroup/3.webp',
     },
   },
   {
@@ -81,7 +81,7 @@ export const data_section_2 = [
         'Техніки утримання уваги глядача',
         'Практикум: створення виразних композицій',
       ],
-      img: '/programgroup/4.jpg',
+      img: '/programgroup/4.webp',
     },
   },
   {
@@ -97,7 +97,7 @@ export const data_section_2 = [
         'Баланс білого: технічні та творчі аспекти',
         'Майстер-клас: робота з кольором у різних жанрах',
       ],
-      img: '/programgroup/5.jpg',
+      img: '/programgroup/5.webp',
     },
   },
   {
