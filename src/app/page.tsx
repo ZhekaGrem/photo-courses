@@ -1,17 +1,17 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
 
-const First = lazy(() => import('@/app/components/section/First'));
-const CourseProgram = lazy(() => import('@/app/components/section/CourseProgram'));
-const WhoLeads = lazy(() => import('@/app/components/section/WhoLeads'));
-const Сertificate = lazy(() => import('@/app/components/section/Сertificate'));
-// const CustomerSearch = lazy(() => import('@/app/components/section/CustomerSearch'));
-const Portfolio = lazy(() => import('@/app/components/section/Portfolio'));
-const PhonePortfolio = lazy(() => import('@/app/components/section/PhonePortfolio'));
-const PortfolioStudent = lazy(() => import('@/app/components/section/PortfolioStudent'));
-// const Price = lazy(() => import('@/app/components/section/Price'));
-const Price2 = lazy(() => import('@/app/components/section/Price2'));
-// const Question = lazy(() => import('@/app/components/section/Question'));
+const First = lazy(() => import('@/app/_components/section/First'));
+const CourseProgram = lazy(() => import('@/app/_components/section/CourseProgram'));
+const WhoLeads = lazy(() => import('@/app/_components/section/WhoLeads'));
+const Сertificate = lazy(() => import('@/app/_components/section/Сertificate'));
+// const CustomerSearch = lazy(() => import('@/app/_components/section/CustomerSearch'));
+const Portfolio = lazy(() => import('@/app/_components/section/Portfolio'));
+const PhonePortfolio = lazy(() => import('@/app/_components/section/PhonePortfolio'));
+const PortfolioStudent = lazy(() => import('@/app/_components/section/PortfolioStudent'));
+// const Price = lazy(() => import('@/app/_components/section/Price'));
+const Price2 = lazy(() => import('@/app/_components/section/Price2'));
+// const Question = lazy(() => import('@/app/_components/section/Question'));
 
 export default function Home() {
   return (

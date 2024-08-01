@@ -18,9 +18,12 @@ type ComponentProps = {
 
 const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
   const [selectedId, setSelectedId] = useState(data[0].id);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const handleClick = (id: number) => {
     setSelectedId(id);
   };
+
   return (
     <div className="relative flex flex-row items-start">
       <ul className="w-1/3 p-4">
@@ -45,7 +48,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                 <div className="pb-5">
                   <div>
                     <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
-                    <ul className=" ">
+                    <ul>
                       {item.content.list.map((item, index) => (
                         <li className="list-inside list-disc pb-2 text-lg lg:text-xl" key={index}>
                           {item}
@@ -54,14 +57,16 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     </ul>
                   </div>
                 </div>
-                <div>
+                <div className="relative">
+                  {!imageLoaded && <div className="absolute inset-0 animate-pulse bg-gray-200" />}
                   <Image
-                    className="h-full rounded-lg object-cover shadow-2xl"
+                    className={`h-full rounded-lg object-cover shadow-2xl ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     src={item.content.img}
                     alt={item.content.title}
                     width={640}
                     height={360}
-                    priority={true}
+                    loading="eager"
+                    onLoad={() => setImageLoaded(true)}
                   />
                 </div>
               </div>

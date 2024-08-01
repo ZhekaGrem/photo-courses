@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
 import { section_5 } from '@/db/data';
-const Carousel = lazy(() => import('@/app/components/layout/Carousel'));
+const Carousel = lazy(() => import('@/app/_components/layout/Carousel'));
 
 const data: string = section_5;
 

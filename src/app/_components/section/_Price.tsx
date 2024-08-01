@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '../common/Button';
-import { usePortal } from '@/app/components/layout/PortalContext';
+import { usePortal } from '@/app/_components/layout/PortalContext';
 import { section_6 } from '@/db/data';
 import CheckmarkIcon from '../common/Checkmark';
 

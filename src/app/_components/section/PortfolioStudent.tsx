@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
-const FullScreenImage = lazy(() => import('@/app/components/common/BgImage'));
+const FullScreenImage = lazy(() => import('@/app/_components/common/BgImage'));
 
 const PortfolioStudent = () => {
   return (

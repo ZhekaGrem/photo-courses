@@ -1,9 +1,13 @@
 import type { Metadata, Viewport } from 'next';
+import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
-import Footer from './components/layout/Footer';
-import Header from './components/layout/Header';
-import { PortalProvider } from './components/layout/PortalContext';
+import Footer from './_components/layout/Footer';
+const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
+  loading: () => <p>Loading...</p>,
+});
+import Header from './_components/layout/Header';
+import { PortalProvider } from './_components/layout/PortalContext';
 import Script from 'next/script';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 
@@ -70,7 +74,7 @@ export default function RootLayout({
         <PortalProvider>
           <Header />
           <main>{children}</main>
-          <Footer />
+          <DynamicFooter />
           <div id="portal-root" />
         </PortalProvider>
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">

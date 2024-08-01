@@ -1,9 +1,9 @@
 import { footer } from '@/db/data';
 import MiniFormFooter from '../form/MiniFormFooter';
-import InstagramIcon from '@/app/components/common/InstagramIcon';
-import FacebookIcon from '@/app/components/common/FacebookIcon';
-import TiktokIcon from '@/app/components/common/TiktokIcon';
-
+import InstagramIcon from '@/app/_components/common/InstagramIcon';
+import FacebookIcon from '@/app/_components/common/FacebookIcon';
+import TiktokIcon from '@/app/_components/common/TiktokIcon';
+import SocialIcons from '@/app/_components/common/SocialIcons';
 //Icon socials
 const icon = [
   { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
