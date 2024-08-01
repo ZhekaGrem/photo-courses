@@ -113,7 +113,7 @@ export const data_section_2 = [
         'Світлоформуючі насадки: розширюємо можливості',
         'Практикум: створення професійних портретів',
       ],
-      img: '/programgroup/6.jpg',
+      img: '/programgroup/6.webp',
     },
   },
   {
@@ -129,7 +129,7 @@ export const data_section_2 = [
         'Робота в команді: фотограф, модель, стиліст',
         'Практикум: зйомка для вашого першого портфоліо',
       ],
-      img: '/programgroup/7.jpg',
+      img: '/programgroup/7.webp',
     },
   },
   {
@@ -193,7 +193,7 @@ export const data_section_2 = [
         'Техніки залучення та утримання клієнтів',
         'Майстер-клас: створення першої рекламної кампанії',
       ],
-      img: '/programgroup/11.jpg',
+      img: '/programgroup/11.webp',
     },
   },
   {
@@ -209,7 +209,7 @@ export const data_section_2 = [
         'Створення рекламного кабінету',
         'Запуск реклами',
       ],
-      img: '/programgroup/12.jpg',
+      img: '/programgroup/12.webp',
     },
   },
   {

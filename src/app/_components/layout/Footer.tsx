@@ -60,7 +60,7 @@ const Footer = () => {
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {footer.colum3.list_link.map((link) => (
               <li key={link.id} className={`mb-4 ${link.colspan}`}>
-                <a target="_blank" rel="noopener noreferrer" href={link.href} className="hover:underline">
+                <a  rel="noopener noreferrer" href={link.href} className="hover:underline">
                   {link.text}
                 </a>
               </li>
