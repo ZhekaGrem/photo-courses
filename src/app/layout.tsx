@@ -85,6 +85,8 @@ export default function RootLayout({
             name: 'Курс фотографії для початківців',
             description:
               'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
+            category: 'Фотографія',
+            courseWorkload: 'PT40H',
             provider: {
               '@type': 'Organization',
               name: 'Школа фотографії',
