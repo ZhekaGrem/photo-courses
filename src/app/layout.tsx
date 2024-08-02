@@ -90,28 +90,31 @@ export default function RootLayout({
               name: 'Школа фотографії',
               sameAs: 'https://www.screenphotoschool.com.ua',
             },
-            courseWorkload: 'PT40H',
             category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
             hasCourseInstance: {
               '@type': 'CourseInstance',
               courseMode: 'onsite',
               startDate: '2024-09-01',
+              courseWorkload: 'PT40H',
             },
             offers: [
               {
                 '@type': 'Offer',
+                category: 'Базовий курс',
                 name: 'Відеокурс "Швидкий Старт"',
                 price: '3000',
                 priceCurrency: 'UAH',
               },
               {
                 '@type': 'Offer',
+                category: 'Розширений курс',
                 name: 'Відеокурс з менторством',
                 price: '5500',
                 priceCurrency: 'UAH',
               },
               {
                 '@type': 'Offer',
+                category: 'Індивідуальне навчання',
                 name: 'Індивідуальна школа фотографії',
                 price: '500',
                 priceCurrency: 'USD',
