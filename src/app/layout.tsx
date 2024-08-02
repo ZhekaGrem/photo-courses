@@ -89,6 +89,31 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Школа фотографії',
               sameAs: 'https://www.screenphotoschool.com.ua',
+              hasCourseInstance: {
+                '@type': 'CourseInstance',
+                courseMode: 'onsite',
+                startDate: '2024-09-01',
+              },
+              offers: [
+                {
+                  '@type': 'Offer',
+                  name: 'Відеокурс "Швидкий Старт"',
+                  price: '3000',
+                  priceCurrency: 'UAH',
+                },
+                {
+                  '@type': 'Offer',
+                  name: 'Відеокурс з менторством',
+                  price: '5500',
+                  priceCurrency: 'UAH',
+                },
+                {
+                  '@type': 'Offer',
+                  name: 'Індивідуальна школа фотографії',
+                  price: '500',
+                  priceCurrency: 'USD',
+                },
+              ],
             },
           })}
         </Script>
