@@ -14,7 +14,7 @@ type InfoType = {
     title2: string;
     list: Array<string>;
     img: string;
-    loading?: string;
+    img_alt: string;
   };
 };
 const title: string = title_2;
