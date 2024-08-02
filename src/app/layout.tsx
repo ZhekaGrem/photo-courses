@@ -85,13 +85,13 @@ export default function RootLayout({
             name: 'Курс фотографії для початківців',
             description:
               'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
-            category: 'Фотографія',
-            courseWorkload: 'PT40H',
             provider: {
               '@type': 'Organization',
               name: 'Школа фотографії',
               sameAs: 'https://www.screenphotoschool.com.ua',
             },
+            courseWorkload: 'PT40H',
+            category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
             hasCourseInstance: {
               '@type': 'CourseInstance',
               courseMode: 'onsite',
