@@ -11,7 +11,6 @@ type InfoType = {
     list: Array<string>;
     img: string;
     img_alt: string;
-    
   };
 };
 type ComponentProps = {
