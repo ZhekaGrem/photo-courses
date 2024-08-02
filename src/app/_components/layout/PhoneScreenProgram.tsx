@@ -14,7 +14,7 @@ type InfoType = {
     title2: string;
     list: Array<string>;
     img: string;
-    loading?: string;
+    img_alt: string;
   };
 };
 
@@ -105,7 +105,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                   <Image
                                     className="h-auto rounded-lg object-cover shadow-2xl"
                                     src={item.content.img}
-                                    alt={item.content.title}
+                                    alt={item.content.img_alt}
                                     width={640}
                                     height={360}
                                     priority={true}

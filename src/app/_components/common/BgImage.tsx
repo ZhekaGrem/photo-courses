@@ -6,7 +6,7 @@ const FullScreenImage = () => (
       className="object-cover"
       loading="lazy"
       src="/BG_block2.png"
-      alt=" Student Portfolio"
+      alt="Портфоліо студентів, фотошкола, школа фотографії, курси фотографа"
       layout="fill"
       quality={100}
     />

@@ -10,6 +10,8 @@ type InfoType = {
     title2: string;
     list: Array<string>;
     img: string;
+    img_alt: string;
+    
   };
 };
 type ComponentProps = {
@@ -58,7 +60,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                   <Image
                     className="h-full rounded-lg object-cover shadow-2xl"
                     src={item.content.img}
-                    alt={item.content.title}
+                    alt={item.content.img_alt}
                     width={640}
                     height={360}
                     priority={true}
