@@ -7,8 +7,9 @@ const FullScreenImage = () => (
       loading="lazy"
       src="/BG_block2.png"
       alt="Портфоліо студентів, фотошкола, школа фотографії, курси фотографа"
-      layout="fill"
+      fill
       quality={100}
+      sizes="100vw"
     />
   </div>
 );

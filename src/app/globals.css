@@ -105,12 +105,6 @@ h2 {
   background-position: center;
   background-size: cover;
 }
-/* .imgBg3 {
-  background-image: url('./assets/img/BG_block2.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
 
 @media (min-width: 640px) {
   .container {
