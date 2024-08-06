@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 
 type InfoType = {
@@ -11,6 +11,7 @@ type InfoType = {
     list: Array<string>;
     img: string;
     img_alt: string;
+    video?: string;
   };
 };
 type ComponentProps = {
@@ -19,8 +20,19 @@ type ComponentProps = {
 
 const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
   const [selectedId, setSelectedId] = useState(data[0].id);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const handleClick = (id: number) => {
     setSelectedId(id);
+    setIsPlaying(false);
+  };
+
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
   };
   return (
     <div className="relative flex flex-row items-start">
@@ -55,15 +67,51 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     </ul>
                   </div>
                 </div>
-                <div>
-                  <Image
-                    className="h-full rounded-lg object-cover shadow-2xl"
-                    src={item.content.img}
-                    alt={item.content.img_alt}
-                    width={640}
-                    height={360}
-                    priority={true}
-                  />
+                <div className="relative">
+                  {item.content.video ? (
+                    <>
+                      {!isPlaying && (
+                        <>
+                          <Image
+                            className="h-full w-full rounded-lg object-cover shadow-2xl"
+                            src={item.content.img}
+                            alt={item.content.img_alt}
+                            width={640}
+                            height={360}
+                            priority={true}
+                          />
+                          <button
+                            className="absolute inset-0 flex items-center justify-center text-black"
+                            onClick={handlePlayClick}>
+                            <div className="flex items-center justify-center rounded-full bg-white bg-opacity-70 p-3 shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+                              <svg
+                                className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16"
+                                viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </button>
+                        </>
+                      )}
+                      <video
+                        ref={videoRef}
+                        className={`h-full w-full rounded-lg object-cover shadow-2xl ${isPlaying ? 'block' : 'hidden'}`}
+                        controls={isPlaying}>
+                        <source src={item.content.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </>
+                  ) : (
+                    <Image
+                      className="h-full rounded-lg object-cover shadow-2xl"
+                      src={item.content.img}
+                      alt={item.content.img_alt}
+                      width={640}
+                      height={360}
+                      priority={true}
+                    />
+                  )}
                 </div>
               </div>
             ) : null

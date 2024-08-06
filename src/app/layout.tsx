@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Школа фотографії для початківців | Старт вашої кар'єри",
     description:
       'Отримайте навички професійного фотографа за 2 місяці. Практика, теорія, робота з реальними проектами.',
-    images: ['https://www.screenphotoschool.com.ua/_next/static/media/small.0cd81a37.jpg'],
+    images: ['https://www.screenphotoschool.com.ua/_next/static/media/small3.256dd6f4.webp'],
   },
   robots: 'index, follow',
   alternates: {
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: ['/favicon.ico'],
-    shortcut: ['/favicon.ico'],
+    icon: ['/icon.ico'],
+    shortcut: ['/icon.ico'],
     apple: ['/apple-touch-icon.png'],
   },
   authors: [{ name: 'Oleg Serniuk' }],
@@ -74,7 +74,6 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <meta name="google-site-verification" content="zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw" />
         <GoogleTagManager gtmId="GTM-NB39DGF6" />
         <GoogleAnalytics gaId="G-0SG93S79Y0" />
