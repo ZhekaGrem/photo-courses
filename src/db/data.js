@@ -34,7 +34,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/1, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/01.mp4',
+      video: '/video2/01.mp4',
     },
   },
   {
@@ -52,7 +52,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/2, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/02.mp4',
+      video: '/video2/02.mp4',
     },
   },
   {
@@ -70,7 +70,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/3, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/03.mp4',
+      video: '/video2/03.mp4',
     },
   },
   {
@@ -88,7 +88,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/4, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/04.mp4',
+      video: '/video2/04.mp4',
     },
   },
   {
@@ -106,7 +106,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/5, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/05.mp4',
+      video: '/video2/05.mp4',
     },
   },
   {
@@ -124,7 +124,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/6, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/06.mp4',
+      video: '/video2/06.mp4',
     },
   },
   {
@@ -142,7 +142,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/7, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/07.mp4',
+      video: '/video2/07.mp4',
     },
   },
   {
@@ -160,7 +160,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/8, фотошкола, школа фотографії, курси фотографа.jpg',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/08.mp4',
+      video: '/video2/08.mp4',
     },
   },
   {
@@ -178,7 +178,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/9, фотошкола, школа фотографії, курси фотографа.jpg',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/09.mp4',
+      video: '/video2/09.mp4',
     },
   },
   {
@@ -196,7 +196,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/10, фотошкола, школа фотографії, курси фотографа.jpg',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/010.mp4',
+      video: '/video2/010.mp4',
     },
   },
   {
@@ -214,7 +214,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/11, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/011.mp4',
+      video: '/video2/011.mp4',
     },
   },
   {
@@ -232,7 +232,7 @@ export const data_section_2 = [
       ],
       img: '/programgroup/12, фотошкола, школа фотографії, курси фотографа.webp',
       img_alt: 'фотошкола, школа фотографії, курси фотографа',
-      video: '/video/012.mp4',
+      video: '/video2/012.mp4',
     },
   },
   {
