@@ -25,10 +25,10 @@ type ComponentProps = {
 
 const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
   const [openIndex, setOpenIndex] = useState<IndexType>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
-const handleButtonClick: HandleClickButton = (index) => {
-    setOpenIndex(openIndex === index ? null : index);}
+  const handleButtonClick: HandleClickButton = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div className="section container">
