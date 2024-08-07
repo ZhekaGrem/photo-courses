@@ -35,14 +35,7 @@ export const metadata: Metadata = {
     title: 'Курс фотографії для початківців | Від основ до професіонала | Школа фотографії',
     description:
       'Навчіться створювати вражаючі фотографії, освоїте роботу з камерою та світлом. Практичні заняття та підтримка експертів.',
-    images: [
-      {
-        url: 'https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Курс фотографії для початківців,  Школа фотографії',
-      },
-    ],
+    images: ['https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg'],
     locale: 'uk_UA',
     type: 'website',
   },
@@ -76,10 +69,7 @@ export default function RootLayout({
     <html lang="uk">
       <Head>
         <meta name="google-site-verification" content="zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw" />
-        <meta
-          property="og:image"
-          content="https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg"
-        />
+
         <GoogleTagManager gtmId="GTM-NB39DGF6" />
         <GoogleAnalytics gaId="G-0SG93S79Y0" />
       </Head>
