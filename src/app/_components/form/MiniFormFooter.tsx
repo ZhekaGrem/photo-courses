@@ -9,6 +9,7 @@ const initialFormData = {
 function MiniFormFooter() {
   const [formData, setFormData] = useState(initialFormData);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const validatePhone = (phone: string) => {
     const phoneRegex = /^(\+38|38)?0\d{9}$/;
@@ -30,9 +31,7 @@ function MiniFormFooter() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const text = `Клієнт Курси Фото:\n
-Ім'я Клієнта: ${formData.name}\n
-Номер клієнта: ${formData.tel}\n
+    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}
 `;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
       text
@@ -52,7 +51,11 @@ function MiniFormFooter() {
       const data = await response.json();
 
       if (data.ok) {
-        setFormData(initialFormData);
+        setShowThankYou(true);
+        setTimeout(() => {
+          setShowThankYou(false);
+          setFormData(initialFormData);
+        }, 2000);
       } else {
         throw new Error('Помилка при відправці повідомлення');
       }
@@ -60,6 +63,13 @@ function MiniFormFooter() {
       console.error('Помилка:', error);
     }
   };
+  if (showThankYou) {
+    return (
+      <div className="flex w-full flex-col content-center gap-6 p-10 text-center">
+        <p className="text-2xl font-bold text-background_btn">Дякуємо за вашу заявку</p>
+      </div>
+    );
+  }
   return (
     <>
       <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
@@ -91,7 +101,7 @@ function MiniFormFooter() {
         </label>
 
         <input
-          className="w-full rounded-md bg-background_btn py-4 text-center font-bold text-text_header hover:bg-background_btn_hover disabled:bg-slate-400"
+          className="w-full rounded-md bg-background_btn py-4 text-center font-bold text-text_header hover:scale-105 hover:bg-background_btn_hover disabled:bg-slate-400"
           value={`ЗВ'ЯЗАТИСЬ`}
           type="submit"
           disabled={!isFormValid}

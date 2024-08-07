@@ -10,12 +10,14 @@ const initialFormData = {
   name: '',
   tel: '+380',
 };
+const phoneRegex = /^(\+38|38)?0\d{9}$/;
 
 const PopUp = ({ title, onClose }: ClosePortal) => {
   const [formData, setFormData] = useState(initialFormData);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+
   const validatePhone = (phone: string) => {
-    const phoneRegex = /^(\+38|38)?0\d{9}$/;
     return phoneRegex.test(phone.replace(/\s/g, ''));
   };
 
@@ -34,10 +36,7 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const text = `Клієнт Курси Фото:\n
-    Ім'я Клієнта: ${formData.name}\n
-    Номер клієнта: ${formData.tel}\n
-    Який курс обрав клієнт ${title}\n
+    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\nЯкий курс обрав клієнт ${title}\n
 `;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
       text
@@ -57,7 +56,11 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
       const data = await response.json();
 
       if (data.ok) {
-        onClose();
+        setShowThankYou(true);
+        setTimeout(() => {
+          setShowThankYou(false);
+          onClose();
+        }, 2000);
       } else {
         throw new Error('Помилка при відправці повідомлення');
       }
@@ -65,7 +68,13 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
       console.error('Помилка:', error);
     }
   };
-
+  if (showThankYou) {
+    return (
+      <div className="flex w-full flex-col content-center gap-6 p-10 text-center">
+        <p className="text-2xl font-bold text-white">Дякуємо за вашу заявку</p>
+      </div>
+    );
+  }
   return (
     <>
       <form className="flex w-full flex-col content-center gap-6 p-10 text-center" onSubmit={handleSubmit}>

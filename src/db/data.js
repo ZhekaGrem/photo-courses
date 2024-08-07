@@ -237,7 +237,7 @@ export const data_section_2 = [
   },
   {
     id: 12,
-    title: 'СЕКРЕТИ УСПІХУ',
+    title: 'БОНУСНИЙ УРОК',
     content: {
       title: 'ОГЛЯД ФІЛЬМУ',
       title2: 'Програма уроку',
