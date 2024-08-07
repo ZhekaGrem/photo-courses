@@ -69,7 +69,10 @@ export default function RootLayout({
     <html lang="uk">
       <Head>
         <meta name="google-site-verification" content="zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw" />
-
+        <meta property="og:url" content="https://www.screenphotoschool.com.ua/"></meta>
+        <meta
+          property="og:image"
+          content="https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg"></meta>
         <GoogleTagManager gtmId="GTM-NB39DGF6" />
         <GoogleAnalytics gaId="G-0SG93S79Y0" />
       </Head>
