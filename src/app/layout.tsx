@@ -9,6 +9,7 @@ const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
 import Header from './_components/layout/Header';
 import { PortalProvider } from './_components/layout/PortalContext';
 import Script from 'next/script';
+import Head from 'next/head';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
       'Навчіться створювати вражаючі фотографії, освоїте роботу з камерою та світлом. Практичні заняття та підтримка експертів.',
     images: [
       {
-        url: 'https://www.screenphotoschool.com.ua/_next/static/media/small3.256dd6f4.webp',
+        url: 'https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg',
         width: 1200,
         height: 630,
         alt: 'Курс фотографії для початківців,  Школа фотографії',
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     title: "Школа фотографії для початківців | Старт вашої кар'єри",
     description:
       'Отримайте навички професійного фотографа за 2 місяці. Практика, теорія, робота з реальними проектами.',
-    images: ['https://www.screenphotoschool.com.ua/_next/static/media/small3.256dd6f4.webp'],
+    images: ['https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg'],
   },
   robots: 'index, follow',
   alternates: {
@@ -73,11 +74,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <head>
+      <Head>
         <meta name="google-site-verification" content="zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw" />
+        <meta
+          property="og:image"
+          content="https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg"
+        />
         <GoogleTagManager gtmId="GTM-NB39DGF6" />
         <GoogleAnalytics gaId="G-0SG93S79Y0" />
-      </head>
+      </Head>
 
       <body className={montrat.className}>
         <PortalProvider>
