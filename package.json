@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.5",
@@ -15,6 +16,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "framer-motion": "^11.2.13",
+    "husky": "^9.1.4",
     "keen-slider": "^6.8.6",
     "next": "^14.2.5",
     "next-cloudinary": "^6.9.0",
