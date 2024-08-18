@@ -74,19 +74,6 @@ export default function RootLayout({
           property="og:image"
           content="https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg"></meta>
         <GoogleTagManager gtmId="GTM-NB39DGF6" />
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-0SG93S79Y0');
-              `,
-          }}
-        />
       </Head>
 
       <body className={montrat.className}>
@@ -140,6 +127,19 @@ export default function RootLayout({
             ],
           })}
         </Script>
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-0SG93S79Y0');
+              `,
+          }}
+        />
       </body>
     </html>
   );
