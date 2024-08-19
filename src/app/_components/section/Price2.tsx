@@ -8,6 +8,8 @@ const plans = [
   {
     title: 'Відеокурс "Швидкий Старт"',
     price: '3000₴',
+    newPrice: '2400₴',
+    discount: 20,
     description:
       "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
     features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
@@ -15,6 +17,8 @@ const plans = [
   {
     title: 'Відеокурс з менторством',
     price: '5500₴',
+    newPrice: '4400₴',
+    discount: 20,
     description: 'Навчання проходить з викладачем',
     features: [
       'Доступ до (5+)годинного курсу на дванадцять уроків',
@@ -25,6 +29,8 @@ const plans = [
   {
     title: 'Відеокурс швийдкий старт з наставником',
     price: '10500₴',
+    newPrice: '8400₴',
+    discount: 20,
     description: 'Індивідуальні заняття ',
     features: [
       'Доступ до відео матеріалів',
@@ -49,21 +55,32 @@ const Price2 = () => {
     <section className="bg-[#e4722b]">
       <div className="section container mx-auto">
         <h2 className="mb-12 text-center text-text_2">ВАРТІСТЬ НАВЧАННЯ</h2>
-        {/* <h2 className="my-12 text-center text-4xl font-bold text-white">Вартість навчання</h2> */}
 
-        <div
-          id="price"
-          className="https://www.tailwindhelper.com/ grid grid-cols-1 gap-8 px-6 xl:grid-cols-3">
+        <div id="price" className="grid grid-cols-1 gap-8 px-6 xl:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.title}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="overflow-hidden rounded-2xl bg-white shadow-2xl">
+              className="relative overflow-hidden rounded-2xl bg-white shadow-2xl">
+              {plan.discount && (
+                <div className="absolute right-0 top-0 rounded-bl-lg bg-red-500 px-4 py-1 font-bold text-white">
+                  Знижка {plan.discount}%
+                </div>
+              )}
               <div className="p-8">
                 <h3 className="mb-4 text-2xl font-bold text-text_1">{plan.title}</h3>
-                <h4 className="mb-4 text-4xl font-bold">{plan.price}</h4>
+                <div className="mb-4 flex flex-col">
+                  {plan.newPrice ? (
+                    <>
+                      <h4 className="ml-2 text-2xl font-bold text-gray-400 line-through">{plan.price}</h4>
+                      <h4 className="text-4xl font-bold">{plan.newPrice}</h4>
+                    </>
+                  ) : (
+                    <h4 className="text-4xl font-bold">{plan.price}</h4>
+                  )}
+                </div>
                 <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.description}</p>
                 <div className="text-center">
                   <Button
