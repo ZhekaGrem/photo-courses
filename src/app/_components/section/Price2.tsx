@@ -3,47 +3,18 @@ import { Button } from '../common/Button';
 import { usePortal } from '@/app/_components/layout/PortalContext';
 import CheckmarkIcon from '../common/Checkmark';
 import { motion } from 'framer-motion';
+import { section_6 } from '@/db/data';
 
-const plans = [
-  {
-    title: 'Відеокурс "Швидкий Старт"',
-    price: '3000₴',
-    newPrice: '2400₴',
-    discount: 20,
-    description:
-      "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
-    features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
-  },
-  {
-    title: 'Відеокурс з менторством',
-    price: '5500₴',
-    newPrice: '4400₴',
-    discount: 20,
-    description: 'Навчання проходить з викладачем',
-    features: [
-      'Доступ до (5+)годинного курсу на дванадцять уроків',
-      'Розбір домашніх завдань(по розкладу)',
-      'Доступ до додаткових матеріалів',
-    ],
-  },
-  {
-    title: 'Відеокурс швийдкий старт з наставником',
-    price: '10500₴',
-    newPrice: '8400₴',
-    discount: 20,
-    description: 'Індивідуальні заняття ',
-    features: [
-      'Доступ до відео матеріалів',
-      'Доступ до додаткових матеріалів',
-      'Доступ до загального телеграм чату учнів (всіх потоків)',
-      'Індивідуальне вирішення питань з викладачем',
-      'Зворотній звязок з викладачем (необмежений під час курсу )',
-      'Огляд ваших робіт викладачем, та рекомендації для покращення',
-      'Консультації з викладачем після курсу',
-    ],
-  },
-];
+type PriseType = {
+  title: string;
+  price: string;
+  newPrice: string;
+  discount: number;
+  description: string;
+  features: string[];
+};
 
+const data: PriseType[] = section_6;
 const Price2 = () => {
   const { setIsPortalOpen, setTitle } = usePortal();
 
@@ -57,7 +28,7 @@ const Price2 = () => {
         <h2 className="mb-12 text-center text-text_2">ВАРТІСТЬ НАВЧАННЯ</h2>
 
         <div id="price" className="grid grid-cols-1 gap-8 px-6 xl:grid-cols-3">
-          {plans.map((plan, index) => (
+          {data.map((plan, index) => (
             <motion.div
               key={plan.title}
               initial={{ opacity: 0, y: 50 }}

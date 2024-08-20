@@ -35,9 +35,9 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <Portfolio />
       </Suspense>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}>
         <PhonePortfolio />
-      </Suspense>
+      </Suspense> */}
       {/* <Suspense fallback={<Loading />}>
         <Price />
       </Suspense> */}
