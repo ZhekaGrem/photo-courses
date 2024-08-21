@@ -11,7 +11,7 @@ import { PortalProvider } from './_components/layout/PortalContext';
 import Script from 'next/script';
 import Head from 'next/head';
 
-const montrat = Montserrat({ subsets: ['latin', 'cyrillic'] });
+const montrat = Montserrat({ subsets: ['latin', 'cyrillic'], adjustFontFallback: false, preload: true });
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -120,8 +120,8 @@ export default function RootLayout({
                 '@type': 'Offer',
                 category: 'Індивідуальне навчання',
                 name: 'Індивідуальна школа фотографії',
-                price: '500',
-                priceCurrency: 'USD',
+                price: '10000',
+                priceCurrency: 'UAH',
               },
             ],
           })}

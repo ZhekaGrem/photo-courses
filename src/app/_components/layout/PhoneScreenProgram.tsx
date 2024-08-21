@@ -44,7 +44,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                 <button
                   className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
                   onClick={() => handleButtonClick(index)}>
-                  <p className="text-base font-semibold text-gray-800">{item.title}</p>
+                  <span className="text-base font-semibold text-gray-800">{item.title}</span>
                   <motion.div
                     initial={false}
                     animate={{ rotate: openIndex === index ? 135 : 0 }}
