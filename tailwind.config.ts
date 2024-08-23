@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        test: '#20242c',
         background_header: '#20242c',
         background_btn: '#4C98EE',
         background_span: '#1057A8',
