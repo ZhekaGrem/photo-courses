@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-ba absolute left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
+      className={`bg-ba sticky left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
       <nav className="start-0 top-0 z-20 border-b bg-background_header">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">

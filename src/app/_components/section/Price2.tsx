@@ -4,7 +4,13 @@ import { usePortal } from '@/app/_components/layout/PortalContext';
 import CheckmarkIcon from '../common/Checkmark';
 import { motion } from 'framer-motion';
 import { section_6 } from '@/db/data';
+import Link from 'next/link';
 
+const tabs = [
+  { name: 'ШВИДКИЙ СТАРТ', href: '' },
+  { name: 'Індивідуальна школа фотографії', href: '' },
+  { name: 'Індивідуальна школа фотографії', href: '' },
+];
 type PriseType = {
   title: string;
   price: string;
@@ -75,9 +81,27 @@ const Price2 = () => {
             </motion.div>
           ))}
         </div>
+        <BottomTabs />
       </div>
     </section>
   );
 };
+
+function BottomTabs() {
+  return (
+    <div className="fixed bottom-4 left-1/2 z-50 h-16 w-full max-w-lg -translate-x-1/2 rounded-full border border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-700">
+      <nav className="mx-auto my-2 grid grid-cols-3 gap-1 rounded-lg p-1">
+        {tabs.map((tab) => (
+          <Link
+            key={tab.name}
+            href={tab.href}
+            className={`rounded-lg px-5 py-1.5 text-center text-xs font-medium text-white`}>
+            <span className="mt-1 text-xs">{tab.name}</span>
+          </Link>
+        ))}
+      </nav>
+    </div>
+  );
+}
 
 export default Price2;
