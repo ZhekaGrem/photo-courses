@@ -34,17 +34,19 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
     <div className="section container">
       <div className="flex flex-col content-center gap-12 lg:flex-row">
         <div className="w-full">
-          <motion.ul
+          <motion.ol
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className="space-y-4 px-6">
+            className="list-decimal space-y-4 px-6">
             {data.map((item, index) => (
               <li key={item.id} className="overflow-hidden rounded-lg bg-white shadow-md">
                 <button
                   className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
                   onClick={() => handleButtonClick(index)}>
-                  <span className="text-base font-semibold text-gray-800">{item.title}</span>
+                  <span className="text-base font-semibold text-gray-800">
+                    {index + 1}. {item.title}
+                  </span>
                   <motion.div
                     initial={false}
                     animate={{ rotate: openIndex === index ? 135 : 0 }}
@@ -143,7 +145,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                 </AnimatePresence>
               </li>
             ))}
-          </motion.ul>
+          </motion.ol>
         </div>
       </div>
     </div>
