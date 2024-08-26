@@ -373,7 +373,7 @@ export const data_section_2 = {
         },
         {
           id: 6,
-          title: 'Основи lightroom',
+          title: 'Основи Lightroom',
           content: {
             title: 'ОБРОБКА ФОТОГРАФІЙ У LIGHTROOM',
             title2: 'Програма уроку',

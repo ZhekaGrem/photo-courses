@@ -27,7 +27,7 @@ const BottomTabs = () => {
                 <button onClick={() => handleVariantChange(tab.id)}>
                   <Link
                     href={tab.href}
-                    className={`block rounded-xl p-1 text-center text-xs font-medium shadow-md transition duration-300 ease-in-out md:p-2 ${
+                    className={`block rounded-2xl p-1 text-center text-xs font-medium shadow-md transition duration-300 ease-in-out md:p-2 ${
                       activeTab === tab.id
                         ? 'cursor-pointer rounded-full bg-gray-500'
                         : 'transition hover:bg-gray-300 hover:text-black active:scale-95'
