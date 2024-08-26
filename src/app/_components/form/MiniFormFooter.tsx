@@ -12,7 +12,7 @@ function MiniFormFooter() {
   const [showThankYou, setShowThankYou] = useState(false);
 
   const validatePhone = (phone: string) => {
-    const phoneRegex = /^(\+38|38)?0\d{9}$/;
+    const phoneRegex = /^(\+?1?[-.\s]?)?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/;
     return phoneRegex.test(phone.replace(/\s/g, ''));
   };
 

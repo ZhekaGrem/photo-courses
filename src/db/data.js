@@ -57,7 +57,7 @@ export const data_section_2 = [
   },
   {
     id: 2,
-    title: ' МАГІЯ  ВИТРИМКА ТА ISO ',
+    title: 'МАГІЯ  ВИТРИМКА ТА ISO ',
     content: {
       title: 'ВИТРИМКА \n ТА \n ISO (СВІТЛОЧУТЛИВІСТЬ)',
       title2: 'Програма уроку',
@@ -279,18 +279,18 @@ export const section_5 = 'ПОРТФОЛІО:';
 export const section_6 = [
   {
     title: 'Відеокурс "Швидкий Старт"',
-    price: '3000₴',
-    newPrice: '2400₴',
-    discount: 20,
+    price: 3000,
+    // newPrice: '2400₴',
+    // discount: 20,
     description:
       "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
     features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
   },
   {
     title: 'Відеокурс з менторством',
-    price: '5500₴',
-    newPrice: '4400₴',
-    discount: 20,
+    price: 5500,
+    // newPrice: '4400₴',
+    // discount: 20,
     description: 'Навчання проходить з викладачем',
     features: [
       'Доступ до (5+)годинного курсу на дванадцять уроків',
@@ -300,9 +300,9 @@ export const section_6 = [
   },
   {
     title: 'Відеокурс швийдкий старт з наставником',
-    price: '10500₴',
-    newPrice: '8400₴',
-    discount: 20,
+    price: 10500,
+    // newPrice: '8400₴',
+    // discount: 20,
     description: 'Індивідуальні заняття ',
     features: [
       'Доступ до відео матеріалів',

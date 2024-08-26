@@ -7,9 +7,9 @@ import { section_6 } from '@/db/data';
 
 type PriseType = {
   title: string;
-  price: string;
-  newPrice: string;
-  discount: number;
+  price: number;
+  newPrice?: string;
+  discount?: number;
   description: string;
   features: string[];
 };
@@ -45,11 +45,11 @@ const Price2 = () => {
                 <div className="mb-4 flex flex-col">
                   {plan.newPrice ? (
                     <>
-                      <h4 className="ml-2 text-2xl font-bold text-gray-400 line-through">{plan.price}</h4>
+                      <h4 className="ml-2 text-2xl font-bold text-gray-400 line-through">{plan.price}₴</h4>
                       <h4 className="text-4xl font-bold">{plan.newPrice}</h4>
                     </>
                   ) : (
-                    <h4 className="text-4xl font-bold">{plan.price}</h4>
+                    <h4 className="text-4xl font-bold">{plan.price}₴</h4>
                   )}
                 </div>
                 <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.description}</p>

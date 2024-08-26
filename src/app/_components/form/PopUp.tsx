@@ -10,12 +10,14 @@ const initialFormData = {
   name: '',
   tel: '+380',
 };
-const phoneRegex = /^(\+38|38)?0\d{9}$/;
+const phoneRegex = /^(\+?1?[-.\s]?)?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/;
 
 const PopUp = ({ title, onClose }: ClosePortal) => {
   const [formData, setFormData] = useState(initialFormData);
   const [isFormValid, setIsFormValid] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const validatePhone = (phone: string) => {
     return phoneRegex.test(phone.replace(/\s/g, ''));
@@ -33,6 +35,55 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleLiqPayPayment = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('https://liqpay-photo-course.onrender.com/pay', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: 1488,
+          description: `Оплата за курс: ${title}`,
+          order_id: Date.now().toString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Помилка при створенні платежу');
+      }
+
+      const { data, signature } = await response.json();
+
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://www.liqpay.ua/api/3/checkout';
+      form.acceptCharset = 'utf-8';
+
+      const dataInput = document.createElement('input');
+      dataInput.type = 'hidden';
+      dataInput.name = 'data';
+      dataInput.value = data;
+
+      const signatureInput = document.createElement('input');
+      signatureInput.type = 'hidden';
+      signatureInput.name = 'signature';
+      signatureInput.value = signature;
+
+      form.appendChild(dataInput);
+      form.appendChild(signatureInput);
+
+      document.body.appendChild(form);
+      form.submit();
+    } catch (error) {
+      console.error('Помилка при створенні платежу:', error);
+      alert('Виникла помилка при створенні платежу. Спробуйте ще раз.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -117,6 +168,14 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
           />
         </label>
       </form>
+      <div className="w-full text-center">
+        <button
+          onClick={handleLiqPayPayment}
+          disabled={isLoading}
+          className="rounded-3xl border-4 p-2 text-2xl font-bold text-white hover:border-double hover:border-green-400 md:text-xl md:font-normal">
+          {isLoading ? 'Завантаження...' : 'Оплатити через LiqPay'}
+        </button>
+      </div>
     </>
   );
 };
