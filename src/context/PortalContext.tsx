@@ -1,21 +1,25 @@
 'use client';
 import React, { createContext, useState, useContext } from 'react';
-import Portal from './Portal';
+import Portal from '../app/_components/layout/Portal';
 
 type PortalContextType = {
   isPortalOpen: boolean;
   setIsPortalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   title?: string;
   setTitle?: React.Dispatch<React.SetStateAction<string>>;
+  variantId?: string;
+  setVariantId?: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 const PortalContext = createContext<PortalContextType | undefined>(undefined);
 
 export const PortalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isPortalOpen, setIsPortalOpen] = useState(false);
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState<string>('');
+  const [variantId, setVariantId] = useState<string | undefined>(undefined);
 
   return (
-    <PortalContext.Provider value={{ isPortalOpen, setIsPortalOpen, title, setTitle }}>
+    <PortalContext.Provider
+      value={{ isPortalOpen, setIsPortalOpen, title, setTitle, variantId, setVariantId }}>
       {children}
       {isPortalOpen && <Portal title={title} onClose={() => setIsPortalOpen(false)} />}
     </PortalContext.Provider>

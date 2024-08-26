@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '../common/Button';
-import { usePortal } from '@/app/_components/layout/PortalContext';
+import { usePortal } from '@/context/PortalContext';
 import CheckmarkIcon from '../common/Checkmark';
 import { motion } from 'framer-motion';
 import { section_6 } from '@/db/data';
@@ -8,8 +8,8 @@ import { section_6 } from '@/db/data';
 type PriseType = {
   title: string;
   price: string;
-  newPrice: string;
-  discount: number;
+  newPrice?: string;
+  discount?: number;
   description: string;
   features: string[];
 };

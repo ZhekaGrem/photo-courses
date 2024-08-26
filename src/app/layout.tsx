@@ -2,12 +2,13 @@ import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import '@/app/styles/globals.css';
+import BottomTabs from '@/app/_components/layout/BottomTabs';
 
 const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
   loading: () => <p>Loading...</p>,
 });
 import Header from './_components/layout/Header';
-import { PortalProvider } from './_components/layout/PortalContext';
+import { PortalProvider } from '@/context/PortalContext';
 import Script from 'next/script';
 import Head from 'next/head';
 
@@ -80,6 +81,8 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <DynamicFooter />
+          <BottomTabs />
+
           <div id="portal-root" />
         </PortalProvider>
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">

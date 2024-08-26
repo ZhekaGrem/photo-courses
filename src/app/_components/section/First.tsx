@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '../common/Button';
-import { usePortal } from '@/app/_components/layout/PortalContext';
+import { usePortal } from '@/context/PortalContext';
 import SocialIcons from '@/app/_components/common/SocialIcons';
 import FirstTitle from '@/app/_components/common/FirstTitle';
 

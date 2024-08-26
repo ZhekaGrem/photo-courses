@@ -12,7 +12,6 @@ const PortfolioStudent = lazy(() => import('@/app/_components/section/PortfolioS
 // const Price = lazy(() => import('@/app/_components/section/Price'));
 const Price2 = lazy(() => import('@/app/_components/section/Price2'));
 // const Question = lazy(() => import('@/app/_components/section/Question'));
-import BottomTabs from '@/app/_components/layout/BottomTabs';
 
 export default function Home() {
   return (
@@ -24,15 +23,12 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <WhoLeads />
       </Suspense>
-      <div className="bg-[#e4722b] pb-8">
-        <Suspense fallback={<Loading />}>
-          <CourseProgram />
-        </Suspense>
-        <Suspense fallback={<Loading />}>
-          <Price2 />
-        </Suspense>
-        <BottomTabs />
-      </div>
+      <Suspense fallback={<Loading />}>
+        <CourseProgram />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <Price2 />
+      </Suspense>
       <Suspense fallback={<Loading />}>
         <Сertificate />
       </Suspense>

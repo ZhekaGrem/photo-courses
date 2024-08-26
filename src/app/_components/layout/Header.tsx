@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../common/Button';
 import BurgerIcon from '../common/BurgerIcon';
-import { usePortal } from '@/app/_components/layout/PortalContext';
+import { usePortal } from '@/context/PortalContext';
 import { navlink, header } from '@/db/data';
 
 type NavLinks = {
@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-ba sticky left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
+      className={`bg-ba static left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
       <nav className="start-0 top-0 z-20 border-b bg-background_header">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -64,6 +64,7 @@ const Header = () => {
               {dataLink.map((list) => (
                 <li key={list.id} className={` ${burgerMenu ? '' : 'p-6'}`}>
                   <Link
+                    onClick={handleBurgerButtonClick}
                     href={list.href}
                     className="block rounded px-3 py-2 hover:text-background_btn_hover lg:p-0">
                     {list.name}
