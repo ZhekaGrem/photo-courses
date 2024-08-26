@@ -26,7 +26,7 @@ export const data_section_2 = {
       program: [
         {
           id: 0,
-          title: ' ОСНОВИ ФОТОТЕХНІКИ',
+          title: 'Основи фототехніки',
           content: {
             title: 'ВИБІР ТА ОСВОЄННЯ ТЕХНІКИ',
             title2: 'Програма уроку',
@@ -43,7 +43,7 @@ export const data_section_2 = {
         },
         {
           id: 1,
-          title: ' СЕКРЕТИ ЕКСПОЗИЦІЇ',
+          title: ' Секрети експозиції',
           content: {
             title: 'ЕКСПОЗИЦІЯ ТА ДІАФРАГМА',
             title2: 'Програма уроку',
@@ -61,9 +61,9 @@ export const data_section_2 = {
         },
         {
           id: 2,
-          title: ' МАГІЯ  ВИТРИМКА ТА ISO ',
+          title: ' Магія  витримки та iso ',
           content: {
-            title: 'ВИТРИМКА \n ТА \n ISO (СВІТЛОЧУТЛИВІСТЬ)',
+            title: 'ВИТРИМКИ \n ТА \n ISO (СВІТЛОЧУТЛИВІСТЬ)',
             title2: 'Програма уроку',
             list: [
               'Витримка: ключ до динамічних та статичних кадрів',
@@ -79,7 +79,7 @@ export const data_section_2 = {
         },
         {
           id: 3,
-          title: 'МИСТЕЦТВО КОМПОЗИЦІЇ',
+          title: 'Мистецтво композиції',
           content: {
             title: 'КОМПОЗИЦІЯ',
             title2: 'Програма уроку',
@@ -97,7 +97,7 @@ export const data_section_2 = {
         },
         {
           id: 4,
-          title: 'ПСИХОЛОГІЯ КОЛЬОРУ',
+          title: 'Психологія кольору',
           content: {
             title: 'КОЛІР',
             title2: 'Програма уроку',
@@ -115,7 +115,7 @@ export const data_section_2 = {
         },
         {
           id: 5,
-          title: ' ПРОФЕСІЙНЕ ОСВІТЛЕННЯ',
+          title: ' Професійне освітлення',
           content: {
             title: 'СВІТЛО',
             title2: 'Програма уроку',
@@ -133,7 +133,7 @@ export const data_section_2 = {
         },
         {
           id: 6,
-          title: ' ФОРМУВАННЯ ПОРТФОЛІО',
+          title: ' Формування портфоліо',
           content: {
             title: 'ПОРТФОЛІО',
             title2: 'Програма уроку',
@@ -151,7 +151,7 @@ export const data_section_2 = {
         },
         {
           id: 7,
-          title: ' СТУДІЙНА ЗЙОМКА',
+          title: ' Студійна зйомка',
           content: {
             title: 'ІМПРОВІЗАЦІЙНА ЗЙОМКА ВІД ВХОДУ У СТУДІЮ ДО ВИХОДУ',
             title2: 'Програма уроку',
@@ -169,7 +169,7 @@ export const data_section_2 = {
         },
         {
           id: 8,
-          title: 'ПРОФЕСІЙНА ЕТИКА',
+          title: 'Професійна етика',
           content: {
             title: 'ФОТОГРАФ ОЧИМА КОМАНДИ',
             title2: 'Програма уроку',
@@ -187,7 +187,7 @@ export const data_section_2 = {
         },
         {
           id: 9,
-          title: ' МАГІЯ ПОСТ-ОБРОБКИ',
+          title: ' Магія пост-обробки',
           content: {
             title: 'ВИБІР ТА ПРОЯВКА В LIGHTROOM',
             title2: 'Програма уроку',
@@ -205,7 +205,7 @@ export const data_section_2 = {
         },
         {
           id: 10,
-          title: " СТАРТ КАР'ЄРИ",
+          title: " Старт кар'єри",
           content: {
             title: 'ЯК ЗНАЙТИ ПЕРШОГО КЛІЄНТА',
             title2: 'Програма уроку',
@@ -223,7 +223,7 @@ export const data_section_2 = {
         },
         {
           id: 11,
-          title: ' ТАРГЕТ',
+          title: ' Таргет',
           content: {
             title: 'ТАРГЕТ',
             title2: 'Програма уроку',
@@ -241,7 +241,7 @@ export const data_section_2 = {
         },
         {
           id: 12,
-          title: 'БОНУСНИЙ УРОК',
+          title: 'Бонусний урок',
           content: {
             title: 'ОГЛЯД ФІЛЬМУ',
             title2: 'Програма уроку',
@@ -263,7 +263,7 @@ export const data_section_2 = {
       program: [
         {
           id: 0,
-          title: 'ПЕРШЕ ЗНАЙОМСТВО З ФОТОГРАФІЄЮ',
+          title: 'Перше знайомство з фотографією',
           content: {
             title: 'ОСНОВИ ТА ЦІЛІ ФОТОМИСТЕЦТВА',
             title2: 'Програма уроку',
@@ -280,9 +280,9 @@ export const data_section_2 = {
         },
         {
           id: 1,
-          title: 'ФУНКЦІОНАЛ ФОТОАПАРАТА',
+          title: 'Функціонал фотоапарата',
           content: {
-            title: 'ЕКСПОЗИЦІЯ ТА ДІАФРАГМА',
+            title: 'Експозиція та діафрагма',
             title2: 'Програма уроку',
             list: [
               'Налаштування діафрагми та її вплив на якість зображення',
@@ -298,9 +298,9 @@ export const data_section_2 = {
         },
         {
           id: 2,
-          title: 'ВИТРИМКА ТА ISO',
+          title: 'ВИТРИМКИ ТА ISO',
           content: {
-            title: 'ТРИКУТНИК ЕКСПОЗИЦІЇ',
+            title: 'Трикутник експозиції',
             title2: 'Програма уроку',
             list: [
               'Дослідження впливу короткої та довгої витримки',
@@ -316,7 +316,7 @@ export const data_section_2 = {
         },
         {
           id: 3,
-          title: 'МИСТЕЦТВО КОМПОЗИЦІЇ',
+          title: 'Мистецтво композиції',
           content: {
             title: 'ОСНОВИ ПОБУДОВИ КАДРУ',
             title2: 'Програма уроку',
@@ -335,7 +335,7 @@ export const data_section_2 = {
         },
         {
           id: 4,
-          title: 'РОБОТА З КОЛЬОРОМ',
+          title: 'Робота з кольором',
           content: {
             title: 'ТЕОРІЯ ТА ПРАКТИКА КОЛЬОРУ',
             title2: 'Програма уроку',
@@ -354,7 +354,7 @@ export const data_section_2 = {
         },
         {
           id: 5,
-          title: 'СВІТЛО У ФОТОГРАФІЇ',
+          title: 'Світло у фотографії',
           content: {
             title: 'ТЕХНІКИ ОСВІТЛЕННЯ',
             title2: 'Програма уроку',
@@ -373,7 +373,7 @@ export const data_section_2 = {
         },
         {
           id: 6,
-          title: 'ОСНОВИ LIGHTROOM',
+          title: 'Основи lightroom',
           content: {
             title: 'ОБРОБКА ФОТОГРАФІЙ У LIGHTROOM',
             title2: 'Програма уроку',

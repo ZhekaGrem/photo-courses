@@ -42,11 +42,11 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
   };
   return (
     <div className="relative flex flex-row items-start">
-      <ul className="w-1/3 p-4">
+      <ol className="w-1/3 list-decimal p-4">
         {data.map((item) => (
           <li
             key={item.id}
-            className={`mb-5 cursor-pointer break-words p-2 text-xl font-bold ${
+            className={`mb-5 cursor-pointer break-words p-2 text-xl font-bold normal-case ${
               selectedId === item.id
                 ? 'border-text-text_2 border-b-4 border-solid'
                 : 'border-text-text_2 border-b-2 border-solid'
@@ -55,7 +55,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
             {item.title}
           </li>
         ))}
-      </ul>
+      </ol>
       <div className="sticky top-4 w-full px-24">
         <div className="left-0 top-0 h-full w-full pt-4">
           {data.map((item) =>
