@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 const tabs = [
   { name: 'Швидкий старт', href: '#program', id: 'basic' },
-  { name: 'PRO Світло', href: '#program', id: 'advanced' },
   { name: 'Індивідуальна школа', href: '#program', id: 'advanced' },
+  { name: 'PRO Світло', href: '#program', id: 'light' },
 ];
 
 const BottomTabs = () => {
