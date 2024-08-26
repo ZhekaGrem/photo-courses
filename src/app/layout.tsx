@@ -80,10 +80,10 @@ export default function RootLayout({
         <PortalProvider>
           <Header />
           <main>{children}</main>
-          <BottomTabs />
           <DynamicFooter />
 
           <div id="portal-root" />
+          <BottomTabs />
         </PortalProvider>
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({

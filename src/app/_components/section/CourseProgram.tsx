@@ -57,7 +57,7 @@ const CourseProgram = () => {
   return (
     <section id="program" className="bg-background_header">
       <div className="section container text-text_2">
-        <h2 className="text-center sm:text-left">{selectedVariant.title_2}</h2>
+        <h2 className="text-center text-2xl sm:text-left sm:text-5xl">{selectedVariant.title_2}</h2>
         <Suspense fallback={<Loading />}>
           <div className="big-screen">
             <BigScreenProgram data={selectedVariant.program} />
