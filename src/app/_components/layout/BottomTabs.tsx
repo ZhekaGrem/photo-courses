@@ -4,7 +4,8 @@ import { usePortal } from '@/context/PortalContext';
 
 const tabs = [
   { name: 'ШВИДКИЙ СТАРТ', href: '#program', id: 'basic' },
-  { name: 'Індивідуальна школа фотографії', href: '#program', id: 'advanced' },
+  { name: 'PRO Світло', href: '#program', id: 'advanced' },
+  { name: 'Індивідуальна школа', href: '#program', id: 'advanced' },
 ];
 
 const BottomTabs = () => {
