@@ -1,17 +1,20 @@
 'use client';
 import Link from 'next/link';
 import { usePortal } from '@/context/PortalContext';
+import { useState } from 'react';
 
 const tabs = [
-  { name: 'ШВИДКИЙ СТАРТ', href: '#program', id: 'basic' },
+  { name: 'Швидкий старт', href: '#program', id: 'basic' },
   { name: 'PRO Світло', href: '#program', id: 'advanced' },
   { name: 'Індивідуальна школа', href: '#program', id: 'advanced' },
 ];
 
 const BottomTabs = () => {
   const { variantId, setVariantId } = usePortal();
+  const [activeTab, setActiveTab] = useState('basic');
 
   const handleVariantChange = (newVariantId: string) => {
+    setActiveTab(newVariantId);
     setVariantId?.(newVariantId);
   };
   return (
@@ -20,12 +23,16 @@ const BottomTabs = () => {
         <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-2">
           <ul className="flex w-full justify-between">
             {tabs.map((tab, id) => (
-              <li key={id}>
-                <button onClick={() => handleVariantChange(`${tab.id}`)}>
+              <li key={id} className="font-bold text-white">
+                <button onClick={() => handleVariantChange(tab.id)}>
                   <Link
                     href={tab.href}
-                    className="block rounded px-1 py-1 text-center text-xs font-medium text-white hover:text-background_btn_hover md:px-2 md:py-2">
-                    <span>{tab.name}</span>
+                    className={`block rounded-xl p-1 text-center text-xs font-medium shadow-md transition duration-300 ease-in-out md:p-2 ${
+                      activeTab === tab.id
+                        ? 'cursor-pointer rounded-full bg-gray-500'
+                        : 'transition hover:bg-gray-300 hover:text-black active:scale-95'
+                    }`}>
+                    <span className="font-semibold md:text-base">{tab.name}</span>
                   </Link>
                 </button>
               </li>

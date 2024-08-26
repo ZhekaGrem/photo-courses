@@ -80,8 +80,8 @@ export default function RootLayout({
         <PortalProvider>
           <Header />
           <main>{children}</main>
-          <DynamicFooter />
           <BottomTabs />
+          <DynamicFooter />
 
           <div id="portal-root" />
         </PortalProvider>
