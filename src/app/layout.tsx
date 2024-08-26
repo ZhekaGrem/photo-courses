@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
-import './globals.css';
+import '@/app/styles/globals.css';
 
 const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
   loading: () => <p>Loading...</p>,

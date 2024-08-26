@@ -96,7 +96,7 @@ h2 {
 }
 
 .imgBg {
-  background-image: url('assets/img/small3.webp');
+  background-image: url('../assets/img/small3.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -119,7 +119,7 @@ h2 {
     max-width: 768px;
   }
   .imgBg {
-    background-image: url('assets/img/larg.jpg');
+    background-image: url('../assets/img/larg.jpg');
   }
 }
 
@@ -136,7 +136,7 @@ h2 {
 
 @media (max-width: 767px) {
   .imgBg2 {
-    background-image: url('./assets/img/bg-popup.jpg');
+    background-image: url('../assets/img/bg-popup.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
