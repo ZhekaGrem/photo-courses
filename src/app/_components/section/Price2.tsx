@@ -8,8 +8,8 @@ import { section_6 } from '@/db/data';
 type PriseType = {
   title: string;
   price: string;
-  newPrice: string;
-  discount: number;
+  newPrice?: string;
+  discount?: number;
   description: string;
   features: string[];
 };
