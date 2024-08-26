@@ -24,7 +24,13 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleClick = (id: number) => {
-    setSelectedId(id);
+    const exists = data.some((item) => item.id === id);
+
+    if (exists) {
+      setSelectedId(id);
+    } else {
+      setSelectedId(data[0].id); // Якщо немає такого id, повертаємось до першого варіанту
+    }
     setIsPlaying(false);
   };
 

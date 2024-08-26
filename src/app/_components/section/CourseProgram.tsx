@@ -48,8 +48,8 @@ type DataSection2Type = {
 
 const data: DataSection2Type = data_section_2;
 const CourseProgram = () => {
-  const { variantId, setVariantId } = usePortal();
-  const selectedVariant = data_section_2.variants.find((variant) => variant.id === variantId);
+  const { variantId } = usePortal();
+  const selectedVariant = data.variants.find((variant) => variant.id === variantId);
 
   if (!selectedVariant) {
     return <div>Variant not found</div>;
