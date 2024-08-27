@@ -63,7 +63,7 @@ export const data_section_2 = {
           id: 2,
           title: 'Урок 3:Магія  витримки та ISO ',
           content: {
-            title: 'Витримки \n та \n iso (світлочутливість)',
+            title: 'Витримки та ISO (світлочутливість)',
             title2: 'Програма уроку',
             list: [
               'Витримка: ключ до динамічних та статичних кадрів',
@@ -298,7 +298,7 @@ export const data_section_2 = {
         },
         {
           id: 2,
-          title: 'Витримки та iso',
+          title: 'Витримки та ISO',
           content: {
             title: 'Трикутник експозиції',
             title2: 'Програма уроку',
