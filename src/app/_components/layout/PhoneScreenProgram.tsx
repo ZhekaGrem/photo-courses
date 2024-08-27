@@ -97,7 +97,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                     <div className="text-1xl pb-4 font-semibold">{item.content.title}</div>
                                     <ul className="ml-5">
                                       {item.content.list.map((item, index) => (
-                                        <li className="list-outside list-disc" key={index}>
+                                        <li className="list-inside list-disc" key={index}>
                                           {item}
                                         </li>
                                       ))}
