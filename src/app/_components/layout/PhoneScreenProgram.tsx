@@ -95,13 +95,13 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                   </div>
                                   <div className="w-full p-3">
                                     <div className="text-1xl pb-4 font-semibold">{item.content.title}</div>
-                                    <ul>
+                                    <ol className="ml-5">
                                       {item.content.list.map((item, index) => (
                                         <li className="list-outside list-disc" key={index}>
                                           {item}
                                         </li>
                                       ))}
-                                    </ul>
+                                    </ol>
                                   </div>
                                 </div>
                                 <div className="relative">
