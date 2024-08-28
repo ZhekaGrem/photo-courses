@@ -44,6 +44,17 @@ const config: Config = {
         black2: '0.1px 0.1px 0.1px black, 0 0 0.1em black, 0 0 0.1em black',
         orange: '0.5px 0.5px 1px #e4722b, 0 0 1em black, 0 0 0.5em #e4722b',
       },
+      keyframes: {
+        'tilt-shaking': {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(5deg)' },
+          '50%': { transform: 'rotate(0deg)' },
+          '75%': { transform: 'rotate(-5deg)' },
+        },
+      },
+      animation: {
+        'tilt-shaking': 'tilt-shaking 0.5s 10',
+      },
     },
   },
   plugins: [require('tailwindcss-textshadow')],

@@ -9,7 +9,7 @@ import { section_1 } from '@/db/data';
 type SectionInfo = {
   title: string;
   title2: string;
-  text: string;
+  text?: string;
   button_text: string;
 };
 
@@ -32,9 +32,9 @@ const First = () => {
                 onClick={() => setIsPortalOpen(true)}
               />
             </div>
-            <div className="pt-20 md:pt-0 xl:pt-[40%]">
+            {/* <div className="pt-20 md:pt-0 xl:pt-[40%]">
               <p className="max-w-[90%] font-bold sm:max-w-[70%] lg:text-2xl">{data.text}</p>
-            </div>
+            </div> */}
           </div>
           <SocialIcons />
         </div>

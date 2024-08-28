@@ -18,7 +18,7 @@ type PhoneCarouselProps = {
 const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [ref, instanceRef] = useKeenSlider<HTMLUListElement>({
+  const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -31,32 +31,30 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
 
     slides: { perView: 1, spacing: 0 },
   });
-  return (
-    <>
-      <div className="relative overflow-hidden">
-        <ul ref={ref} className="keen-slider">
-          {carousel.map((item) => (
-            <li key={item.id} className="keen-slider__slide w-full">
-              <Image
-                className="h-full w-full object-cover"
-                width={400}
-                height={400}
-                src={item.src}
-                alt={item.alt}
-                loading="lazy"
-              />
-            </li>
-          ))}
-        </ul>
-        {loaded && instanceRef.current && (
-          <>
-            <Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} />
 
-            <Arrow onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()} />
-          </>
-        )}
+  return (
+    <div className="relative mx-auto w-full max-w-md">
+      <div ref={ref} className="keen-slider">
+        {carousel.map((item) => (
+          <div key={item.id} className="keen-slider__slide flex items-center justify-center">
+            <Image
+              className="w-auto rounded-md object-contain"
+              width={400}
+              height={400}
+              src={item.src}
+              alt={item.alt}
+              loading="lazy"
+            />
+          </div>
+        ))}
       </div>
-    </>
+      {loaded && instanceRef.current && (
+        <>
+          <Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} />
+          <Arrow onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()} />
+        </>
+      )}
+    </div>
   );
 };
 
@@ -64,9 +62,7 @@ function Arrow(props: { left?: boolean; onClick: (e: any) => void }) {
   return (
     <svg
       onClick={props.onClick}
-      className={`arrow max-w-6 fill-text_2 shadow-xl transition-transform duration-300 active:scale-150 ${
-        props.left ? 'arrow--left' : 'arrow--right'
-      } `}
+      className={`arrow rounded-full bg-slate-200 fill-text_1 p-1 opacity-80 shadow-xl ${props.left ? 'arrow--left--program' : 'arrow--right--program'} `}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24">
       {props.left && <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />}

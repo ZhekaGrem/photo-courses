@@ -2,9 +2,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 
 type IndexType = number | null;
 type HandleClickButton = (index: number) => void;
+
+type CarouselType = {
+  id: number;
+  src: string;
+  alt: string;
+};
 
 type InfoType = {
   id: number;
@@ -16,6 +23,7 @@ type InfoType = {
     img?: string;
     img_alt?: string;
     video?: string;
+    сarousel?: Array<CarouselType>;
   };
 };
 
@@ -81,7 +89,9 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                   </div>
                                 </div>
                                 <div className="relative">
-                                  {item.content.video ? (
+                                  {item.content.сarousel ? (
+                                    <CarouselProgram carousel={item.content.сarousel} />
+                                  ) : item.content.video ? (
                                     <>
                                       <video
                                         className={`h-full w-full rounded-lg object-cover shadow-2xl`}
