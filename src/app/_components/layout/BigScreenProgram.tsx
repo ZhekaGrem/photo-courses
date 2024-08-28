@@ -9,8 +9,8 @@ type InfoType = {
     title: string;
     title2: string;
     list: Array<string>;
-    img: string;
-    img_alt: string;
+    img?: string;
+    img_alt?: string;
     video?: string;
   };
 };
@@ -80,8 +80,8 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                         <>
                           <Image
                             className="h-full w-full rounded-lg object-cover shadow-2xl"
-                            src={item.content.img}
-                            alt={item.content.img_alt}
+                            src={item.content.img || 'Content image'}
+                            alt={item.content.img_alt || 'Content image'}
                             width={640}
                             height={360}
                             priority={true}

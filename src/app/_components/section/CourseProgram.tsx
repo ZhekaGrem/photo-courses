@@ -25,8 +25,8 @@ type ProgramContentType = {
   title: string;
   title2: string;
   list: Array<string>;
-  img: string;
-  img_alt: string;
+  img?: string;
+  img_alt?: string;
   video?: string;
 };
 
