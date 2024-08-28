@@ -46,16 +46,14 @@ const config: Config = {
       },
       keyframes: {
         'tilt-shaking': {
-          '0%': { transform: 'skewY(-15deg)' },
-          '5%': { transform: 'skewY(15deg)' },
-          '10%': { transform: 'skewY(-15deg)' },
-          '15%': { transform: 'skewY(15deg)' },
-          '20%': { transform: 'skewY(0deg)' },
-          '100%': { transform: 'skewY(0deg)' },
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '25%': { transform: 'rotate(0.5deg)' },
+          '50%': { transform: 'rotate(0deg)' },
+          '75%': { transform: 'rotate(-0.5deg)' },
         },
       },
       animation: {
-        'tilt-shaking': 'tilt-shaking 0.1s 10',
+        'tilt-shaking': 'tilt-shaking 0.2s 10',
       },
     },
   },

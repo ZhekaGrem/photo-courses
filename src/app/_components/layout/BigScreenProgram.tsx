@@ -122,7 +122,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     </>
                   ) : item.content.img ? (
                     <Image
-                      className="h-full rounded-lg object-cover shadow-2xl"
+                      className="h-full w-full rounded-lg object-cover shadow-2xl"
                       src={item.content.img}
                       alt={item.content.img_alt || 'Content image'}
                       width={640}
