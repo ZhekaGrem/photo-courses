@@ -81,7 +81,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     </ul>
                   </div>
                 </div>
-                <div className="relative">
+                <div className="relative min-h-96">
                   {item.content.сarousel ? (
                     <CarouselProgram carousel={item.content.сarousel} />
                   ) : item.content.video ? (

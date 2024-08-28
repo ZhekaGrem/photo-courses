@@ -33,7 +33,7 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
   });
 
   return (
-    <div className="relative mx-auto w-full max-w-md">
+    <div className="relative mx-auto min-h-[700px] w-full max-w-md">
       <div ref={ref} className="keen-slider">
         {carousel.map((item) => (
           <div key={item.id} className="keen-slider__slide flex items-center justify-center">
