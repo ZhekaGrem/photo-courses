@@ -25,7 +25,7 @@ const First = () => {
           <div className="mb-12 text-text_2 lg:mb-0 lg:w-2/3">
             <FirstTitle title={data.title} title2={data.title2} />
 
-            <div className="w-full pt-56 text-end">
+            <div className="w-full pt-40 text-end xs:pt-56">
               <Button
                 className="bg-background_btn_burger text-2xl font-bold transition-all duration-300 hover:underline sm:hidden"
                 text={data.button_text}

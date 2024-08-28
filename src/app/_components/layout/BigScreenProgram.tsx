@@ -110,16 +110,16 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                         Your browser does not support the video tag.
                       </video>
                     </>
-                  ) : (
+                  ) : item.content.img ? (
                     <Image
                       className="h-full rounded-lg object-cover shadow-2xl"
                       src={item.content.img}
-                      alt={item.content.img_alt}
+                      alt={item.content.img_alt || 'Content image'}
                       width={640}
                       height={360}
                       priority={true}
                     />
-                  )}
+                  ) : null}
                 </div>
               </div>
             ) : null
