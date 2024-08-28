@@ -24,7 +24,7 @@ const First = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="mb-12 text-text_2 lg:mb-0 lg:w-2/3">
             <FirstTitle title={data.title} title2={data.title2} />
-
+            {/* prettier-ignore */}
             <div className="w-full pt-40 text-end xs:pt-56">
               <Button
                 className="bg-background_btn_burger text-2xl font-bold transition-all duration-300 hover:underline sm:hidden"

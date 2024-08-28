@@ -26,12 +26,6 @@
       "options": {
         "proseWrap": "preserve"
       }
-    },
-    {
-      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      "options": {
-        "ignoreClassAttributes": ["xs:pt-56 w-full pt-40 text-end"]
-      }
     }
   ]
 }
