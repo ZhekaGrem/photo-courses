@@ -41,7 +41,7 @@ const Price2 = () => {
     setIsPortalOpen(true);
   };
   return (
-    <section className="bg-[#e4722b]">
+    <section className="bg-background_section_6">
       <div className="section container mx-auto">
         <h2 className="mb-12 text-center text-text_2">ВАРТІСТЬ НАВЧАННЯ</h2>
 
@@ -77,7 +77,7 @@ const Price2 = () => {
                   <Button
                     text="Замовити"
                     onClick={() => openPortal(plan.content.title)}
-                    className="w-full max-w-60 rounded-lg bg-[#e4722b] px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90"
+                    className="w-full max-w-60 rounded-lg bg-background_section_6 px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90"
                   />
                 </div>
               </div>

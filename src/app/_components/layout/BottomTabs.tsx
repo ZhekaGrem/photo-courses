@@ -19,7 +19,7 @@ const BottomTabs = () => {
   };
   return (
     <div className="sticky bottom-4 left-1/2 z-10 w-full max-w-lg px-3 sm:-translate-x-1/2">
-      <nav className="rounded-full bg-gray-700">
+      <nav className="rounded-full bg-background_section_6">
         <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-2">
           <ul className="flex w-full justify-between">
             {tabs.map((tab, id) => (
@@ -29,7 +29,7 @@ const BottomTabs = () => {
                     href={tab.href}
                     className={`block rounded-2xl p-1 text-center text-xs font-medium shadow-md transition duration-300 ease-in-out md:p-2 ${
                       activeTab === tab.id
-                        ? 'cursor-pointer rounded-full bg-gray-500'
+                        ? 'cursor-pointer rounded-full bg-red-500'
                         : 'transition hover:bg-gray-300 hover:text-black active:scale-95'
                     }`}>
                     <span className="font-semibold md:text-base">{tab.name}</span>
