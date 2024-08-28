@@ -47,13 +47,13 @@ const config: Config = {
       keyframes: {
         'tilt-shaking': {
           '0%, 100%': { transform: 'rotate(0deg)' },
-          '25%': { transform: 'rotate(0.5deg)' },
+          '25%': { transform: 'rotate(2deg)' },
           '50%': { transform: 'rotate(0deg)' },
-          '75%': { transform: 'rotate(-0.5deg)' },
+          '75%': { transform: 'rotate(-3deg)' },
         },
       },
       animation: {
-        'tilt-shaking': 'tilt-shaking 0.2s 10',
+        'tilt-shaking': 'tilt-shaking 0.3s 10',
       },
     },
   },
