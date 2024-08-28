@@ -1,11 +1,11 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-// import CarouselProgram from '@/app/_components/layout/CarouselProgram';
+import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 
 type CarouselType = {
   id: number;
-  link: string;
+  src: string;
   alt: string;
 };
 
@@ -82,7 +82,9 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                   </div>
                 </div>
                 <div className="relative">
-                  {item.content.video ? (
+                  {item.content.сarousel ? (
+                    <CarouselProgram carousel={item.content.сarousel} />
+                  ) : item.content.video ? (
                     <>
                       {!isPlaying && (
                         <>
