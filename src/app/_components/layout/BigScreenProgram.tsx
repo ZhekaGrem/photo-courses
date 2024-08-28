@@ -1,6 +1,13 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
+// import CarouselProgram from '@/app/_components/layout/CarouselProgram';
+
+type CarouselType = {
+  id: number;
+  link: string;
+  alt: string;
+};
 
 type InfoType = {
   id: number;
@@ -12,6 +19,7 @@ type InfoType = {
     img?: string;
     img_alt?: string;
     video?: string;
+    сarousel?: Array<CarouselType>;
   };
 };
 type ComponentProps = {
@@ -29,7 +37,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
     if (exists) {
       setSelectedId(id);
     } else {
-      setSelectedId(data[0].id); // Якщо немає такого id, повертаємось до першого варіанту
+      setSelectedId(data[0].id);
     }
     setIsPlaying(false);
   };
