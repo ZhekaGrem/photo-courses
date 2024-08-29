@@ -4,9 +4,9 @@ import { usePortal } from '@/context/PortalContext';
 import { useState } from 'react';
 
 const tabs = [
-  { name: 'Швидкий старт', href: '#program', id: 'basic' },
+  { name: 'Швидкий старт', href: '#program', id: 'faststart' },
   { name: 'PRO Світло', href: '#program', id: 'light' },
-  { name: 'Індивідуальна школа', href: '#program', id: 'advanced' },
+  { name: 'Індивідуальна школа', href: '#program', id: 'school' },
 ];
 
 const BottomTabs = () => {
