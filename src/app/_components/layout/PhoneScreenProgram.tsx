@@ -95,7 +95,8 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                     <>
                                       <video
                                         className={`h-full w-full rounded-lg object-cover shadow-2xl`}
-                                        controls>
+                                        controls
+                                        poster={item.content.img}>
                                         <source src={item.content.video} type="video/mp4" />
                                         Your browser does not support the video tag.
                                       </video>
