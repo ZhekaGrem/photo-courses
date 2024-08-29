@@ -88,30 +88,38 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                     </ul>
                                   </div>
                                 </div>
-                                <div className="relative">
-                                  {item.content.сarousel ? (
-                                    <CarouselProgram carousel={item.content.сarousel} />
-                                  ) : item.content.video ? (
-                                    <>
-                                      <video
-                                        className={`h-full w-full rounded-lg object-cover shadow-2xl`}
-                                        controls
-                                        poster={item.content.img}>
-                                        <source src={item.content.video} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                      </video>
-                                    </>
-                                  ) : item.content.img ? (
-                                    <Image
-                                      className="h-full rounded-lg object-cover shadow-2xl"
-                                      src={item.content.img}
-                                      alt={item.content.img_alt || 'Content image'}
-                                      width={640}
-                                      height={360}
-                                      priority={true}
-                                    />
-                                  ) : null}
-                                </div>
+                                <AnimatePresence mode="wait">
+                                  <motion.div
+                                    key={item.id}
+                                    className="relative"
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 20 }}
+                                    transition={{ duration: 0.3 }}>
+                                    {item.content.сarousel ? (
+                                      <CarouselProgram carousel={item.content.сarousel} />
+                                    ) : item.content.video ? (
+                                      <>
+                                        <video
+                                          className={`h-full w-full rounded-lg object-cover shadow-2xl`}
+                                          controls
+                                          poster={item.content.img}>
+                                          <source src={item.content.video} type="video/mp4" />
+                                          Your browser does not support the video tag.
+                                        </video>
+                                      </>
+                                    ) : item.content.img ? (
+                                      <Image
+                                        className="h-full rounded-lg object-cover shadow-2xl"
+                                        src={item.content.img}
+                                        alt={item.content.img_alt || 'Content image'}
+                                        width={640}
+                                        height={360}
+                                        priority={true}
+                                      />
+                                    ) : null}
+                                  </motion.div>
+                                </AnimatePresence>
                               </motion.div>
                             ) : null
                           )}

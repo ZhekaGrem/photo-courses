@@ -493,7 +493,7 @@ export const data_section_2 = {
             сarousel: [
               {
                 id: 1,
-                src: '/programgroup/school/block2/1, фотошкола, школа фотографії, курси фотографа.webp ',
+                src: '/programgroup/school/block2/1, фотошкола, школа фотографії, курси фотографа.webp',
                 alt: 'фотошкола, школа фотографії, курси фотографа',
               },
               {
@@ -545,7 +545,7 @@ export const data_section_2 = {
             сarousel: [
               {
                 id: 1,
-                src: '/programgroup/school/block3/1, фотошкола, школа фотографії, курси фотографа.webp',
+                src: '/programgroup/school/block3/4, фотошкола, школа фотографії, курси фотографа.webp',
                 alt: 'фотошкола, школа фотографії, курси фотографа',
               },
               {
@@ -560,7 +560,7 @@ export const data_section_2 = {
               },
               {
                 id: 4,
-                src: '/programgroup/school/block3/4, фотошкола, школа фотографії, курси фотографа.webp',
+                src: '/programgroup/school/block3/1, фотошкола, школа фотографії, курси фотографа.webp',
                 alt: 'фотошкола, школа фотографії, курси фотографа',
               },
               {
