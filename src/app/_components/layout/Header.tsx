@@ -28,8 +28,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`bg-ba static left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
+    <header className={`absolute left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
       <nav className="start-0 top-0 z-20 border-b bg-background_header">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -45,7 +44,7 @@ const Header = () => {
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             <Button
               onClick={() => setIsPortalOpen(true)}
-              className="hidden bg-background_btn_burger px-6 sm:block"
+              className="hidden rounded-md bg-background_btn_burger px-6 sm:block"
               text={text.btndata}
             />
             <button
