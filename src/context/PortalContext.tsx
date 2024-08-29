@@ -15,7 +15,7 @@ const PortalContext = createContext<PortalContextType | undefined>(undefined);
 export const PortalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isPortalOpen, setIsPortalOpen] = useState(false);
   const [title, setTitle] = useState<string>('');
-  const [variantId, setVariantId] = useState<string | undefined>('basic');
+  const [variantId, setVariantId] = useState<string | undefined>('faststar');
 
   return (
     <PortalContext.Provider

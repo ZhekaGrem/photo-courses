@@ -11,7 +11,7 @@ const tabs = [
 
 const BottomTabs = () => {
   const { variantId, setVariantId } = usePortal();
-  const [activeTab, setActiveTab] = useState('basic');
+  const [activeTab, setActiveTab] = useState('faststar');
 
   const handleVariantChange = (newVariantId: string) => {
     setActiveTab(newVariantId);
