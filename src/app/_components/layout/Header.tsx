@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../common/Button';
 import BurgerIcon from '../common/BurgerIcon';
-import { usePortal } from '@/app/_components/layout/PortalContext';
+import { usePortal } from '@/context/PortalContext';
 import { navlink, header } from '@/db/data';
 
 type NavLinks = {
@@ -28,8 +28,7 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`bg-ba absolute left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
+    <header className={`absolute left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
       <nav className="start-0 top-0 z-20 border-b bg-background_header">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -45,7 +44,7 @@ const Header = () => {
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             <Button
               onClick={() => setIsPortalOpen(true)}
-              className="hidden bg-background_btn_burger px-6 sm:block"
+              className="hidden rounded-md bg-background_btn_burger px-6 sm:block"
               text={text.btndata}
             />
             <button
@@ -64,6 +63,7 @@ const Header = () => {
               {dataLink.map((list) => (
                 <li key={list.id} className={` ${burgerMenu ? '' : 'p-6'}`}>
                   <Link
+                    onClick={handleBurgerButtonClick}
                     href={list.href}
                     className="block rounded px-3 py-2 hover:text-background_btn_hover lg:p-0">
                     {list.name}
@@ -71,7 +71,7 @@ const Header = () => {
                 </li>
               ))}
               <li>
-                <Button className=":block hidden px-4 py-2" text="ЗАПИСАТИСЬ НА КУРС" />
+                <Button className=":block hidden rounded-md px-4 py-2" text="ЗАПИСАТИСЬ НА КУРС" />
               </li>
             </ul>
           </div>

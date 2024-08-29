@@ -21,10 +21,13 @@ export default function Home() {
       </Suspense>
 
       <Suspense fallback={<Loading />}>
+        <WhoLeads />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
         <CourseProgram />
       </Suspense>
       <Suspense fallback={<Loading />}>
-        <WhoLeads />
+        <Price2 />
       </Suspense>
       <Suspense fallback={<Loading />}>
         <Сertificate />
@@ -41,9 +44,7 @@ export default function Home() {
       {/* <Suspense fallback={<Loading />}>
         <Price />
       </Suspense> */}
-      <Suspense fallback={<Loading />}>
-        <Price2 />
-      </Suspense>
+
       <Suspense fallback={<Loading />}>
         <PortfolioStudent />
       </Suspense>

@@ -2,9 +2,16 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 
 type IndexType = number | null;
 type HandleClickButton = (index: number) => void;
+
+type CarouselType = {
+  id: number;
+  src: string;
+  alt: string;
+};
 
 type InfoType = {
   id: number;
@@ -13,9 +20,10 @@ type InfoType = {
     title: string;
     title2: string;
     list: Array<string>;
-    img: string;
-    img_alt: string;
+    img?: string;
+    img_alt?: string;
     video?: string;
+    сarousel?: Array<CarouselType>;
   };
 };
 
@@ -34,17 +42,19 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
     <div className="section container">
       <div className="flex flex-col content-center gap-12 lg:flex-row">
         <div className="w-full">
-          <motion.ul
+          <motion.ol
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className="space-y-4 px-6">
+            className="list-decimal space-y-4 px-6">
             {data.map((item, index) => (
               <li key={item.id} className="overflow-hidden rounded-lg bg-white shadow-md">
                 <button
                   className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
                   onClick={() => handleButtonClick(index)}>
-                  <span className="text-base font-semibold text-gray-800">{item.title}</span>
+                  <span className="text-base font-semibold text-gray-800">
+                    {index + 1}. {item.title}
+                  </span>
                   <motion.div
                     initial={false}
                     animate={{ rotate: openIndex === index ? 135 : 0 }}
@@ -66,33 +76,9 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                             item.id === openIndex ? (
                               <motion.div key={item.id}>
                                 <div className="flex flex-col pb-3 sm:flex-row sm:px-3">
-                                  <div className="hidden w-full sm:w-1/2 sm:p-3">
-                                    {/* <div className="w-full pl-3">
-                                      <Image
-                                        className="h-auto"
-                                        src="/photo-1-2.png"
-                                        alt="photoaparat"
-                                        width={75}
-                                        height={87}
-                                      />
-                                    </div> */}
-                                    {/* <div
-                                     
-                                      className="text-center text-2xl sm:text-3xl break-words overflow-hidden font-bold">
-                                      {item.content.title}
-                                    </div> */}
-                                    {/* <div  className="flex justify-end">
-                                      <Image
-                                        className="h-auto"
-                                        src="/phone-1-2.png"
-                                        alt="phone"
-                                        width={85}
-                                        height={104}
-                                      />
-                                    </div> */}
-                                  </div>
+                                  <div className="hidden w-full sm:w-1/2 sm:p-3"></div>
                                   <div className="w-full p-3">
-                                    <div className="pb-4 text-2xl font-semibold">{item.content.title}</div>
+                                    <div className="text-1xl pb-4 font-semibold">{item.content.title}</div>
                                     <ul>
                                       {item.content.list.map((item, index) => (
                                         <li className="list-inside list-disc" key={index}>
@@ -102,37 +88,38 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                     </ul>
                                   </div>
                                 </div>
-                                <div className="relative">
-                                  {item.content.video ? (
-                                    <>
-                                      <video
-                                        className={`h-full w-full rounded-lg object-cover shadow-2xl`}
-                                        controls>
-                                        <source src={item.content.video} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                      </video>
-                                    </>
-                                  ) : (
-                                    <Image
-                                      className="h-full rounded-lg object-cover shadow-2xl"
-                                      src={item.content.img}
-                                      alt={item.content.img_alt}
-                                      width={640}
-                                      height={360}
-                                      priority={true}
-                                    />
-                                  )}
-                                </div>
-                                {/* <div className="flex w-full justify-center sm:px-12 sm:pb-5">
-                                  <Image
-                                    className="h-auto rounded-lg object-cover shadow-2xl"
-                                    src={item.content.img}
-                                    alt={item.content.img_alt}
-                                    width={640}
-                                    height={360}
-                                    priority={true}
-                                  />
-                                </div> */}
+                                <AnimatePresence mode="wait">
+                                  <motion.div
+                                    key={item.id}
+                                    className="relative"
+                                    initial={{ opacity: 0, y: -20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 20 }}
+                                    transition={{ duration: 0.3 }}>
+                                    {item.content.сarousel ? (
+                                      <CarouselProgram carousel={item.content.сarousel} />
+                                    ) : item.content.video ? (
+                                      <>
+                                        <video
+                                          className={`h-full w-full rounded-lg object-cover shadow-2xl`}
+                                          controls
+                                          poster={item.content.img}>
+                                          <source src={item.content.video} type="video/mp4" />
+                                          Your browser does not support the video tag.
+                                        </video>
+                                      </>
+                                    ) : item.content.img ? (
+                                      <Image
+                                        className="h-full rounded-lg object-cover shadow-2xl"
+                                        src={item.content.img}
+                                        alt={item.content.img_alt || 'Content image'}
+                                        width={640}
+                                        height={360}
+                                        priority={true}
+                                      />
+                                    ) : null}
+                                  </motion.div>
+                                </AnimatePresence>
                               </motion.div>
                             ) : null
                           )}
@@ -143,7 +130,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                 </AnimatePresence>
               </li>
             ))}
-          </motion.ul>
+          </motion.ol>
         </div>
       </div>
     </div>

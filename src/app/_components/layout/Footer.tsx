@@ -68,8 +68,8 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="bg-gray-700 p-1">
-        <div className="container px-4 py-6 text-text_2 md:flex md:items-center md:justify-between">
+      <div className="p-1 pb-5">
+        <div className="container px-3 py-6 text-text_1 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-base">&copy; {date} Євгеній Грем. Усі права захищено.</p>
           </div>
@@ -78,7 +78,7 @@ const Footer = () => {
               href="https://t.me/GremYevhenii"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base text-gray-300 transition-colors hover:text-white">
+              className="text-base text-text_1 transition-colors hover:text-white">
               Зв`язатися з розробником
             </a>
           </div>
