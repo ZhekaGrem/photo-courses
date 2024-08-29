@@ -32,7 +32,7 @@ const Price2 = () => {
   const { setIsPortalOpen, setTitle, variantId } = usePortal();
 
   const selectedVariant = data.variants.find((variant) => variant.id === variantId);
-
+  const colSection = selectedVariant?.price.length;
   if (!selectedVariant) {
     return <div>Variant not found</div>;
   }
@@ -45,14 +45,16 @@ const Price2 = () => {
       <div className="section container mx-auto">
         <h2 className="mb-12 text-center text-text_2">ВАРТІСТЬ НАВЧАННЯ</h2>
 
-        <div id="price" className="grid grid-cols-1 gap-8 px-6 xl:grid-cols-3">
+        <div
+          id="price"
+          className={`grid grid-cols-1 gap-8 px-6 xl:grid-cols-${colSection} ${colSection === 1 ? 'justify-center' : ''}`}>
           {selectedVariant.price.map((plan, index) => (
             <motion.div
               key={plan.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative overflow-hidden rounded-2xl bg-white shadow-2xl">
+              className="relative mx-auto max-w-[361px] overflow-hidden rounded-2xl bg-white shadow-2xl">
               {plan.content.discount && (
                 <div className="absolute right-0 top-0 rounded-bl-lg bg-red-500 px-4 py-1 font-bold text-white">
                   Знижка {plan.content.discount}%

@@ -377,7 +377,7 @@ export const data_section_2 = {
               'Використання води у поєднанні зі змішаним освітленням',
               'Практична сесія: жива зйомка із застосуванням змішаного світла',
             ],
-            img: '/programgroup/light/7.jpg',
+            img: '/programgroup/light/6.jpg',
             img_alt: 'фотошкола, школа фотографії, курси фотографа',
             video: '/video/program/light/06.mp4',
           },
