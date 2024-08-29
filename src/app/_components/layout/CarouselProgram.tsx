@@ -33,32 +33,6 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
     slides: { perView: 1, spacing: 0 },
   });
 
-  useEffect(() => {
-    const preloadImages = async () => {
-      const imagePromises = carousel.map((item) => {
-        return new Promise((resolve, reject) => {
-          const img = document.createElement('img');
-          img.src = item.src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      });
-      try {
-        await Promise.all(imagePromises);
-        setImagesLoaded(true);
-      } catch (error) {
-        console.error('Failed to preload images:', error);
-        setImagesLoaded(true);
-      }
-    };
-
-    preloadImages();
-  }, [carousel]);
-  if (!imagesLoaded) {
-    return (
-      <div className="relative mx-auto min-h-[400px] w-full max-w-md animate-pulse bg-white md:min-h-[700px]"></div>
-    );
-  }
   return (
     <div className="relative mx-auto min-h-[400px] w-full max-w-md md:min-h-[700px]">
       <div ref={ref} className="keen-slider">
@@ -70,6 +44,8 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
               height={400}
               src={item.src}
               alt={item.alt}
+              priority={true}
+              loading="eager"
             />
           </div>
         ))}
