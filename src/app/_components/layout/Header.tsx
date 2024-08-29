@@ -72,7 +72,7 @@ const Header = () => {
                 </li>
               ))}
               <li>
-                <Button className=":block hidden px-4 py-2" text="ЗАПИСАТИСЬ НА КУРС" />
+                <Button className=":block hidden rounded-md px-4 py-2" text="ЗАПИСАТИСЬ НА КУРС" />
               </li>
             </ul>
           </div>

@@ -18,7 +18,7 @@ const data: ImgType[] = porfoliocarousel;
 export default function PhoneCarousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [ref, instanceRef] = useKeenSlider<HTMLUListElement>({
+  const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
@@ -33,8 +33,8 @@ export default function PhoneCarousel() {
   });
   return (
     <>
-      <div className="relative overflow-hidden">
-        <ul ref={ref} className="keen-slider">
+      <div ref={ref} className="relative overflow-hidden">
+        <ul className="keen-slider">
           {data.map((item) => (
             <li key={item.id} className="keen-slider__slide w-full">
               <Image

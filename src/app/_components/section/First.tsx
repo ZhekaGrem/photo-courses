@@ -27,7 +27,7 @@ const First = () => {
             {/* prettier-ignore */}
             <div className="w-full pt-40 text-end xs:pt-56">
               <Button
-                className="bg-background_btn_burger text-2xl font-bold transition-all duration-300 hover:underline sm:hidden"
+                className="bg-background_btn_burger text-2xl font-bold transition-all duration-300 hover:underline sm:hidden rounded-full"
                 text={data.button_text}
                 onClick={() => setIsPortalOpen(true)}
               />

@@ -929,10 +929,10 @@ export const section_6 = {
       id: 'light',
       price: [
         {
-          id: 4,
+          id: 7,
           content: {
-            title: 'Індивідуальна школа фотографії',
-            price: '500$',
+            title: 'Базовий',
+            price: '5000₴',
             // newPrice: '2400₴',
             // discount: 20,
             description:
@@ -943,7 +943,7 @@ export const section_6 = {
           },
         },
         {
-          id: 5,
+          id: 8,
           content: {
             title: 'Індивідуальна школа фотографії ',
             price: '950$',
@@ -954,7 +954,7 @@ export const section_6 = {
           },
         },
         {
-          id: 6,
+          id: 9,
           content: {
             title: 'Індивідуальна школа фотографії ',
             price: '1100$',

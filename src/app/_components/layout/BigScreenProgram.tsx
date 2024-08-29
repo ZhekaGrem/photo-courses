@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import CarouselProgram from '@/app/_components/layout/CarouselProgram';
-
+import { motion, AnimatePresence } from 'framer-motion';
 type CarouselType = {
   id: number;
   src: string;
@@ -66,74 +66,83 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
       </ol>
       <div className="sticky top-4 w-full px-24">
         <div className="left-0 top-0 h-full w-full pt-4">
-          {data.map((item) =>
-            item.id === selectedId ? (
-              <div key={item.id}>
-                <div className="pb-5">
-                  <div>
-                    <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
-                    <ul className=" ">
-                      {item.content.list.map((item, index) => (
-                        <li className="list-inside list-disc pb-2 text-lg lg:text-xl" key={index}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="relative min-h-96">
-                  {item.content.сarousel ? (
-                    <CarouselProgram carousel={item.content.сarousel} />
-                  ) : item.content.video ? (
-                    <>
-                      {!isPlaying && (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedId}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}>
+              {data.map((item) =>
+                item.id === selectedId ? (
+                  <div key={item.id}>
+                    <div className="pb-5">
+                      <div>
+                        <div className="pb-3 text-xl font-bold lg:text-2xl">{item.content.title}</div>
+                        <ul className=" ">
+                          {item.content.list.map((item, index) => (
+                            <li className="list-inside list-disc pb-2 text-lg lg:text-xl" key={index}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="relative min-h-96">
+                      {item.content.сarousel ? (
+                        <CarouselProgram carousel={item.content.сarousel} />
+                      ) : item.content.video ? (
                         <>
-                          <Image
-                            className="h-full w-full rounded-lg object-cover shadow-2xl"
-                            src={item.content.img || 'Content image'}
-                            alt={item.content.img_alt || 'Content image'}
-                            width={640}
-                            height={360}
-                            priority={true}
-                          />
-                          <button
-                            className="absolute inset-0 flex items-center justify-center text-black"
-                            onClick={handlePlayClick}>
-                            <div className="flex items-center justify-center rounded-full bg-white bg-opacity-70 p-3 shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+                          {!isPlaying && (
+                            <>
                               <Image
-                                className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16"
-                                src="/svg/play2.svg"
-                                alt="play video"
+                                className="h-full w-full rounded-lg object-cover shadow-2xl"
+                                src={item.content.img || 'Content image'}
+                                alt={item.content.img_alt || 'Content image'}
                                 width={640}
                                 height={360}
                                 priority={true}
                               />
-                            </div>
-                          </button>
+                              <button
+                                className="absolute inset-0 flex items-center justify-center text-black"
+                                onClick={handlePlayClick}>
+                                <div className="flex items-center justify-center rounded-full bg-white bg-opacity-70 p-3 shadow-[0_0_10px_rgba(255,255,255,0.7)]">
+                                  <Image
+                                    className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16"
+                                    src="/svg/play2.svg"
+                                    alt="play video"
+                                    width={640}
+                                    height={360}
+                                    priority={true}
+                                  />
+                                </div>
+                              </button>
+                            </>
+                          )}
+                          <video
+                            ref={videoRef}
+                            className={`h-full w-full rounded-lg object-cover shadow-2xl ${isPlaying ? 'block' : 'hidden'}`}
+                            controls={isPlaying}>
+                            <source src={item.content.video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
                         </>
-                      )}
-                      <video
-                        ref={videoRef}
-                        className={`h-full w-full rounded-lg object-cover shadow-2xl ${isPlaying ? 'block' : 'hidden'}`}
-                        controls={isPlaying}>
-                        <source src={item.content.video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    </>
-                  ) : item.content.img ? (
-                    <Image
-                      className="h-full w-full rounded-lg object-cover shadow-2xl"
-                      src={item.content.img}
-                      alt={item.content.img_alt || 'Content image'}
-                      width={640}
-                      height={360}
-                      priority={true}
-                    />
-                  ) : null}
-                </div>
-              </div>
-            ) : null
-          )}
+                      ) : item.content.img ? (
+                        <Image
+                          className="h-full w-full rounded-lg object-cover shadow-2xl"
+                          src={item.content.img}
+                          alt={item.content.img_alt || 'Content image'}
+                          width={640}
+                          height={360}
+                          priority={true}
+                        />
+                      ) : null}
+                    </div>
+                  </div>
+                ) : null
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>

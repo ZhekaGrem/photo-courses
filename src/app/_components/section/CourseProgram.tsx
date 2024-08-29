@@ -5,22 +5,7 @@ import Loading from '@/app/loading';
 const BigScreenProgram = lazy(() => import('../layout/BigScreenProgram'));
 const PhoneScreenProgram = lazy(() => import('../layout/PhoneScreenProgram'));
 import { usePortal } from '@/context/PortalContext';
-
-// type InfoType = {
-//   title_2: string;
-//   program: Array<{
-//     id: number;
-//     title: string;
-//     content: {
-//       title: string;
-//       title2: string;
-//       list: Array<string>;
-//       img: string;
-//       img_alt: string;
-//       video?: string;
-//     };
-//   }>;
-// };
+import { motion, AnimatePresence } from 'framer-motion';
 type ProgramContentType = {
   title: string;
   title2: string;
@@ -57,11 +42,23 @@ const CourseProgram = () => {
   return (
     <section id="program" className="bg-background_header">
       <div className="section container text-text_2">
-        <h2 className="text-center text-2xl sm:text-left sm:text-5xl">{selectedVariant.title_2}</h2>
+        <AnimatePresence mode="wait">
+          <motion.h2
+            key={selectedVariant.title_2}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            transition={{ duration: 0.3 }}
+            className="transform text-center text-2xl sm:text-left sm:text-5xl">
+            {selectedVariant.title_2}
+          </motion.h2>
+        </AnimatePresence>
         <Suspense fallback={<Loading />}>
           <div className="big-screen">
             <BigScreenProgram data={selectedVariant.program} />
           </div>
+        </Suspense>
+        <Suspense fallback={<Loading />}>
           <div className="phone-screen">
             <PhoneScreenProgram data={selectedVariant.program} />
           </div>
