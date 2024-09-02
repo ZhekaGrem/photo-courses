@@ -31,7 +31,7 @@ const Сertificate = () => {
             <Image
               className="h-full rounded-lg object-cover"
               loading="lazy"
-              src="/certifies.jpg"
+              src="/assets/img/certifies.jpg"
               width={520}
               height={465}
               alt="Сертифікат UAPP"

@@ -60,7 +60,13 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                     animate={{ rotate: openIndex === index ? 135 : 0 }}
                     transition={{ duration: 0.2 }}
                     className="flex h-4 min-w-10 items-center justify-center">
-                    <Image className="h-auto" src="/svg/plus.svg" alt="photoaparat" width={35} height={40} />
+                    <Image
+                      className="h-auto"
+                      src="assets/svg/plus.svg"
+                      alt="photoaparat"
+                      width={35}
+                      height={40}
+                    />
                   </motion.div>
                 </button>
                 <AnimatePresence>

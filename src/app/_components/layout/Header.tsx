@@ -37,7 +37,7 @@ const Header = () => {
               className="h-auto min-w-32"
               width={100}
               height={80}
-              src="/logo4.png"
+              src="/assets/logo/logo.png"
               alt="logo"
             />
           </Link>

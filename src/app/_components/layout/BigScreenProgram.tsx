@@ -109,7 +109,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                 <div className="flex items-center justify-center rounded-full bg-white bg-opacity-70 p-3 shadow-[0_0_10px_rgba(255,255,255,0.7)]">
                                   <Image
                                     className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16"
-                                    src="/svg/play2.svg"
+                                    src="assets/svg/play2.svg"
                                     alt="play video"
                                     width={640}
                                     height={360}

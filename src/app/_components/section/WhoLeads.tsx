@@ -39,7 +39,7 @@ const WhoLeads = () => {
             <div className="relative">
               <Image
                 loading="lazy"
-                src="/oleg.png"
+                src="/assets/img/oleg.png"
                 width={600}
                 height={600}
                 alt="Олег Сернюк"
