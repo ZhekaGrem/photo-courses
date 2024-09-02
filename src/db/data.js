@@ -839,8 +839,8 @@ export const section_6 = {
           content: {
             title: 'Базовий',
             price: '3000₴',
-            // newPrice: '2400₴',
-            // discount: 20,
+            newPrice: '2400₴',
+            discount: 20,
             description:
               "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
             features: ['Доступ до (5+)годинного курсу на дванадцять уроків'],
@@ -851,8 +851,8 @@ export const section_6 = {
           content: {
             title: 'З ментором',
             price: '5500₴',
-            // newPrice: '4400₴',
-            // discount: 20,
+            newPrice: '4950₴',
+            discount: 10,
             description: 'Навчання проходить з викладачем',
             features: [
               'Доступ до (5+)годинного курсу на дванадцять уроків',
@@ -866,8 +866,8 @@ export const section_6 = {
           content: {
             title: 'З наставником',
             price: '10500₴',
-            // newPrice: '8400₴',
-            // discount: 20,
+            newPrice: '9450₴',
+            discount: 10,
             description: 'Індивідуальні заняття ',
             features: [
               'Доступ до відео матеріалів',
@@ -890,8 +890,8 @@ export const section_6 = {
           content: {
             title: 'Професійний курс Pro світло',
             price: '4999₴',
-            // newPrice: '2400₴',
-            // discount: 20,
+            newPrice: '4499₴',
+            discount: 10,
             description: 'Професійний відеокурс по вивченню роботи зі світлом любого типу',
             features: ['Доступ до (8+)годинного курсу на десять уроків'],
           },
@@ -930,8 +930,8 @@ export const section_6 = {
           content: {
             title: 'Досвідчений',
             price: '500$',
-            // newPrice: '2400₴',
-            // discount: 20,
+            newPrice: '450$',
+            discount: 10,
             description: 'Курси «Швидкий старт», «proСВІТЛО» та вісім індивідуальних годинних занять',
             features: [
               '5 годинний онлайн-курс «Швидкий старт»',
@@ -945,8 +945,8 @@ export const section_6 = {
           content: {
             title: 'Експерт',
             price: '950$',
-            // newPrice: '4400₴',
-            // discount: 20,
+            newPrice: '855$',
+            discount: 10,
             description: '40 годин навчання, щоб досягти експертного рівня у фотографії',
             features: ['Очний курс, що включає 16 уроків тривалістю від 2 до 2,5 годин'],
           },
@@ -956,8 +956,8 @@ export const section_6 = {
           content: {
             title: 'Майстер',
             price: '1100$',
-            // newPrice: '8400₴',
-            // discount: 20,
+            newPrice: '990$',
+            discount: 10,
             description:
               'Курси «Швидкий старт», «proСВІТЛО» та повний 34 годинний курс індивідуальних занять',
             features: [
