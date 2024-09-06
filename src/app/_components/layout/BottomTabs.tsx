@@ -1,21 +1,29 @@
 'use client';
 import Link from 'next/link';
 import { usePortal } from '@/context/PortalContext';
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const tabs = [
-  { name: 'Швидкий старт', href: '#program', id: 'faststart' },
-  { name: 'PRO Світло', href: '#program', id: 'light' },
-  { name: 'Індивідуальна школа', href: '#program', id: 'school' },
+  { name: 'Швидкий старт', href: '#faststart', id: 'faststart' },
+  { name: 'PRO Світло', href: '#prosvitlo', id: 'prosvitlo' },
+  { name: 'Індивідуальна школа', href: '#school', id: 'school' },
 ];
 
 const BottomTabs = () => {
+  const searchParams = useSearchParams();
   const { variantId, setVariantId } = usePortal();
-  const [activeTab, setActiveTab] = useState('faststart');
+
+  useEffect(() => {
+    const variant = searchParams.get('variant');
+    if (variant) {
+      setVariantId?.(variant);
+    }
+  }, [searchParams, setVariantId]);
 
   const handleVariantChange = (newVariantId: string) => {
-    setActiveTab(newVariantId);
     setVariantId?.(newVariantId);
+    window.location.hash = newVariantId;
   };
   return (
     <>
@@ -30,7 +38,7 @@ const BottomTabs = () => {
                   <Link
                     href={tab.href}
                     className={`block rounded-2xl p-1 text-center text-xs font-medium shadow-md transition duration-300 ease-in-out md:p-2 ${
-                      activeTab === tab.id
+                      variantId  === tab.id
                         ? 'cursor-pointer rounded-full bg-text_2 text-background_btn_burger'
                         : 'transition hover:bg-background_btn hover:text-black active:scale-95'
                     }`}>

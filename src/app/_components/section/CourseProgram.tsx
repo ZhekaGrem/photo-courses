@@ -1,11 +1,15 @@
 'use client';
-import { Suspense, lazy } from 'react';
-import { data_section_2 } from '@/db/data';
-import Loading from '@/app/loading';
-const BigScreenProgram = lazy(() => import('../layout/BigScreenProgram'));
-const PhoneScreenProgram = lazy(() => import('../layout/PhoneScreenProgram'));
+import { Suspense, lazy, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { usePortal } from '@/context/PortalContext';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const BigScreenProgram = lazy(() => import('../layout/BigScreenProgram'));
+const PhoneScreenProgram = lazy(() => import('../layout/PhoneScreenProgram'));
+import Loading from '@/app/loading';
+
+import { data_section_2 } from '@/db/data';
+
 type ProgramContentType = {
   title: string;
   title2: string;
@@ -33,15 +37,23 @@ type DataSection2Type = {
 
 const data: DataSection2Type = data_section_2;
 const CourseProgram = () => {
-  const { variantId } = usePortal();
+  const searchParams = useSearchParams();
+  const { variantId, setVariantId } = usePortal();
+
+  useEffect(() => {
+    const variant = searchParams.get('variant');
+    if (variant && data.variants.some((v) => v.id === variant)) {
+      setVariantId?.(variant);
+    }
+  }, [searchParams, setVariantId]);
   const selectedVariant = data.variants.find((variant) => variant.id === variantId);
 
   if (!selectedVariant) {
     return <div>Variant not found</div>;
   }
   return (
-    <section id="program" className="bg-background_header">
-      <div className="section container text-text_2">
+    <section id={variantId} className="bg-background_header">
+      <div className="section container text-text_2" id="program">
         <AnimatePresence mode="wait">
           <motion.h2
             key={selectedVariant.title_2}

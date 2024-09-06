@@ -258,7 +258,7 @@ export const data_section_2 = {
       ],
     },
     {
-      id: 'light',
+      id: 'prosvitlo',
       title_2: 'ПРОГРАМА КУРСУ "PRO СВІТЛО"',
       program: [
         {
