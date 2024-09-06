@@ -9,6 +9,7 @@ const Сertificate = lazy(() => import('@/app/_components/section/Сertificate')
 const Portfolio = lazy(() => import('@/app/_components/section/Portfolio'));
 const PhonePortfolio = lazy(() => import('@/app/_components/section/PhonePortfolio'));
 const PortfolioStudent = lazy(() => import('@/app/_components/section/PortfolioStudent'));
+
 // const Price = lazy(() => import('@/app/_components/section/Price'));
 const Price2 = lazy(() => import('@/app/_components/section/Price2'));
 // const Question = lazy(() => import('@/app/_components/section/Question'));
@@ -48,6 +49,7 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <PortfolioStudent />
       </Suspense>
+
       {/* <Suspense fallback={<Loading />}>
         <Question />
       </Suspense> */}

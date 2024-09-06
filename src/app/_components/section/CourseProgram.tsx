@@ -1,6 +1,5 @@
 'use client';
-import { Suspense, lazy, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import { usePortal } from '@/context/PortalContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -37,22 +36,35 @@ type DataSection2Type = {
 
 const data: DataSection2Type = data_section_2;
 const CourseProgram = () => {
-  const searchParams = useSearchParams();
   const { variantId, setVariantId } = usePortal();
+  const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const variant = searchParams.get('variant');
-    if (variant && data.variants.some((v) => v.id === variant)) {
-      setVariantId?.(variant);
+  const scrollToSection = () => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [searchParams, setVariantId]);
+  };
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      const variant = data.variants.find((v) => v.id === hash);
+      if (variant) {
+        setVariantId?.(variant.id);
+        setTimeout(scrollToSection, 100); // Невелика затримка для надійності
+      }
+    };
+
+    handleHashChange(); // Викликаємо функцію при першому завантаженні
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [setVariantId]);
   const selectedVariant = data.variants.find((variant) => variant.id === variantId);
 
   if (!selectedVariant) {
     return <div>Variant not found</div>;
   }
   return (
-    <section id={variantId} className="bg-background_header">
+    <section id={variantId} ref={sectionRef} className="bg-background_header">
       <div className="section container text-text_2" id="program">
         <AnimatePresence mode="wait">
           <motion.h2

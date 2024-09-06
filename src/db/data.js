@@ -883,7 +883,7 @@ export const section_6 = {
       ],
     },
     {
-      id: 'light',
+      id: 'prosvitlo',
       price: [
         {
           id: 7,

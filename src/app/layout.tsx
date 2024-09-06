@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import '@/app/styles/globals.css';
-import BottomTabs from '@/app/_components/layout/BottomTabs';
+import { lazy, Suspense } from 'react';
+import Loading from '@/app/loading';
+const BottomTabs = lazy(() => import('@/app/_components/layout/BottomTabs'));
 
 const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
   loading: () => <p>Loading...</p>,
@@ -81,9 +83,10 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <DynamicFooter />
-
+          <Suspense fallback={<Loading />}>
+            <BottomTabs />
+          </Suspense>
           <div id="portal-root" />
-          <BottomTabs />
         </PortalProvider>
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
