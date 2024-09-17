@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 type ClosePortal = {
   onClose: () => void;
-  title: string;
+  title?: string;
 };
 
 const initialFormData = {
@@ -36,8 +36,8 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\nЯкий курс обрав клієнт ${title}\n
-`;
+    const courseInfo = title ? `Який курс обрав клієнт: ${title}` : 'Курс не обрано';
+    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\n${courseInfo}`;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
       text
     )}`;
