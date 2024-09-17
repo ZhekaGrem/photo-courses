@@ -90,7 +90,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
               </div>
               <div className="hidden w-1/2 md:block">
                 <Image
-                  src="/asstes/img/popup.jpg"
+                  src="/assets/img/popup.jpg"
                   alt="Автор курсів"
                   width={500}
                   height={300}
