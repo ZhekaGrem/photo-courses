@@ -36,6 +36,9 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setIsFormValid(false);
     const courseInfo = title ? `Який курс обрав клієнт: ${title}` : 'Курс не обрано';
     const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\n${courseInfo}`;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
@@ -46,7 +49,7 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
       const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'Content-type': 'applicaton/json',
+          'Content-Type': 'applicaton/json',
         },
         body: JSON.stringify({
           chat_id: chat_id,
@@ -66,6 +69,7 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
       }
     } catch (error) {
       console.error('Помилка:', error);
+      setIsFormValid(true);
     }
   };
   if (showThankYou) {
