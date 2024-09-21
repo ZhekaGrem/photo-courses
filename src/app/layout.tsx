@@ -4,6 +4,7 @@ import { Montserrat } from 'next/font/google';
 import '@/app/styles/globals.css';
 import { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
+import ClarityScript from '@/app/_components/scripts/ClarityScript';
 const BottomTabs = lazy(() => import('@/app/_components/layout/BottomTabs'));
 
 const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
@@ -12,7 +13,6 @@ const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
 import Header from './_components/layout/Header';
 import { PortalProvider } from '@/context/PortalContext';
 import Script from 'next/script';
-import Head from 'next/head';
 
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'], adjustFontFallback: false, preload: true });
 
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     images: ['https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg'],
     locale: 'uk_UA',
     type: 'website',
+    url: 'https://www.screenphotoschool.com.ua/',
   },
   twitter: {
     title: "Школа фотографії для початківців | Старт вашої кар'єри",
@@ -54,6 +55,12 @@ export const metadata: Metadata = {
     apple: ['/apple-touch-icon.png'],
   },
   authors: [{ name: 'Oleg Serniuk' }],
+  verification: {
+    google: 'zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw',
+  },
+  other: {
+    'google-site-verification': 'zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw',
+  },
 };
 
 export default function RootLayout({
@@ -63,14 +70,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <Head>
-        <meta name="google-site-verification" content="zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw" />
-        <meta property="og:url" content="https://www.screenphotoschool.com.ua/"></meta>
-        <meta
-          property="og:image"
-          content="https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg"></meta>
-      </Head>
-
       <body className={montrat.className}>
         <noscript>
           <iframe
@@ -159,6 +158,7 @@ export default function RootLayout({
               `,
           }}
         />
+        <ClarityScript />
       </body>
     </html>
   );
