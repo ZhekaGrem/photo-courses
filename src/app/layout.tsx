@@ -71,13 +71,6 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className={montrat.className}>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NB39DGF6"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}></iframe>
-        </noscript>
         <PortalProvider>
           <Header />
           <main>{children}</main>
