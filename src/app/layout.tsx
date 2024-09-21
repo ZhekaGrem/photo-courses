@@ -71,6 +71,13 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className={montrat.className}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NB39DGF6"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}></iframe>
+        </noscript>
         <PortalProvider>
           <Header />
           <main>{children}</main>
@@ -124,6 +131,7 @@ export default function RootLayout({
             ],
           })}
         </Script>
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
