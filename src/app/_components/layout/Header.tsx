@@ -36,7 +36,7 @@ const Header = () => {
               loading="lazy"
               className="h-auto min-w-32"
               width={100}
-              height={80}
+              height={20}
               src="/assets/logo/logo.png"
               alt="logo"
             />
