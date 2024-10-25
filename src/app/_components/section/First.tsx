@@ -36,7 +36,7 @@ const First = () => {
               <p className="max-w-[90%] font-bold sm:max-w-[70%] lg:text-2xl">{data.text}</p>
             </div> */}
           </div>
-          <SocialIcons />
+          <SocialIcons place="hero" />
         </div>
       </div>
     </section>

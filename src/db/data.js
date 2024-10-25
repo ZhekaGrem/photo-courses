@@ -838,8 +838,8 @@ export const section_6 = {
           id: 1,
           content: {
             title: 'Базовий',
-            price: '3000₴',
-            newPrice: '2400₴',
+            price: '5000₴',
+            newPrice: '4000₴',
             discount: 20,
             description:
               "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
@@ -850,9 +850,9 @@ export const section_6 = {
           id: 2,
           content: {
             title: 'З ментором',
-            price: '5500₴',
-            newPrice: '4950₴',
-            discount: 10,
+            price: '7500₴',
+            newPrice: '6375₴',
+            discount: 15,
             description: 'Навчання проходить з викладачем',
             features: [
               'Доступ до (5+)годинного курсу на дванадцять уроків',

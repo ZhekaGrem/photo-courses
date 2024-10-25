@@ -1,15 +1,9 @@
 import { footer } from '@/db/data';
 import MiniFormFooter from '../form/MiniFormFooter';
-import InstagramIcon from '@/app/_components/common/InstagramIcon';
-import FacebookIcon from '@/app/_components/common/FacebookIcon';
-import TiktokIcon from '@/app/_components/common/TiktokIcon';
+import SocialIcons from '../common/SocialIcons';
 
 //Icon socials
-const icon = [
-  { id: 1, src: 'https://www.instagram.com/serniukphoto/', alt: 'instagram', svg: <InstagramIcon /> },
-  { id: 2, src: 'https://www.facebook.com/SerNiuK', alt: 'facebook', svg: <FacebookIcon /> },
-  { id: 3, src: 'https://www.tiktok.com/@serniukphoto', alt: 'tiktok', svg: <TiktokIcon /> },
-];
+
 const date = new Date().getFullYear();
 
 const Footer = () => {
@@ -34,22 +28,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <ul className="flex gap-x-4">
-            {icon.map((item) => (
-              <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
-                <span className="sr-only">{item.alt}</span>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.alt}
-                  title={item.alt}
-                  href={item.src}
-                  className="fill-black hover:fill-background_btn_hover">
-                  {item.svg}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialIcons place="footer" />
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum2.title}</h3>

@@ -31,6 +31,10 @@ const config: Config = {
         text_3: '#20242c',
         texthover: '#727d91',
         bluesmock: '#57a3eb',
+        telegram: '#0088cc',
+        instagram: '#E4405F',
+        tiktok: '#000000',
+        facebook: '#1877F2',
       },
       backgroundImage: {
         photo: './public/popup.jpg',
