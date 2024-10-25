@@ -49,15 +49,15 @@ const Footer = () => {
       </div>
       <div className="p-1 pb-5">
         <div className="container px-3 py-6 text-text_1 md:flex md:items-center md:justify-between">
-          <div className="text-center md:text-left">
-            <p className="text-base">&copy; {date} Євгеній Грем. Усі права захищено.</p>
+          <div className="text-center text-sm text-gray-500 md:text-left">
+            © {date} Фотокурс. Усі права захищені.
           </div>
           <div className="mt-4 flex justify-center md:mt-0">
             <a
               href="https://t.me/GremYevhenii"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base text-text_1 transition-colors hover:text-white">
+              className="text-base text-text_1 transition-colors hover:text-background_btn">
               Зв`язатися з розробником
             </a>
           </div>

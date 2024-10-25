@@ -77,7 +77,7 @@ const Price2 = () => {
                 <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.content.description}</p>
                 <div className="text-center">
                   <Button
-                    text="Замовити"
+                    text="Оплатити"
                     onClick={() => openPortal(plan.content.title)}
                     className="w-full max-w-60 rounded-lg bg-background_section_6 px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90"
                   />

@@ -1,68 +1,9 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-
-const initialFormData = {
-  name: '',
-  tel: '',
-};
+import React from 'react';
+import { useFormHandler } from '@/hook/useFormHandler';
 
 function MiniFormFooter() {
-  const [formData, setFormData] = useState(initialFormData);
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
-
-  const validatePhone = (phone: string) => {
-    const phoneRegex = /^(\+38|38)?0\d{9}$/;
-    return phoneRegex.test(phone.replace(/\s/g, ''));
-  };
-
-  useEffect(() => {
-    const isNameValid = formData.name.trim() !== '';
-    const isPhoneValid = validatePhone(formData.tel);
-    setIsFormValid(isNameValid && isPhoneValid);
-  }, [formData]);
-
-  const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
-  const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}
-`;
-    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(
-      text
-    )}`;
-    e.preventDefault();
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-type': 'applicaton/json',
-        },
-        body: JSON.stringify({
-          chat_id: chat_id,
-          text: text,
-        }),
-      });
-      const data = await response.json();
-
-      if (data.ok) {
-        setShowThankYou(true);
-        setTimeout(() => {
-          setShowThankYou(false);
-          setFormData(initialFormData);
-        }, 2000);
-      } else {
-        throw new Error('Помилка при відправці повідомлення');
-      }
-    } catch (error) {
-      console.error('Помилка:', error);
-    }
-  };
+  const { formData, isFormValid, showThankYou, handleChange, handleSubmit } = useFormHandler({});
   if (showThankYou) {
     return (
       <div className="flex w-full flex-col content-center gap-6 p-10 text-center">

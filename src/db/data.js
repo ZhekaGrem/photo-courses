@@ -1,7 +1,5 @@
-//Header
-
 export const header = {
-  btndata: 'ЗАПИСАТИСЬ НА КУРС',
+  btndata: 'ЗВ`ЯЗАТИСЬ',
 };
 export const navlink = [
   { id: 1, name: 'ПРОГРАМА', href: '/#program' },
@@ -838,8 +836,8 @@ export const section_6 = {
           id: 1,
           content: {
             title: 'Базовий',
-            price: '5000₴',
-            newPrice: '4000₴',
+            price: '5999₴',
+            newPrice: '4999₴',
             discount: 20,
             description:
               "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
