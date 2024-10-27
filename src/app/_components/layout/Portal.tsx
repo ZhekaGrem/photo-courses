@@ -8,9 +8,10 @@ import Image from 'next/image';
 interface PortalProps {
   onClose: () => void;
   title: string;
+  amount?: string;
 }
 
-const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
+const Portal: React.FC<PortalProps> = ({ title, onClose, amount }) => {
   const portalRoot = typeof document !== 'undefined' ? document.getElementById('portal-root') : null;
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -77,7 +78,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
               </svg>
             </button>
             <div className="flex w-full">
-              <div className="w-full bg-black bg-opacity-50 md:w-1/2 md:bg-opacity-0">
+              <div className="w-full rounded-2xl bg-black bg-opacity-50 md:w-1/2 md:bg-opacity-0">
                 <h3
                   className="mb-4 p-8 text-center text-3xl font-bold leading-6 text-[#DDDDDD] md:text-2xl"
                   id="modal-title">
@@ -86,7 +87,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
                 <p className="mx-6 mb-6 text-center text-lg text-white md:text-sm">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
-                <PopUp onClose={onClose} title={title} />
+                <PopUp onClose={onClose} title={title} amount={amount} />
               </div>
               <div className="hidden w-1/2 md:block">
                 <Image
@@ -95,6 +96,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
                   width={500}
                   height={300}
                   className="w-full rounded-r-lg object-cover"
+                  priority={true}
                 />
               </div>
             </div>
