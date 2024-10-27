@@ -29,12 +29,12 @@ const Terms_of_service = () => {
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Політика конфіденційності</h2>
               <p className="text-gray-600">
-                Ми збираємо та обробляємо ваші персональні дані відповідно до GDPR та Закону України "Про
-                захист персональних даних":
+                Ми збираємо та обробляємо ваші персональні дані відповідно до GDPR та Закону України &quot;Про
+                захист персональних даних&quot;:
               </p>
               <ul className="mt-2 list-disc pl-6 text-gray-600">
                 <li>Email використовується для надання доступу до курсу та комунікації</li>
-                <li>Ім'я та прізвище - для персоналізації навчального процесу</li>
+                <li>Ім&#34;я та прізвище - для персоналізації навчального процесу</li>
                 <li>Використовуємо файли cookie для покращення роботи сайту</li>
                 <li>Ваші дані не передаються третім особам</li>
                 <li>Ви маєте право на видалення своїх даних за запитом</li>
@@ -44,7 +44,7 @@ const Terms_of_service = () => {
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Політика повернення коштів</h2>
               <p className="text-gray-600">
-                Відповідно до Закону України "Про захист прав споживачів", ви маєте право:
+                Відповідно до Закону України &quot;Про захист прав споживачів&quot;, ви маєте право:
               </p>
               <ul className="mt-2 list-disc pl-6 text-gray-600">
                 <li>
@@ -63,7 +63,7 @@ const Terms_of_service = () => {
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Контактна інформація та підтримка</h2>
               <p className="text-gray-600">
-                ФОП "Фотокурс"
+                ФОП &quot;Фотокурс&quot;
                 <br />
                 ЄДРПОУ: XXXXXXXX
                 <br />
