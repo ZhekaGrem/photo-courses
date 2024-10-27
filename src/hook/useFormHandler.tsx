@@ -42,7 +42,7 @@ export const useFormHandler = ({ title, onClose, amount }: UseFormHandlerProps) 
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount: amount,
+          amount,
           description: `Оплата за курс: ${title}`,
           order_id: Date.now().toString(),
         }),
