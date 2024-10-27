@@ -1,5 +1,4 @@
 import Script from 'next/script';
-const clarity = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
 
 export default function ClarityScript() {
   return (

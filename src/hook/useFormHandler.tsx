@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { validatePhone } from '@/untils/validation';
 
 interface FormData {
@@ -44,16 +44,16 @@ export const useFormHandler = ({ title, onClose }: UseFormHandlerProps) => {
       });
       const data = await response.json();
 
-      if (data.ok) {
-        setShowThankYou(true);
-        setTimeout(() => {
-          setShowThankYou(false);
-          setFormData({ name: '', tel: '+380' });
-          if (onClose) onClose();
-        }, 2000);
-      } else {
-        throw new Error('Помилка при відправці повідомлення');
+      if (!data.ok) {
+        console.error('Помилка: при відправці');
+        return;
       }
+      setShowThankYou(true);
+      setTimeout(() => {
+        setShowThankYou(false);
+        setFormData({ name: '', tel: '+380' });
+        if (onClose) onClose();
+      }, 2000);
     } catch (error) {
       console.error('Помилка:', error);
     }

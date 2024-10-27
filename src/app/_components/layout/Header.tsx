@@ -21,8 +21,8 @@ const dataLink: NavLinks[] = navlink;
 const text: InfoType = header;
 
 const Header = () => {
-  const { isPortalOpen, setIsPortalOpen } = usePortal();
-  const [burgerMenu, setBurgerMenu] = useState(!false);
+  const { setIsPortalOpen } = usePortal();
+  const [burgerMenu, setBurgerMenu] = useState(true);
   const handleBurgerButtonClick = () => {
     setBurgerMenu(!burgerMenu);
   };

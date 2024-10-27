@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import '@/app/styles/globals.css';
-import { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import Loading from '@/app/loading';
 import ClarityScript from '@/app/_components/scripts/ClarityScript';
 const BottomTabs = lazy(() => import('@/app/_components/layout/BottomTabs'));

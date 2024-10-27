@@ -16,7 +16,7 @@ type SectionInfo = {
 const data: SectionInfo = section_1;
 
 const First = () => {
-  const { isPortalOpen, setIsPortalOpen } = usePortal();
+  const { setIsPortalOpen } = usePortal();
 
   return (
     <section className="imgBg flex min-h-screen bg-cover bg-center">

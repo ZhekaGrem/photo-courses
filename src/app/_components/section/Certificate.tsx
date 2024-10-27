@@ -8,7 +8,7 @@ type SectionInfo = {
 };
 
 const data: SectionInfo = section_4;
-const Сertificate = () => {
+const Certificate = () => {
   return (
     <section className="bg-background_section_4">
       <div className="section container flex flex-col items-center lg:flex-row">
@@ -43,4 +43,4 @@ const Сertificate = () => {
   );
 };
 
-export default Сertificate;
+export default Certificate;

@@ -18,7 +18,6 @@ type PhoneCarouselProps = {
 const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
   const [ref, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {

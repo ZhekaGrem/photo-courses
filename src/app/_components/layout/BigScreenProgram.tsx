@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 import { motion, AnimatePresence } from 'framer-motion';
+
 type CarouselType = {
   id: number;
   src: string;
@@ -42,10 +43,18 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
     setIsPlaying(false);
   };
 
-  const handlePlayClick = () => {
-    setIsPlaying(true);
-    if (videoRef.current) {
-      videoRef.current.play();
+  const handlePlayClick = async () => {
+    try {
+      setIsPlaying(true);
+      if (videoRef.current) {
+        await videoRef.current.play();
+      }
+    } catch (error) {
+      // Handle any playback errors
+      setIsPlaying(false);
+      console.error('Error playing video:', error);
+      // Optionally show user feedback
+      // alert('Failed to play video');
     }
   };
   return (

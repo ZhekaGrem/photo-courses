@@ -4,10 +4,10 @@ import Loading from '@/app/loading';
 const First = lazy(() => import('@/app/_components/section/First'));
 const CourseProgram = lazy(() => import('@/app/_components/section/CourseProgram'));
 const WhoLeads = lazy(() => import('@/app/_components/section/WhoLeads'));
-const Сertificate = lazy(() => import('@/app/_components/section/Сertificate'));
+const Certificate = lazy(() => import('@/app/_components/section/Certificate'));
 // const CustomerSearch = lazy(() => import('@/app/_components/section/CustomerSearch'));
 const Portfolio = lazy(() => import('@/app/_components/section/Portfolio'));
-const PhonePortfolio = lazy(() => import('@/app/_components/section/PhonePortfolio'));
+// const PhonePortfolio = lazy(() => import('@/app/_components/section/PhonePortfolio'));
 const PortfolioStudent = lazy(() => import('@/app/_components/section/PortfolioStudent'));
 
 // const Price = lazy(() => import('@/app/_components/section/Price'));
@@ -31,7 +31,7 @@ export default function Home() {
         <Price2 />
       </Suspense>
       <Suspense fallback={<Loading />}>
-        <Сertificate />
+        <Certificate />
       </Suspense>
       {/* <Suspense fallback={<Loading />}>
         <CustomerSearch />
