@@ -7,6 +7,8 @@ type PortalContextType = {
   setIsPortalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   title?: string;
   amount?: string;
+  formType?: 'simple' | 'payment';
+  setFormType?: React.Dispatch<React.SetStateAction<'simple' | 'payment'>>;
   setTitle?: React.Dispatch<React.SetStateAction<string>>;
   setAmount?: React.Dispatch<React.SetStateAction<string>>;
   variantId?: string;
@@ -17,14 +19,28 @@ const PortalContext = createContext<PortalContextType | undefined>(undefined);
 export const PortalProvider = ({ children }: { children: React.ReactNode }) => {
   const [isPortalOpen, setIsPortalOpen] = useState(false);
   const [title, setTitle] = useState<string>('');
+  const [formType, setFormType] = useState<'simple' | 'payment'>('simple');
   const [amount, setAmount] = useState<string>('');
   const [variantId, setVariantId] = useState<string | undefined>('faststart');
 
   return (
     <PortalContext.Provider
-      value={{ isPortalOpen, setIsPortalOpen, title, setTitle, variantId, setVariantId, amount, setAmount }}>
+      value={{
+        isPortalOpen,
+        setIsPortalOpen,
+        title,
+        setTitle,
+        variantId,
+        setVariantId,
+        amount,
+        setAmount,
+        formType,
+        setFormType,
+      }}>
       {children}
-      {isPortalOpen && <Portal title={title} amount={amount} onClose={() => setIsPortalOpen(false)} />}
+      {isPortalOpen && (
+        <Portal title={title} amount={amount} formType={formType} onClose={() => setIsPortalOpen(false)} />
+      )}
     </PortalContext.Provider>
   );
 };

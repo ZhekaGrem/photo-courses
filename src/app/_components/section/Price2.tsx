@@ -30,16 +30,16 @@ type DataSection6Type = {
 const data: DataSection6Type = section_6;
 
 const Price2 = () => {
-  const { setIsPortalOpen, setTitle, variantId, setAmount } = usePortal();
-
+  const { setIsPortalOpen, setTitle, variantId, setAmount, setFormType } = usePortal();
   const selectedVariant = data.variants.find((variant) => variant.id === variantId);
   const colSection = selectedVariant?.price.length;
   if (!selectedVariant) {
     return <div>Variant not found</div>;
   }
-  const openPortal = (title: string, amount: string) => {
+  const openPortal = (title: string, amount: string, formType: 'simple' | 'payment') => {
     setAmount?.(amount);
     setTitle?.(title);
+    setFormType?.(formType);
     setIsPortalOpen(true);
   };
   return (
@@ -90,7 +90,8 @@ const Price2 = () => {
                     onClick={() =>
                       openPortal(
                         plan.content.title,
-                        plan.content.newPrice ? plan.content.newPrice : plan.content.price
+                        plan.content.newPrice ? plan.content.newPrice : plan.content.price,
+                        'payment'
                       )
                     }
                     className="w-full max-w-60 rounded-lg bg-background_section_6 px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90"

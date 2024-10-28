@@ -21,10 +21,15 @@ const dataLink: NavLinks[] = navlink;
 const text: InfoType = header;
 
 const Header = () => {
-  const { setIsPortalOpen } = usePortal();
+  const { setIsPortalOpen, setFormType } = usePortal();
   const [burgerMenu, setBurgerMenu] = useState(true);
   const handleBurgerButtonClick = () => {
     setBurgerMenu(!burgerMenu);
+  };
+
+  const openPortal = (formType: 'simple' | 'payment') => {
+    setFormType?.(formType);
+    setIsPortalOpen(true);
   };
 
   return (
@@ -43,7 +48,7 @@ const Header = () => {
           </Link>
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             <Button
-              onClick={() => setIsPortalOpen(true)}
+              onClick={() => openPortal('simple')}
               className="hidden rounded-md bg-background_btn_burger px-6 sm:block"
               text={text.btndata}
             />

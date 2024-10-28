@@ -3,10 +3,15 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactDOM from 'react-dom';
 import PopUp from '../form/PopUp';
+import PopUpPay from '../form/PopUpPay';
 import Image from 'next/image';
 import { PortalProps } from '@/types/index';
 
-const Portal: React.FC<PortalProps> = ({ title, onClose, amount }) => {
+interface ExtendedPortalProps extends PortalProps {
+  formType?: 'simple' | 'payment';
+}
+
+const Portal: React.FC<ExtendedPortalProps> = ({ title, onClose, amount, formType = 'simple' }) => {
   const portalRoot = typeof document !== 'undefined' ? document.getElementById('portal-root') : null;
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -82,7 +87,11 @@ const Portal: React.FC<PortalProps> = ({ title, onClose, amount }) => {
                 <p className="mx-6 mb-6 text-center text-lg text-white md:text-sm">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
-                <PopUp onClose={onClose} title={title} amount={amount} />
+                {formType === 'simple' ? (
+                  <PopUp onClose={onClose} />
+                ) : (
+                  <PopUpPay onClose={onClose} title={title} amount={amount} />
+                )}
               </div>
               <div className="hidden w-1/2 md:block">
                 <Image
