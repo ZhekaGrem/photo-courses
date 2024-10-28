@@ -8,6 +8,7 @@ import { section_6 } from '@/db/data';
 type PriseType = {
   title: string;
   price: string;
+  currency: string;
   newPrice?: string;
   discount?: number;
   description: string;
@@ -29,14 +30,15 @@ type DataSection6Type = {
 const data: DataSection6Type = section_6;
 
 const Price2 = () => {
-  const { setIsPortalOpen, setTitle, variantId } = usePortal();
+  const { setIsPortalOpen, setTitle, variantId, setAmount } = usePortal();
 
   const selectedVariant = data.variants.find((variant) => variant.id === variantId);
   const colSection = selectedVariant?.price.length;
   if (!selectedVariant) {
     return <div>Variant not found</div>;
   }
-  const openPortal = (title: string) => {
+  const openPortal = (title: string, amount: string) => {
+    setAmount?.(amount);
     setTitle?.(title);
     setIsPortalOpen(true);
   };
@@ -67,18 +69,30 @@ const Price2 = () => {
                     <>
                       <h4 className="ml-2 text-2xl font-bold text-gray-400 line-through">
                         {plan.content.price}
+                        {plan.content.currency}
                       </h4>
-                      <h4 className="text-4xl font-bold">{plan.content.newPrice}</h4>
+                      <h4 className="text-4xl font-bold">
+                        {plan.content.newPrice}
+                        {plan.content.currency}
+                      </h4>
                     </>
                   ) : (
-                    <h4 className="text-4xl font-bold">{plan.content.price}</h4>
+                    <h4 className="text-4xl font-bold">
+                      {plan.content.price}
+                      {plan.content.currency}
+                    </h4>
                   )}
                 </div>
                 <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.content.description}</p>
                 <div className="text-center">
                   <Button
                     text="Купити"
-                    onClick={() => openPortal(plan.content.title)}
+                    onClick={() =>
+                      openPortal(
+                        plan.content.title,
+                        plan.content.newPrice ? plan.content.newPrice : plan.content.price
+                      )
+                    }
                     className="w-full max-w-60 rounded-lg bg-background_section_6 px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90"
                   />
                 </div>

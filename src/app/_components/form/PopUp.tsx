@@ -1,14 +1,9 @@
 'use client';
 import React from 'react';
 import { useFormHandler } from '@/hook/useFormHandler';
+import { PortalProps } from '@/types/index';
 
-type ClosePortal = {
-  onClose: () => void;
-  title?: string;
-  amount?: string;
-};
-
-const PopUp: React.FC<ClosePortal> = ({ title, onClose, amount }) => {
+const PopUp: React.FC<PortalProps> = ({ title, onClose, amount }) => {
   const { formData, isFormValid, showThankYou, handleChange, handleSubmit, handleLiqPayPayment } =
     useFormHandler({
       title,
@@ -24,7 +19,10 @@ const PopUp: React.FC<ClosePortal> = ({ title, onClose, amount }) => {
   }
   return (
     <>
-      <form className="flex w-full flex-col content-center gap-6 p-10 text-center" onSubmit={handleSubmit}>
+      <form
+        className="flex w-full flex-col content-center gap-6 p-10 text-center"
+        //  onSubmit={handleSubmit}
+      >
         <div className="relative h-11 w-full min-w-[200px]">
           <input
             value={formData.name}

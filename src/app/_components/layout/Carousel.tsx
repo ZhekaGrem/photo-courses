@@ -3,18 +3,13 @@
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { ImgType } from '@/types/index';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '@/app/styles/carousel.css';
 
 import { porfoliocarousel } from '@/db/data';
-
-type ImgType = {
-  id: number;
-  link: string;
-  alt: string;
-};
 
 const data: ImgType[] = porfoliocarousel;
 

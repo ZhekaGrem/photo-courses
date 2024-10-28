@@ -4,12 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ReactDOM from 'react-dom';
 import PopUp from '../form/PopUp';
 import Image from 'next/image';
-
-interface PortalProps {
-  onClose: () => void;
-  title: string;
-  amount?: string;
-}
+import { PortalProps } from '@/types/index';
 
 const Portal: React.FC<PortalProps> = ({ title, onClose, amount }) => {
   const portalRoot = typeof document !== 'undefined' ? document.getElementById('portal-root') : null;

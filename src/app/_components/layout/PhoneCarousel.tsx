@@ -4,14 +4,8 @@ import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
 import 'keen-slider/keen-slider.min.css';
 import '@/app/styles/carousel.css';
-
+import { ImgType } from '@/types/index';
 import { porfoliocarousel } from '@/db/data';
-
-type ImgType = {
-  id: number;
-  link: string;
-  alt: string;
-};
 
 const data: ImgType[] = porfoliocarousel;
 

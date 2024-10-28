@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { validatePhone } from '@/untils/validation';
-
+import { PortalProps } from '@/types/index';
 interface FormData {
   name: string;
   tel: string;
   email?: string;
 }
 
-interface UseFormHandlerProps {
-  title?: string;
-  onClose?: () => void;
-  amount?: string;
-}
-
-export const useFormHandler = ({ title, onClose, amount }: UseFormHandlerProps) => {
+export const useFormHandler = ({ title, onClose, amount }: PortalProps) => {
   const [formData, setFormData] = useState<FormData>({ name: '', tel: '+380', email: '' });
   const [isFormValid, setIsFormValid] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
@@ -33,16 +27,17 @@ export const useFormHandler = ({ title, onClose, amount }: UseFormHandlerProps) 
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleLiqPayPayment = async () => {
+  const handleLiqPayPayment = async (e: React.FormEvent) => {
+    e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('https://liqpay-photo-course.onrender.com/pay', {
+      const response = await fetch('http://localhost:3001/pay', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount,
+          amount: amount,
           description: `Оплата за курс: ${title}`,
           order_id: Date.now().toString(),
         }),

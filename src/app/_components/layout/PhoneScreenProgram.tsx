@@ -7,11 +7,7 @@ import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 type IndexType = number | null;
 type HandleClickButton = (index: number) => void;
 
-type CarouselType = {
-  id: number;
-  src: string;
-  alt: string;
-};
+import { ImgType } from '@/types/index';
 
 type InfoType = {
   id: number;
@@ -23,7 +19,7 @@ type InfoType = {
     img?: string;
     img_alt?: string;
     video?: string;
-    сarousel?: Array<CarouselType>;
+    сarousel?: Array<ImgType>;
   };
 };
 

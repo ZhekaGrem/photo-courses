@@ -4,15 +4,10 @@ import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
 import 'keen-slider/keen-slider.min.css';
 import '@/app/styles/carousel.css';
-
-type ImgItem = {
-  id: number;
-  src: string;
-  alt: string;
-};
+import { ImgType } from '@/types/index';
 
 type PhoneCarouselProps = {
-  carousel: ImgItem[];
+  carousel: ImgType[];
 };
 
 const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
@@ -41,7 +36,7 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
               className="w-auto rounded-md object-contain"
               width={400}
               height={400}
-              src={item.src}
+              src={item.link}
               alt={item.alt}
               priority={true}
               loading="eager"

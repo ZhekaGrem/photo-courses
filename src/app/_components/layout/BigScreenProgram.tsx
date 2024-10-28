@@ -3,12 +3,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 import { motion, AnimatePresence } from 'framer-motion';
-
-type CarouselType = {
-  id: number;
-  src: string;
-  alt: string;
-};
+import { ImgType } from '@/types/index';
 
 type InfoType = {
   id: number;
@@ -20,7 +15,7 @@ type InfoType = {
     img?: string;
     img_alt?: string;
     video?: string;
-    сarousel?: Array<CarouselType>;
+    сarousel?: Array<ImgType>;
   };
 };
 type ComponentProps = {
