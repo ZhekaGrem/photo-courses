@@ -1,5 +1,5 @@
 export type PortalProps = {
-  onClose: () => void;
+  onClose?: () => void;
   title?: string;
   amount?: string;
 };
