@@ -65,7 +65,7 @@ const PopUpPay: React.FC<PortalProps> = ({ title, onClose, amount }) => {
             className="border-blue-gray-200 placeholder-shown:border-blue-orangev-200 peer h-full w-full border-b bg-transparent pb-1.5 pt-4 font-sans text-2xl font-normal text-white outline outline-0 transition-all focus:border-orange-500 focus:outline-0 disabled:border-0 md:text-sm"
           />
           <label className="after:content[' '] peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute -top-2.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2xl font-normal leading-tight text-white transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-focus:text-sm peer-focus:leading-tight peer-focus:text-white peer-focus:after:scale-x-100 peer-focus:after:border-zinc-50 peer-disabled:text-transparent md:text-sm">
-            {` Ваш емейл:`}
+            {` Ваш емейл:(не обов'язково)`}
           </label>
         </div>
         <div className="flex justify-center gap-10">

@@ -86,7 +86,7 @@ const Price2 = () => {
                 <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.content.description}</p>
                 <div className="text-center">
                   <Button
-                    text="Купити"
+                    text="Придбати"
                     onClick={() =>
                       openPortal(
                         plan.content.title,
