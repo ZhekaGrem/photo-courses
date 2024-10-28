@@ -31,7 +31,7 @@ export const useFormHandler = ({ title, onClose, amount }: PortalProps) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/pay', {
+      const response = await fetch('https://liqpay-photo-course.onrender.com/pay', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
