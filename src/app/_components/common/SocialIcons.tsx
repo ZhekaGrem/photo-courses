@@ -58,7 +58,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ place }) => {
   if (place === 'hero') {
     return (
       <div className="absolute right-0 top-72 lg:right-[21%]">
-        <div className="mt-9 rounded-2xl p-5">
+        <div className="rounded-2xl p-5">
           <ul className="flex flex-col gap-y-6">
             {icon.map((item) => (
               <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
