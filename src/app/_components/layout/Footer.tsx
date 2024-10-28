@@ -1,6 +1,7 @@
 import { footer } from '@/db/data';
 import MiniFormFooter from '../form/MiniFormFooter';
 import SocialIcons from '../common/SocialIcons';
+import Image from 'next/image';
 
 //Icon socials
 
@@ -47,6 +48,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
       <div className="p-1 pb-5">
         <div className="container px-3 py-6 text-text_1 md:flex md:items-center md:justify-between">
           <div className="text-center text-sm text-gray-500 md:text-left">
@@ -60,6 +62,22 @@ const Footer = () => {
               className="text-base text-text_1 transition-colors hover:text-background_btn">
               Зв`язатися з розробником
             </a>
+          </div>
+          <div className="mt-4 flex justify-center space-x-4">
+            <Image
+              src="/assets/logo/Visa.png"
+              alt="Visa"
+              width={60}
+              height={40}
+              className="w-auto object-contain"
+            />
+            <Image
+              src="/assets/logo/MasterCard.png"
+              alt="MasterCard"
+              className="w-auto object-contain"
+              width={60}
+              height={40}
+            />
           </div>
         </div>
       </div>
