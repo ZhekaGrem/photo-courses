@@ -78,10 +78,10 @@ export const useFormHandler = ({ title, onClose, amount }: PortalProps) => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent, buttonValue: string) => {
     e.preventDefault();
     const courseInfo = title ? `Який курс обрав клієнт: ${title}` : 'Курс не обрано';
-    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\nЕмеіл клієнта: ${formData.email}\n${courseInfo}`;
+    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\nЕмеіл клієнта: ${formData.email}\n${courseInfo}\nДія: ${buttonValue}`;
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(text)}`;
 
     try {

@@ -5,11 +5,13 @@ const Terms_of_service = () => {
     <div className="min-h-screen bg-background_header px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <div className="rounded-2xl bg-gray-100 p-8 shadow-[inset_-5px_-5px_15px_rgba(255,255,255,0.8),inset_5px_5px_10px_rgba(0,0,0,0.1)]">
-          <h1 className="mb-6 text-3xl font-bold text-gray-800">Умови надання послуг та повернення коштів</h1>
+          <h1 className="mb-6 text-center text-3xl font-bold text-gray-800">
+            Умови надання послуг та повернення коштів
+          </h1>
 
           <div className="space-y-6">
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
-              <h2 className="mb-3 text-xl font-semibold text-gray-700">Про наш продукт</h2>
+              <h2 className="mb-3 text-center text-xl font-semibold text-gray-700">Про наш продукт</h2>
               <p className="text-gray-600">
                 Наш онлайн фотокурс для початківців (MCC код: 8299 - Educational Services) - це ваш квиток у
                 захоплюючий світ фотографії. Розроблений провідними експертами, цей курс допоможе вам розкрити
@@ -18,7 +20,7 @@ const Terms_of_service = () => {
             </div>
 
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
-              <h2 className="mb-3 text-xl font-semibold text-gray-700">Безпека платежів</h2>
+              <h2 className="mb-3 text-center text-xl font-semibold text-gray-700">Безпека платежів</h2>
               <p className="text-gray-600">
                 Оплата здійснюється через платіжну систему LiqPay. Ми не зберігаємо дані ваших карток - всі
                 платежі проводяться безпосередньо через захищений віджет LiqPay, який відповідає стандартам
@@ -27,7 +29,9 @@ const Terms_of_service = () => {
             </div>
 
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
-              <h2 className="mb-3 text-xl font-semibold text-gray-700">Політика конфіденційності</h2>
+              <h2 className="mb-3 text-center text-xl font-semibold text-gray-700">
+                Політика конфіденційності
+              </h2>
               <p className="text-gray-600">
                 Ми збираємо та обробляємо ваші персональні дані відповідно до GDPR та Закону України &quot;Про
                 захист персональних даних&quot;:
@@ -42,7 +46,9 @@ const Terms_of_service = () => {
             </div>
 
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
-              <h2 className="mb-3 text-xl font-semibold text-gray-700">Політика повернення коштів</h2>
+              <h2 className="mb-3 text-center text-xl font-semibold text-gray-700">
+                Політика повернення коштів
+              </h2>
               <p className="text-gray-600">
                 Відповідно до Закону України &quot;Про захист прав споживачів&quot;, ви маєте право:
               </p>
@@ -61,7 +67,9 @@ const Terms_of_service = () => {
             </div>
 
             <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
-              <h2 className="mb-3 text-xl font-semibold text-gray-700">Контактна інформація та підтримка</h2>
+              <h2 className="mb-3 text-center text-xl font-semibold text-gray-700">
+                Контактна інформація та підтримка
+              </h2>
               <p className="text-gray-600">
                 ФОП &quot;Фотокурс&quot;
                 <br />
@@ -70,9 +78,9 @@ const Terms_of_service = () => {
                 Юридична адреса: м. Київ, вул. Хрещатик, 1<br />
                 Email підтримки: support@photocourse.com
                 <br />
-                Телефон підтримки: +380 XX XXX XX XX
+                Телефон підтримки: +38 (098) 875 84 42
                 <br />
-                Графік роботи підтримки: Пн-Пт, 9:00 - 18:00
+                Графік роботи підтримки: Пн-Пт, 12:00 - 17:00
               </p>
             </div>
           </div>

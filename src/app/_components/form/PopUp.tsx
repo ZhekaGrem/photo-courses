@@ -10,6 +10,12 @@ const PopUp: React.FC<PortalProps> = ({ title, onClose, amount }) => {
       onClose,
       amount,
     });
+
+  const handleBuy = (e: React.FormEvent, buttonValue: string) => {
+    handleLiqPayPayment(e);
+    handleSubmit(e, buttonValue);
+  };
+
   if (showThankYou) {
     return (
       <div className="flex w-full flex-col content-center gap-6 p-10 text-center">
@@ -21,8 +27,7 @@ const PopUp: React.FC<PortalProps> = ({ title, onClose, amount }) => {
     <>
       <form
         className="flex w-full flex-col content-center gap-6 p-10 text-center"
-        //  onSubmit={handleSubmit}
-      >
+        onSubmit={(e) => e.preventDefault()}>
         <div className="relative h-11 w-full min-w-[200px]">
           <input
             value={formData.name}
@@ -66,7 +71,7 @@ const PopUp: React.FC<PortalProps> = ({ title, onClose, amount }) => {
         <div className="flex justify-center gap-10">
           <label>
             <input
-              onClick={handleLiqPayPayment}
+              onClick={(e) => handleBuy(e, 'оплатив')}
               disabled={!isFormValid}
               title={isFormValid ? 'Відправити' : 'Будь ласка, заповніть всі поля'}
               className="rounded-3xl border-4 p-2 text-2xl font-bold text-white hover:border-double hover:border-white disabled:border-gray-600 disabled:text-gray-500 md:text-xl md:font-normal"
@@ -76,6 +81,7 @@ const PopUp: React.FC<PortalProps> = ({ title, onClose, amount }) => {
           </label>
           <label>
             <input
+              onClick={(e) => handleSubmit(e, 'для зв’язатись')}
               disabled={!isFormValid}
               title={isFormValid ? 'Відправити' : 'Будь ласка, заповніть всі поля'}
               className="rounded-3xl border-4 p-2 text-2xl font-bold text-white hover:border-double hover:border-white disabled:border-gray-600 disabled:text-gray-500 md:text-xl md:font-normal"

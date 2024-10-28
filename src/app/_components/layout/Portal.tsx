@@ -88,8 +88,8 @@ const Portal: React.FC<PortalProps> = ({ title, onClose, amount }) => {
                 <Image
                   src="/assets/img/popup.jpg"
                   alt="Автор курсів"
-                  width={500}
-                  height={300}
+                  width={350}
+                  height={200}
                   className="w-full rounded-r-lg object-cover"
                   priority={true}
                 />

@@ -1035,11 +1035,15 @@ export const footer = {
   colum3: {
     title: 'ІНФО',
     list_link: [
-      { id: 9, text: 'ГОЛОВНА', href: '/', colspan: 'col-span-1' },
-      { id: 10, text: 'ПРО КУРС', href: '/#program', colspan: 'col-span-1' },
-      { id: 11, text: 'ПОРТФОЛІО АВТОРА', href: '/#portfolio', colspan: 'col-span-2' },
-      { id: 12, text: 'ПРО АВТОРА', href: '/#author', colspan: 'col-span-1' },
-      { id: 13, text: 'ВАРТІСТЬ', href: '/#price', colspan: 'col-span-1' },
+      { id: 9, text: 'ГОЛОВНА', href: '/' },
+      { id: 11, text: 'ПОРТФОЛІО АВТОРА', href: '/#portfolio' },
+      { id: 12, text: 'ПРО АВТОРА', href: '/#author' },
+      { id: 13, text: 'ВАРТІСТЬ', href: '/#price' },
+      {
+        id: 14,
+        text: 'УМОВИ НАДАННЯ ПОСЛУГ ТА ПОВЕРНЕННЯ КОШТІВ',
+        href: '/terms-of-service',
+      },
     ],
   },
 

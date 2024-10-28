@@ -38,7 +38,7 @@ const Footer = () => {
           <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum3.title}</h3>
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {footer.colum3.list_link.map((link) => (
-              <li key={link.id} className={`mb-4 ${link.colspan}`}>
+              <li key={link.id} className={`mb-4 ${link.id === 14 ? 'col-span-2' : 'col-span-1'}`}>
                 <a rel="noopener noreferrer" href={link.href} className="hover:underline">
                   {link.text}
                 </a>
