@@ -71,7 +71,7 @@ const PopUpPay: React.FC<PortalProps> = ({ title, onClose, amount }) => {
         <div className="flex justify-center gap-10">
           <label>
             <input
-              onClick={(e) => handleBuy(e, 'оплатив')}
+              onClick={(e) => handleBuy(e, 'натиснув на кнопку оплатив')}
               disabled={!isFormValid}
               title={isFormValid ? 'Відправити' : 'Будь ласка, заповніть всі поля'}
               className="rounded-3xl border-4 p-2 text-xl font-bold text-white hover:border-double hover:border-white disabled:border-gray-600 disabled:text-gray-500 md:text-xl lg:text-2xl"
