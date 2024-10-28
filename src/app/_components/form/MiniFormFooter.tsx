@@ -13,7 +13,7 @@ function MiniFormFooter() {
   }
   return (
     <>
-      <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
+      <form className="flex flex-col justify-center" onSubmit={(e) => handleSubmit(e, 'для зв’язку')}>
         <label className="mb-6" htmlFor="name">
           <input
             type="text"
