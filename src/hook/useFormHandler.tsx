@@ -15,6 +15,7 @@ export const useFormHandler = ({ title, onClose, amount }: PortalProps) => {
 
   const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
   const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
+  const backend_link = process.env.NEXT_PUBLIC_BACKEND_LINK;
 
   // Utility for phone validation
 
@@ -31,7 +32,7 @@ export const useFormHandler = ({ title, onClose, amount }: PortalProps) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('https://liqpay-photo-course.onrender.com/pay', {
+      const response = await fetch(`${backend_link}/pay`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
