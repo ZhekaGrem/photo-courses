@@ -69,7 +69,7 @@ const PopUp: React.FC<PortalProps> = ({ title, onClose, amount }) => {
               onClick={(e) => handleSubmit(e, 'для зв’язку')}
               disabled={!isFormValid}
               title={isFormValid ? 'Відправити' : 'Будь ласка, заповніть всі поля'}
-              className="rounded-3xl border-4 p-2 text-2xl font-bold text-white hover:border-double hover:border-white disabled:border-gray-600 disabled:text-gray-500 md:text-xl md:font-normal"
+              className="rounded-3xl border-4 p-2 text-2xl font-bold text-white hover:border-double hover:border-white disabled:border-gray-600 disabled:text-gray-500 md:text-xl"
               type="submit"
               value="Зв'язатись"
             />

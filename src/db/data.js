@@ -1,5 +1,5 @@
 export const header = {
-  btndata: 'ЗАПИСАТИСЬ НА КУРС',
+  btndata: 'Зв`язатись',
 };
 export const navlink = [
   { id: 1, name: 'ПРОГРАМА', href: '/#program' },
