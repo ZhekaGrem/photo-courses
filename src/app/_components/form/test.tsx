@@ -167,7 +167,7 @@ const PopUpUnified: React.FC<PortalProps> = ({ title, onClose, amount }) => {
           className={`after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-sm font-normal leading-tight text-white transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-white after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-white peer-focus:text-sm peer-focus:leading-tight peer-focus:text-white peer-focus:after:scale-x-100 peer-focus:after:border-white peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-white ${
             errors.name ? 'text-red-500' : 'text-white'
           }`}>
-          Ваше ім'я
+          Ваше ім`я
         </label>
         {errors.name && <p className="pl-1 text-sm text-red-500">{errors.name.message}</p>}
       </div>
@@ -203,7 +203,7 @@ const PopUpUnified: React.FC<PortalProps> = ({ title, onClose, amount }) => {
           className={`after:content[' '] pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-sm font-normal leading-tight text-white transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-white after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-white peer-focus:text-sm peer-focus:leading-tight peer-focus:text-white peer-focus:after:scale-x-100 peer-focus:after:border-white peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-white ${
             errors.email ? 'text-red-500' : 'text-white'
           }`}>
-          Ваш емейл (не обов'язково)
+          Ваш емейл (не обов`язково)
         </label>
         {errors.email && <p className="pl-1 text-sm text-red-500">{errors.email.message}</p>}
       </div>
