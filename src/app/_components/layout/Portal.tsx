@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ReactDOM from 'react-dom';
 import PopUp from '../form/PopUp';
 import PopUpPay from '../form/PopUpPay';
+import PopUpUnified from '../form/test';
 import Image from 'next/image';
 import { PortalProps } from '@/types/index';
 
@@ -90,7 +91,7 @@ const Portal: React.FC<ExtendedPortalProps> = ({ title, onClose, amount, formTyp
                 {formType === 'simple' ? (
                   <PopUp onClose={onClose} />
                 ) : (
-                  <PopUpPay onClose={onClose} title={title} amount={amount} />
+                  <PopUpUnified onClose={onClose} title={title} amount={amount} />
                 )}
               </div>
               <div className="hidden w-1/2 md:block">
