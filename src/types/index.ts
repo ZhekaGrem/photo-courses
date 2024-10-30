@@ -9,3 +9,9 @@ export type ImgType = {
   link: string;
   alt: string;
 };
+
+export type FormData = {
+  name: string;
+  tel: string;
+  email: string | null;
+};

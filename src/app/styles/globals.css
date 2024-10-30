@@ -182,3 +182,7 @@ h1 {
   min-height: auto;
   padding: 2rem 0;
 }
+input:-webkit-autofill {
+  opacity: 1;
+  transition: 5000s ease-in-out 0s;
+}

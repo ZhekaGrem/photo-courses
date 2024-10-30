@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum2.title}</h3>
-          <MiniFormFooter />
+          <MiniFormFooter title={footer.colum2.title} />
         </div>
         <div>
           <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum3.title}</h3>
