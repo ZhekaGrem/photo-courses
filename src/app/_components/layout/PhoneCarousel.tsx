@@ -36,6 +36,7 @@ export default function PhoneCarousel() {
                 width={400}
                 height={400}
                 src={item.link}
+                blurDataURL={item.link}
                 alt={item.alt}
                 loading="lazy"
                 placeholder="blur"

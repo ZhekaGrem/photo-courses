@@ -6,6 +6,7 @@ const FullScreenImage = () => (
       className="object-cover"
       loading="lazy"
       src="/assets/img/BG_block2.png"
+      blurDataURL="/assets/img/BG_block2.png"
       alt="Портфоліо студентів, фотошкола, школа фотографії, курси фотографа"
       fill
       quality={100}

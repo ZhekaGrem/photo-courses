@@ -102,6 +102,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                               <Image
                                 className="h-full w-full rounded-lg object-cover shadow-2xl"
                                 src={item.content.img || 'Content image'}
+                                blurDataURL={item.content.img || 'Content image'}
                                 alt={item.content.img_alt || 'Content image'}
                                 width={640}
                                 height={360}
@@ -115,6 +116,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                   <Image
                                     className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16"
                                     src="assets/svg/play2.svg"
+                                    blurDataURL="assets/svg/play2.svg"
                                     alt="play video"
                                     width={640}
                                     height={360}

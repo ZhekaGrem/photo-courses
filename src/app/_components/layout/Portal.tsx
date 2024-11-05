@@ -97,6 +97,7 @@ const Portal: React.FC<ExtendedPortalProps> = ({ title, onClose, amount, formTyp
               <div className="hidden w-1/2 md:block">
                 <Image
                   src="/assets/img/popup.jpg"
+                  blurDataURL="/assets/img/popup.jpg"
                   alt="Автор курсів"
                   width={350}
                   height={200}

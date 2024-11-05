@@ -70,6 +70,7 @@ export default function CarouselMini() {
               width={170}
               height={45}
               src={item.src}
+              blurDataURL={item.src}
               alt={item.alt}
               placeholder="blur"
             />

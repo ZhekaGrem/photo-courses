@@ -44,6 +44,7 @@ const Header = () => {
               width={100}
               height={20}
               src="/assets/logo/logo.png"
+              blurDataURL="/assets/logo/logo.png"
               alt="logo"
             />
           </Link>

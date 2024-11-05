@@ -37,6 +37,7 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
               width={400}
               height={400}
               src={item.link}
+              blurDataURL={item.link}
               alt={item.alt}
               priority={true}
               loading="eager"

@@ -13,8 +13,8 @@ export const useFormHandler = ({ title, onClose, amount }: PortalProps) => {
   const [showThankYou, setShowThankYou] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
-  const chat_id = process.env.NEXT_PUBLIC_CHAT_ID;
+  const token = process.env.TELEGRAM_TOKEN;
+  const chat_id = process.env.CHAT_ID;
   const backend_link = process.env.NEXT_PUBLIC_BACKEND_LINK;
 
   // Utility for phone validation

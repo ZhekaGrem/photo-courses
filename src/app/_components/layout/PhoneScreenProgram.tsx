@@ -114,6 +114,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                       <Image
                                         className="h-full rounded-lg object-cover shadow-2xl"
                                         src={item.content.img}
+                                        blurDataURL={item.content.img}
                                         alt={item.content.img_alt || 'Content image'}
                                         width={640}
                                         height={360}

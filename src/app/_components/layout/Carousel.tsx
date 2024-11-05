@@ -40,6 +40,7 @@ export default function Carousel() {
               width={800}
               height={640}
               src={item.link}
+              blurDataURL={item.link}
               alt={item.alt}
               loading="lazy"
               placeholder="blur"

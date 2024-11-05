@@ -31,6 +31,7 @@ const Certificate = () => {
               className="h-full rounded-lg object-cover"
               loading="lazy"
               src="/assets/img/certifies.jpg"
+              blurDataURL="/assets/img/certifies.jpg"
               width={520}
               height={465}
               alt="Сертифікат UAPP"
