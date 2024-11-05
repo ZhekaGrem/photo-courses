@@ -1,10 +1,13 @@
 'use client';
-import { Suspense, lazy, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePortal } from '@/context/PortalContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
 
-const BigScreenProgram = lazy(() => import('../layout/BigScreenProgram'));
-const PhoneScreenProgram = lazy(() => import('../layout/PhoneScreenProgram'));
+const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), { loading: () => <Loading /> });
+const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {
+  loading: () => <Loading />,
+});
 import Loading from '@/app/loading';
 
 import { data_section_2 } from '@/db/data';
@@ -77,16 +80,12 @@ const CourseProgram = () => {
             {selectedVariant.title_2}
           </motion.h2>
         </AnimatePresence>
-        <Suspense fallback={<Loading />}>
-          <div className="big-screen">
-            <BigScreenProgram data={selectedVariant.program} />
-          </div>
-        </Suspense>
-        <Suspense fallback={<Loading />}>
-          <div className="phone-screen">
-            <PhoneScreenProgram data={selectedVariant.program} />
-          </div>
-        </Suspense>
+        <div className="big-screen">
+          <BigScreenProgram data={selectedVariant.program} />
+        </div>
+        <div className="phone-screen">
+          <PhoneScreenProgram data={selectedVariant.program} />
+        </div>
       </div>
     </section>
   );

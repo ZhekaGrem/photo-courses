@@ -15,7 +15,7 @@ type SectionInfo = {
 
 const data: SectionInfo = section_1;
 
-const First = () => {
+const Hero = () => {
   const { isPortalOpen, setIsPortalOpen } = usePortal();
 
   return (
@@ -43,4 +43,4 @@ const First = () => {
   );
 };
 
-export default First;
+export default Hero;
