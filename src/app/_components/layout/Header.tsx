@@ -26,6 +26,11 @@ const Header = () => {
   const handleBurgerButtonClick = () => {
     setBurgerMenu(!burgerMenu);
   };
+  const closeMenuOnLinkClick = () => {
+    if (!burgerMenu) {
+      setBurgerMenu(true);
+    }
+  };
 
   const openPortal = (formType: 'simple' | 'payment') => {
     setFormType?.(formType);
@@ -33,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`absolute left-0 top-0 z-50 w-full text-text_header ${burgerMenu ? '' : 'text-2xl'}`}>
+    <header className={`absolute left-0 top-0 z-50 w-full text-lg text-text_header`}>
       <nav className="start-0 top-0 z-20 border-b bg-background_header">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -64,13 +69,13 @@ const Header = () => {
           </div>
           <div
             className={`w-full items-center justify-between lg:order-1 lg:flex lg:w-auto ${
-              burgerMenu ? 'hidden' : 'bloc text-center text-3xl'
+              burgerMenu ? 'hidden' : 'block text-center text-3xl'
             }`}>
             <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 font-bold lg:mt-0 lg:flex-row lg:space-x-8 lg:border-0 lg:p-0">
               {dataLink.map((list) => (
                 <li key={list.id} className={` ${burgerMenu ? '' : 'p-6'}`}>
                   <Link
-                    onClick={handleBurgerButtonClick}
+                    onClick={closeMenuOnLinkClick}
                     href={list.href}
                     className="block rounded px-3 py-2 hover:text-background_btn_hover lg:p-0">
                     {list.name}
