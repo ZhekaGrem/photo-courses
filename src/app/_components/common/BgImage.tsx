@@ -10,6 +10,7 @@ const FullScreenImage = () => (
       fill
       quality={100}
       sizes="100vw"
+      placeholder="blur"
     />
   </div>
 );

@@ -38,6 +38,7 @@ export default function PhoneCarousel() {
                 src={item.link}
                 alt={item.alt}
                 loading="lazy"
+                placeholder="blur"
               />
             </li>
           ))}

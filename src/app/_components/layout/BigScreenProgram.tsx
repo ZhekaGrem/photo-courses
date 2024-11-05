@@ -106,6 +106,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                 width={640}
                                 height={360}
                                 priority={true}
+                                placeholder="blur"
                               />
                               <button
                                 className="absolute inset-0 flex items-center justify-center text-black"
@@ -118,6 +119,7 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                     width={640}
                                     height={360}
                                     priority={true}
+                                    placeholder="blur"
                                   />
                                 </div>
                               </button>

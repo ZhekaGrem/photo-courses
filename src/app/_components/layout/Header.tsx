@@ -38,6 +38,7 @@ const Header = () => {
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <Image
+              placeholder="blur"
               loading="lazy"
               className="h-auto min-w-32"
               width={100}

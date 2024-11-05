@@ -34,6 +34,7 @@ const Certificate = () => {
               width={520}
               height={465}
               alt="Сертифікат UAPP"
+              placeholder="blur"
             />
           </div>
         </div>

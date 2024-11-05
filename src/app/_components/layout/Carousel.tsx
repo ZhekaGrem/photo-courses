@@ -42,6 +42,7 @@ export default function Carousel() {
               src={item.link}
               alt={item.alt}
               loading="lazy"
+              placeholder="blur"
             />
           </SwiperSlide>
         ))}

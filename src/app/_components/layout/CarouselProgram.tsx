@@ -40,6 +40,7 @@ const CarouselProgram: React.FC<PhoneCarouselProps> = ({ carousel }) => {
               alt={item.alt}
               priority={true}
               loading="eager"
+              placeholder="blur"
             />
           </div>
         ))}

@@ -102,6 +102,7 @@ const Portal: React.FC<ExtendedPortalProps> = ({ title, onClose, amount, formTyp
                   height={200}
                   className="w-full rounded-r-lg object-cover"
                   priority={true}
+                  placeholder="blur"
                 />
               </div>
             </div>

@@ -118,6 +118,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                         width={640}
                                         height={360}
                                         priority={true}
+                                        placeholder="blur"
                                       />
                                     ) : null}
                                   </motion.div>
