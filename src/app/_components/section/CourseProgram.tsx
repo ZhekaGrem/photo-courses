@@ -4,7 +4,7 @@ import { usePortal } from '@/context/PortalContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), { loading: () => <Loading /> });
+import BigScreenProgram from '../layout/BigScreenProgram';
 const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {
   loading: () => <Loading />,
 });

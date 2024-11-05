@@ -3,7 +3,11 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ImgType } from '@/types/index';
+type CarouselType = {
+  id: number;
+  src: string;
+  alt: string;
+};
 
 type InfoType = {
   id: number;
@@ -15,7 +19,7 @@ type InfoType = {
     img?: string;
     img_alt?: string;
     video?: string;
-    сarousel?: Array<ImgType>;
+    сarousel?: Array<CarouselType>;
   };
 };
 type ComponentProps = {
@@ -38,18 +42,10 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
     setIsPlaying(false);
   };
 
-  const handlePlayClick = async () => {
-    try {
-      setIsPlaying(true);
-      if (videoRef.current) {
-        await videoRef.current.play();
-      }
-    } catch (error) {
-      // Handle any playback errors
-      setIsPlaying(false);
-      console.error('Error playing video:', error);
-      // Optionally show user feedback
-      // alert('Failed to play video');
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
     }
   };
   return (
@@ -102,12 +98,10 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                               <Image
                                 className="h-full w-full rounded-lg object-cover shadow-2xl"
                                 src={item.content.img || 'Content image'}
-                                blurDataURL={item.content.img || 'Content image'}
                                 alt={item.content.img_alt || 'Content image'}
                                 width={640}
                                 height={360}
                                 priority={true}
-                                placeholder="blur"
                               />
                               <button
                                 className="absolute inset-0 flex items-center justify-center text-black"
@@ -116,12 +110,10 @@ const BigScreenProgram: React.FC<ComponentProps> = ({ data }) => {
                                   <Image
                                     className="h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16"
                                     src="assets/svg/play2.svg"
-                                    blurDataURL="assets/svg/play2.svg"
                                     alt="play video"
                                     width={640}
                                     height={360}
                                     priority={true}
-                                    placeholder="blur"
                                   />
                                 </div>
                               </button>
