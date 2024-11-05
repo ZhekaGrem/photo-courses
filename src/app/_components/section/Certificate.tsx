@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import { section_4 } from '@/db/data';
 

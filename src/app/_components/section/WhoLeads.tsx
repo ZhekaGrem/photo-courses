@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import CarouselMini from '../layout/CarouselMini';
 import { section_3 } from '@/db/data';

@@ -15,8 +15,8 @@ type SectionInfo = {
 
 const data: SectionInfo = section_1;
 
-const First = () => {
-  const { setIsPortalOpen } = usePortal();
+const Hero = () => {
+  const { isPortalOpen, setIsPortalOpen } = usePortal();
 
   return (
     <section className="imgBg flex min-h-screen bg-cover bg-center">
@@ -43,4 +43,4 @@ const First = () => {
   );
 };
 
-export default First;
+export default Hero;

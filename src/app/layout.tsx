@@ -2,13 +2,15 @@ import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import '@/app/styles/globals.css';
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import Loading from '@/app/loading';
 import ClarityScript from '@/app/_components/scripts/ClarityScript';
-const BottomTabs = lazy(() => import('@/app/_components/layout/BottomTabs'));
+const BottomTabs = dynamic(() => import('@/app/_components/layout/BottomTabs'), {
+  loading: () => <Loading />,
+});
 
 const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <Loading />,
 });
 import Header from './_components/layout/Header';
 import { PortalProvider } from '@/context/PortalContext';
@@ -94,9 +96,9 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <DynamicFooter />
-          <Suspense fallback={<Loading />}>
-            <BottomTabs />
-          </Suspense>
+
+          <BottomTabs />
+
           <div id="portal-root" />
         </PortalProvider>
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
