@@ -5,20 +5,14 @@ const useTelegramService = () => {
     const courseInfo = title ? `Який курс обрав клієнт: ${title}` : 'Курс не обрано';
     const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\nЕмеіл клієнта: ${formData.email}\n${courseInfo}\nДія: ${formType === 'simple' ? "нажав кнопку зв'затись" : 'нажав кнопку купити'}`;
 
-    const url = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_TOKEN}/sendMessage`;
-
     try {
-      const response = await fetch(url, {
+      const response = await fetch('/api/sendTelegramMessage', {
         method: 'POST',
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
-          text,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
       });
 
-      const data = await response.json();
-      if (!data.ok) {
+      if (!response.ok) {
         throw new Error('Помилка при відправці в Telegram');
       }
 
