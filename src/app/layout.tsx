@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Курси Фотографії в Україні ᐈ Навчання для початківців【2024】',
     description:
       '️Професійні курси фотографії ➤ 70% практики ➤ Робота з реальними проектами ➤ Підтримка 24/7 ➤ Портфоліо після навчання ➤ Допомога у старті карʼєри ✓ Бронюйте місце зараз',
-    images: ['https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg'],
+    images: ['https://www.screenphotoschool.com.ua/_next/static/media/google.84aede1a.webp'],
     locale: 'uk_UA',
     type: 'website',
     siteName: 'Screen Photo School',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: 'Школа Фотографії в Україні',
     description:
       '⭐ Стань професійним фотографом за 2 місяці ➤ Сучасна програма навчання ➤ Практичні заняття ➤ Робота з брендами ➤ Сертифікат ✓ Записуйтесь',
-    images: ['https://www.screenphotoschool.com.ua/_next/static/media/larg.4c8625f1.jpg'],
+    images: ['https://www.screenphotoschool.com.ua/_next/static/media/google.84aede1a.webp'],
   },
   robots: {
     index: true,
