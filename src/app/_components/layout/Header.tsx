@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <header className={`absolute left-0 top-0 z-50 w-full text-lg text-text_header`}>
       <nav className="start-0 top-0 z-20 border-b bg-background_header">
-        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+        <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-3">
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <Image
               loading="lazy"
