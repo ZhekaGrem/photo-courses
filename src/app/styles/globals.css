@@ -105,6 +105,12 @@ h2 {
   background-position: center;
   background-size: cover;
 }
+.imgBgtest {
+  background-image: url('../assets/img/google.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 /* .imgBg2 {
     background-image: url('../assets/img/popup.jpg');
