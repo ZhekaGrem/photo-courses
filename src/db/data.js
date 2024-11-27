@@ -866,9 +866,9 @@ export const section_6 = {
           content: {
             title: 'З наставником',
             price: '10500₴',
-            newPrice: '9450₴',
-            discount: 10,
-            description: 'Індивідуальні заняття ',
+            newPrice: '5000₴',
+            discount: 50,
+            description: 'Індивідуальні заняття',
             features: [
               'Доступ до відео матеріалів',
               'Доступ до додаткових матеріалів',
