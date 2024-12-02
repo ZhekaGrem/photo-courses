@@ -100,16 +100,13 @@ h2 {
 }
 
 .imgBg {
+  background-color: #f3f3f3;
   background-image: url('../assets/img/small3.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-.imgBgtest {
-  background-image: url('../assets/img/google.webp');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  will-change: background-image;
+  transition: background-image 0.3s ease-in-out;
 }
 
 /* .imgBg2 {

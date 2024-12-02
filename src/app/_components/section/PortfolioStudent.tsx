@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-
 import Loading from '@/app/loading';
 const FullScreenImage = dynamic(() => import('@/app/_components/common/BgImage'), {
   loading: () => <Loading />,

@@ -3,9 +3,11 @@ import { section_5 } from '@/db/data';
 import dynamic from 'next/dynamic';
 const Carousel = dynamic(() => import('@/app/_components/layout/Carousel'), {
   loading: () => <Loading />,
+  ssr: false,
 });
 const PhoneCarousel = dynamic(() => import('@/app/_components/layout/PhoneCarousel'), {
   loading: () => <Loading />,
+  ssr: false,
 });
 
 const data: string = section_5;

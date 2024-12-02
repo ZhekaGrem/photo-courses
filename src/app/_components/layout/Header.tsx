@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../common/Button';
 import BurgerIcon from '../common/BurgerIcon';
-import { usePortal } from '@/context/PortalContext';
 import { navlink, header } from '@/db/data';
 
 type NavLinks = {
@@ -21,7 +20,6 @@ const dataLink: NavLinks[] = navlink;
 const text: InfoType = header;
 
 const Header = () => {
-  const { isPortalOpen, setIsPortalOpen } = usePortal();
   const [burgerMenu, setBurgerMenu] = useState(!false);
   const handleBurgerButtonClick = () => {
     setBurgerMenu(!burgerMenu);
@@ -48,10 +46,11 @@ const Header = () => {
           </Link>
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             <Button
-              onClick={() => setIsPortalOpen(true)}
               className="hidden rounded-md bg-background_btn_burger px-6 sm:block"
               text={text.btndata}
-            />
+              openPortal={true}>
+              {text.btndata}
+            </Button>
             <button
               type="button"
               className="kinline-flex h-10 w-10 items-center justify-center rounded-lg bg-transparent text-xs lg:hidden"
@@ -76,7 +75,12 @@ const Header = () => {
                 </li>
               ))}
               <li>
-                <Button className=":block hidden rounded-md px-4 py-2" text="ЗАПИСАТИСЬ НА КУРС" />
+                <Button
+                  className=":block hidden rounded-md px-4 py-2"
+                  text="ЗАПИСАТИСЬ НА КУРС"
+                  openPortal={true}>
+                  ЗАПИСАТИСЬ НА КУРС
+                </Button>
               </li>
             </ul>
           </div>

@@ -1,8 +1,12 @@
-'use client';
 import { Button } from '../common/Button';
-import { usePortal } from '@/context/PortalContext';
-import SocialIcons from '@/app/_components/common/SocialIcons';
 import FirstTitle from '@/app/_components/common/FirstTitle';
+
+import Loading from '@/app/loading';
+import dynamic from 'next/dynamic';
+const SocialIcons = dynamic(() => import('@/app/_components/common/SocialIcons'), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 
 import { section_1 } from '@/db/data';
 
@@ -16,8 +20,6 @@ type SectionInfo = {
 const data: SectionInfo = section_1;
 
 const Hero = () => {
-  const { isPortalOpen, setIsPortalOpen } = usePortal();
-
   return (
     <section className="imgBg flex min-h-screen bg-cover bg-center">
       <div className="container mx-auto">
@@ -29,8 +31,8 @@ const Hero = () => {
               <Button
                 className="bg-background_btn_burger text-2xl font-bold transition-all duration-300 hover:underline sm:hidden rounded-full"
                 text={data.button_text}
-                onClick={() => setIsPortalOpen(true)}
-              />
+                openPortal={true}
+              >{data.button_text}</Button>
             </div>
             {/* <div className="pt-20 md:pt-0 xl:pt-[40%]">
               <p className="max-w-[90%] font-bold sm:max-w-[70%] lg:text-2xl">{data.text}</p>

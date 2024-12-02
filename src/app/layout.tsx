@@ -104,7 +104,7 @@ export default function RootLayout({
 
           <div id="portal-root" />
         </PortalProvider>
-        <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
+        <Script id="schema-org" type="application/ld+json" strategy="lazyOnload">
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Course',
@@ -148,10 +148,10 @@ export default function RootLayout({
             ],
           })}
         </Script>
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -164,7 +164,7 @@ export default function RootLayout({
 
         <Script
           id="google-tag-manager"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

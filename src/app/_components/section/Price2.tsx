@@ -79,8 +79,9 @@ const Price2 = () => {
                   <Button
                     text="Замовити"
                     onClick={() => openPortal(plan.content.title)}
-                    className="w-full max-w-60 rounded-lg bg-background_section_6 px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90"
-                  />
+                    className="w-full max-w-60 rounded-lg bg-background_section_6 px-4 py-3 font-bold text-text_2 drop-shadow-xl transition-colors text-shadow-black2 hover:bg-opacity-90">
+                    Замовити
+                  </Button>
                 </div>
               </div>
               <div className="bg-[#fff5f0] p-8">
