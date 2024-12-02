@@ -490,7 +490,7 @@ export const data_section_2 = {
               'Дослідження режиму "пріоритет діафрагми"',
               'Практичне застосування отриманих знань',
             ],
-            сarousel: [
+            carousel: [
               {
                 id: 1,
                 src: '/assets/programgroup/school/block2/1, фотошкола, школа фотографії, курси фотографа.webp',
@@ -542,7 +542,7 @@ export const data_section_2 = {
               'Збалансоване налаштування елементів експозиції',
               'Практичні вправи з різними налаштуваннями',
             ],
-            сarousel: [
+            carousel: [
               {
                 id: 1,
                 src: '/assets/programgroup/school/block3/4, фотошкола, школа фотографії, курси фотографа.webp',
@@ -605,7 +605,7 @@ export const data_section_2 = {
               'Виразні засоби зйомки',
               'Ключові аспекти фотографування',
             ],
-            сarousel: [
+            carousel: [
               {
                 id: 1,
                 src: '/assets/programgroup/school/block4/1, фотошкола, школа фотографії, курси фотографа.webp',
@@ -713,7 +713,7 @@ export const data_section_2 = {
               'Гармонійні поєднання кольорів',
               'Балансування білого',
             ],
-            сarousel: [
+            carousel: [
               {
                 id: 1,
                 src: '/assets/programgroup/school/block5/1, фотошкола, школа фотографії, курси фотографа.webp',
@@ -761,7 +761,7 @@ export const data_section_2 = {
               'Насадки для формування світла',
               'Головне та додаткове освітлення',
             ],
-            сarousel: [
+            carousel: [
               {
                 id: 1,
                 src: '/assets/programgroup/school/block6/1, фотошкола, школа фотографії, курси фотографа.webp',

@@ -26,7 +26,7 @@ type InfoType = {
     img?: string;
     img_alt?: string;
     video?: string;
-    сarousel?: CarouselType[];
+    carousel?: CarouselType[];
   };
 };
 
@@ -55,8 +55,8 @@ const MediaRenderer = React.memo(
     videoRef: React.RefObject<HTMLVideoElement>;
     onPlayClick: () => void;
   }) => {
-    if (content.сarousel) {
-      return <CarouselProgram carousel={content.сarousel} />;
+    if (content.carousel) {
+      return <CarouselProgram carousel={content.carousel} />;
     }
 
     if (content.video) {

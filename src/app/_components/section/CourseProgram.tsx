@@ -74,7 +74,7 @@ const CourseProgram = React.memo(() => {
         // Use requestAnimationFrame for better performance
         requestAnimationFrame(() => {
           setVariantId?.(variant.id);
-          setTimeout(scrollToSection, 100);
+          scrollToSection;
         });
       }
     };
