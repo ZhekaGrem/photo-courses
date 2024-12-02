@@ -7,10 +7,12 @@ import Loading from '@/app/loading';
 import ClarityScript from '@/app/_components/scripts/ClarityScript';
 const BottomTabs = dynamic(() => import('@/app/_components/layout/BottomTabs'), {
   loading: () => <Loading />,
+  ssr: false,
 });
 
 const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
   loading: () => <Loading />,
+  ssr: false,
 });
 import Header from './_components/layout/Header';
 import { PortalProvider } from '@/context/PortalContext';
@@ -104,79 +106,79 @@ export default function RootLayout({
 
           <div id="portal-root" />
         </PortalProvider>
-        <Script id="schema-org" type="application/ld+json" strategy="lazyOnload">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Course',
-            name: 'Курс фотографії для початківців',
-            description:
-              'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
-            provider: {
-              '@type': 'Organization',
-              name: 'Школа фотографії',
-              sameAs: 'https://www.screenphotoschool.com.ua',
+      </body>
+      <Script id="schema-org" type="application/ld+json" strategy="lazyOnload">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Course',
+          name: 'Курс фотографії для початківців',
+          description:
+            'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
+          provider: {
+            '@type': 'Organization',
+            name: 'Школа фотографії',
+            sameAs: 'https://www.screenphotoschool.com.ua',
+          },
+          category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'onsite',
+            startDate: '2024-09-01',
+            courseWorkload: 'PT40H',
+          },
+          offers: [
+            {
+              '@type': 'Offer',
+              category: 'Базовий курс',
+              name: 'Відеокурс "Швидкий Старт"',
+              price: '3000',
+              priceCurrency: 'UAH',
             },
-            category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
-            hasCourseInstance: {
-              '@type': 'CourseInstance',
-              courseMode: 'onsite',
-              startDate: '2024-09-01',
-              courseWorkload: 'PT40H',
+            {
+              '@type': 'Offer',
+              category: 'Розширений курс',
+              name: 'Відеокурс з менторством',
+              price: '5500',
+              priceCurrency: 'UAH',
             },
-            offers: [
-              {
-                '@type': 'Offer',
-                category: 'Базовий курс',
-                name: 'Відеокурс "Швидкий Старт"',
-                price: '3000',
-                priceCurrency: 'UAH',
-              },
-              {
-                '@type': 'Offer',
-                category: 'Розширений курс',
-                name: 'Відеокурс з менторством',
-                price: '5500',
-                priceCurrency: 'UAH',
-              },
-              {
-                '@type': 'Offer',
-                category: 'Індивідуальне навчання',
-                name: 'Індивідуальна школа фотографії',
-                price: '10000',
-                priceCurrency: 'UAH',
-              },
-            ],
-          })}
-        </Script>
-        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
+            {
+              '@type': 'Offer',
+              category: 'Індивідуальне навчання',
+              name: 'Індивідуальна школа фотографії',
+              price: '10000',
+              priceCurrency: 'UAH',
+            },
+          ],
+        })}
+      </Script>
+      <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
+      <Script
+        id="google-analytics"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', 'G-0SG93S79Y0');
               `,
-          }}
-        />
+        }}
+      />
 
-        <Script
-          id="google-tag-manager"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        id="google-tag-manager"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                 })(window,document,'script','dataLayer','GTM-NB39DGF6');
               `,
-          }}
-        />
-        <ClarityScript />
-      </body>
+        }}
+      />
+      <ClarityScript />
     </html>
   );
 }
