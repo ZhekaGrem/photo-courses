@@ -1,26 +1,14 @@
 'use client';
-import React, { useState, useRef, useMemo, useCallback, Suspense, lazy } from 'react';
+import React, { useState, useRef, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Optimize dynamic import with lazy loading and error boundary
-const CarouselProgram = lazy(() =>
-  import('@/app/_components/layout/CarouselProgram').catch(() => ({
-    default: () => <div>Failed to load carousel</div>,
-  }))
-);
-
-// Performance-optimized skeleton loader
-const SkeletonLoader = React.memo(() => (
-  <div className="animate-pulse space-y-4">
-    <div className="h-64 rounded bg-gray-300"></div>
-    <div className="space-y-3">
-      {[...Array(3)].map((_, i) => (
-        <div key={i} className="h-4 rounded bg-gray-200"></div>
-      ))}
-    </div>
-  </div>
-));
+import dynamic from 'next/dynamic';
+import Loading from '@/app/loading';
+const CarouselProgram = dynamic(() => import('@/app/_components/layout/CarouselProgram'), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 
 // Types definition
 type CarouselType = {
@@ -68,11 +56,7 @@ const MediaRenderer = React.memo(
     onPlayClick: () => void;
   }) => {
     if (content.сarousel) {
-      return (
-        <Suspense fallback={<SkeletonLoader />}>
-          <CarouselProgram carousel={content.сarousel} />
-        </Suspense>
-      );
+      return <CarouselProgram carousel={content.сarousel} />;
     }
 
     if (content.video) {
@@ -130,6 +114,8 @@ const MediaRenderer = React.memo(
     return null;
   }
 );
+
+MediaRenderer.displayName = 'MediaRenderer';
 
 // Main component with performance optimizations
 const BigScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
@@ -202,14 +188,12 @@ const BigScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
                     </ul>
                   </div>
 
-                  <Suspense fallback={<SkeletonLoader />}>
-                    <MediaRenderer
-                      content={currentItem.content}
-                      isPlaying={isPlaying}
-                      videoRef={videoRef}
-                      onPlayClick={handlePlayClick}
-                    />
-                  </Suspense>
+                  <MediaRenderer
+                    content={currentItem.content}
+                    isPlaying={isPlaying}
+                    videoRef={videoRef}
+                    onPlayClick={handlePlayClick}
+                  />
                 </div>
               )}
             </motion.div>

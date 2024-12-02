@@ -100,6 +100,7 @@ const ListItem: React.FC<{
     </li>
   );
 });
+ListItem.displayName = 'ListItem';
 
 const ExpandedContent: React.FC<{ content: ContentDetails }> = React.memo(({ content }) => {
   const renderMedia = () => {
@@ -155,6 +156,7 @@ const ExpandedContent: React.FC<{ content: ContentDetails }> = React.memo(({ con
   );
 });
 
+ExpandedContent.displayName = 'ExpandedContent';
 const PhoneScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -186,5 +188,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
     </div>
   );
 });
+
+PhoneScreenProgram.displayName = 'PhoneScreenProgram';
 
 export default PhoneScreenProgram;
