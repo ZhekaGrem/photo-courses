@@ -71,6 +71,7 @@ export default function CarouselMini() {
               height={45}
               src={item.src}
               alt={item.alt}
+              loading="lazy"
             />
           </div>
         ))}

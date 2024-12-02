@@ -95,6 +95,8 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
                   width={500}
                   height={300}
                   className="w-full rounded-r-lg object-cover"
+                  priority={true}
+                  loading="eager"
                 />
               </div>
             </div>

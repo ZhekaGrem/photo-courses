@@ -1,16 +1,32 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { data_section_2 } from '@/db/data';
+import React, { useEffect, useRef, Suspense } from 'react';
 import { usePortal } from '@/context/PortalContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), { loading: () => <Loading /> });
-const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {
-  loading: () => <Loading />,
+// Improve dynamic imports with preloading and more specific loading states
+const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), {
+  loading: () => <SkeletonLoader variant="big" />,
+  ssr: false, // Disable server-side rendering for client-heavy components
 });
-import Loading from '@/app/loading';
 
-import { data_section_2 } from '@/db/data';
+const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {
+  loading: () => <SkeletonLoader variant="phone" />,
+  ssr: false,
+});
+
+// Create a more informative loading component
+const SkeletonLoader = ({ variant }: { variant: 'big' | 'phone' }) => (
+  <div className={`skeleton-loader ${variant}`}>
+    <div className="animate-pulse">
+      <div className="mb-4 h-4 bg-gray-300"></div>
+      {[...Array(3)].map((_, i) => (
+        <div key={i} className="mb-2 h-20 rounded bg-gray-200"></div>
+      ))}
+    </div>
+  </div>
+);
 
 type ProgramContentType = {
   title: string;
@@ -38,57 +54,83 @@ type DataSection2Type = {
 };
 
 const data: DataSection2Type = data_section_2;
-const CourseProgram = () => {
+
+const CourseProgram = React.memo(() => {
   const { variantId, setVariantId } = usePortal();
   const sectionRef = useRef<HTMLElement>(null);
 
-  const scrollToSection = () => {
+  const scrollToSection = React.useCallback(() => {
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
+
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
       const variant = data.variants.find((v) => v.id === hash);
+
       if (variant) {
-        setVariantId?.(variant.id);
-        setTimeout(scrollToSection, 100); // Невелика затримка для надійності
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
+          setVariantId?.(variant.id);
+          setTimeout(scrollToSection, 100);
+        });
       }
     };
 
-    handleHashChange(); // Викликаємо функцію при першому завантаженні
+    // Initial load and hash change handling
+    handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
+
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [setVariantId]);
+  }, [setVariantId, scrollToSection]);
+
   const selectedVariant = data.variants.find((variant) => variant.id === variantId);
 
   if (!selectedVariant) {
-    return <div>Variant not found</div>;
+    return (
+      <div className="p-4 text-center text-gray-500">
+        No variant selected. Please choose a program variant.
+      </div>
+    );
   }
+
   return (
-    <section id={variantId} ref={sectionRef} className="bg-background_header">
+    <section
+      id={variantId}
+      ref={sectionRef}
+      className="bg-background_header"
+      aria-labelledby="course-program-title">
       <div className="section container text-text_2" id="program">
-        <AnimatePresence mode="wait">
-          <motion.h2
-            key={selectedVariant.title_2}
-            initial={{ opacity: 0, y: -5 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 5 }}
-            transition={{ duration: 0.3 }}
-            className="transform text-center text-2xl sm:text-left sm:text-5xl">
-            {selectedVariant.title_2}
-          </motion.h2>
-        </AnimatePresence>
-        <div className="big-screen">
-          <BigScreenProgram data={selectedVariant.program} />
-        </div>
-        <div className="phone-screen">
-          <PhoneScreenProgram data={selectedVariant.program} />
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <AnimatePresence mode="wait">
+            <motion.h2
+              key={selectedVariant.title_2}
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 5 }}
+              transition={{ duration: 0.3 }}
+              className="transform text-center text-2xl sm:text-left sm:text-5xl">
+              {selectedVariant.title_2}
+            </motion.h2>
+          </AnimatePresence>
+
+          <div className="big-screen">
+            <BigScreenProgram data={selectedVariant.program} />
+          </div>
+
+          <div className="phone-screen">
+            <PhoneScreenProgram data={selectedVariant.program} />
+          </div>
+        </Suspense>
       </div>
     </section>
   );
-};
+});
+
+CourseProgram.displayName = 'CourseProgram';
 
 export default CourseProgram;
+
+// CSS can remain the same as in your original file

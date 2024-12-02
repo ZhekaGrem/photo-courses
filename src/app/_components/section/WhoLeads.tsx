@@ -1,7 +1,12 @@
 import Image from 'next/image';
-import CarouselMini from '../layout/CarouselMini';
 import { section_3 } from '@/db/data';
 import CheckmarkIcon from '../common/Checkmark';
+import Loading from '@/app/loading';
+import dynamic from 'next/dynamic';
+const CarouselMini = dynamic(() => import('../layout/CarouselMini'), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 
 type SectionInfo = {
   title: string;

@@ -1,9 +1,11 @@
 import { Button } from '../common/Button';
-import FirstTitle from '@/app/_components/common/FirstTitle';
-
 import Loading from '@/app/loading';
 import dynamic from 'next/dynamic';
 const SocialIcons = dynamic(() => import('@/app/_components/common/SocialIcons'), {
+  loading: () => <Loading />,
+  ssr: false,
+});
+const FirstTitle = dynamic(() => import('@/app/_components/common/FirstTitle'), {
   loading: () => <Loading />,
   ssr: false,
 });
