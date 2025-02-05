@@ -1,8 +1,16 @@
 import { footer } from '@/db/data';
-import MiniFormFooter from '../form/MiniFormFooter';
-import SocialIcons from '../common/SocialIcons';
 
-//Icon socials
+import dynamic from 'next/dynamic';
+import Loading from '@/app/loading';
+
+const MiniFormFooter = dynamic(() => import('../form/MiniFormFooter'), {
+  loading: () => <Loading />,
+  ssr: false,
+});
+const SocialIcons = dynamic(() => import('../common/SocialIcons'), {
+  loading: () => <Loading />,
+  ssr: false,
+});
 
 const date = new Date().getFullYear();
 

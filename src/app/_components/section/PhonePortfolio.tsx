@@ -1,6 +1,6 @@
-import Loading from '@/app/loading';
 import { section_5 } from '@/db/data';
 
+import Loading from '@/app/loading';
 import dynamic from 'next/dynamic';
 const PhoneCarousel = dynamic(() => import('@/app/_components/layout/PhoneCarousel'), {
   loading: () => <Loading />,

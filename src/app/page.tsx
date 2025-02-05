@@ -38,9 +38,7 @@ export default function Home() {
       <CourseProgram />
       <Price2 />
       <Сertificate />
-
       <Portfolio />
-
       <PortfolioStudent />
     </>
   );
