@@ -3,11 +3,11 @@ import Loading from '@/app/loading';
 import dynamic from 'next/dynamic';
 const SocialIcons = dynamic(() => import('@/app/_components/common/SocialIcons'), {
   loading: () => <Loading />,
-  ssr: false,
+  ssr: true,
 });
 const FirstTitle = dynamic(() => import('@/app/_components/common/FirstTitle'), {
   loading: () => <Loading />,
-  ssr: false,
+  ssr: true,
 });
 
 import { section_1 } from '@/db/data';
