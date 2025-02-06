@@ -6,50 +6,37 @@
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   cursor: pointer;
+  z-index: 10;
 }
 
-.arrow--left {
+.arrow--left--program {
   left: 5px;
 }
 
-.arrow--right {
-  left: auto;
-  right: 5px;
-}
-.arrow--left--program {
-  left: 1%;
-}
-
 .arrow--right--program {
+  right: 5px;
   left: auto;
-  right: 1%;
-}
-
-.arrow--disabled {
-  fill: rgba(255, 255, 255, 0.5);
 }
 
 .custom-swiper .swiper-button-next,
 .custom-swiper .swiper-button-prev {
-  color: #ffffff; /* Цвет стрелок */
-  padding: 40px; /* Размер кнопки */
+  color: #ffffff;
+  padding: 40px;
 }
 
-/* Изменение цвета при наведении */
-
-/* Убираем фоновый круг у стрелок по умолчанию */
 .custom-swiper .swiper-button-next::after,
 .custom-swiper .swiper-button-prev::after {
-  font-size: 30px; /* Размер стрелок */
+  font-size: 30px;
 }
 
+/* Responsive adjustments */
 @media (min-width: 786px) {
   .arrow--left--program {
     left: 20px;
   }
 
   .arrow--right--program {
-    left: auto;
     right: 20px;
+    left: auto;
   }
 }

@@ -2,13 +2,8 @@
 import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import Loading from '@/app/loading';
 
-const CarouselProgram = dynamic(() => import('@/app/_components/layout/CarouselProgram'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
+import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 
 interface CarouselItem {
   id: number;
@@ -77,7 +72,7 @@ const ListItem: React.FC<{
           animate={{ rotate: isOpen ? 135 : 0 }}
           className="flex h-4 min-w-10 items-center justify-center">
           <Image
-            className="h-auto"
+            className="h-full w-full rounded-lg object-cover shadow-2xl"
             src="/assets/svg/plus.svg"
             alt="Expand/Collapse"
             width={35}

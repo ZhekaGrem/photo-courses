@@ -5,10 +5,9 @@ import { usePortal } from '@/context/PortalContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-// Improve dynamic imports with preloading and more specific loading states
 const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), {
   loading: () => <SkeletonLoader variant="big" />,
-  ssr: false, // Disable server-side rendering for client-heavy components
+  ssr: false,
 });
 
 const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {

@@ -3,12 +3,7 @@ import React, { useState, useRef, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import dynamic from 'next/dynamic';
-import Loading from '@/app/loading';
-const CarouselProgram = dynamic(() => import('@/app/_components/layout/CarouselProgram'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
+import CarouselProgram from '@/app/_components/layout/CarouselProgram';
 
 // Types definition
 type CarouselType = {
