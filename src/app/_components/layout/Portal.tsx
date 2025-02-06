@@ -77,7 +77,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
               </svg>
             </button>
             <div className="flex w-full">
-              <div className="w-full bg-[#020202] bg-opacity-50 md:w-1/2 md:bg-opacity-0">
+              <div className="w-full rounded-2xl bg-[#020202] bg-opacity-50 md:w-1/2 md:bg-opacity-0">
                 <h3
                   className="mb-4 p-8 text-center text-3xl font-bold leading-6 text-[#DDDDDD] md:text-2xl"
                   id="modal-title">

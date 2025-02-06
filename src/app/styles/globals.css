@@ -150,7 +150,7 @@ h2 {
 
 @media (max-width: 767px) {
   .imgBg2 {
-    background-image: url('../assets/img/bg-popup.jpg');
+    background-image: url('../assets/img/s-bg-popup.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
