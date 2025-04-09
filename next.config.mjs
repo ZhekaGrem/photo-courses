@@ -10,6 +10,13 @@ const nextConfig = {
   },
   experimental: {
     images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'www.screenphotoschool.com.ua',
+          pathname: '/images/**',
+        },
+      ],
       // Указываем долгое время кэширования для изображений, поскольку они уже оптимизированы
       minimumCacheTTL: 60 * 60 * 24 * 7, // 7 дней
 
