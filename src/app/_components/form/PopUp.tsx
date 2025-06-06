@@ -179,7 +179,7 @@ const PopUp = ({ title, onClose }: ClosePortal) => {
         whileTap={{ scale: isFormValid() ? 0.98 : 1 }}
         className={`relative overflow-hidden rounded-lg px-8 py-4 text-lg font-bold transition-all ${
           isFormValid()
-            ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg hover:shadow-xl'
+            ? 'bg-gradient-to-r from-[#f62553] to-background_btn_burger text-white shadow-lg hover:shadow-xl'
             : 'cursor-not-allowed bg-gray-600 text-gray-400'
         }`}>
         <AnimatePresence mode="wait">
