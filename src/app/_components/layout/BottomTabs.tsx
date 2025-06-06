@@ -28,6 +28,20 @@ const BottomTabs = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     window.history.pushState(null, '', `#${newVariantId}`);
+    setTimeout(() => {
+      const element = document.getElementById(newVariantId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Якщо елемента немає, спробуємо ще раз через більший інтервал
+        setTimeout(() => {
+          const retryElement = document.getElementById(newVariantId);
+          if (retryElement) {
+            retryElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    }, 50);
   };
   return (
     <>
