@@ -20,6 +20,8 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
     return () => setIsVisible(false);
   }, []);
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         onClose();
@@ -28,6 +30,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
+      document.body.style.overflow = 'unset';
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [onClose]);
@@ -76,7 +79,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
                   d="M6 18L18 6M6 6l12 12"></path>
               </svg>
             </button>
-            <div className="flex w-full">
+            <div className="flex w-full max-w-4xl">
               <div className="w-full rounded-2xl bg-[#020202] bg-opacity-50 md:w-1/2 md:bg-opacity-0">
                 <h3
                   className="mb-4 p-8 text-center text-3xl font-bold leading-6 text-[#DDDDDD] md:text-2xl"
