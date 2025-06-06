@@ -26,6 +26,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/forbid-prop-types": "off",
     "@next/next/no-img-element": "off",
+    "react/no-unescaped-entities": 0,
     "react/require-default-props": [
       "error",
       {

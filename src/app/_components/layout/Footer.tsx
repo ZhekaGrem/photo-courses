@@ -66,7 +66,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-base text-text_1 transition-colors hover:text-white">
-              Зв`язатися з розробником
+              Зв'язатися з розробником
             </a>
           </div>
         </div>
