@@ -116,9 +116,9 @@ const BottomTabs = () => {
   );
 
   return (
-    <div className="sticky bottom-4 left-1/2 z-10 w-auto max-w-md -translate-x-1 px-3 sm:left-1/3 sm:translate-x-0 lg:left-1/2 lg:-translate-x-1/2">
+    <div className="sticky bottom-4 left-1/2 z-10 w-auto max-w-md -translate-x-1 px-10 sm:left-1/3 sm:translate-x-0 sm:px-3 lg:left-1/2 lg:-translate-x-1/2">
       <nav className="animate-tilt-shaking rounded-full bg-background_btn_burger">
-        <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-2">
+        <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-3">
           <ul className="flex w-full justify-between">
             {tabs.map((tab) => {
               const isActive = getActiveState(tab);
@@ -144,7 +144,7 @@ const BottomTabs = () => {
                     className="relative z-10 block rounded-2xl p-1 text-center text-xs font-medium shadow-lg transition duration-300 ease-in-out md:p-2"
                     aria-label={`Navigate to ${tab.name}`}>
                     <motion.span
-                      className={`font-semibold transition-colors duration-300 md:text-base ${
+                      className={`p-1 font-semibold transition-colors duration-300 md:text-base ${
                         isActive ? 'text-background_btn_burger' : 'text-white hover:text-black'
                       }`}
                       animate={{
