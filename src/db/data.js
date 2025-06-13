@@ -5,7 +5,7 @@ export const header = {
 };
 export const navlink = [
   { id: 1, name: 'ПРОГРАМА', href: '/#program' },
-  { id: 2, name: 'ПРО АВТОРА', href: '/#author' },
+  { id: 2, name: 'ПРО АВТОРА', href: '/mentor' },
   { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
 ];
 
