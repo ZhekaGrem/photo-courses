@@ -49,7 +49,7 @@ const Price2 = () => {
 
         <div
           id="price"
-          className={`grid grid-cols-1 gap-8 px-6 xl:grid-cols-3 ${colSection === 1 ? 'justify-center xl:grid-cols-1' : ''}`}>
+          className={`grid grid-cols-1 gap-8 px-6 xl:grid-cols-4 ${colSection === 1 ? 'justify-center xl:grid-cols-1' : ''}`}>
           {selectedVariant.price.map((plan, index) => (
             <motion.div
               key={plan.id}
