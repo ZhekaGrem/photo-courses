@@ -835,13 +835,13 @@ export const section_6 = {
         {
           id: 1,
           content: {
-            title: 'ЕКСПРЕС-ДОСТУП',
+            title: 'Базовий експрес',
             price: '1500₴',
-            newPrice: '1000₴',
-            discount: 50,
+            newPrice: '1200₴',
+            // discount: 50,
             description:
               "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
-            features: ['Доступ на 2 тижні'],
+            features: ['Доступ до онлайн-уроків курсу на 2 тижні'],
           },
         },
         {
@@ -898,9 +898,9 @@ export const section_6 = {
           id: 10,
           content: {
             title: 'ЕКСПРЕС-ДОСТУ',
-            price: '1700₴',
+            price: '1200₴',
             newPrice: '1200₴',
-            discount: 30,
+            // discount: 30,
             description: 'Доступ на 2 тижні',
             features: ['Доступ до (8+)годинного курсу на десять уроків'],
           },
