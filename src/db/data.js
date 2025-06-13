@@ -835,13 +835,13 @@ export const section_6 = {
         {
           id: 1,
           content: {
-            title: 'Базовий',
-            price: '5000₴',
-            newPrice: '4000₴',
-            discount: 20,
+            title: 'ЕКСПРЕС-ДОСТУП',
+            price: '1500₴',
+            newPrice: '1000₴',
+            discount: 50,
             description:
               "П'ятигодинний курс на дванадцять уроків. Від вибору обладнання до залучення перших клієнтів ",
-            features: ['Доступ до онлайн-уроків курсу протягом 6 місяців'],
+            features: ['Доступ на 2 тижні'],
           },
         },
         {
@@ -894,6 +894,17 @@ export const section_6 = {
     {
       id: 'prosvitlo',
       price: [
+        {
+          id: 10,
+          content: {
+            title: 'ЕКСПРЕС-ДОСТУ',
+            price: '1700₴',
+            newPrice: '1200₴',
+            discount: 30,
+            description: 'Доступ на 2 тижні',
+            features: ['Доступ до (8+)годинного курсу на десять уроків'],
+          },
+        },
         {
           id: 7,
           content: {
