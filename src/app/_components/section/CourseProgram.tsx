@@ -85,7 +85,9 @@ const CourseProgram = React.memo(() => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, [setVariantId, scrollToSection]);
 
-  const selectedVariant = data.variants.find((variant) => variant.id === variantId);
+  const selectedVariant =
+    data.variants.find((variant) => variant.id === variantId) ||
+    data.variants.find((variant) => variant.id === 'faststart');
 
   if (!selectedVariant) {
     return (

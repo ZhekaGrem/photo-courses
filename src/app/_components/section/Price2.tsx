@@ -31,7 +31,9 @@ const data: DataSection6Type = section_6;
 const Price2 = () => {
   const { setIsPortalOpen, setTitle, variantId } = usePortal();
 
-  const selectedVariant = data.variants.find((variant) => variant.id === variantId);
+  const selectedVariant =
+    data.variants.find((variant) => variant.id === variantId) ||
+    data.variants.find((variant) => variant.id === 'faststart');
   const colSection = selectedVariant?.price.length;
   if (!selectedVariant) {
     return <div>Variant not found</div>;

@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const tabs = [
   { name: 'Швидкий старт', href: '/#faststart', id: 'faststart', isExternal: true },
   { name: 'PRO Світло', href: '/#prosvitlo', id: 'prosvitlo', isExternal: true },
-  { name: 'Про Автора', href: '/mentor', id: 'mentor', isExternal: true },
+  { name: 'Про Автора', href: '/mentor#author', id: 'mentor', isExternal: true },
 ];
 
 const BottomTabs = () => {
@@ -21,8 +21,13 @@ const BottomTabs = () => {
   // Initialize variant from URL params and current route
   useEffect(() => {
     const variant = searchParams.get('variant');
+    const hash = window.location.hash.replace('#', '');
+
     if (variant && setVariantId) {
       setVariantId(variant);
+    } else if (hash && setVariantId) {
+      // Set variant from hash
+      setVariantId(hash);
     } else if (pathname === '/mentor' && setVariantId) {
       // Set variant for mentor page
       setVariantId('mentor');
@@ -63,27 +68,31 @@ const BottomTabs = () => {
       const isHomePage = pathname === '/';
 
       if (tab.isExternal) {
-        if (tab.href.startsWith('/') && !tab.href.includes('#')) {
-          // Navigate to different page and set variant
+        if (tab.href.includes('#')) {
+          const [path, hash] = tab.href.split('#');
+          const targetPath = path || '/';
+
+          if (pathname !== targetPath) {
+            // Navigate to different page with hash
+            router.push(tab.href);
+            if (setVariantId && hash) {
+              setVariantId(hash);
+            }
+          } else {
+            // Same page, just update hash
+            router.replace(`${targetPath}#${hash}`, { scroll: false });
+            if (hash) {
+              scrollToElement(hash);
+              if (setVariantId) {
+                setVariantId(hash);
+              }
+            }
+          }
+        } else if (tab.href.startsWith('/')) {
+          // Navigate to different page without hash
           router.push(tab.href);
           if (setVariantId) {
             setVariantId(tab.id);
-          }
-        } else if (tab.href.includes('#')) {
-          const [path, hash] = tab.href.split('#');
-
-          if (!isHomePage && (path === '/' || path === '')) {
-            // Navigate to home page with hash
-            router.push(`/${hash ? `#${hash}` : ''}`);
-          } else if (isHomePage && hash) {
-            // Update hash on current page
-            router.replace(`#${hash}`, { scroll: false });
-            scrollToElement(hash);
-          }
-
-          // Update variant state
-          if (setVariantId && hash) {
-            setVariantId(hash);
           }
         }
       }
