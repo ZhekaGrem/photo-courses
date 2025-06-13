@@ -65,8 +65,6 @@ const BottomTabs = () => {
         clearTimeout(timeoutRef.current);
       }
 
-      const isHomePage = pathname === '/';
-
       if (tab.isExternal) {
         if (tab.href.includes('#')) {
           const [path, hash] = tab.href.split('#');
@@ -118,7 +116,7 @@ const BottomTabs = () => {
   );
 
   return (
-    <div className="sticky bottom-4 left-1/2 z-10 w-auto max-w-md -translate-x-1/2 px-3 sm:left-1/3 sm:translate-x-0 lg:left-1/2 lg:-translate-x-1/2">
+    <div className="sticky bottom-4 left-1/2 z-10 w-auto max-w-md -translate-x-1 px-3 sm:left-1/3 sm:translate-x-0 lg:left-1/2 lg:-translate-x-1/2">
       <nav className="animate-tilt-shaking rounded-full bg-background_btn_burger">
         <div className="flex max-w-screen-xl flex-wrap items-center justify-between p-2">
           <ul className="flex w-full justify-between">
