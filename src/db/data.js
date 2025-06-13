@@ -836,7 +836,7 @@ export const section_6 = {
           id: 1,
           content: {
             title: 'Базовий експрес',
-            price: '1500₴',
+            // price: '1500₴',
             newPrice: '1200₴',
             // discount: 50,
             description:
@@ -898,7 +898,7 @@ export const section_6 = {
           id: 10,
           content: {
             title: 'Професійний курс Pro світло експрес',
-            price: '1500₴',
+            // price: '1500₴',
             newPrice: '1200₴',
             // discount: 30,
             description: 'Професійний відеокурс по вивченню роботи зі світлом любого типу',

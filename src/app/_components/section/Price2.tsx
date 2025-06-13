@@ -7,7 +7,7 @@ import { section_6 } from '@/db/data';
 
 type PriseType = {
   title: string;
-  price: string;
+  price?: string;
   newPrice?: string;
   discount?: number;
   description: string;
