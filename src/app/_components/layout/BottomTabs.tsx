@@ -126,7 +126,7 @@ const BottomTabs = () => {
               return (
                 <motion.li
                   key={tab.id}
-                  className="relative font-bold text-white hover:shadow-xl"
+                  className="relative flex items-center font-bold text-white hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: 'spring', stiffness: 500, damping: 30 }}>

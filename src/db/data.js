@@ -5,6 +5,7 @@ export const navlink = [
   { id: 1, name: 'ПРОГРАМА', href: '/#program' },
   { id: 2, name: 'ПРО АВТОРА', href: '/mentor/#author' },
   { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
+  { id: 4, name: 'ВІДГУКИ', href: '/feedback' },
 ];
 
 //01 Section
