@@ -9,18 +9,7 @@ const CourseProgram = dynamic(() => import('@/app/_components/section/CourseProg
   loading: () => <Loading />,
   ssr: false,
 });
-// const WhoLeads = dynamic(() => import('@/app/_components/section/WhoLeads'), {
-//   loading: () => <Loading />,
-//   ssr: false,
-// });
-// const Сertificate = dynamic(() => import('@/app/_components/section/Сertificate'), {
-//   loading: () => <Loading />,
-//   ssr: false,
-// });
-// const Portfolio = dynamic(() => import('@/app/_components/section/Portfolio'), {
-//   loading: () => <Loading />,
-//   ssr: false,
-// });
+
 const PortfolioStudent = dynamic(() => import('@/app/_components/section/PortfolioStudent'), {
   loading: () => <Loading />,
   ssr: false,
