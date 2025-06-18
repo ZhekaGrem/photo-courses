@@ -89,7 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <body className={`${montrat.className} bg-cloud_dancer`}>
+      <body className={`${montrat.className} bg-pageant_blue`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NB39DGF6"

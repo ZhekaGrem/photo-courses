@@ -16,7 +16,7 @@ const date = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="tablet:h-full bg-cloud_dancer pt-2 text-lg text-pageant_blue">
+    <footer className="tablet:h-full bg-pageant_blue pt-2 text-lg text-cloud_dancer">
       <div className="mx-auto grid w-full max-w-screen-xl grid-cols-1 gap-8 px-4 py-3 md:grid-cols-3 lg:py-4">
         <div>
           <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum1.title}</h3>

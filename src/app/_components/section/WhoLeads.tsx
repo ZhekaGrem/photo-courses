@@ -20,21 +20,21 @@ const data: SectionInfo = section_3;
 
 const WhoLeads = () => {
   return (
-    <section id="author" className="bg-cloud_dancer text-pageant_blue">
+    <section id="author" className="bg-cloud_dancer text-neon_navy">
       <div className="section container">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="mb-8 lg:mb-0 lg:w-1/2">
-            <h2 className="text-neon_navy">{data.title}</h2>
-            <h3 className="mb-8 px-6 text-3xl font-semibold text-harbor_blue">{data.name}</h3>
+            <h2 className="">{data.title}</h2>
+            <h3 className="mb-8 px-6 text-3xl font-semibold">{data.name}</h3>
             <div className="">
               <ul className="space-y-4 rounded-lg p-6">
                 <li className="flex items-start">
                   <CheckmarkIcon />
-                  <p className="text-gray-800">{data.text}</p>
+                  <p className="">{data.text}</p>
                 </li>
                 <li className="flex items-start">
                   <CheckmarkIcon />
-                  <p className="text-gray-800">{data.text2}</p>
+                  <p className="">{data.text2}</p>
                 </li>
               </ul>
             </div>
@@ -49,7 +49,7 @@ const WhoLeads = () => {
                 alt="Олег Сернюк"
                 className="z-0 rounded-lg"
               />
-              <div className="m- absolute right-2 z-10 flex rounded-lg bg-white p-1 text-text_1 shadow-lg md:-right-6">
+              <div className="m- absolute right-2 z-10 flex rounded-lg bg-white p-1 shadow-lg md:-right-6">
                 <p className="p-1 text-lg font-bold">{data.experience}</p>
               </div>
             </div>
