@@ -1,8 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Gallery from '@/app/_components/layout/Gallery';
-// import CarouselTestimonial from '@/app/_components/layout/CarouselTestimonial';
-import { getImagesFromFoldersFeedback } from '@/lib/cloudinary';
+import Gallery from '@/app/_components/layout/Gallery'; // Updated import
+import { getColumnImages, ColumnImages, CloudinaryFolders } from '@/lib/cloudinary'; // Add CloudinaryFolders
 import Testimonial from '../_components/section/Testimonial';
 
 export const metadata: Metadata = {
@@ -13,15 +12,18 @@ export const metadata: Metadata = {
 export const revalidate = 3600; // 1 hour
 
 const GalleryPage = async () => {
-  const feedback = await getImagesFromFoldersFeedback();
+  // Default: студентські роботи
+  const studentColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.STUDENT_COLUMNS);
+
+  // Або автор роботи (якщо потрібно)
+  // const authorColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.AUTHOR);
 
   return (
     <div className="min-h-screen bg-background_header py-8">
       <div className="container mx-auto">
-        {/* <CarouselTestimonial /> */}
         <Testimonial />
         <h2 className="mb-12 text-center text-4xl font-bold text-text_2">РОБОТИ УЧНІВ</h2>
-        <Gallery images={feedback} />
+        <Gallery columnImages={studentColumnImages} />
       </div>
     </div>
   );
