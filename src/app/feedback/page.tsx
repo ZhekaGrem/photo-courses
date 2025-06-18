@@ -23,7 +23,7 @@ const GalleryPage = async () => {
       <div className="container mx-auto">
         <Testimonial />
         <h2 className="my-5 pt-5 text-center text-pageant_blue">РОБОТИ УЧНІВ</h2>
-        {/* <Gallery columnImages={studentColumnImages} /> */}
+        <Gallery columnImages={studentColumnImages} />
       </div>
     </div>
   );

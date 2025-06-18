@@ -10,7 +10,7 @@ function mentor() {
       <Hero />
       <WhoLeads />
       <Сertificate />
-      {/* <Portfolio /> */}
+      <Portfolio />
       {/* <PortfolioStudent /> */}
     </>
   );
