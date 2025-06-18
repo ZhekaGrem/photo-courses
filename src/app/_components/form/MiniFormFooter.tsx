@@ -83,7 +83,7 @@ function MiniFormFooter() {
             id="name"
             required
             autoComplete="name"
-            className="w-full rounded-md bg-cloud_dancer p-3"
+            className="w-full rounded-md bg-cloud_dancer p-3 text-neon_navy"
           />
         </label>
         <label className="mb-6" htmlFor="tel">
@@ -96,7 +96,7 @@ function MiniFormFooter() {
             id="tel"
             autoComplete="tel"
             required
-            className="w-full rounded-md bg-cloud_dancer p-3"
+            className="w-full rounded-md bg-cloud_dancer p-3 text-neon_navy"
           />
         </label>
 
