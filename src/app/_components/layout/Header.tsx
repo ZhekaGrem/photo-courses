@@ -63,8 +63,8 @@ const Header = () => {
   );
 
   return (
-    <header className="absolute left-0 top-0 z-50 w-full text-lg text-text_header">
-      <nav className="start-0 top-0 z-20 border-b bg-background_header">
+    <header className="absolute left-0 top-0 z-50 w-full text-lg text-cloud_dancer">
+      <nav className="start-0 top-0 z-20 border-b bg-pageant_blue">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-3">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse" onClick={closeMenu}>
@@ -82,7 +82,7 @@ const Header = () => {
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             {/* Desktop CTA Button */}
             <Button
-              className="hidden rounded-md bg-background_btn_burger px-6 font-medium sm:block"
+              className="hidden rounded-md bg-harbor_blue px-6 font-medium sm:block"
               text={text.btndata}
               openPortal={true}>
               {text.btndata}
