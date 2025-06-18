@@ -26,7 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
       setIsPortalOpen(true);
     }
   };
-  const baseStyles = 'font-bold text-center transform hover:scale-105  text-text_header  px-3 py-2';
+  const baseStyles = 'font-bold text-center transform hover:scale-105   px-3 py-2';
   return (
     <button aria-label={text} className={`${baseStyles} ${className} `} onClick={handleClick} {...props}>
       <span className="sr-only">{text}</span>
