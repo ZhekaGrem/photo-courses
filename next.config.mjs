@@ -21,7 +21,8 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    minimumCacheTTL: 60 * 60 * 24 * 7, // 7 дней
+    minimumCacheTTL: 60 * 5, // 5хв дев
+    // minimumCacheTTL: 60 * 60 * 24 * 7, // 7 дній для проду
 
     unoptimized: true,
   },
