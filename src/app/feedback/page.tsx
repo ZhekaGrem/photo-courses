@@ -19,10 +19,10 @@ const GalleryPage = async () => {
   // const authorColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.AUTHOR);
 
   return (
-    <div className="min-h-screen bg-background_header py-8">
+    <div className="min-h-screen bg-cloud_dancer py-8">
       <div className="container mx-auto">
         <Testimonial />
-        <h2 className="my-5 pt-5 text-center text-4xl font-bold text-text_2">РОБОТИ УЧНІВ</h2>
+        <h2 className="my-5 pt-5 text-center text-4xl font-bold text-pageant_blue">РОБОТИ УЧНІВ</h2>
         {/* <Gallery columnImages={studentColumnImages} /> */}
       </div>
     </div>
