@@ -20,7 +20,7 @@ const data: SectionInfo = section_3;
 
 const WhoLeads = () => {
   return (
-    <section id="author" className="bg-background_section_3 text-pageant_blue">
+    <section id="author" className="bg-cloud_dancer text-pageant_blue">
       <div className="section container">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="mb-8 lg:mb-0 lg:w-1/2">
