@@ -82,7 +82,7 @@ const Header = () => {
           <div className="flex space-x-3 text-center font-bold lg:order-2 lg:space-x-0 rtl:space-x-reverse">
             {/* Desktop CTA Button */}
             <Button
-              className="hidden rounded-md bg-harbor_blue px-6 font-medium sm:block"
+              className="hidden rounded-md bg-neon_navy px-6 font-medium sm:block"
               text={text.btndata}
               openPortal={true}>
               {text.btndata}
