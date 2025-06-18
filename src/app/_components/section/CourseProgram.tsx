@@ -7,7 +7,6 @@ import dynamic from 'next/dynamic';
 
 const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), {
   loading: () => <SkeletonLoader variant="big" />,
-  ssr: false,
 });
 
 const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {
