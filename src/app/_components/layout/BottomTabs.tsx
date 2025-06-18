@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const tabs = [
   { name: 'Швидкий старт', href: '/#faststart', id: 'faststart', isExternal: true },
   { name: 'PRO Світло', href: '/#prosvitlo', id: 'prosvitlo', isExternal: true },
-  { name: 'ВІДГУКИ', href: '/feedback', id: 'feedback', isExternal: true },
+  { name: 'Відгуки', href: '/feedback', id: 'feedback', isExternal: true },
 ];
 
 const BottomTabs = () => {
