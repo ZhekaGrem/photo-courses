@@ -100,9 +100,9 @@ const CourseProgram = React.memo(() => {
     <section
       id={variantId}
       ref={sectionRef}
-      className="bg-background_section_2_2"
+      className="bg-cloud_dancer"
       aria-labelledby="course-program-title">
-      <div className="section container text-text_2_2" id="program">
+      <div className="section container text-neon_navy" id="program">
         <Suspense fallback={<div>Loading...</div>}>
           <AnimatePresence mode="wait">
             <motion.h2
