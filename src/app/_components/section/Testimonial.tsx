@@ -70,9 +70,7 @@ const Testimonial = () => {
       <div className="text-gray-600">
         <div className="mx-auto max-w-7xl px-4 md:px-12 xl:px-6">
           <div className="mb-5 space-y-4 px-6 md:px-0">
-            <h2 className="text-text-pageant_blue text-center text-3xl font-bold md:text-4xl">
-              Відгуки наших учнів
-            </h2>
+            <h2 className="text-center text-3xl font-bold text-pageant_blue md:text-4xl">Відгуки</h2>
           </div>
 
           <div className="gap-8 space-y-8 md:columns-2 lg:columns-3">
