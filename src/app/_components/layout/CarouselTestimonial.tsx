@@ -10,27 +10,31 @@ const CarouselTestimonial = () => {
   const images = [
     {
       id: 1,
-      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750175544/screenphotoschool/feedback/6_atfc51.jpg',
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234041/screenphotoschool/feedback/2025-06-18_10.57.23_owo6ci.jpg',
     },
     {
       id: 2,
-      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750175545/screenphotoschool/feedback/5_ypezb2.jpg',
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234039/screenphotoschool/feedback/2025-06-18_10.57.08_lexav4.jpg',
     },
     {
       id: 3,
-      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750175544/screenphotoschool/feedback/3_z87f94.jpg',
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234036/screenphotoschool/feedback/2025-06-18_10.57.05_m0yga9.jpg',
     },
     {
       id: 4,
-      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750175544/screenphotoschool/feedback/4_ohiyux.jpg',
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234034/screenphotoschool/feedback/2025-06-18_10.56.59_dpuld0.jpg',
     },
     {
       id: 5,
-      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750175544/screenphotoschool/feedback/2_mgqoko.jpg',
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234032/screenphotoschool/feedback/2025-06-18_10.56.56_yshj9x.jpg',
     },
     {
       id: 6,
-      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750175543/screenphotoschool/feedback/1_vxzohb.jpg',
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234030/screenphotoschool/feedback/2025-06-18_10.56.52_esqa28.jpg',
+    },
+    {
+      id: 7,
+      url: 'https://res.cloudinary.com/dwgk0dtrp/image/upload/v1750234028/screenphotoschool/feedback/2025-06-18_10.56.47_n3id8r.jpg',
     },
   ];
 
@@ -130,31 +134,6 @@ const CarouselTestimonial = () => {
               </div>
             ))}
           </div>
-
-          {/* {loaded && instanceRef.current && (
-            <>
-              <button
-                onClick={() => instanceRef.current?.prev()}
-                disabled={currentSlide === 0}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed z-10"
-                aria-label="Попередній слайд"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              <button
-                onClick={() => instanceRef.current?.next()}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-white transition-colors z-10"
-                aria-label="Наступний слайд"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </>
-          )} */}
         </div>
       </div>
     </section>
