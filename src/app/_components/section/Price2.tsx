@@ -58,7 +58,7 @@ const Price2 = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative mx-auto max-w-[361px] overflow-hidden rounded-2xl bg-cloud_dancer shadow-2xl">
               {plan.content.discount && (
-                <div className="absolute right-0 top-0 rounded-bl-lg bg-harbor_blue px-4 py-1 font-bold text-white">
+                <div className="absolute right-0 top-0 rounded-bl-lg bg-red-600 px-4 py-1 font-bold text-white">
                   Знижка {plan.content.discount}%
                 </div>
               )}
