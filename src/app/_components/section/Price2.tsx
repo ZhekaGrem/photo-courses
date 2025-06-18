@@ -43,7 +43,7 @@ const Price2 = () => {
     setIsPortalOpen(true);
   };
   return (
-    <section className="bg-neon_navy">
+    <section className="bg-pageant_blue">
       <div className="section container mx-auto">
         <h2 className="mb-12 text-center text-cloud_dancer">ВАРТІСТЬ НАВЧАННЯ</h2>
 
@@ -58,7 +58,7 @@ const Price2 = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative mx-auto max-w-[361px] overflow-hidden rounded-2xl bg-cloud_dancer shadow-2xl">
               {plan.content.discount && (
-                <div className="absolute right-0 top-0 rounded-bl-lg bg-red-500 px-4 py-1 font-bold text-white">
+                <div className="absolute right-0 top-0 rounded-bl-lg bg-harbor_blue px-4 py-1 font-bold text-white">
                   Знижка {plan.content.discount}%
                 </div>
               )}
@@ -91,7 +91,7 @@ const Price2 = () => {
                 <ul className="space-y-2">
                   {plan.content.features.map((feature, index) => (
                     <li key={index} className="flex items-center">
-                      <CheckmarkIcon className="text-background_section_6" />
+                      <CheckmarkIcon className="text-harbor_blu" />
                       <span className="ml-2 text-[#4a4a4a]">{feature}</span>
                     </li>
                   ))}
