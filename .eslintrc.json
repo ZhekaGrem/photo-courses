@@ -30,8 +30,7 @@
     "react/require-default-props": [
       "error",
       {
-        "ignoreFunctionalComponents": true,
-        "endOfLine": "auto"
+        "ignoreFunctionalComponents": true
       }
     ]
   }
