@@ -8,7 +8,7 @@ const Portfolio = async () => {
   const studentColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.AUTHOR);
 
   return (
-    <section id="portfolio" className="bg-background_section_5 pb-20">
+    <section id="portfolio" className="bg-pageant_blue pb-20 text-cloud_dancer">
       <div className="container mx-auto">
         <h2 className="z-10 justify-center rounded-3xl py-6 text-center">{data}</h2>
         <Gallery columnImages={studentColumnImages} />

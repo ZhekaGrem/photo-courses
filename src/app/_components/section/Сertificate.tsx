@@ -9,11 +9,11 @@ type SectionInfo = {
 const data: SectionInfo = section_4;
 const Сertificate = () => {
   return (
-    <section className="bg-background_section_4">
+    <section className="bg-cloud_dancer text-harbor_blue">
       <div className="section container flex flex-col items-center lg:flex-row">
         <div className="mb-12 px-6 lg:mb-0 lg:w-1/2">
           <a href="https://ukrainianphotographers.com/" target="_blank" rel="noreferrer nofollow">
-            <h3 className="mb-6 text-2xl font-bold leading-tight text-text_2 drop-shadow-xl text-shadow-black2 lg:text-4xl xl:text-5xl">
+            <h3 className="mb-6 text-2xl font-bold leading-tight text-text_2 drop-shadow-xl lg:text-4xl xl:text-5xl">
               {data.text1}
             </h3>
           </a>

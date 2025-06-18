@@ -16,10 +16,10 @@ const date = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="tablet:h-full pt-2 text-lg">
+    <footer className="tablet:h-full bg-cloud_dancer pt-2 text-lg text-pageant_blue">
       <div className="mx-auto grid w-full max-w-screen-xl grid-cols-1 gap-8 px-4 py-3 md:grid-cols-3 lg:py-4">
         <div>
-          <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum1.title}</h3>
+          <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum1.title}</h3>
           <ul>
             {footer.colum1.list_link.map((link) => (
               <li key={link.id} className="mb-4">
@@ -39,11 +39,11 @@ const Footer = () => {
           <SocialIcons place="footer" />
         </div>
         <div>
-          <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum2.title}</h3>
+          <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum2.title}</h3>
           <MiniFormFooter />
         </div>
         <div>
-          <h3 className="mb-6 text-sm font-semibold uppercase text-gray-900">{footer.colum3.title}</h3>
+          <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum3.title}</h3>
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {footer.colum3.list_link.map((link) => (
               <li key={link.id} className={`mb-4 ${link.colspan}`}>
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="p-1 pb-5">
-        <div className="container px-3 py-6 text-text_1 md:flex md:items-center md:justify-between">
+        <div className="container px-3 py-6 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-base">&copy; {date} Євгеній Грем. Усі права захищено.</p>
           </div>
@@ -65,7 +65,7 @@ const Footer = () => {
               href="https://t.me/GremYevhenii"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base text-text_1 transition-colors hover:text-white">
+              className="text-base transition-colors hover:text-white">
               Зв'язатися з розробником
             </a>
           </div>
