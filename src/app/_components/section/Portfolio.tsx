@@ -1,33 +1,16 @@
-import Loading from '@/app/loading';
 import { section_5 } from '@/db/data';
-import dynamic from 'next/dynamic';
-const Carousel = dynamic(() => import('@/app/_components/layout/Carousel'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
-const PhoneCarousel = dynamic(() => import('@/app/_components/layout/PhoneCarousel'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
+import { getImagesFromFoldersAuthor } from '@/lib/cloudinary';
+import Gallery from '@/app/_components/layout/Gallery';
 
 const data: string = section_5;
 
-const Portfolio = () => {
+const Portfolio = async () => {
+  const author = await getImagesFromFoldersAuthor();
   return (
-    <section id="portfolio" className="p-0">
-      <div className="hidden sm:block">
-        <div className="flex justify-center text-text_2">
-          <h2 className="absolute z-10 justify-center rounded-3xl pt-6 drop-shadow-2xl text-shadow-black">
-            {data}
-          </h2>
-          <Carousel />
-        </div>
-      </div>
-      <div className="block sm:hidden">
-        <div className="text-text_2 drop-shadow-2xl text-shadow-black sm:hidden">
-          <h2 className="absolute z-10 w-full pt-6 text-center">{data}</h2>
-          <PhoneCarousel />
-        </div>
+    <section id="portfolio" className="bg-background_section_5 p-0">
+      <div className="container mx-auto">
+        <h2 className="z-10 justify-center rounded-3xl py-6 text-center">{data}</h2>
+        <Gallery images={author} />
       </div>
     </section>
   );
