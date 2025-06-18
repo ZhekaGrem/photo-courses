@@ -10,7 +10,7 @@ const STUDENT_REVIEWS = [
   },
   {
     //+
-    img: '/assets/student/христина.PNG',
+    img: '/assets/student/христина.jpg',
     name: 'Христина',
     position: 'учень',
     comment:
@@ -48,7 +48,7 @@ const STUDENT_REVIEWS = [
   },
   {
     //+
-    img: '/assets/student/марта.png',
+    img: '/assets/student/марта.jpg',
     name: 'Марта',
     position: 'учень',
     comment:
@@ -56,7 +56,7 @@ const STUDENT_REVIEWS = [
   },
   {
     //+
-    img: '/assets/student/IMG_4103.png',
+    img: '/assets/student/IMG_4103.jpg',
     name: 'Соля',
     position: 'учень',
     comment:
@@ -67,10 +67,10 @@ const STUDENT_REVIEWS = [
 const Testimonial = () => {
   return (
     <section id="testimonials" className="p-0">
-      <div className="pt-8 text-gray-600">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 xl:px-6">
-          <div className="mb-10 space-y-4 px-6 md:px-0">
-            <h2 className="text-center text-2xl font-bold text-gray-800 md:text-4xl dark:text-white">
+      <div className="text-gray-600">
+        <div className="mx-auto max-w-7xl px-4 md:px-12 xl:px-6">
+          <div className="mb-5 space-y-4 px-6 md:px-0">
+            <h2 className="text-center text-3xl font-bold text-gray-800 md:text-4xl dark:text-white">
               Відгуки наших учнів
             </h2>
           </div>
