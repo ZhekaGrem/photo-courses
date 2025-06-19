@@ -36,13 +36,13 @@ const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick }) =
   const sortedImages = sortImagesByNumber(images);
 
   return (
-    <div className="space-y-4 overflow-hidden">
+    <div className="space-y-4 overflow-hidden md:overflow-visible">
       {sortedImages.map((image) => (
         <motion.div
           key={image.public_id}
           className="cursor-pointer transition-all duration-300"
           onClick={() => onImageClick(image)}
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: 200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{
             duration: 0.4,
