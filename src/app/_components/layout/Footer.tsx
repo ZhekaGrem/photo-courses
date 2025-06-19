@@ -46,7 +46,9 @@ const Footer = () => {
         <div>
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {footer.colum3.list_link.map((link) => (
-              <li key={link.id} className={`mb-4 text-center sm:text-start ${link.colspan}`}>
+              <li
+                key={link.id}
+                className={`col-span-1 text-balance text-center last:col-span-2 sm:mb-4 sm:text-start`}>
                 <a rel="noopener noreferrer" href={link.href} className="hover:underline">
                   {link.text}
                 </a>
@@ -56,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="p-1 pb-5">
-        <div className="container px-3 py-6 md:flex md:items-center md:justify-between">
+        <div className="container px-3 pb-6 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
             <p className="text-base">&copy; {date} STUDIO SMEREKA. Усі права захищено.</p>
           </div>

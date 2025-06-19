@@ -1061,10 +1061,12 @@ export const footer = {
     title: 'ІНФО',
     list_link: [
       { id: 9, text: 'ГОЛОВНА', href: '/', colspan: 'col-span-1' },
-      { id: 10, text: 'ПРО КУРС', href: '/#program', colspan: 'col-span-1' },
-      { id: 11, text: 'ПОРТФОЛІО АВТОРА', href: '/#portfolio', colspan: 'col-span-2' },
-      { id: 12, text: 'ПРО АВТОРА', href: '/#author', colspan: 'col-span-1' },
-      { id: 13, text: 'ВАРТІСТЬ', href: '/#price', colspan: 'col-span-1' },
+      { id: 11, text: 'ПОРТФОЛІО ', href: '/mentor/#portfolio', colspan: 'col-span-2' },
+      { id: 10, text: 'ПРО КУРС «ШВИДКИЙ СТАРТ»', href: '/#faststart', colspan: 'col-span-2' },
+      { id: 12, text: 'ПРО КУРС    «PRO СВІТЛО»', href: '/#prosvitlo', colspan: 'col-span-2' },
+      { id: 13, text: 'МЕНТОР', href: '/mentor/#author', colspan: 'col-span-1' },
+      { id: 14, text: 'ВАРТІСТЬ', href: '/#price', colspan: 'col-span-1' },
+      { id: 15, text: 'ВІДГУКИ', href: '/feedback', colspan: 'col-span-1' },
     ],
   },
 
