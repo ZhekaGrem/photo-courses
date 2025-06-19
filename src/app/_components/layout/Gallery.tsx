@@ -71,10 +71,12 @@ const Gallery: React.FC<ColumnGalleryProps> = ({ columnImages }) => {
 
   const handleImageClick: (image: CloudinaryImage) => void = (image) => {
     setSelectedImage(image);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedImage(null);
+    document.body.style.overflow = 'auto';
   };
 
   return (
