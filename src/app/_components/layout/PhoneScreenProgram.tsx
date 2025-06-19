@@ -131,7 +131,7 @@ const ExpandedContent: React.FC<{ content: ContentDetails }> = React.memo(({ con
   return (
     <div className="left-0 top-0 h-full w-full">
       <motion.div className="flex flex-col pb-3 sm:flex-row sm:px-3">
-        <div className="w-full p-3">
+        <div className="w-full">
           {/* <div className="text-1xl pb-4 font-semibold">{content.title}</div> */}
           <ul>
             {content.list.map((item, index) => (
