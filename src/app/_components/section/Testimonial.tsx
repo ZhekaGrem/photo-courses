@@ -74,7 +74,7 @@ const Testimonial = () => {
               <div
                 key={index}
                 className="relative mb-8 aspect-auto break-inside-avoid border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10">
-                <div className="flex gap-4">
+                <div className="flex justify-between gap-4">
                   <img
                     className="size-12 rounded-full bg-gray-200"
                     src={review.img}
@@ -97,14 +97,6 @@ const Testimonial = () => {
                   />
                 </div>
                 <p className="mt-8 text-sm text-gray-600">{review.comment}</p>
-                <img
-                  className="absolute right-0 top-0 size-12 rounded-full"
-                  src="/assets/icon/instagram.webp"
-                  alt={`${review.name} avatar`}
-                  width="48"
-                  height="48"
-                  loading="lazy"
-                />
               </div>
             ))}
           </div>
