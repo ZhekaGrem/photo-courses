@@ -12,14 +12,31 @@ interface GalleryColumnProps {
   onImageClick: (image: CloudinaryImage) => void;
 }
 
+const extractNumber = (filename: string): number => {
+  const match = filename.match(/^(\d+)/); // ^ означає початок рядка
+  return match ? parseInt(match[1], 10) : 0;
+};
+
+// Функція сортування зображень по числовому значенню в назві
+const sortImagesByNumber = (images: CloudinaryImage[]): CloudinaryImage[] => {
+  return [...images].sort((a, b) => {
+    const nameA = a.public_id.split('/').pop() || '';
+    const nameB = b.public_id.split('/').pop() || '';
+    const numA = extractNumber(nameA);
+    const numB = extractNumber(nameB);
+    return numA - numB;
+  });
+};
+
 const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick }) => {
   if (images.length === 0) {
     return <div className="py-8 text-center text-gray-500">No images</div>;
   }
+  const sortedImages = sortImagesByNumber(images);
 
   return (
     <div className="space-y-4">
-      {images.map((image) => (
+      {sortedImages.map((image) => (
         <div
           key={image.public_id}
           className="cursor-pointer transition-all duration-300"

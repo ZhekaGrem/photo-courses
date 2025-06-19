@@ -20,14 +20,16 @@ const GalleryPage = async () => {
 
   return (
     <div className="min-h-screen bg-cloud_dancer">
-      <div className="container mx-auto">
+      <div className="section container mx-auto">
         {/* need add section */}
         <h2 className="py-6 text-center text-pageant_blue">ВІДГУКИ</h2>
         <Testimonial />
       </div>
-      <section className="container bg-pageant_blue">
-        <h2 className="py-6 text-center text-cloud_dancer">РОБОТИ УЧНІВ</h2>
-        <Gallery columnImages={studentColumnImages} />
+      <section className="bg-pageant_blue">
+        <div className="container">
+          <h2 className="py-6 text-center text-cloud_dancer">РОБОТИ УЧНІВ</h2>
+          <Gallery columnImages={studentColumnImages} />
+        </div>
       </section>
     </div>
   );
