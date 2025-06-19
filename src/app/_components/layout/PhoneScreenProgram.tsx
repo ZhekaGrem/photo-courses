@@ -60,7 +60,7 @@ const ListItem: React.FC<{
   return (
     <li className="overflow-hidden bg-white shadow-md">
       <button
-        className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
+        className="flex w-full items-center justify-between text-left focus:outline-none"
         onClick={onClick}
         aria-expanded={isOpen}
         aria-controls={`content-${item.id}`}>
@@ -132,7 +132,7 @@ const ExpandedContent: React.FC<{ content: ContentDetails }> = React.memo(({ con
     <div className="left-0 top-0 h-full w-full">
       <motion.div className="flex flex-col pb-3 sm:flex-row sm:px-3">
         <div className="w-full p-3">
-          <div className="text-1xl pb-4 font-semibold">{content.title}</div>
+          {/* <div className="text-1xl pb-4 font-semibold">{content.title}</div> */}
           <ul>
             {content.list.map((item, index) => (
               <li className="list-inside list-disc" key={`list-item-${index}`}>
@@ -167,7 +167,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className="list-decimal space-y-4 px-6">
+            className="list-decimal space-y-4">
             {data.map((item, index) => (
               <ListItem
                 key={`program-item-${item.id}`}
