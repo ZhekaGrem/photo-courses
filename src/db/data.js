@@ -2,7 +2,8 @@ export const header = {
   btndata: 'ЗАПИСАТИСЬ НА КУРС',
 };
 export const navlink = [
-  { id: 1, name: 'ПРОГРАМА', href: '/#program' },
+  { id: 10, name: 'ШВИДКИЙ СТАРТ', href: '/#faststart' },
+  { id: 12, name: 'PRO СВІТЛО', href: '/#prosvitlo' },
   { id: 2, name: 'ПРО АВТОРА', href: '/mentor/#author' },
   { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
   { id: 4, name: 'ВІДГУКИ', href: '/feedback' },

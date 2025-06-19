@@ -116,7 +116,7 @@ const Header = () => {
               {dataLink.map((link, index) => (
                 <li
                   key={link.id}
-                  className={`transition-all duration-300 ease-in-out ${isMenuOpen ? 'p-6 lg:p-0' : ''}`}>
+                  className={`transition-all duration-300 ease-in-out ${isMenuOpen ? 'p-4 lg:p-0' : ''}`}>
                   <Link
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}

@@ -25,10 +25,10 @@ const Сertificate = () => {
             </a>
           </div>
         </div>
-        <div className="flex justify-center px-6 lg:w-1/2">
+        <div className="flex justify-center lg:w-1/2">
           <div className="w-full overflow-hidden border-8">
             <Image
-              className="h-full rounded-lg object-cover"
+              className="h-full w-full object-cover"
               loading="lazy"
               src="/assets/img/certifies.jpg"
               width={520}
