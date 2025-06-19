@@ -111,7 +111,7 @@ const CourseProgram = React.memo(() => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 5 }}
               transition={{ duration: 0.3 }}
-              className="transform py-6 text-center sm:text-left">
+              className="transform py-6 text-center">
               {selectedVariant.title_2}
             </motion.h2>
           </AnimatePresence>
