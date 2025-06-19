@@ -115,6 +115,10 @@ h2 {
     background-position: center;
     background-size: cover;
   } */
+.section {
+  min-height: auto;
+  padding: 0;
+}
 
 @media (min-width: 640px) {
   .container {
@@ -124,6 +128,9 @@ h2 {
     font-size: 3.75rem;
     line-height: 1.1334;
     font-weight: 900;
+  }
+  .section {
+    padding: 2rem 0;
   }
 }
 
@@ -179,9 +186,4 @@ h1 {
   .phone-screen {
     display: block;
   }
-}
-
-.section {
-  min-height: auto;
-  padding: 2rem 0;
 }

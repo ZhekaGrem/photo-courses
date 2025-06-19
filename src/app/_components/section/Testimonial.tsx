@@ -66,10 +66,10 @@ const STUDENT_REVIEWS = [
 
 const Testimonial = () => {
   return (
-    <section id="testimonials" className="p-0">
+    <section id="testimonials" className="pb-5">
       <div className="text-gray-600">
-        <div className="mx-auto max-w-7xl px-4 md:px-12 xl:px-6">
-          <div className="gap-8 space-y-8 md:columns-2 lg:columns-3">
+        <div className="container mx-auto max-w-7xl md:px-12">
+          <div className="gap-8 space-y-8 pb-5 md:columns-2 lg:columns-3">
             {STUDENT_REVIEWS.map((review, index) => (
               <div
                 key={index}

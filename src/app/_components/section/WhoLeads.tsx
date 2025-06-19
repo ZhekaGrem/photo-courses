@@ -24,7 +24,7 @@ const WhoLeads = () => {
       <div className="section container">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="mb-8 lg:mb-0 lg:w-1/2">
-            <h2 className="">{data.title}</h2>
+            <h2 className="pt-6">{data.title}</h2>
             <h3 className="mb-8 px-6 text-3xl font-semibold">{data.name}</h3>
             <div className="">
               <ul className="space-y-4 rounded-lg p-6">

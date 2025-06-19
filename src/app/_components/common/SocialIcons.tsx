@@ -79,7 +79,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ place }) => {
     );
   } else if (place === 'footer') {
     return (
-      <ul className="flex gap-x-4">
+      <ul className="flex justify-center gap-x-4 sm:justify-start">
         {icon.map((item) => (
           <li key={item.id} className="transform transition-transform duration-300 hover:scale-110">
             <span className="sr-only">{item.alt}</span>

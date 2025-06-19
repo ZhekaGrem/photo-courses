@@ -71,7 +71,7 @@ const Gallery: React.FC<ColumnGalleryProps> = ({ columnImages }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 px-4 pb-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 pb-5 md:grid-cols-2 lg:grid-cols-3">
         {/* Column One */}
         <div className="flex flex-col">
           <GalleryColumn images={columnImages.one} onImageClick={handleImageClick} />

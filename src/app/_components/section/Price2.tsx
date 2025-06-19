@@ -45,7 +45,7 @@ const Price2 = () => {
   return (
     <section className="bg-cloud_dancer">
       <div className="section container mx-auto">
-        <h2 className="mb-12 text-center text-pageant_blue">ВАРТІСТЬ НАВЧАННЯ</h2>
+        <h2 className="py-6 text-center text-pageant_blue">ВАРТІСТЬ НАВЧАННЯ</h2>
 
         <div
           id="price"

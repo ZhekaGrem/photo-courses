@@ -19,10 +19,9 @@ const Footer = () => {
     <footer className="tablet:h-full bg-pageant_blue pt-2 text-lg text-cloud_dancer">
       <div className="mx-auto grid w-full max-w-screen-xl grid-cols-1 gap-8 px-4 py-3 md:grid-cols-3 lg:py-4">
         <div>
-          <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum1.title}</h3>
           <ul>
             {footer.colum1.list_link.map((link) => (
-              <li key={link.id} className="mb-4">
+              <li key={link.id} className="mb-4 text-center sm:text-start">
                 <span className="sr-only">{link.text}</span>
                 <a
                   href={link.href}
@@ -39,14 +38,15 @@ const Footer = () => {
           <SocialIcons place="footer" />
         </div>
         <div>
-          <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum2.title}</h3>
+          <h3 className="mb-6 text-center text-sm font-semibold uppercase sm:text-start">
+            {footer.colum2.title}
+          </h3>
           <MiniFormFooter />
         </div>
         <div>
-          <h3 className="mb-6 text-sm font-semibold uppercase">{footer.colum3.title}</h3>
           <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
             {footer.colum3.list_link.map((link) => (
-              <li key={link.id} className={`mb-4 ${link.colspan}`}>
+              <li key={link.id} className={`mb-4 text-center sm:text-start ${link.colspan}`}>
                 <a rel="noopener noreferrer" href={link.href} className="hover:underline">
                   {link.text}
                 </a>
@@ -58,7 +58,7 @@ const Footer = () => {
       <div className="p-1 pb-5">
         <div className="container px-3 py-6 md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left">
-            <p className="text-base">&copy; {date} Євгеній Грем. Усі права захищено.</p>
+            <p className="text-base">&copy; {date} STUDIO SMEREKA. Усі права захищено.</p>
           </div>
           <div className="mt-4 flex justify-center md:mt-0">
             <a
@@ -66,7 +66,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-base transition-colors hover:text-white">
-              Зв'язатися з розробником
+              Зв'язатися з студією
             </a>
           </div>
         </div>
