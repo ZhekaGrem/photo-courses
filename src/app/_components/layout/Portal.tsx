@@ -81,11 +81,11 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
             </button>
             <div className="flex w-full max-w-4xl">
               <div className="w-full rounded-2xl bg-[#020202] bg-opacity-50 md:w-1/2 md:bg-opacity-0">
-                <h3
+                {/* <h3
                   className="mb-4 p-8 text-center text-3xl font-bold leading-6 text-[#DDDDDD] md:text-2xl"
                   id="modal-title">
                   РЕЄСТРАЦІЯ НА КУРС ФОТОГРАФА
-                </h3>
+                </h3> */}
                 <p className="mx-6 mb-6 text-center text-lg text-white md:text-sm">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>

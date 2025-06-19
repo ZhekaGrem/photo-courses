@@ -5,7 +5,7 @@ export const navlink = [
   { id: 10, name: 'ШВИДКИЙ СТАРТ', href: '/#faststart' },
   { id: 12, name: 'PRO СВІТЛО', href: '/#prosvitlo' },
   { id: 2, name: 'ПРО АВТОРА', href: '/mentor/#author' },
-  { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
+  // { id: 3, name: 'ВАРТІСТЬ', href: '/#price' },
   { id: 4, name: 'ВІДГУКИ', href: '/feedback' },
 ];
 
