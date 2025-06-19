@@ -60,7 +60,7 @@ const ListItem: React.FC<{
   return (
     <li className="overflow-hidden bg-white shadow-md">
       <button
-        className="flex w-full items-center justify-between text-left focus:outline-none"
+        className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
         onClick={onClick}
         aria-expanded={isOpen}
         aria-controls={`content-${item.id}`}>
