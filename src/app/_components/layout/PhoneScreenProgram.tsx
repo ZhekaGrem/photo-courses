@@ -64,7 +64,7 @@ const ListItem: React.FC<{
         onClick={onClick}
         aria-expanded={isOpen}
         aria-controls={`content-${item.id}`}>
-        <span className="text-base font-semibold text-gray-800">
+        <span className="px-3 text-base font-semibold text-gray-800">
           {index + 1}. {item.title}
         </span>
         <motion.div
