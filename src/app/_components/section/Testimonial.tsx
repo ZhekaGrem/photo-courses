@@ -87,6 +87,14 @@ const Testimonial = () => {
                     <h6 className="text-lg font-medium text-gray-700">{review.name}</h6>
                     <p className="text-xs text-gray-500">{review.position}</p>
                   </div>
+                  <img
+                    className="size-12"
+                    src="/assets/icon/instagram-3.webp"
+                    alt={`${review.name} avatar`}
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                  />
                 </div>
                 <p className="mt-8 text-sm text-gray-600">{review.comment}</p>
                 <img

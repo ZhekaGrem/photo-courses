@@ -64,7 +64,7 @@ const ListItem: React.FC<{
         onClick={onClick}
         aria-expanded={isOpen}
         aria-controls={`content-${item.id}`}>
-        <span className="px-3 text-base font-semibold text-gray-800">
+        <span className="text-base font-semibold text-gray-800">
           {index + 1}. {item.title}
         </span>
         <motion.div
@@ -167,7 +167,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className="list-decimal space-y-4">
+            className="list-decimal space-y-4 px-3">
             {data.map((item, index) => (
               <ListItem
                 key={`program-item-${item.id}`}
