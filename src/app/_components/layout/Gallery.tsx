@@ -1,8 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CldImage } from 'next-cloudinary';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CloudinaryImage, ColumnImages } from '@/lib/cloudinary';
+import useIsMobile from '@/hook/useIsMobile';
+
+// Your mobile hook
 
 interface ColumnGalleryProps {
   columnImages: ColumnImages;
@@ -11,6 +14,7 @@ interface ColumnGalleryProps {
 interface GalleryColumnProps {
   images: CloudinaryImage[];
   onImageClick: (image: CloudinaryImage) => void;
+  isMobile: boolean;
 }
 
 const extractNumber = (filename: string): number => {
@@ -28,7 +32,7 @@ const sortImagesByNumber = (images: CloudinaryImage[]): CloudinaryImage[] => {
   });
 };
 
-const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick }) => {
+const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick, isMobile }) => {
   if (images.length === 0) {
     return <div className="py-8 text-center text-gray-500">No images</div>;
   }
@@ -40,8 +44,10 @@ const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick }) =
       {sortedImages.map((image) => (
         <div
           key={image.public_id}
-          className="relative cursor-pointer overflow-hidden transition-all duration-300" // Додаємо relative та overflow-hidden
-          onClick={() => onImageClick(image)}>
+          className={`relative overflow-hidden transition-all duration-300 ${
+            isMobile ? '' : 'cursor-pointer'
+          }`}
+          onClick={isMobile ? undefined : () => onImageClick(image)}>
           <CldImage
             src={image.public_id}
             width={400}
@@ -61,8 +67,12 @@ const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick }) =
 
 const Gallery: React.FC<ColumnGalleryProps> = ({ columnImages }) => {
   const [selectedImage, setSelectedImage] = useState<CloudinaryImage | null>(null);
+  const isMobile = useIsMobile();
 
   const handleImageClick: (image: CloudinaryImage) => void = (image) => {
+    // Якщо мобільний пристрій - не робимо нічого
+    if (isMobile) return;
+
     setSelectedImage(image);
     document.body.style.overflow = 'hidden';
   };
@@ -76,13 +86,13 @@ const Gallery: React.FC<ColumnGalleryProps> = ({ columnImages }) => {
     <>
       <div className="grid grid-cols-1 gap-4 pb-5 md:grid-cols-2 lg:grid-cols-3">
         <div className="flex flex-col">
-          <GalleryColumn images={columnImages.one} onImageClick={handleImageClick} />
+          <GalleryColumn images={columnImages.one} onImageClick={handleImageClick} isMobile={isMobile} />
         </div>
         <div className="flex flex-col">
-          <GalleryColumn images={columnImages.two} onImageClick={handleImageClick} />
+          <GalleryColumn images={columnImages.two} onImageClick={handleImageClick} isMobile={isMobile} />
         </div>
         <div className="flex flex-col">
-          <GalleryColumn images={columnImages.three} onImageClick={handleImageClick} />
+          <GalleryColumn images={columnImages.three} onImageClick={handleImageClick} isMobile={isMobile} />
         </div>
       </div>
 
