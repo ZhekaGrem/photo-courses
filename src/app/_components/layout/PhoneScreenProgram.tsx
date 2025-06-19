@@ -58,7 +58,7 @@ const ListItem: React.FC<{
   onClick: () => void;
 }> = React.memo(({ item, index, isOpen, onClick }) => {
   return (
-    <li className="overflow-hidden bg-white shadow-md">
+    <li className="overflow-hidden bg-white px-3 shadow-md">
       <button
         className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
         onClick={onClick}
@@ -167,7 +167,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className="list-decimal space-y-4">
+            className="list-decimal space-y-4 px-3">
             {data.map((item, index) => (
               <ListItem
                 key={`program-item-${item.id}`}
