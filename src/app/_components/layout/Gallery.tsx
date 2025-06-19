@@ -36,53 +36,24 @@ const GalleryColumn: React.FC<GalleryColumnProps> = ({ images, onImageClick }) =
   const sortedImages = sortImagesByNumber(images);
 
   return (
-    <div className="space-y-4 overflow-hidden md:overflow-visible">
+    <div className="min-h-screen space-y-4 overflow-hidden md:overflow-visible">
       {sortedImages.map((image) => (
-        <motion.div
+        <div
           key={image.public_id}
           className="relative cursor-pointer overflow-hidden transition-all duration-300" // Додаємо relative та overflow-hidden
-          onClick={() => onImageClick(image)}
-          initial="hidden" // Початковий стан для контейнера
-          whileInView="visible" // Стан при появі у viewport
-          viewport={{ once: true, amount: 0.3 }}
-          variants={{
-            hidden: { width: 0, opacity: 0 }, // Прихований стан (ширина 0)
-            visible: {
-              width: '100%',
-              opacity: 1,
-              transition: {
-                duration: 0.8, // Тривалість анімації контейнера
-                ease: 'easeOut', // Функція пом'якшення
-                when: 'beforeChildren', // Анімувати дітей після батька
-              },
-            },
-          }}>
-          <motion.div
-            className="h-full w-full" // Обгортка для зображення, щоб контролювати його анімацію
-            variants={{
-              hidden: { x: '100%' }, // Початкове положення зображення позаду
-              visible: {
-                x: '0%', // Кінцеве положення зображення
-                transition: {
-                  duration: 1.2, // Тривалість анімації зображення
-                  ease: [0.6, 0.05, -0.01, 0.9], // Більш складна функція пом'якшення для плавності
-                  delay: 0.2, // Затримка для анімації зображення після контейнера
-                },
-              },
-            }}>
-            <CldImage
-              src={image.public_id}
-              width={400}
-              height={Math.round(400 * (image.height / image.width))}
-              alt="Gallery image"
-              className="w-full object-cover"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              quality="auto"
-              format="auto"
-            />
-          </motion.div>
-        </motion.div>
+          onClick={() => onImageClick(image)}>
+          <CldImage
+            src={image.public_id}
+            width={400}
+            height={Math.round(400 * (image.height / image.width))}
+            alt="Gallery image"
+            className="w-full object-cover"
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality="auto"
+            format="auto"
+          />
+        </div>
       ))}
     </div>
   );
