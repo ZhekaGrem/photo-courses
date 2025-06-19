@@ -58,7 +58,7 @@ const ListItem: React.FC<{
   onClick: () => void;
 }> = React.memo(({ item, index, isOpen, onClick }) => {
   return (
-    <li className="overflow-hidden rounded-lg bg-white shadow-md">
+    <li className="overflow-hidden bg-white shadow-md">
       <button
         className="flex w-full items-center justify-between p-3 text-left focus:outline-none"
         onClick={onClick}

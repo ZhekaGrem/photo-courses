@@ -83,7 +83,7 @@ function MiniFormFooter() {
             id="name"
             required
             autoComplete="name"
-            className="w-full rounded-md bg-cloud_dancer p-3 text-neon_navy"
+            className="w-full bg-cloud_dancer p-3 text-neon_navy"
           />
         </label>
         <label className="mb-6" htmlFor="tel">
@@ -96,12 +96,12 @@ function MiniFormFooter() {
             id="tel"
             autoComplete="tel"
             required
-            className="w-full rounded-md bg-cloud_dancer p-3 text-neon_navy"
+            className="w-full bg-cloud_dancer p-3 text-neon_navy"
           />
         </label>
 
         <input
-          className="w-full rounded-md bg-background_btn py-4 text-center font-bold text-text_header hover:scale-105 hover:bg-background_btn_hover disabled:bg-slate-400"
+          className="w-full bg-background_btn py-4 text-center font-bold text-text_header hover:scale-105 hover:bg-background_btn_hover disabled:bg-slate-400"
           value={`ЗВ'ЯЗАТИСЬ`}
           type="submit"
           disabled={!isFormValid}
