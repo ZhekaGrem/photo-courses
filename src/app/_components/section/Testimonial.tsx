@@ -73,10 +73,10 @@ const Testimonial = () => {
             {STUDENT_REVIEWS.map((review, index) => (
               <div
                 key={index}
-                className="mb-8 aspect-auto break-inside-avoid border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10">
+                className="relative mb-8 aspect-auto break-inside-avoid border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10">
                 <div className="flex gap-4">
                   <img
-                    className="size-12 rounded-full bg-gray-200 dark:bg-gray-600"
+                    className="size-12 rounded-full bg-gray-200"
                     src={review.img}
                     alt={`${review.name} avatar`}
                     width="48"
@@ -89,6 +89,14 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <p className="mt-8 text-sm text-gray-600">{review.comment}</p>
+                <img
+                  className="absolute right-0 top-0 size-12 rounded-full"
+                  src="/assets/icon/instagram.webp"
+                  alt={`${review.name} avatar`}
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
