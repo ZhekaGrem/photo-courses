@@ -69,10 +69,6 @@ const Testimonial = () => {
     <section id="testimonials" className="p-0">
       <div className="text-gray-600">
         <div className="mx-auto max-w-7xl px-4 md:px-12 xl:px-6">
-          <div className="mb-5 space-y-4 px-6 md:px-0">
-            <h2 className="text-center text-pageant_blue">Відгуки</h2>
-          </div>
-
           <div className="gap-8 space-y-8 md:columns-2 lg:columns-3">
             {STUDENT_REVIEWS.map((review, index) => (
               <div
@@ -89,7 +85,7 @@ const Testimonial = () => {
                   />
                   <div>
                     <h6 className="text-lg font-medium text-gray-700">{review.name}</h6>
-                    <p className="text-lg font-medium uppercase text-gray-700">{review.position}</p>
+                    <p className="text-xs text-gray-500">{review.position}</p>
                   </div>
                 </div>
                 <p className="mt-8 text-sm text-gray-600">{review.comment}</p>
