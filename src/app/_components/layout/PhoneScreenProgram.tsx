@@ -167,7 +167,7 @@ const PhoneScreenProgram: React.FC<ComponentProps> = React.memo(({ data }) => {
             viewport={{ once: true }}
             initial="hidden"
             whileInView="visible"
-            className="list-decimal space-y-4 px-3">
+            className="list-decimal space-y-4">
             {data.map((item, index) => (
               <ListItem
                 key={`program-item-${item.id}`}
