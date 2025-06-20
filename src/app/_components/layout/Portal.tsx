@@ -86,7 +86,7 @@ const Portal: React.FC<PortalProps> = ({ title, onClose }) => {
                   id="modal-title">
                   РЕЄСТРАЦІЯ НА КУРС ФОТОГРАФА
                 </h3> */}
-                <p className="mx-6 mb-6 text-center text-lg text-white md:text-sm">
+                <p className="mx-6 mb-6 pt-10 text-center text-lg text-white md:text-sm">
                   {` ЗАЛИШАЙТЕ СВОЇ КОНТАКТНІ ДАНІ І МИ ЗВ'ЯЖЕМОСЬ З ВАМИ ПРОТЯГОМ 24 ГОДИН!`}
                 </p>
                 <PopUp onClose={onClose} title={title} />

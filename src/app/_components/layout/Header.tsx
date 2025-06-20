@@ -128,7 +128,7 @@ const Header = () => {
 
               {/* Mobile CTA Button with staggered animation */}
               <li
-                className={`block justify-center p-6 transition-all duration-300 ease-in-out sm:hidden ${
+                className={`flex justify-center p-4 text-center transition-all duration-300 ease-in-out sm:hidden ${
                   isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{
@@ -139,7 +139,7 @@ const Header = () => {
                   text="ЗАПИСАТИСЬ НА КУРС"
                   openPortal={true}
                   onClick={closeMenu}>
-                  ЗАПИСАТИСЬ НА КУРС
+                  КОНТАКТ
                 </Button>
               </li>
             </ul>
