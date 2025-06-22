@@ -32,21 +32,21 @@ const hoverClasses = {
 export const icon: IconType[] = [
   {
     id: 1,
-    src: 'https://www.instagram.com/serniukphoto/',
+    src: 'https://www.instagram.com/screen.school?igsh=OWJ1dWNseXA2ZmRn&utm_source=qr',
     alt: 'instagram',
     svg: <InstagramIcon />,
     color: 'instagram',
   },
   {
     id: 2,
-    src: 'https://www.facebook.com/SerNiuK',
+    src: 'https://www.facebook.com/share/161HdQVRCa/?mibextid=wwXIfr',
     alt: 'facebook',
     svg: <FacebookIcon />,
     color: 'facebook',
   },
   {
     id: 3,
-    src: 'https://www.tiktok.com/@serniukphoto',
+    src: 'https://www.tiktok.com/@screenphotoschool?_t=ZM-8xOvtYk7CsQ&_r=1',
     alt: 'tiktok',
     svg: <TiktokIcon />,
     color: 'tiktok',
