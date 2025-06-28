@@ -1,17 +1,15 @@
-import { section_5 } from '@/db/data';
-import Gallery from '@/app/_components/layout/Gallery'; // Updated import
-import { getColumnImages, ColumnImages, CloudinaryFolders } from '@/lib/cloudinary';
+import { LocalImageFolders, getColumnImages } from '@/lib/local-images';
+import LocalGallery from '@/app/_components/layout/Gallery';
 
-const data: string = section_5;
-
-const Portfolio = async () => {
-  const studentColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.AUTHOR);
+const Portfolio = () => {
+  // Отримуємо зображення автора з локальних папок
+  const authorColumnImages = getColumnImages(LocalImageFolders.AUTHOR_GALLERY);
 
   return (
     <section id="portfolio" className="bg-pageant_blue pb-20 text-cloud_dancer">
       <div className="container mx-auto">
-        <h2 className="z-10 justify-center rounded-3xl py-6 text-center">{data}</h2>
-        <Gallery columnImages={studentColumnImages} />
+        <h2 className="z-10 justify-center rounded-3xl py-6 text-center">ПОРТФОЛІО</h2>
+        <LocalGallery columnImages={authorColumnImages} />
       </div>
     </section>
   );

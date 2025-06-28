@@ -1,38 +1,37 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Gallery from '@/app/_components/layout/Gallery'; // Updated import
-import { getColumnImages, ColumnImages, CloudinaryFolders } from '@/lib/cloudinary'; // Add CloudinaryFolders
+import LocalGallery from '@/app/_components/layout/Gallery';
+import { getColumnImages, LocalImageFolders } from '@/lib/local-images';
 import Testimonial from '../_components/section/Testimonial';
 
 export const metadata: Metadata = {
-  title: 'Gallery | Photo School',
-  description: 'View our students portfolio and professional work',
+  title: 'Відгуки та Роботи Студентів | Фотошкола',
+  description:
+    'Переглядайте відгуки наших студентів та їх вражаючі роботи після проходження курсів фотографії',
 };
 
-export const revalidate = 3600; // 1 hour
+// Статична генерація - максимальна швидкість
+export const dynamic = 'force-static';
 
-const GalleryPage = async () => {
-  // Default: студентські роботи
-  const studentColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.STUDENT_COLUMNS);
-
-  // Або автор роботи (якщо потрібно)
-  // const authorColumnImages: ColumnImages = await getColumnImages(CloudinaryFolders.AUTHOR);
+const FeedbackPage = () => {
+  // Отримуємо зображення студентів з локальних папок
+  const studentColumnImages = getColumnImages(LocalImageFolders.STUDENT_GALLERY);
 
   return (
     <div className="min-h-screen bg-cloud_dancer">
       <div className="section container mx-auto">
-        {/* need add section */}
         <h2 className="py-6 text-center text-pageant_blue">ВІДГУКИ</h2>
         <Testimonial />
       </div>
+
       <section className="bg-pageant_blue">
         <div className="container">
           <h2 className="py-6 text-center text-cloud_dancer">РОБОТИ УЧНІВ</h2>
-          <Gallery columnImages={studentColumnImages} />
+          <LocalGallery columnImages={studentColumnImages} />
         </div>
       </section>
     </div>
   );
 };
 
-export default GalleryPage;
+export default FeedbackPage;

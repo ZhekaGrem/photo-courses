@@ -21,8 +21,10 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    minimumCacheTTL: 60 * 5, // 5хв дев
+    minimumCacheTTL: 60 * 60 * 24 * 30,
     // minimumCacheTTL: 60 * 60 * 24 * 7, // 7 дній для проду
+    deviceSizes: [640, 768, 1024, 1280, 1600],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
 
     unoptimized: true,
   },
