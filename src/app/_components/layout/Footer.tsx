@@ -55,11 +55,11 @@ const Footer = () => {
       <div className="p-1 pb-5">
         <div className="container flex items-center justify-center p-3">
           <div className="text-center">
-            <p className="text-base">&copy; {date} STUDIO SMEREKA. Усі права захищено.</p>
+            <p className="text-base">&copy; {date} Galychyna Technologies. Усі права захищено.</p>
           </div>
           <div className="ml-5 flex justify-center">
             <a
-              href="https://t.me/GremYevhenii"
+              href="https://galychyna.online/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-base transition-colors hover:text-white">
