@@ -5,12 +5,31 @@ import Сertificate from '@/app/_components/section/Сertificate';
 import Portfolio from '@/app/_components/section/Portfolio';
 
 const SITE_URL = 'https://www.screenphotoschool.com.ua';
+const OG_IMAGE = `${SITE_URL}/assets/img/oleg.png`;
+
+const TITLE = 'Про ментора | Олег Сернюк — Професійний фотограф';
+const DESCRIPTION =
+  'Познайомтеся з Олегом Сернюком — досвідченим фотографом та ментором з 10-річним стажем. Львів, Україна.';
 
 export const metadata: Metadata = {
-  title: 'Про ментора | Олег Сернюк — Професійний фотограф',
-  description:
-    'Познайомтеся з Олегом Сернюком — досвідченим фотографом та ментором з 10-річним стажем. Львів, Україна.',
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/mentor` },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/mentor`,
+    siteName: 'Screen Photo School',
+    locale: 'uk_UA',
+    type: 'profile',
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export const dynamic = 'force-static';

@@ -1,10 +1,31 @@
 import type { Metadata } from 'next';
 
+const SITE_URL = 'https://www.screenphotoschool.com.ua';
+const OG_IMAGE = `${SITE_URL}/assets/img/oleg.png`;
+
+const TITLE = 'Умови надання послуг | Screen Photo School';
+const DESCRIPTION =
+  'Умови надання послуг та політика повернення коштів для курсів фотографії Screen Photo School.';
+
 export const metadata: Metadata = {
-  title: 'Умови надання послуг | Screen Photo School',
-  description:
-    'Умови надання послуг та політика повернення коштів для курсів фотографії Screen Photo School.',
-  alternates: { canonical: 'https://www.screenphotoschool.com.ua/terms-of-service' },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/terms-of-service` },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/terms-of-service`,
+    siteName: 'Screen Photo School',
+    locale: 'uk_UA',
+    type: 'article',
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export const dynamic = 'force-static';
