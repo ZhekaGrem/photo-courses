@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-    ];
-  },
   images: {
     remotePatterns: [
       {
@@ -21,11 +13,27 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    minimumCacheTTL: 60 * 60 * 24 * 7, // 7 дній для проду
+    minimumCacheTTL: 60 * 60 * 24 * 7,
     deviceSizes: [640, 768, 1024, 1280, 1600],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-
     unoptimized: true,
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+        ],
+      },
+    ];
   },
 };
 

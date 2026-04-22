@@ -5,20 +5,20 @@ import '@/app/styles/globals.css';
 
 import Loading from '@/app/loading';
 import ClarityScript from '@/app/_components/scripts/ClarityScript';
+import Footer from './_components/layout/Footer';
+import Header from './_components/layout/Header';
+import { PortalProvider } from '@/context/PortalContext';
+import Script from 'next/script';
+
 const BottomTabs = dynamic(() => import('@/app/_components/layout/BottomTabs'), {
   loading: () => <Loading />,
   ssr: false,
 });
 
-const DynamicFooter = dynamic(() => import('./_components/layout/Footer'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
-import Header from './_components/layout/Header';
-import { PortalProvider } from '@/context/PortalContext';
-import Script from 'next/script';
-
 const montrat = Montserrat({ subsets: ['latin', 'cyrillic'], adjustFontFallback: false, preload: true });
+
+const SITE_URL = 'https://www.screenphotoschool.com.ua';
+const OG_IMAGE = `${SITE_URL}/assets/img/oleg.png`;
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -26,26 +26,26 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Школа фотографії 📸 | Фотошкола | Курси фотографа',
   description:
     'Курси фотографії в Україні ➤ Навчання з досвідченими фотографами  Від базових навичок до комерційної зйомки ✓ Практичні заняття ✓ Сертифікат ✓ Допомога у працевлаштуванні【Старт щомісяця】',
-  keywords:
-    'курси фотографії львів, фотошкола, курси фотографа, школа фотографії, навчання фотографії, фотокурси для початківців, фотограф курси, фотошкола львів, уроки фотографії, курси фотографії для початківців',
   openGraph: {
-    title: 'Курси Фотографії в Україні ᐈ Навчання для початківців【2024】',
+    title: 'Курси Фотографії в Україні ᐈ Навчання для початківців',
     description:
       '️Професійні курси фотографії ➤ 70% практики ➤ Робота з реальними проектами ➤ Підтримка 24/7 ➤ Портфоліо після навчання ➤ Допомога у старті карʼєри ✓ Бронюйте місце зараз',
-    images: ['https://www.screenphotoschool.com.ua/_next/static/media/google.84aede1a.webp'],
+    images: [OG_IMAGE],
     locale: 'uk_UA',
     type: 'website',
     siteName: 'Screen Photo School',
-    url: 'https://www.screenphotoschool.com.ua/',
+    url: `${SITE_URL}/`,
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Школа Фотографії в Україні',
     description:
-      '⭐ Стань професійним фотографом за 2 місяці ➤ Сучасна програма навчання ➤ Практичні заняття ➤ Робота з брендами ➤ Сертифікат ✓ Записуйтесь',
-    images: ['https://www.screenphotoschool.com.ua/_next/static/media/google.84aede1a.webp'],
+      '⭐ Стань професійним фотографом ➤ Сучасна програма навчання ➤ Практичні заняття ➤ Робота з брендами ➤ Сертифікат ✓ Записуйтесь',
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -59,10 +59,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.screenphotoschool.com.ua/',
-    languages: {
-      uk: 'https://www.screenphotoschool.com.ua/',
-    },
+    canonical: `${SITE_URL}/`,
   },
   icons: {
     icon: [
@@ -72,14 +69,92 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
-  authors: [{ name: 'Oleg Serniuk', url: 'https://www.screenphotoschool.com.ua/about' }],
+  authors: [{ name: 'Oleg Serniuk', url: `${SITE_URL}/mentor` }],
   verification: {
     google: 'zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw',
   },
   other: {
-    'google-site-verification': 'zxibwP7y2X_bx4RJ4UMsueYaEauCBZ21uL_2hEaInYw',
     'msvalidate.01': 'E13D0F3684FAF860BAB7CA5C7428A209',
   },
+};
+
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Курс фотографії для початківців',
+  description:
+    'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
+  url: `${SITE_URL}/`,
+  provider: {
+    '@type': 'Organization',
+    name: 'Screen Photo School',
+    url: SITE_URL,
+    sameAs: SITE_URL,
+  },
+  category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
+  inLanguage: 'uk',
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'Onsite',
+    courseWorkload: 'PT40H',
+  },
+  offers: [
+    {
+      '@type': 'Offer',
+      category: 'Базовий експрес',
+      name: 'Швидкий Старт — Базовий експрес',
+      price: '1200',
+      priceCurrency: 'UAH',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/#price`,
+    },
+    {
+      '@type': 'Offer',
+      category: 'Базовий',
+      name: 'Швидкий Старт — Базовий',
+      price: '4000',
+      priceCurrency: 'UAH',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/#price`,
+    },
+    {
+      '@type': 'Offer',
+      category: "Зі зворотнім зв'язком",
+      name: "Швидкий Старт — Зі зворотнім зв'язком",
+      price: '6375',
+      priceCurrency: 'UAH',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/#price`,
+    },
+    {
+      '@type': 'Offer',
+      category: 'З наставником',
+      name: 'Швидкий Старт — З наставником',
+      price: '10000',
+      priceCurrency: 'UAH',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/#price`,
+    },
+  ],
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'Screen Photo School',
+  alternateName: 'Школа фотографії',
+  url: SITE_URL,
+  logo: `${SITE_URL}/android-chrome-512x512.png`,
+  description:
+    'Українська школа фотографії. Онлайн- та офлайн-курси для початківців і професіоналів. Львів, Україна.',
+  areaServed: 'UA',
+  inLanguage: 'uk',
+  telephone: '+380988758442',
+  founder: {
+    '@type': 'Person',
+    name: 'Олег Сернюк',
+  },
+  sameAs: ['https://www.instagram.com/screen.school', 'https://www.instagram.com/serniukphoto'],
 };
 
 export default function RootLayout({
@@ -89,6 +164,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className={`${montrat.className} bg-pageant_blue`}>
         <noscript>
           <iframe
@@ -100,57 +185,13 @@ export default function RootLayout({
         <PortalProvider>
           <Header />
           <main>{children}</main>
-          <DynamicFooter />
+          <Footer />
 
           <BottomTabs />
 
           <div id="portal-root" />
         </PortalProvider>
       </body>
-      <Script id="schema-org" type="application/ld+json" strategy="lazyOnload">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Course',
-          name: 'Курс фотографії для початківців',
-          description:
-            'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
-          provider: {
-            '@type': 'Organization',
-            name: 'Школа фотографії',
-            sameAs: 'https://www.screenphotoschool.com.ua',
-          },
-          category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
-          hasCourseInstance: {
-            '@type': 'CourseInstance',
-            courseMode: 'onsite',
-            startDate: '2024-09-01',
-            courseWorkload: 'PT40H',
-          },
-          offers: [
-            {
-              '@type': 'Offer',
-              category: 'Базовий курс',
-              name: 'Відеокурс "Швидкий Старт"',
-              price: '3000',
-              priceCurrency: 'UAH',
-            },
-            {
-              '@type': 'Offer',
-              category: 'Розширений курс',
-              name: 'Відеокурс з менторством',
-              price: '5500',
-              priceCurrency: 'UAH',
-            },
-            {
-              '@type': 'Offer',
-              category: 'Індивідуальне навчання',
-              name: 'Індивідуальна школа фотографії',
-              price: '10000',
-              priceCurrency: 'UAH',
-            },
-          ],
-        })}
-      </Script>
       <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-0SG93S79Y0" />
       <Script
         id="google-analytics"

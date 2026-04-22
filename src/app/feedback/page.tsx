@@ -8,19 +8,18 @@ export const metadata: Metadata = {
   title: 'Відгуки та Роботи Студентів | Фотошкола',
   description:
     'Переглядайте відгуки наших студентів та їх вражаючі роботи після проходження курсів фотографії',
+  alternates: { canonical: 'https://www.screenphotoschool.com.ua/feedback' },
 };
 
-// Статична генерація - максимальна швидкість
 export const dynamic = 'force-static';
 
 const FeedbackPage = () => {
-  // Отримуємо зображення студентів з локальних папок
   const studentColumnImages = getColumnImages(LocalImageFolders.STUDENT_GALLERY);
 
   return (
     <div className="min-h-screen bg-cloud_dancer">
       <div className="section container mx-auto">
-        <h2 className="py-6 text-center text-pageant_blue">ВІДГУКИ</h2>
+        <h1 className="py-6 text-center text-pageant_blue">Відгуки студентів школи фотографії</h1>
         <Testimonial />
       </div>
 

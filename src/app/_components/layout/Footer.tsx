@@ -2,12 +2,9 @@ import { footer } from '@/db/data';
 
 import dynamic from 'next/dynamic';
 import Loading from '@/app/loading';
+import SocialIcons from '../common/SocialIcons';
 
 const MiniFormFooter = dynamic(() => import('../form/MiniFormFooter'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
-const SocialIcons = dynamic(() => import('../common/SocialIcons'), {
   loading: () => <Loading />,
   ssr: false,
 });
