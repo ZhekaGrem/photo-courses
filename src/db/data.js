@@ -1,3 +1,5 @@
+const VIDEO_BASE = 'https://res.cloudinary.com/dwgk0dtrp/video/upload/screenphotoschool/video/program';
+
 export const header = {
   btndata: 'ЗАПИСАТИСЬ НА КУРС',
 };
@@ -38,7 +40,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/1, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/01.mp4',
+            video: `${VIDEO_BASE}/faststart/01.mp4`,
           },
         },
         {
@@ -56,7 +58,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/2, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/02.mp4',
+            video: `${VIDEO_BASE}/faststart/02.mp4`,
           },
         },
         {
@@ -74,7 +76,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/3, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/03.mp4',
+            video: `${VIDEO_BASE}/faststart/03.mp4`,
           },
         },
         {
@@ -92,7 +94,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/4, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/04.mp4',
+            video: `${VIDEO_BASE}/faststart/04.mp4`,
           },
         },
         {
@@ -110,7 +112,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/5, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/05.mp4',
+            video: `${VIDEO_BASE}/faststart/05.mp4`,
           },
         },
         {
@@ -128,7 +130,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/6, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/06.mp4',
+            video: `${VIDEO_BASE}/faststart/06.mp4`,
           },
         },
         {
@@ -146,7 +148,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/7, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/07.mp4',
+            video: `${VIDEO_BASE}/faststart/07.mp4`,
           },
         },
         {
@@ -164,7 +166,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/8, фотошкола, школа фотографії, курси фотографа.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/08.mp4',
+            video: `${VIDEO_BASE}/faststart/08.mp4`,
           },
         },
         {
@@ -182,7 +184,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/9, фотошкола, школа фотографії, курси фотографа.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/09.mp4',
+            video: `${VIDEO_BASE}/faststart/09.mp4`,
           },
         },
         {
@@ -200,7 +202,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/10, фотошкола, школа фотографії, курси фотографа.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/010.mp4',
+            video: `${VIDEO_BASE}/faststart/010.mp4`,
           },
         },
         {
@@ -218,7 +220,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/11, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/011.mp4',
+            video: `${VIDEO_BASE}/faststart/011.mp4`,
           },
         },
         {
@@ -236,7 +238,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/faststart/12, фотошкола, школа фотографії, курси фотографа.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/faststart/012.mp4',
+            video: `${VIDEO_BASE}/faststart/012.mp4`,
           },
         },
         {
@@ -276,7 +278,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/1.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/01.mp4',
+            video: `${VIDEO_BASE}/light/01.mp4`,
           },
         },
         {
@@ -293,7 +295,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/2.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/02.mp4',
+            video: `${VIDEO_BASE}/light/02.mp4`,
           },
         },
         {
@@ -314,7 +316,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/3.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/03.mp4',
+            video: `${VIDEO_BASE}/light/03.mp4`,
           },
         },
         {
@@ -335,7 +337,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/4.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/04.mp4',
+            video: `${VIDEO_BASE}/light/04.mp4`,
           },
         },
         {
@@ -359,7 +361,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/5.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/05.mp4',
+            video: `${VIDEO_BASE}/light/05.mp4`,
           },
         },
         {
@@ -379,7 +381,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/6.jpg',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/06.mp4',
+            video: `${VIDEO_BASE}/light/06.mp4`,
           },
         },
         {
@@ -399,7 +401,7 @@ export const data_section_2 = {
             ],
             img: '/assets/programgroup/light/7.webp',
             img_alt: 'Урок курсу фотографії Screen Photo School',
-            video: '/assets/video/program/light/07.mp4',
+            video: `${VIDEO_BASE}/light/07.mp4`,
           },
         },
         {
