@@ -1,4 +1,3 @@
-import { url } from 'inspector';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -13,19 +12,19 @@ const config: Config = {
         xs: '400px',
       },
       colors: {
-        neon_navy: '#131936',
-        pageant_blue: '#1F2C43',
-        harbor_blue: '#00656E',
-        cloud_dancer: '#F0EEE9',
-        background_header: '#20242c',
-        background_btn: '#4C98EE',
+        neon_navy: 'var(--text)',
+        pageant_blue: 'var(--text)',
+        harbor_blue: 'var(--accent)',
+        cloud_dancer: 'var(--bg)',
+        background_header: 'var(--text)',
+        background_btn: 'var(--accent)',
         background_span: '#1057A8',
-        background_btn_burger: '#C44E68',
-        background_btn_hover: '#4C98EE',
+        background_btn_burger: 'var(--accent)',
+        background_btn_hover: 'var(--accent-hover)',
         background_section_2: '#E1E327',
         background_section_2_2: '#FFEEC4',
-        background_section_3: '#F0EEE9',
-        background_section_4: '#00656E',
+        background_section_3: 'var(--bg)',
+        background_section_4: 'var(--dark-surface)',
         background_section_5: '#FFCE4E',
         background_section_6: '#e4722b',
         background_section_7: '#3D98D3',

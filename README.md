@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Screen Photo School
 
-## Getting Started
+Потрібен Node.js ≥20.9 (у цьому середовищі перевірено Node 24.2). Онлайн-курси фотографії. Next.js 14 App Router, React 18, TypeScript, Tailwind. Montserrat із кирилицею постачається локально через Fontsource; збірка не завантажує шрифти з Google. План, аудит реалізації та відкладені перевірки: [improvement.md](improvement.md).
 
-First, run the development server:
+## Локальний запуск
 
-```bash
+```sh
+npm ci
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`http://localhost:3000`. Без Telegram credentials сайт працює, але заявка повертає чесний стан тимчасової недоступності.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Заявки
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Обидва входи — консультація та тариф — використовують одну форму й `POST /api/leads`. Маршрут перевіряє контакти, курс і належність тарифу; назву й ціну бере із серверного каталогу. Telegram-виклик виконується тільки на сервері з 10-секундним таймаутом. Клієнт блокує подвійне натискання, зберігає дані після помилки та показує успіх лише після `ok: true`.
 
-## Learn More
+На сервері розгортання задайте `TELEGRAM_TOKEN` і `TELEGRAM_CHAT_ID`. Старі `NEXT_PUBLIC_TELEGRAM_TOKEN` / `NEXT_PUBLIC_CHAT_ID` більше не використовуються: перенесіть значення в серверні змінні та видаліть публічні. Якщо старий bot token уже потрапив у публічну збірку, його слід перевипустити у власника бота. Не додавайте секрети в Git. Потрібен Node/Next server runtime; статичний export не обслуговує `/api/leads`.
 
-To learn more about Next.js, take a look at the following resources:
+Збережено Telegram як канал доставки. CRM та оплата не додані. Перевірка origin і honeypot не є повноцінним захистом від автоматизованого спаму; production rate limiting має налаштовуватися на платформі хостингу з урахуванням її proxy/IP правил.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Перевірки
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```sh
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm start
+```
 
-## Deploy on Vercel
+`npm test` компілює модулі в ігноровану `.test-build` і запускає Node test runner. Усі виклики доставки підмінені mock-функціями; справжні заявки не надсилаються. Охоплено 8 тарифів, ціни, повноту програми, URL, валідацію, помилки/успіх/повторну спробу й відсутність PII у подіях. Це не браузерний E2E-тест.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## URL і контент
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `/#faststart`, `/#prosvitlo` — вибір курсу.
+- `/?variant=prosvitlo#price` — тарифи зі збереженим вибором; старий `/#price` підтримується.
+- `/mentor#author`, `/mentor/#portfolio`, `/feedback`, `/terms-of-service` збережені.
+- `src/db/data.js` — вихідні програми й ціни; `src/lib/courses.ts` — спільне представлення для UI/API.
+- Галереї беруть файли з `public/assets/gallery`, читаючи справжні розміри через sharp. Скрипт `prepare:images` генерує WebP шириною 48–1600px у `public/_media` перед dev/build. Custom Next Image loader віддає ці статичні srcset; runtime-оптимізатор старого Next.js вимкнений. `public/_media` не комітиться, але має потрапити в артефакт deployment разом із public. Для прямого запуску `next build` спочатку виконайте `npm run prepare:images`.
+
+## Аналітика й передпублікаційна перевірка
+
+GTM/GA4/Clarity збережено. UX-події надходять у `window.dataLayer`; автоматична конфігурація GTM-подій не змінювалася. Потрібно налаштувати/перевірити теги й виключити дублювання GA4 у контейнері. Контактні поля маскуються для Clarity, власні події не містять імені/телефону. `purchase` не надсилається.
+
+Власник має уточнити доступ PRO 4499, чинність знижок, старт і техніку, юридичну політику приватності та суперечність між наявними умовами онлайн-оплати й фактичною формою заявки. Юридичні тексти не вигадані; існуючі умови збережені. Потрібні browser QA на 360/390/768/1024/1440px, клавіатура/dialog, URL Back/Forward, скриншоти й реальні CWV. Деталі та фактичні результати — у плані.
+
+Після дозволеного аудиту залежностей лишається 22 повідомлення для production dependencies (2 critical). Sharp виправлено; Next.js/Swiper та інші legacy-залежності потребують окремого оновлення до публікації. Browser QA часткова — див. фактичний список у improvement.md.

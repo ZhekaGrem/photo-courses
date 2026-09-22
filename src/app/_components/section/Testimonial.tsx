@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const STUDENT_REVIEWS = [
   {
@@ -71,55 +72,37 @@ const STUDENT_REVIEWS = [
   },
 ];
 
-const Testimonial = () => {
+const Testimonial = ({ compact = false }: { compact?: boolean }) => {
+  const reviews = compact ? [STUDENT_REVIEWS[0], STUDENT_REVIEWS[5], STUDENT_REVIEWS[6]] : STUDENT_REVIEWS;
   return (
-    <section id="testimonials" className="pb-5">
-      <div className="text-gray-600">
-        <div className="container mx-auto max-w-7xl md:px-12">
-          <div className="gap-8 space-y-8 pb-5 md:columns-2 lg:columns-3">
-            {STUDENT_REVIEWS.map((review, index) => (
-              <div
-                key={index}
-                className="relative mb-8 aspect-auto break-inside-avoid border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10">
-                <div className={`flex gap-4`}>
-                  <img
-                    className="size-12 rounded-full bg-gray-200"
-                    src={review.img}
-                    alt={`${review.name} avatar`}
-                    width="48"
-                    height="48"
-                    loading="lazy"
-                  />
-                  <div>
-                    <h6 className="text-lg font-medium text-gray-700">{review.name}</h6>
-                    <p className="text-xs text-gray-500">{review.position}</p>
-                  </div>
-                  {review.link && (
-                    <a
-                      href={review.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Інстаграм"
-                      className="ml-auto text-base transition-transform duration-200 ease-in-out hover:scale-110">
-                      <img
-                        className="size-12"
-                        src="/assets/icon/instagram-3.webp"
-                        alt={`${review.name} avatar`}
-                        width="48"
-                        height="48"
-                        loading="lazy"
-                      />
-                    </a>
-                  )}
-                </div>
-                <p className="mt-8 text-sm text-gray-600">{review.comment}</p>
+    <div className="reviews-grid">
+      {reviews.map((review, index) => {
+        const end = review.comment.lastIndexOf(' ', 210);
+        const excerpt = review.comment.length > 230 ? review.comment.slice(0, end) + '…' : review.comment;
+        return (
+          <article className="review-card" key={index}>
+            <div className="review-author">
+              <Image src={review.img} alt={review.name} width={48} height={48} loading="lazy" />
+              <div>
+                <h3>{review.name}</h3>
+                {review.link && (
+                  <a href={review.link} target="_blank" rel="noreferrer">
+                    Instagram ↗
+                  </a>
+                )}
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+            </div>
+            <blockquote>{excerpt}</blockquote>
+            {review.comment.length > 230 && (
+              <details>
+                <summary>Читати повністю</summary>
+                <p>{review.comment}</p>
+              </details>
+            )}
+          </article>
+        );
+      })}
+    </div>
   );
 };
-
 export default Testimonial;

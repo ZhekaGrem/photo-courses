@@ -1,108 +1,106 @@
 'use client';
-import { Button } from '../common/Button';
+import { useEffect, useRef } from 'react';
 import { usePortal } from '@/context/PortalContext';
-import CheckmarkIcon from '../common/Checkmark';
-import { motion } from 'framer-motion';
-import { section_6 } from '@/db/data';
-
-type PriseType = {
-  title: string;
-  price?: string;
-  newPrice?: string;
-  discount?: number;
-  description: string;
-  features: string[];
-};
-type PriceItemType = {
-  id: number;
-  content: PriseType;
-};
-type VariantType = {
-  id: string;
-  price: Array<PriceItemType>;
-};
-
-type DataSection6Type = {
-  variants: Array<VariantType>;
-};
-
-const data: DataSection6Type = section_6;
-
-const Price2 = () => {
-  const { setIsPortalOpen, setTitle, variantId } = usePortal();
-
-  const selectedVariant =
-    data.variants.find((variant) => variant.id === variantId) ||
-    data.variants.find((variant) => variant.id === 'faststart');
-  const colSection = selectedVariant?.price.length;
-  if (!selectedVariant) {
-    return <div>Variant not found</div>;
-  }
-  const openPortal = (title: string) => {
-    setTitle?.(title);
-    setIsPortalOpen(true);
-  };
+import { getCourse, money } from '@/lib/courses';
+import { track } from '@/lib/analytics';
+export default function Price2() {
+  const { variantId, openLead } = usePortal();
+  const course = getCourse(variantId);
+  const section = useRef<HTMLElement>(null);
+  const viewed = useRef(new Set<string>());
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !viewed.current.has(variantId)) {
+          track('pricing_view', { course_id: variantId });
+          viewed.current.add(variantId);
+        }
+      },
+      { threshold: 0.05 }
+    );
+    if (section.current) observer.observe(section.current);
+    return () => observer.disconnect();
+  }, [variantId]);
   return (
-    <section className="bg-cloud_dancer">
-      <div className="section container mx-auto">
-        <h2 className="py-6 text-center text-pageant_blue">ВАРТІСТЬ НАВЧАННЯ</h2>
-
-        <div
-          id="price"
-          className={`grid grid-cols-1 gap-4 pb-6 xl:grid-cols-4 ${colSection === 1 ? 'justify-center xl:grid-cols-1' : ''}`}>
-          {selectedVariant.price.map((plan, index) => (
-            <motion.div
-              key={plan.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative mx-auto max-w-[361px] overflow-hidden bg-white shadow-2xl">
-              {plan.content.discount && (
-                <div className="absolute right-0 top-0 rounded-bl-lg bg-background_btn_burger px-4 py-1 font-bold text-white">
-                  Знижка {plan.content.discount}%
-                </div>
-              )}
-              <div className="p-8">
-                <h3 className="mb-4 text-2xl font-bold text-text_1">{plan.content.title}</h3>
-                <div className="mb-4 flex flex-col">
-                  {plan.content.newPrice ? (
+    <section ref={section} className="section-space pricing-section" id="price">
+      <div className="container">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">05 / Ваш формат навчання</p>
+            <h2>Тарифи · {course.name}</h2>
+          </div>
+          <p>Оберіть строк доступу та рівень підтримки. У кожному тарифі — відеоуроки обраного курсу.</p>
+        </div>
+        <div className="pricing-grid">
+          {course.plans.map((plan) => (
+            <article className="price-card" key={`${course.id}-${plan.id}`}>
+              <h3>{plan.title}</h3>
+              <p className="plan-audience">{plan.audience}</p>
+              <div className="price-block">
+                <span className="previous-price">
+                  {plan.previousPrice ? (
                     <>
-                      <h4 className="ml-2 text-2xl font-bold text-gray-400 line-through">
-                        {plan.content.price}
-                      </h4>
-                      <h4 className="text-4xl font-bold">{plan.content.newPrice}</h4>
+                      <del>{money(plan.previousPrice)}</del>
+                      <span>≈ −{plan.discount}%</span>
                     </>
                   ) : (
-                    <h4 className="text-4xl font-bold">{plan.content.price}</h4>
+                    'Вартість навчання'
                   )}
-                </div>
-                <p className="mb-6 text-[#4a4a4a] xl:min-h-40">{plan.content.description}</p>
-                <div className="text-center">
-                  <Button
-                    text="Замовити"
-                    onClick={() => openPortal(plan.content.title)}
-                    className="w-full max-w-60 rounded-lg bg-pageant_blue px-4 py-3 font-bold text-cloud_dancer drop-shadow-xl transition-colors hover:bg-opacity-90">
-                    Замовити
-                  </Button>
-                </div>
+                </span>
+                <strong>{money(plan.price)}</strong>
               </div>
-              <div className="bg-[#fff5f0] p-8">
-                <h3 className="mb-4 font-semibold text-text_1">Що входить:</h3>
-                <ul className="space-y-2">
-                  {plan.content.features.map((feature, index) => (
-                    <li key={index} className="flex items-center">
-                      <CheckmarkIcon className="text-harbor_blu" />
-                      <span className="ml-2 text-[#4a4a4a]">{feature}</span>
-                    </li>
+              <dl className="plan-facts">
+                <div>
+                  <dt>Доступ</dt>
+                  <dd>{plan.access}</dd>
+                </div>
+                <div>
+                  <dt>Матеріали</dt>
+                  <dd>{plan.materials}</dd>
+                </div>
+                <div>
+                  <dt>Перевірка завдань</dt>
+                  <dd>{plan.review}</dd>
+                </div>
+              </dl>
+              <button
+                className="btn"
+                onClick={(event) => {
+                  track('plan_select', { course_id: course.id, plan_id: plan.id, cta_position: 'pricing' });
+                  openLead({ courseId: course.id, planId: plan.id }, 'pricing', event.currentTarget);
+                }}>
+                Залишити заявку
+              </button>
+              <details className="plan-details">
+                <summary>Усі умови тарифу</summary>
+                <dl className="plan-facts">
+                  <div>
+                    <dt>Особистий супровід</dt>
+                    <dd>{plan.personal}</dd>
+                  </div>
+                  <div>
+                    <dt>Після курсу</dt>
+                    <dd>{plan.aftercare}</dd>
+                  </div>
+                </dl>
+                <p>{plan.description}</p>
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
                   ))}
                 </ul>
-              </div>
-            </motion.div>
+              </details>
+            </article>
           ))}
         </div>
+        <p className="pricing-note">
+          Після заявки уточнимо деталі навчання та оплати. Якщо вагаєтеся,{' '}
+          <button className="text-link" onClick={() => openLead({ courseId: course.id }, 'pricing_help')}>
+            допоможемо обрати тариф
+          </button>
+          .
+        </p>
       </div>
     </section>
   );
-};
-
-export default Price2;
+}

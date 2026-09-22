@@ -1,21 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import dynamic from 'next/dynamic';
-import { Montserrat } from 'next/font/google';
+import '@fontsource-variable/montserrat';
 import '@/app/styles/globals.css';
 
-import Loading from '@/app/loading';
 import ClarityScript from '@/app/_components/scripts/ClarityScript';
 import Footer from './_components/layout/Footer';
 import Header from './_components/layout/Header';
 import { PortalProvider } from '@/context/PortalContext';
 import Script from 'next/script';
 
-const BottomTabs = dynamic(() => import('@/app/_components/layout/BottomTabs'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
-
-const montrat = Montserrat({ subsets: ['latin', 'cyrillic'], adjustFontFallback: false, preload: true });
+import BottomTabs from '@/app/_components/layout/BottomTabs';
 
 const SITE_URL = 'https://www.screenphotoschool.com.ua';
 const OG_IMAGE = `${SITE_URL}/assets/img/oleg.png`;
@@ -27,13 +20,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Школа фотографії 📸 | Фотошкола | Курси фотографа',
+  title: 'Screen Photo School — онлайн-курси фотографії',
   description:
-    'Курси фотографії в Україні ➤ Навчання з досвідченими фотографами  Від базових навичок до комерційної зйомки ✓ Практичні заняття ✓ Сертифікат ✓ Допомога у працевлаштуванні【Старт щомісяця】',
+    'Два онлайн-курси Олега Сернюка: «Швидкий старт» для початківців і «PRO Світло» для роботи з освітленням. Програми, тарифи та роботи учнів.',
   openGraph: {
-    title: 'Курси Фотографії в Україні ᐈ Навчання для початківців',
+    title: 'Screen Photo School — навчіться створювати кадр',
     description:
-      '️Професійні курси фотографії ➤ 70% практики ➤ Робота з реальними проектами ➤ Підтримка 24/7 ➤ Портфоліо після навчання ➤ Допомога у старті карʼєри ✓ Бронюйте місце зараз',
+      'Основи фотографії та робота зі світлом. Порівняйте два онлайн-курси й оберіть формат підтримки.',
     images: [OG_IMAGE],
     locale: 'uk_UA',
     type: 'website',
@@ -43,8 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Школа Фотографії в Україні',
-    description:
-      '⭐ Стань професійним фотографом ➤ Сучасна програма навчання ➤ Практичні заняття ➤ Робота з брендами ➤ Сертифікат ✓ Записуйтесь',
+    description: 'Онлайн-курси «Швидкий старт» та «PRO Світло» від Олега Сернюка.',
     images: [OG_IMAGE],
   },
   robots: {
@@ -78,66 +70,6 @@ export const metadata: Metadata = {
   },
 };
 
-const courseJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: 'Курс фотографії для початківців',
-  description:
-    'Освоїти мистецтво фотографії з нуля. Практичні навички, робота зі світлом, композицією та обробкою.',
-  url: `${SITE_URL}/`,
-  provider: {
-    '@type': 'Organization',
-    name: 'Screen Photo School',
-    url: SITE_URL,
-    sameAs: SITE_URL,
-  },
-  category: ['Фотографія', 'Цифрове мистецтво', 'Візуальні медіа'],
-  inLanguage: 'uk',
-  hasCourseInstance: {
-    '@type': 'CourseInstance',
-    courseMode: 'Onsite',
-    courseWorkload: 'PT40H',
-  },
-  offers: [
-    {
-      '@type': 'Offer',
-      category: 'Базовий експрес',
-      name: 'Швидкий Старт — Базовий експрес',
-      price: '1200',
-      priceCurrency: 'UAH',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/#price`,
-    },
-    {
-      '@type': 'Offer',
-      category: 'Базовий',
-      name: 'Швидкий Старт — Базовий',
-      price: '4000',
-      priceCurrency: 'UAH',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/#price`,
-    },
-    {
-      '@type': 'Offer',
-      category: "Зі зворотнім зв'язком",
-      name: "Швидкий Старт — Зі зворотнім зв'язком",
-      price: '6375',
-      priceCurrency: 'UAH',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/#price`,
-    },
-    {
-      '@type': 'Offer',
-      category: 'З наставником',
-      name: 'Швидкий Старт — З наставником',
-      price: '10000',
-      priceCurrency: 'UAH',
-      availability: 'https://schema.org/InStock',
-      url: `${SITE_URL}/#price`,
-    },
-  ],
-};
-
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
@@ -145,8 +77,7 @@ const organizationJsonLd = {
   alternateName: 'Школа фотографії',
   url: SITE_URL,
   logo: `${SITE_URL}/android-chrome-512x512.png`,
-  description:
-    'Українська школа фотографії. Онлайн- та офлайн-курси для початківців і професіоналів. Львів, Україна.',
+  description: 'Онлайн-школа фотографії Олега Сернюка. Основи фотографії та робота зі світлом.',
   areaServed: 'UA',
   inLanguage: 'uk',
   telephone: '+380988758442',
@@ -167,24 +98,26 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body className={`${montrat.className} bg-pageant_blue`}>
+      <body className="bg-cloud_dancer">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NB39DGF6"
+            title="Google Tag Manager"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}></iframe>
         </noscript>
+        <a className="skip-link" href="#main-content">
+          Перейти до змісту
+        </a>
         <PortalProvider>
           <Header />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
 
           <BottomTabs />

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Hero from '@/app/_components/section/Hero';
 import WhoLeads from '@/app/_components/section/WhoLeads';
 import Сertificate from '@/app/_components/section/Сertificate';
 import Portfolio from '@/app/_components/section/Portfolio';
@@ -63,7 +62,6 @@ const breadcrumbsJsonLd = {
 function MentorPage() {
   return (
     <>
-      <Hero />
       <WhoLeads />
       <Сertificate />
       <Portfolio />

@@ -1,136 +1,123 @@
 'use client';
-import { data_section_2 } from '@/db/data';
-import React, { useEffect, useRef, Suspense } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { usePortal } from '@/context/PortalContext';
-import { motion, AnimatePresence } from 'framer-motion';
-import dynamic from 'next/dynamic';
-
-const BigScreenProgram = dynamic(() => import('../layout/BigScreenProgram'), {
-  loading: () => <SkeletonLoader variant="big" />,
-});
-
-const PhoneScreenProgram = dynamic(() => import('../layout/PhoneScreenProgram'), {
-  loading: () => <SkeletonLoader variant="phone" />,
-  ssr: false,
-});
-
-// Create a more informative loading component
-const SkeletonLoader = ({ variant }: { variant: 'big' | 'phone' }) => (
-  <div className={`skeleton-loader ${variant}`}>
-    <div className="animate-pulse">
-      <div className="mb-4 h-4 bg-gray-300"></div>
-      {[...Array(3)].map((_, i) => (
-        <div key={i} className="mb-2 h-20 rounded bg-gray-200"></div>
-      ))}
-    </div>
-  </div>
-);
-
-type ProgramContentType = {
-  title: string;
-  title2: string;
-  list: Array<string>;
-  img?: string;
-  img_alt?: string;
-  video?: string;
-};
-
-type ProgramItemType = {
-  id: number;
-  title: string;
-  content: ProgramContentType;
-};
-
-type VariantType = {
-  id: string;
-  title_2: string;
-  program: Array<ProgramItemType>;
-};
-
-type DataSection2Type = {
-  variants: Array<VariantType>;
-};
-
-const data: DataSection2Type = data_section_2;
-
-const CourseProgram = React.memo(() => {
-  const { variantId, setVariantId } = usePortal();
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const scrollToSection = React.useCallback(() => {
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      const variant = data.variants.find((v) => v.id === hash);
-
-      if (variant) {
-        // Use requestAnimationFrame for better performance
-        requestAnimationFrame(() => {
-          setVariantId?.(variant.id);
-          scrollToSection;
-        });
-      }
-    };
-
-    // Initial load and hash change handling
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [setVariantId, scrollToSection]);
-
-  const selectedVariant =
-    data.variants.find((variant) => variant.id === variantId) ||
-    data.variants.find((variant) => variant.id === 'faststart');
-
-  if (!selectedVariant) {
-    return (
-      <div className="p-4 text-center text-gray-500">
-        No variant selected. Please choose a program variant.
-      </div>
-    );
-  }
-
+import { courses, getCourse, courseFromUrl } from '@/lib/courses';
+import { track } from '@/lib/analytics';
+function Lesson({
+  lesson,
+  courseId,
+}: {
+  lesson: ReturnType<typeof getCourse>['program'][number];
+  courseId: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const played = useRef(false);
   return (
-    <section
-      id={variantId}
-      ref={sectionRef}
-      className="bg-cloud_dancer"
-      aria-labelledby="course-program-title">
-      <div className="section container text-neon_navy" id="program">
-        <Suspense fallback={<div>Loading...</div>}>
-          <AnimatePresence mode="wait">
-            <motion.h2
-              key={selectedVariant.title_2}
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 5 }}
-              transition={{ duration: 0.3 }}
-              className="transform py-6 text-center">
-              {selectedVariant.title_2}
-            </motion.h2>
-          </AnimatePresence>
-
-          <div className="big-screen">
-            <BigScreenProgram data={selectedVariant.program} />
+    <details className="lesson" onToggle={(event) => setOpen(event.currentTarget.open)}>
+      <summary>
+        <span className="lesson-number">{String(lesson.id + 1).padStart(2, '0')}</span>
+        <span>
+          <strong>{lesson.title}</strong>
+          <span className="lesson-outcome">{lesson.outcome}</span>
+        </span>
+        <span className="expand-mark" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <div className="lesson-body">
+        <div>
+          <h3>{lesson.content.title}</h3>
+          <ul>
+            {lesson.content.list.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          {open &&
+            (lesson.content.video ? (
+              <>
+                <p className="eyebrow">Фрагмент уроку</p>
+                <video
+                  controls
+                  muted
+                  playsInline
+                  preload="none"
+                  poster={lesson.content.img}
+                  src={lesson.content.video}
+                  onPlay={() => {
+                    if (!played.current) {
+                      track('lesson_preview_play', {
+                        course_id: courseId,
+                        lesson_id: lesson.id,
+                        cta_position: 'program',
+                      });
+                      played.current = true;
+                    }
+                  }}
+                />
+              </>
+            ) : lesson.content.img ? (
+              <Image
+                src={lesson.content.img}
+                alt={lesson.content.img_alt || lesson.title}
+                width={640}
+                height={420}
+                sizes="(max-width: 768px) 90vw, 45vw"
+              />
+            ) : null)}
+        </div>
+      </div>
+    </details>
+  );
+}
+export default function CourseProgram() {
+  const { variantId, selectCourse } = usePortal();
+  const course = getCourse(variantId);
+  const lastView = useRef('');
+  useEffect(() => {
+    const urlCourse = courseFromUrl(new URL(window.location.href));
+    if (urlCourse && urlCourse !== variantId) return;
+    if (lastView.current !== variantId) {
+      track('course_view', { course_id: variantId });
+      lastView.current = variantId;
+    }
+    const hash = window.location.hash.slice(1);
+    if (hash === variantId) requestAnimationFrame(() => document.getElementById('program')?.scrollIntoView());
+  }, [variantId]);
+  return (
+    <section className="section-space program-section" id="program">
+      <div className="container">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">04 / Від знання до практики</p>
+            <h2>Програма навчання</h2>
           </div>
-
-          <div className="phone-screen">
-            <PhoneScreenProgram data={selectedVariant.program} />
+          <div className="course-switch" aria-label="Курс">
+            {courses.map((item) => (
+              <button
+                key={item.id}
+                aria-pressed={variantId === item.id}
+                onClick={() => selectCourse(item.id, 'program')}>
+                {item.name}
+              </button>
+            ))}
           </div>
-        </Suspense>
+        </div>
+        <div className="program-intro" id={variantId}>
+          <h3>{course.name}</h3>
+          <p>{course.result}</p>
+          <span>
+            {course.duration} · {course.lessons}
+          </span>
+        </div>
+        <div key={variantId} className="lesson-list">
+          {course.program.map((lesson) => (
+            <Lesson key={lesson.id} lesson={lesson} courseId={variantId} />
+          ))}
+        </div>
       </div>
     </section>
   );
-});
-
-CourseProgram.displayName = 'CourseProgram';
-
-export default CourseProgram;
-
-// CSS can remain the same as in your original file
+}

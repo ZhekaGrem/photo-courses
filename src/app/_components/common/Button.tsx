@@ -1,36 +1,31 @@
 'use client';
-import { DetailedHTMLProps, ReactNode, ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import { usePortal } from '@/context/PortalContext';
-
-interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   openPortal?: boolean;
   text: string;
-  className?: string;
   children: ReactNode;
 }
-
-export const Button: React.FC<ButtonProps> = ({
+export function Button({
   text,
   children,
   openPortal = false,
-  className,
+  className = 'btn',
   onClick,
   ...props
-}) => {
-  const { setIsPortalOpen } = usePortal();
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClick) {
-      onClick(e);
-    }
-    if (openPortal === true) {
-      setIsPortalOpen(true);
-    }
-  };
-  const baseStyles = 'font-bold text-center transform hover:scale-105   px-3 py-2';
+}: ButtonProps) {
+  const { openLead } = usePortal();
   return (
-    <button aria-label={text} className={`${baseStyles} ${className} `} onClick={handleClick} {...props}>
-      <span className="sr-only">{text}</span>
+    <button
+      type="button"
+      aria-label={text}
+      className={className}
+      onClick={(event) => {
+        onClick?.(event);
+        if (openPortal) openLead(null, 'consultation', event.currentTarget);
+      }}
+      {...props}>
       {children}
     </button>
   );
-};
+}

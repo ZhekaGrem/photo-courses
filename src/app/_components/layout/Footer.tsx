@@ -1,75 +1,47 @@
-import { footer } from '@/db/data';
-
-import dynamic from 'next/dynamic';
-import Loading from '@/app/loading';
+'use client';
+import Link from 'next/link';
 import SocialIcons from '../common/SocialIcons';
-
-const MiniFormFooter = dynamic(() => import('../form/MiniFormFooter'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
-
-const date = new Date().getFullYear();
-
-const Footer = () => {
+import MiniFormFooter from '../form/MiniFormFooter';
+import { usePortal } from '@/context/PortalContext';
+import { courseHref } from '@/lib/courses';
+export default function Footer() {
+  const { variantId } = usePortal();
   return (
-    <footer className="tablet:h-full bg-pageant_blue pt-2 text-lg text-cloud_dancer">
-      <div className="mx-auto grid w-full max-w-screen-xl grid-cols-1 gap-8 px-4 py-3 md:grid-cols-3 lg:py-4">
+    <footer className="site-footer" id="contact">
+      <div className="footer-grid container">
         <div>
-          <ul>
-            {footer.colum1.list_link.map((link) => (
-              <li key={link.id} className="mb-4 text-center sm:text-start">
-                <span className="sr-only">{link.text}</span>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.text}
-                  title={link.text}
-                  className="hover:underline">
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <SocialIcons place="footer" />
-        </div>
-        <div>
-          <h3 className="mb-6 text-center text-sm font-semibold uppercase sm:text-start">
-            {footer.colum2.title}
-          </h3>
+          <p className="eyebrow">Screen Photo School</p>
+          <h2>Ваш наступний кадр починається тут.</h2>
+          <p>Допоможемо обрати курс і формат підтримки.</p>
           <MiniFormFooter />
         </div>
         <div>
-          <ul className="grid grid-cols-2 grid-rows-3 gap-1.5">
-            {footer.colum3.list_link.map((link) => (
-              <li key={link.id} className={`col-span-1 text-balance p-4 text-center last:col-span-2`}>
-                <a rel="noopener noreferrer" href={link.href} className="hover:underline">
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <h3>Зв’яжіться з нами</h3>
+          <a className="contact-phone" href="tel:+380988758442">
+            +38 (098) 875 84 42
+          </a>
+          <SocialIcons place="footer" />
+          <p className="field-hint">
+            ФОП Сернюк Олег
+            <br />
+            Screen Photo School
+          </p>
         </div>
+        <nav aria-label="Додаткова навігація">
+          <Link href="/">Головна</Link>
+          <Link href="/mentor#author">Про автора</Link>
+          <Link href="/mentor/#portfolio">Портфоліо автора</Link>
+          <Link href="/feedback">Відгуки та роботи учнів</Link>
+          <Link href={courseHref(variantId, 'price')}>Вартість навчання</Link>
+          <Link href="/terms-of-service">Умови надання послуг</Link>
+        </nav>
       </div>
-      <div className="p-1 pb-5">
-        <div className="container flex items-center justify-center p-3">
-          <div className="text-center">
-            <p className="text-base">&copy; {date} Galychyna Technologies. Усі права захищено.</p>
-          </div>
-          <div className="ml-5 flex justify-center">
-            <a
-              href="https://galychyna.online/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base transition-colors hover:text-white">
-              Зв'язатися з студією
-            </a>
-          </div>
-        </div>
+      <div className="footer-bottom container">
+        <span>© {new Date().getFullYear()} Screen Photo School</span>
+        <a href="https://galychyna.online/" target="_blank" rel="noreferrer">
+          Розробка — Galychyna Technologies ↗
+        </a>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

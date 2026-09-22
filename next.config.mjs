@@ -15,8 +15,9 @@ const nextConfig = {
     ],
     minimumCacheTTL: 60 * 60 * 24 * 7,
     deviceSizes: [640, 768, 1024, 1280, 1600],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: true,
+    imageSizes: [48, 128, 256, 384],
+    loader: 'custom',
+    loaderFile: './src/lib/image-loader.ts',
   },
   async headers() {
     return [

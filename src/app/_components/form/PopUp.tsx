@@ -1,207 +1,182 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { usePortal } from '@/context/PortalContext';
+import { courses, getCourse, isCourseId, money } from '@/lib/courses';
+import { track } from '@/lib/analytics';
 
-type ClosePortal = {
-  onClose: () => void;
-  title?: string;
-};
-
-const initialFormData = {
-  name: '',
-  tel: '+380',
-};
-
-const phoneRegex = /^(\+38|38)?0\d{9}$/;
-
-const PopUp = ({ title, onClose }: ClosePortal) => {
-  const [formData, setFormData] = useState(initialFormData);
-  const [errors, setErrors] = useState({ name: '', tel: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
-  const nameInputRef = useRef<HTMLInputElement>(null);
-
-  // Фокус на першому полі при відкритті
-  useEffect(() => {
-    nameInputRef.current?.focus();
-  }, []);
-
-  const validateField = (name: string, value: string) => {
-    if (name === 'name') {
-      return value.trim().length < 2 ? "Ім'я повинно містити мінімум 2 символи" : '';
+export default function PopUp({ onClose }: { onClose: () => void }) {
+  const { selection, setSelection } = usePortal();
+  const [name, setName] = useState('');
+  const [tel, setTel] = useState('');
+  const [errors, setErrors] = useState({ name: '', tel: '', form: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const locked = useRef(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const course = selection ? getCourse(selection.courseId) : null;
+  const plan = course?.plans.find((p) => p.id === selection?.planId);
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (locked.current) return;
+    const nextErrors = {
+      name: name.trim().length < 2 ? 'Вкажіть ім’я: щонайменше 2 символи.' : '',
+      tel: /^(\+38|38)?0\d{9}$/.test(tel.replace(/[\s()-]/g, ''))
+        ? ''
+        : 'Вкажіть український номер, наприклад +380 98 123 45 67.',
+      form: '',
+    };
+    setErrors(nextErrors);
+    if (nextErrors.name || nextErrors.tel) {
+      formRef.current?.querySelector<HTMLInputElement>(`#lead-${nextErrors.name ? 'name' : 'tel'}`)?.focus();
+      return;
     }
-    if (name === 'tel') {
-      return !phoneRegex.test(value.replace(/\s/g, '')) ? 'Невірний формат номера' : '';
-    }
-    return '';
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-
-    // Валідація в реальному часі
-    const error = validateField(name, value);
-    setErrors({ ...errors, [name]: error });
-  };
-
-  const isFormValid = () => {
-    return (
-      formData.name.trim().length >= 2 && phoneRegex.test(formData.tel.replace(/\s/g, '')) && !isSubmitting
-    );
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!isFormValid()) return;
-
-    setIsSubmitting(true);
-    const courseInfo = title ? `Який курс обрав клієнт: ${title}` : 'Курс не обрано';
-    const text = `Клієнт Курси Фото:\nІм'я Клієнта: ${formData.name}\nНомер клієнта: ${formData.tel}\n${courseInfo}`;
-
+    locked.current = true;
+    setStatus('loading');
+    const params = { course_id: selection?.courseId, plan_id: selection?.planId };
     try {
-      const response = await fetch(
-        `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_TOKEN}/sendMessage`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
-            text: text,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.ok) {
-        setShowThankYou(true);
-        setTimeout(() => {
-          onClose();
-        }, 2000);
-      } else {
-        throw new Error('Помилка при відправці');
-      }
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          tel,
+          courseId: selection?.courseId,
+          planId: selection?.planId,
+          website: new FormData(event.currentTarget).get('website'),
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || result.ok !== true)
+        throw new Error(result.message || 'Не вдалося надіслати заявку.');
+      setStatus('success');
+      track('lead_submit_success', params);
     } catch (error) {
-      console.error('Помилка:', error);
-      setErrors({ ...errors, name: 'Помилка відправки. Спробуйте ще раз.' });
+      setErrors((previous) => ({
+        ...previous,
+        form:
+          error instanceof Error && error.message !== 'Failed to fetch'
+            ? error.message
+            : 'Немає зв’язку. Спробуйте ще раз або зателефонуйте нам.',
+      }));
+      setStatus('idle');
+      track('lead_submit_error', params);
     } finally {
-      setIsSubmitting(false);
+      locked.current = false;
     }
-  };
-
-  if (showThankYou) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        className="flex w-full flex-col items-center justify-center gap-6 p-10 text-center">
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}>
-          <svg className="h-24 w-24 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-          </svg>
-        </motion.div>
-        <p className="text-2xl font-bold text-white">Дякуємо за вашу заявку!</p>
-        <p className="text-white/80">Ми зв'яжемося з вами найближчим часом</p>
-      </motion.div>
-    );
   }
-
-  return (
-    <form className="flex w-full flex-col gap-6 p-10" onSubmit={handleSubmit}>
-      <div className="space-y-6">
-        {/* Поле імені */}
-        <div className="relative">
-          <input
-            ref={nameInputRef}
-            value={formData.name}
-            onChange={handleChange}
-            type="text"
-            name="name"
-            required
-            className={`peer w-full rounded-lg border-2 bg-white/10 px-4 py-3 text-white placeholder-transparent transition-all ${errors.name ? 'border-red-500' : 'border-white/30 focus:border-white'} backdrop-blur-sm focus:bg-white/20 focus:outline-none`}
-            placeholder="Ім'я"
-          />
-          <label className="absolute -top-2.5 left-4 rounded-lg px-2 text-sm text-white transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/70 peer-focus:-top-2.5 peer-focus:bg-black peer-focus:text-sm peer-focus:text-white">
-            Ваше ім'я
-          </label>
-          <AnimatePresence>
-            {errors.name && (
-              <motion.p
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="mt-1 text-sm text-red-400">
-                {errors.name}
-              </motion.p>
-            )}
-          </AnimatePresence>
+  if (status === 'success')
+    return (
+      <div className="form-success">
+        <div role="status" tabIndex={-1} ref={(element) => element?.focus()}>
+          <h2>Дякуємо! Заявку отримано.</h2>
+          <p>Ми зв’яжемося з вами протягом 24 годин, щоб уточнити деталі навчання.</p>
         </div>
-
-        {/* Поле телефону */}
-        <div className="relative">
-          <input
-            value={formData.tel}
-            onChange={handleChange}
-            type="tel"
-            name="tel"
-            required
-            className={`peer w-full rounded-lg border-2 bg-white/10 px-4 py-3 text-white placeholder-transparent transition-all ${errors.tel ? 'border-red-500' : 'border-white/30 focus:border-white'} backdrop-blur-sm focus:bg-white/20 focus:outline-none`}
-            placeholder="Телефон"
-          />
-          <label className="absolute -top-2.5 left-4 rounded-lg px-2 text-sm text-white transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/70 peer-focus:-top-2.5 peer-focus:bg-black peer-focus:text-sm peer-focus:text-white">
-            Ваш номер
-          </label>
-          <AnimatePresence>
-            {errors.tel && (
-              <motion.p
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="mt-1 text-sm text-red-400">
-                {errors.tel}
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </div>
+        <button className="btn" onClick={onClose}>
+          Готово
+        </button>
       </div>
-
-      {/* Кнопка відправки */}
-      <motion.button
-        type="submit"
-        disabled={!isFormValid()}
-        whileHover={{ scale: isFormValid() ? 1.02 : 1 }}
-        whileTap={{ scale: isFormValid() ? 0.98 : 1 }}
-        className={`relative overflow-hidden rounded-lg px-8 py-4 text-lg font-bold transition-all ${
-          isFormValid()
-            ? 'bg-gradient-to-r from-[#f62553] to-background_btn_burger text-white shadow-lg hover:shadow-xl'
-            : 'cursor-not-allowed bg-gray-600 text-gray-400'
-        }`}>
-        <AnimatePresence mode="wait">
-          {isSubmitting ? (
-            <motion.div
-              key="loading"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex items-center justify-center gap-2">
-              <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
-              <span>Відправка...</span>
-            </motion.div>
-          ) : (
-            <motion.span key="submit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              Замовити консультацію
-            </motion.span>
-          )}
-        </AnimatePresence>
-      </motion.button>
+    );
+  return (
+    <form ref={formRef} className="lead-form" data-clarity-mask="true" onSubmit={submit} noValidate>
+      <fieldset disabled={status === 'loading'}>
+        <label htmlFor="lead-course">Курс</label>
+        <select
+          id="lead-course"
+          value={selection?.courseId || ''}
+          onChange={(e) => setSelection(isCourseId(e.target.value) ? { courseId: e.target.value } : null)}>
+          <option value="">Потрібна допомога з вибором</option>
+          {courses.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+        {course && (
+          <>
+            <label htmlFor="lead-plan">Тариф</label>
+            <select
+              id="lead-plan"
+              value={selection?.planId || ''}
+              onChange={(e) =>
+                setSelection({
+                  courseId: course.id,
+                  planId: e.target.value ? Number(e.target.value) : undefined,
+                })
+              }>
+              <option value="">Порадьте тариф</option>
+              {course.plans.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.title} — {money(item.price)}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
+        {plan && (
+          <p className="selection-summary">
+            {course?.name} · {plan.title}
+            <strong>{money(plan.price)}</strong>
+          </p>
+        )}
+        <label htmlFor="lead-name">Ваше ім’я</label>
+        <input
+          autoFocus
+          id="lead-name"
+          name="name"
+          autoComplete="name"
+          required
+          maxLength={80}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'name-error' : undefined}
+        />
+        {errors.name && (
+          <p className="field-error" id="name-error">
+            {errors.name}
+          </p>
+        )}
+        <label htmlFor="lead-tel">Номер телефону</label>
+        <input
+          id="lead-tel"
+          name="tel"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          required
+          maxLength={30}
+          placeholder="+380 98 123 45 67"
+          value={tel}
+          onChange={(e) => setTel(e.target.value)}
+          aria-invalid={!!errors.tel}
+          aria-describedby={errors.tel ? 'tel-error' : 'tel-hint'}
+        />
+        <p className="field-hint" id="tel-hint">
+          Зателефонуємо, щоб відповісти на запитання й уточнити ваш вибір.
+        </p>
+        {errors.tel && (
+          <p className="field-error" id="tel-error">
+            {errors.tel}
+          </p>
+        )}
+        <div className="honeypot" aria-hidden="true">
+          <label htmlFor="lead-website">Website</label>
+          <input id="lead-website" name="website" tabIndex={-1} autoComplete="off" />
+        </div>
+        <p className="field-hint">
+          Ім’я та телефон потрібні школі для відповіді на вашу заявку.{' '}
+          <a href="/terms-of-service" target="_blank" rel="noreferrer">
+            Умови навчання ↗
+          </a>
+        </p>
+        <button className="btn" disabled={status === 'loading'} type="submit">
+          {status === 'loading' ? 'Надсилаємо…' : 'Залишити заявку'}
+        </button>
+      </fieldset>
+      {errors.form && (
+        <div className="field-error" role="alert">
+          {errors.form} <a href="tel:+380988758442">+38 (098) 875 84 42</a>
+        </div>
+      )}
     </form>
   );
-};
-
-export default PopUp;
+}

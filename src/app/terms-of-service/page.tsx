@@ -32,13 +32,13 @@ export const dynamic = 'force-static';
 
 const Terms_of_service = () => {
   return (
-    <div className="min-h-screen bg-background_header px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl">
-        <div className="rounded-2xl bg-gray-100 p-8 shadow-[inset_-5px_-5px_15px_rgba(255,255,255,0.8),inset_5px_5px_10px_rgba(0,0,0,0.1)]">
+    <div className="legal-page">
+      <div className="legal-content container">
+        <div className="legal-intro">
           <h1 className="mb-6 text-3xl font-bold text-gray-800">Умови надання послуг та повернення коштів</h1>
 
           <div className="space-y-6">
-            <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
+            <div className="border-t border-stone-300 py-6">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Про наш продукт</h2>
               <p className="text-gray-600">
                 Онлайн-курс фотографії Screen Photo School для початківців — це ваш квиток у захоплюючий світ
@@ -47,7 +47,7 @@ const Terms_of_service = () => {
               </p>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
+            <div className="border-t border-stone-300 py-6">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Процес придбання</h2>
               <p className="text-gray-600">
                 Придбати курс просто та зручно — оплата здійснюється безпосередньо на нашому сайті. Ми
@@ -56,7 +56,7 @@ const Terms_of_service = () => {
               </p>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
+            <div className="border-t border-stone-300 py-6">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Політика повернення коштів</h2>
               <p className="text-gray-600">
                 {`Ми впевнені в якості нашого курсу, але розуміємо, що плани можуть змінюватися.
@@ -67,7 +67,7 @@ const Terms_of_service = () => {
               </p>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-[5px_5px_15px_rgba(0,0,0,0.1),-5px_-5px_15px_rgba(255,255,255,0.8)]">
+            <div className="border-t border-stone-300 py-6">
               <h2 className="mb-3 text-xl font-semibold text-gray-700">Реквізити</h2>
               <p className="text-gray-600">
                 ФОП Сернюк Олег · сайт: screenphotoschool.com.ua · телефон: +38 (098) 875 84 42

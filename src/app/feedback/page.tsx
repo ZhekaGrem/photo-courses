@@ -34,25 +34,40 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
-const FeedbackPage = () => {
-  const studentColumnImages = getColumnImages(LocalImageFolders.STUDENT_GALLERY);
+const FeedbackPage = async () => {
+  const studentColumnImages = await getColumnImages(LocalImageFolders.STUDENT_GALLERY);
 
   return (
-    <div className="min-h-screen bg-cloud_dancer">
-      <div className="section container mx-auto">
-        <h1 className="px-6 py-6 text-center text-xl font-bold leading-[1.1334] text-pageant_blue sm:text-[2rem] sm:font-black sm:leading-[1.1334]">
-          Відгуки студентів школи фотографії
+    <>
+      <div className="page-intro container">
+        <p className="eyebrow">Досвід Screen Photo School</p>
+        <h1>
+          Історії учнів.
+          <br />
+          Погляд у фотографіях.
         </h1>
-        <Testimonial />
+        <p>
+          Відгуки про навчання й роботи з галереї школи. Особистий досвід кожного учня — зі своїм темпом і
+          результатом.
+        </p>
       </div>
-
-      <section className="bg-pageant_blue">
+      <section className="section-space">
         <div className="container">
-          <h2 className="py-6 text-center text-cloud_dancer">РОБОТИ УЧНІВ</h2>
+          <Testimonial />
+        </div>
+      </section>
+      <section className="section-space student-preview" id="student-work">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Практика в кадрах</p>
+              <h2>Роботи учнів</h2>
+            </div>
+          </div>
           <LocalGallery columnImages={studentColumnImages} />
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

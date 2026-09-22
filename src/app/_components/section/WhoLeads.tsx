@@ -1,66 +1,39 @@
 import Image from 'next/image';
-import { section_3 } from '@/db/data';
-import CheckmarkIcon from '../common/Checkmark';
-import Loading from '@/app/loading';
-import dynamic from 'next/dynamic';
-const CarouselMini = dynamic(() => import('../layout/CarouselMini'), {
-  loading: () => <Loading />,
-  ssr: false,
-});
-
-type SectionInfo = {
-  title: string;
-  name: string;
-  text: string;
-  text2: string;
-  experience: string;
-};
-
-const data: SectionInfo = section_3;
-
-const WhoLeads = () => {
+import CarouselMini from '../layout/CarouselMini';
+export default function WhoLeads() {
   return (
-    <section id="author" className="bg-cloud_dancer text-neon_navy">
-      <div className="section container">
-        <div className="flex flex-col items-center lg:flex-row">
-          <div className="mb-8 lg:mb-0 lg:w-1/2">
-            <h2 className="pt-6">{data.title}</h2>
-            <h3 className="mb-8 px-6 text-3xl font-semibold">{data.name}</h3>
-            <div className="">
-              <ul className="space-y-4 rounded-lg p-6">
-                <li className="flex items-start">
-                  <CheckmarkIcon />
-                  <p className="">{data.text}</p>
-                </li>
-                <li className="flex items-start">
-                  <CheckmarkIcon />
-                  <p className="">{data.text2}</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="px-6 sm:px-0 lg:w-1/2 lg:pl-12">
-            <div className="relative">
-              <Image
-                loading="lazy"
-                src="/assets/img/oleg.png"
-                width={600}
-                height={600}
-                alt="Олег Сернюк"
-                className="z-0 rounded-lg"
-              />
-              <div className="m- absolute right-2 z-10 flex rounded-lg bg-white p-1 shadow-lg md:-right-6">
-                <p className="p-1 text-lg font-bold">{data.experience}</p>
-              </div>
-            </div>
-          </div>
+    <section className="section-space" id="author">
+      <div className="author-profile container">
+        <div>
+          <p className="eyebrow">Автор курсів Screen Photo School</p>
+          <h1>Олег Сернюк</h1>
+          <p>
+            Арт- і fashion-фотограф, член Української асоціації професійних фотографів. Понад 10 років досвіду
+            роботи з образами, світлом і командою.
+          </p>
+          <p>
+            Роботи Олега публікувалися у міжнародних виданнях Of Town, Connor, Isabella, 17:23, Poza, Vigour,
+            Vous, Art of Portrait, Mob, Malvie, Selin, Elegant, Marika та Top Posters. Його фотографії цінують
+            у США, Франції, Іспанії, Канаді та Великій Британії.
+          </p>
+          <p>У курсах — досвід фотографа: від вибору камери й композиції до студійних схем освітлення.</p>
+          <a className="btn" href="#portfolio">
+            Переглянути роботи ↗
+          </a>
         </div>
-        <div className="mt-16 px-6 sm:px-0">
-          <CarouselMini />
-        </div>
+        <Image
+          src="/assets/img/oleg.png"
+          alt="Фотограф Олег Сернюк"
+          width={600}
+          height={650}
+          priority
+          sizes="(max-width: 767px) 90vw, 45vw"
+        />
+      </div>
+      <div className="container">
+        <p className="eyebrow mt-12">Комерційні співпраці</p>
+        <CarouselMini />
       </div>
     </section>
   );
-};
-
-export default WhoLeads;
+}
